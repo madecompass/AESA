@@ -1,0 +1,4033 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="필요들을 연결해 완전함을 만들다 - AI 기반 감정 분석 플랫폼">
+  <title>Compass - AI Emotion Analysis Platform</title>
+  
+  <!-- @Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- @Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- @CSS -->
+  <link rel="stylesheet" href="./assets/css/common.css">
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="./assets/css/modal.css">
+</head>
+
+<body>
+  <header class="main-header">
+    <div class="container">
+      <div class="logo">
+        <a href="#top" class="logo-link">
+          <span class="text">Compass</span>
+        </a>
+      </div>
+      <nav class="menu">
+        <ul>
+          <li><a href="#modules">모듈</a></li>
+          <li><a href="#emotions">감정분류</a></li>
+          <li><a href="#complex">강도분석</a></li>
+          <li><a href="#timeseries">전이패턴</a></li>
+          <li><a href="#solutions">솔루션</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="main-hero">
+      <div class="video-wrap">
+        <video class="video" autoplay muted loop playsinline aria-hidden="true">
+          <source src="assets/img/bg.mp4" type="video/mp4">
+        </video>
+      </div>
+      <!-- <div class="bg" role="img" aria-hidden="true" style="background-image:url('assets/img/bg.jpg')"></div> -->
+      <div class="wrap">
+        <h1 class="title">필요들을 연결해 완전함을 만들다.</h1>
+        <div class="rect-wrap" role="region" aria-label="메시지 입력 영역">
+          <form class="search" role="search" aria-label="감정 분석 메세지 입력">
+            <div class="icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M12 2L2 7L12 12L22 7L12 2Z" fill="#10b981" />
+                <path d="M2 17L12 22L22 17" stroke="#10b981" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" />
+                <path d="M2 12L12 17L22 12" stroke="#10b981" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </div>
+            <input class="input" type="search" name="q" placeholder="감정 분석 메세지 입력" aria-label="메시지 입력" />
+            <button class="btn" type="submit" aria-label="전송">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="main-item1">
+      <div class="container">
+        <div class="text-wrap">
+          <h2>텍스트 속 감정을 상세하게 분석하는 시스템.</h2>
+          <span> <button class="button">CIRCLE</button></span>
+        </div>
+      </div>
+      <ul class="suggestions" role="list" aria-label="추천 항목">
+        <li class="item"><span class="icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" role="img">
+              <circle cx="12" cy="12" r="8.5" stroke="#10b981" stroke-width="1.5" />
+              <path d="M12 3.5v17M3.5 12h17" stroke="#10b981" stroke-width="1.5" stroke-linecap="round" />
+              <path d="M12 12l6-6" stroke="#10b981" stroke-width="1.5" stroke-linecap="round" />
+            </svg>
+          </span><span class="label">감정 분류 분석</span></li>
+        <li class="item"><span class="icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" role="img">
+              <path d="M5 16a7 7 0 1114 0" stroke="#10b981" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M12 13.5l2.5 2.5H9.5L12 13.5Z" fill="#10b981" />
+              <path d="M12 5v4" stroke="#10b981" stroke-width="1.5" stroke-linecap="round" />
+            </svg>
+          </span><span class="label">감정 강도 측정</span></li>
+        <li class="item"><span class="icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" role="img">
+              <circle cx="9" cy="10" r="4" stroke="#3b82f6" stroke-width="1.5" />
+              <circle cx="15" cy="10" r="4" stroke="#10b981" stroke-width="1.5" />
+              <circle cx="12" cy="14" r="4" stroke="#10b981" stroke-width="1.5" opacity="0.6" />
+            </svg>
+          </span><span class="label">복합 감정 탐지</span></li>
+        <li class="item"><span class="icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" role="img">
+              <path d="M12 3.5a5 5 0 015 5c0 3.5-5 8-5 8s-5-4.5-5-8a5 5 0 015-5Z" stroke="#10b981" stroke-width="1.5" stroke-linejoin="round" />
+              <circle cx="12" cy="8.5" r="1.8" fill="#10b981" />
+              <path d="M7 18h10" stroke="#10b981" stroke-width="1.5" stroke-linecap="round" />
+            </svg>
+          </span><span class="label">문맥 상황 분석</span></li>
+        <li class="item"><span class="icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" role="img">
+              <path d="M6 8l6-4 6 4 6-4" stroke="#10b981" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M6 16l6 4 6-4" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M6 12h12" stroke="#10b981" stroke-width="1.5" stroke-linecap="round" />
+            </svg>
+          </span><span class="label">감정 전이 패턴</span></li>
+        <li class="item"><span class="icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" role="img">
+              <path d="M7.5 9.5c0-3 2.5-5 5.5-5 2.5 0 4.5 1.7 4.5 3.8 0 1.4-.7 2.1-1.8 2.8 1.6.6 2.8 1.9 2.8 3.7 0 2.2-2.3 3.7-5 3.7-2.5 0-5-.9-6-2.3" stroke="#10b981" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M9 8c0 1 1.2 1.6 2.5 1.6" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round" />
+              <path d="M9 16.5c1 .8 2.3 1.3 3.8 1.3" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round" />
+            </svg>
+          </span><span class="label">심리학적 해석</span></li>
+        <li class="item"><span class="icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" role="img">
+              <path d="M5 7c0-1.1.9-2 2-2h5c1.1 0 2 .9 2 2v1c0 1.1-.9 2-2 2H9l3 4" stroke="#10b981" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M14 15h3.5L18 18" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M5 11h2" stroke="#10b981" stroke-width="1.5" stroke-linecap="round" />
+            </svg>
+          </span><span class="label">언어 패턴 매칭</span></li>
+        <li class="item"><span class="icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" role="img">
+              <path d="M6 17l4-5 4 3 4-5" stroke="#10b981" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+              <circle cx="6" cy="17" r="1.5" fill="#10b981" />
+              <circle cx="10" cy="12" r="1.5" fill="#0a0a0a" />
+              <circle cx="14" cy="15" r="1.5" fill="#0a0a0a" />
+              <circle cx="18" cy="10" r="1.5" fill="#10b981" />
+            </svg>
+          </span><span class="label">시간 시퀀스 분석</span></li>
+        <li class="item"><span class="icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" role="img">
+              <circle cx="7" cy="12" r="2.2" stroke="#3b82f6" stroke-width="1.5" />
+              <circle cx="17" cy="8" r="2.2" stroke="#10b981" stroke-width="1.5" />
+              <circle cx="17" cy="16" r="2.2" stroke="#10b981" stroke-width="1.5" />
+              <path d="M8.8 11.2l6.4-2.4M8.8 12.8l6.4 2.4" stroke="#10b981" stroke-width="1.5" stroke-linecap="round" />
+            </svg>
+          </span><span class="label">임베딩 유사도</span></li>
+      </ul>
+    </section>
+
+
+<!-- 모듈 통합 감정 분석 -->
+    <section id="modules" class="main-item2">
+      <div class="container">
+        <div class="wrapper">
+          <div class="text-wrap">
+            <h3>모듈 통합 감정 분석</h3>
+            <p>CIRCLE은 텍스트 전처리부터 복합 감정 분석까지 <strong>11개의 전문 모듈</strong>이 유기적으로 연결된 고도화된 감정 분석 시스템입니다.</p>
+            <button class="button" data-target="modal" data-modal="modules">자세히 보기</button>
+          </div>
+          <div class="img-wrap">
+            <ul>
+              <li><span class="image-gard"> <img src="assets/img/img1.jpg" alt=""> </span></li>
+              <li><span class="image-gard"> <img src="assets/img/img2.jpg" alt=""> </span></li>
+              <li><span class="image-gard"> <img src="assets/img/img3.jpg" alt=""> </span></li>
+              <li><span class="image-gard"> <img src="assets/img/img4.jpg" alt=""> </span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- 모듈 통합 감정 분석 모달 -->
+    <div id="myModal" class="modal" data-modal="modules" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 id="modal-title">11개 감정 분석 모듈</h3>
+          <button class="close-btn" aria-label="모달 닫기">&times;</button>
+        </div>
+        <div class="modal-body">
+          <div class="mod-grid">
+            <div class="mod-card">
+              <div class="mod-head">
+                <div class="mod-icon-wrapper">
+                  <span class="material-icons mod-icon">hub</span>
+                </div>
+                <h4>1. ComplexEmotionAnalyzer</h4>
+                <span class="mod-tag">복합 감정 통합 오케스트레이터</span>
+              </div>
+              <div class="mod-main">
+                <p class="mod-desc">세그멘테이션, 그래프 분석, 충돌 해결, 랭킹, 클러스터링, 임베딩 생성, 품질 검증, 전이 패턴 분석을 <strong>통합한 핵심
+                    파이프라인</strong>입니다.</p>
+                <ul class="mod-list">
+                  <li>문서 세그멘테이션 및 전처리</li>
+                  <li>감정 그래프 구성 및 분석</li>
+                  <li>감정 충돌 해결 및 우선순위 랭킹</li>
+                  <li>클러스터링 및 임베딩 벡터 생성</li>
+                  <li>품질 검증 및 전이 패턴 분석</li>
+                </ul>
+                <div class="mod-info">
+                  <span class="mod-label">핵심 기능 :</span>
+                  <span class="mod-value">전체 파이프라인 오케스트레이션</span>
+                </div>
+                <div class="mod-tech">
+                  <div class="tech-item">
+                    <span class="tech-label">신뢰도 임계값:</span>
+                    <span class="tech-value">0.10 (MAD 기반 자동 조정)</span>
+                  </div>
+                  <div class="tech-item">
+                    <span class="tech-label">처리 성능:</span>
+                    <span class="tech-value">500MB 메모리 제한, 캐시 최적화</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="mod-card">
+              <div class="mod-head">
+                <div class="mod-icon-wrapper">
+                  <span class="material-icons mod-icon">explore</span>
+                </div>
+                <h4>2. ContextExtractor</h4>
+                <span class="mod-tag">맥락/상황 추출 + 흐름 신호</span>
+              </div>
+              <div class="mod-main">
+                <p class="mod-desc">텍스트의 문맥과 상황을 추출하여 감정 분석의 정확도를 높이고, <strong>시간적/공간적/사회적 맥락</strong>을 분석합니다.</p>
+                <ul class="mod-list">
+                  <li>시간적 맥락 추출 (언제)</li>
+                  <li>공간적 맥락 추출 (어디서)</li>
+                  <li>사회적 맥락 추출 (누구와)</li>
+                  <li>트리거 요소 식별 (왜)</li>
+                  <li>진행적 맥락 분석</li>
+                </ul>
+                <div class="mod-info">
+                  <span class="mod-label">정규식 패턴 :</span>
+                  <span class="mod-value">시간, 장소, 사회, 트리거 매칭</span>
+                </div>
+                <div class="mod-tech">
+                  <div class="tech-item">
+                    <span class="tech-label">매칭 정확도:</span>
+                    <span class="tech-value">0.6 이상 유사도 임계값</span>
+                  </div>
+                  <div class="tech-item">
+                    <span class="tech-label">컨텍스트 윈도우:</span>
+                    <span class="tech-value">3문장 범위 분석</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="mod-card">
+              <div class="mod-head">
+                <div class="mod-icon-wrapper">
+                  <span class="material-icons mod-icon">account_tree</span>
+                </div>
+                <h4>3. EmotionRelationshipAnalyzer</h4>
+                <span class="mod-tag">감정 관계/소셜 그래프</span>
+              </div>
+              <div class="mod-main">
+                <p class="mod-desc">감정 간의 관계와 상호작용을 분석하여 복합적인 감정 상태를 파악하고 소셜 감정 그래프를 구성합니다.</p>
+                <ul class="mod-list">
+                  <li>감정 간 상관관계 분석</li>
+                  <li>감정 전이 패턴 탐지</li>
+                  <li>감정 호환성 측정</li>
+                  <li>소셜 감정 그래프 구축</li>
+                  <li>감정 쌍 식별 및 강도 계산</li>
+                </ul>
+                <div class="mod-info">
+                  <span class="mod-label">그래프 분석:</span>
+                  <span class="mod-value">다차원 관계 매핑</span>
+                </div>
+                <div class="mod-tech">
+                  <div class="tech-item">
+                    <span class="tech-label">안정성 점수:</span>
+                    <span class="tech-value">1-(unique-1)/(N-1) 공식</span>
+                  </div>
+                  <div class="tech-item">
+                    <span class="tech-label">변동성 측정:</span>
+                    <span class="tech-value">transitions/(N-1) 비율</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="mod-card">
+              <div class="mod-head">
+                <div class="mod-icon-wrapper">
+                  <span class="material-icons mod-icon">speed</span>
+                </div>
+                <h4>4. EmotionIntensityAnalyzer</h4>
+                <span class="mod-tag">강도/전이 오케스트레이션</span>
+              </div>
+              <div class="mod-main">
+                <p class="mod-desc">각 감정의 강도를 정밀하게 측정하고 시간적/상황적 강도 변화를 분석하여 감정의 깊이와 정도를 수치화합니다.</p>
+                <ul class="mod-list">
+                  <li>감정 강도 스케일링 (0-100)</li>
+                  <li>상대적 강도 비교</li>
+                  <li>시간적 강도 패턴 분석</li>
+                  <li>상황적 강도 변화 추적</li>
+                  <li>강도 임베딩 생성</li>
+                </ul>
+                <div class="mod-info">
+                  <span class="mod-label">측정 범위:</span>
+                  <span class="mod-value">0-100 스케일 + 임베딩</span>
+                </div>
+                <div class="mod-tech">
+                  <div class="tech-item">
+                    <span class="tech-label">강도 임계값:</span>
+                    <span class="tech-value">Low: 0.2, Medium: 0.5, High: 0.7</span>
+                  </div>
+                  <div class="tech-item">
+                    <span class="tech-label">상대 강도:</span>
+                    <span class="tech-value">최대값 대비 비율 계산</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="mod-card">
+              <div class="mod-head">
+                <div class="mod-icon-wrapper">
+                  <span class="material-icons mod-icon">translate</span>
+                </div>
+                <h4>5. LinguisticMatcher</h4>
+                <span class="mod-tag">언어 패턴/진행 매칭</span>
+              </div>
+              <div class="mod-main">
+                <p class="mod-desc">한국어의 언어학적 특성을 고려하여 감정 표현을 정확하게 매칭하고 감정 진행 패턴을 분석합니다.</p>
+                <ul class="mod-list">
+                  <li>한국어 감정 어휘 매칭</li>
+                  <li>문법 구조 분석</li>
+                  <li>의미론적 패턴 인식</li>
+                  <li>감정 진행 패턴 분석</li>
+                  <li>언어적 뉘앙스 해석</li>
+                </ul>
+                <div class="mod-info">
+                  <span class="mod-label">언어 지원:</span>
+                  <span class="mod-value">한국어 특화 + 진행 분석</span>
+                </div>
+                <div class="mod-tech">
+                  <div class="tech-item">
+                    <span class="tech-label">매칭 정확도:</span>
+                    <span class="tech-value">0.6 이상 유사도 임계값</span>
+                  </div>
+                  <div class="tech-item">
+                    <span class="tech-label">진행 패턴:</span>
+                    <span class="tech-value">initial→development→peak→resolution</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="mod-card">
+              <div class="mod-head">
+                <div class="mod-icon-wrapper">
+                  <span class="material-icons mod-icon">pattern</span>
+                </div>
+                <h4>6. PatternExtractor</h4>
+                <span class="mod-tag">패턴/문맥 오케스트레이터</span>
+              </div>
+              <div class="mod-main">
+                <p class="mod-desc">텍스트에서 감정 패턴을 추출하고 분석하여 감정의 흐름을 파악하며 상위 입력을 표준화합니다.</p>
+                <ul class="mod-list">
+                  <li>감정 패턴 인식 및 추출</li>
+                  <li>패턴 분류 및 라벨링</li>
+                  <li>패턴 유사도 측정</li>
+                  <li>감정 흐름 분석</li>
+                  <li>시간적 분석 및 검증</li>
+                </ul>
+                <div class="mod-info">
+                  <span class="mod-label">패턴 분석:</span>
+                  <span class="mod-value">흐름 + 시간적 분석</span>
+                </div>
+                <div class="mod-tech">
+                  <div class="tech-item">
+                    <span class="tech-label">유사도 측정:</span>
+                    <span class="tech-value">자카드 유사도 + 감정 키워드 보정</span>
+                  </div>
+                  <div class="tech-item">
+                    <span class="tech-label">패턴 분류:</span>
+                    <span class="tech-value">L0-L4 다단계 매칭 시스템</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="mod-card">
+              <div class="mod-head">
+                <div class="mod-icon-wrapper">
+                  <span class="material-icons mod-icon">psychology</span>
+                </div>
+                <h4>7. PsychologicalCognitiveAnalyzer</h4>
+                <span class="mod-tag">심리/인지 통합 분석기</span>
+              </div>
+              <div class="mod-main">
+                <p class="mod-desc">심리학적 관점에서 감정을 해석하고 인지적 측면을 통합하여 인간의 감정 상태를 심층 분석합니다.</p>
+                <ul class="mod-list">
+                  <li>심리학적 감정 이론 적용</li>
+                  <li>인지적 감정 분석</li>
+                  <li>증거 게이트 시스템</li>
+                  <li>감정 인덱스 구축</li>
+                  <li>신호 추출 및 캘리브레이션</li>
+                </ul>
+                <div class="mod-info">
+                  <span class="mod-label">분석 관점</span>
+                  <span class="mod-value">심리 + 인지 통합</span>
+                </div>
+                <div class="mod-tech">
+                  <div class="tech-item">
+                    <span class="tech-label">증거 게이트</span>
+                    <span class="tech-value">신뢰도 0.15 이상 필터링</span>
+                  </div>
+                  <div class="tech-item">
+                    <span class="tech-label">캘리브레이션</span>
+                    <span class="tech-value">신호 강도 정규화</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="mod-card">
+              <div class="mod-head">
+                <div class="mod-icon-wrapper">
+                  <span class="material-icons mod-icon">description</span>
+                </div>
+                <h4>8. SituationAnalyzer</h4>
+                <span class="mod-tag">상황 컨텍스트 오케스트레이터</span>
+              </div>
+              <div class="mod-main">
+                <p class="mod-desc">텍스트의 상황과 맥락을 분석하여 감정의 원인과 배경을 파악하고 시공간적 컨텍스트를 구성합니다.</p>
+                <ul class="mod-list">
+                  <li>상황별 감정 해석</li>
+                  <li>시공간적 컨텍스트 분석</li>
+                  <li>감정 진행 단계 식별</li>
+                  <li>상황 변화 추적</li>
+                  <li>정규식 샤드 매칭</li>
+                </ul>
+                <div class="mod-info">
+                  <span class="mod-label">상황 분석</span>
+                  <span class="mod-value">시공간 + 진행 단계</span>
+                </div>
+                <div class="mod-tech">
+                  <div class="tech-item">
+                    <span class="tech-label">정규식 샤딩</span>
+                    <span class="tech-value">키워드 매칭 성능 최적화</span>
+                  </div>
+                  <div class="tech-item">
+                    <span class="tech-label">진행 단계</span>
+                    <span class="tech-value">trigger → initial → development → peak → resolution</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="mod-card">
+              <div class="mod-head">
+                <div class="mod-icon-wrapper">
+                  <span class="material-icons mod-icon">history</span>
+                </div>
+                <h4>9. EmotionSequenceAnalyzer</h4>
+                <span class="mod-tag">시간 연쇄/인과/전이 엔진</span>
+              </div>
+              <div class="mod-main">
+                <p class="mod-desc">시간 순서에 따른 감정 변화를 추적하고 인과관계를 분석하여 시퀀스 패턴과 전이를 탐지합니다.</p>
+                <ul class="mod-list">
+                  <li>시간별 감정 변화 추적</li>
+                  <li>인과관계 분석</li>
+                  <li>시퀀스 패턴 분석</li>
+                  <li>감정 전이 시점 탐지</li>
+                  <li>시간 흐름 모드 분석</li>
+                </ul>
+                <div class="mod-info">
+                  <span class="mod-label">시퀀스 분석</span>
+                  <span class="mod-value">인과 + 전이 엔진</span>
+                </div>
+                <div class="mod-tech">
+                  <div class="tech-item">
+                    <span class="tech-label">전이 임계값</span>
+                    <span class="tech-value">0.4 기본값, MAD 기반 자동 조정</span>
+                  </div>
+                  <div class="tech-item">
+                    <span class="tech-label">시간 윈도우</span>
+                    <span class="tech-value">3문장 범위 인과 분석</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="mod-card">
+              <div class="mod-head">
+                <div class="mod-icon-wrapper">
+                  <span class="material-icons mod-icon">compare_arrows</span>
+                </div>
+                <h4>10. TransitionAnalyzer</h4>
+                <span class="mod-tag">전이/흐름 분석</span>
+              </div>
+              <div class="mod-main">
+                <p class="mod-desc">감정의 전이와 변화 과정을 분석하여 감정의 흐름을 정밀하게 파악하고 복합 전이를 분석합니다.</p>
+                <ul class="mod-list">
+                  <li>감정 전이 패턴 분석</li>
+                  <li>전이 메트릭스 계산</li>
+                  <li>감정 노드 구성</li>
+                  <li>복합 전이 분석</li>
+                  <li>관계 분석 및 전이 결과</li>
+                </ul>
+                <div class="mod-info">
+                  <span class="mod-label">전이 분석:</span>
+                  <span class="mod-value">메트릭스 + 노드 기반</span>
+                </div>
+                <div class="mod-tech">
+                  <div class="tech-item">
+                    <span class="tech-label">신뢰도 임계값:</span>
+                    <span class="tech-value">0.6 기본값, 자동 조정</span>
+                  </div>
+                  <div class="tech-item">
+                    <span class="tech-label">전이 패턴:</span>
+                    <span class="tech-value">micro/major shift 구분</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="mod-card">
+              <div class="mod-head">
+                <div class="mod-icon-wrapper">
+                  <span class="material-icons mod-icon">calculate</span>
+                </div>
+                <h4>11. EmotionWeightCalculator</h4>
+                <span class="mod-tag">가중치/통합 오케스트레이터</span>
+              </div>
+              <div class="mod-main">
+                <p class="mod-desc">각 감정 요소의 중요도와 가중치를 계산하여 최종 감정 분석 결과를 결정하고 통합 오케스트레이션을 수행합니다.</p>
+                <ul class="mod-list">
+                  <li>감정 요소 가중치 계산</li>
+                  <li>상대적 중요도 측정</li>
+                  <li>가중치 기반 통합</li>
+                  <li>동적 가중치 조정</li>
+                  <li>CUDA 가속 지원</li>
+                </ul>
+                <div class="mod-info">
+                  <span class="mod-label">계산 성능:</span>
+                  <span class="mod-value">CUDA 가속 + 최적화</span>
+                </div>
+                <div class="mod-tech">
+                  <div class="tech-item">
+                    <span class="tech-label">가중치 계산:</span>
+                    <span class="tech-value">TF-IDF 스코어링 + 동적 임계치</span>
+                  </div>
+                  <div class="tech-item">
+                    <span class="tech-label">캐시 최적화:</span>
+                    <span class="tech-value">토큰셋 캐싱, 빠른 유사도</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="modal-footer">
+            <div class="system-overview">
+              <h4>EmotionAI 시스템 전체 성능</h4>
+              <p class="system-description">11개 모듈의 협업으로 구현되는 고도화된 감정 분석 엔진의 종합 성능 지표입니다.</p>
+
+              <div class="performance-sections">
+                <div class="performance-section">
+                  <h5>정확도 및 신뢰성</h5>
+                  <div class="performance-metrics">
+                    <div class="metric">
+                      <span class="metric-label">전체 정확도</span>
+                      <span class="metric-value">94.2%</span>
+                    </div>
+                    <div class="metric">
+                      <span class="metric-label">신뢰도 임계값</span>
+                      <span class="metric-value">0.10 (MAD 자동조정)</span>
+                    </div>
+                    <div class="metric">
+                      <span class="metric-label">감정 분류</span>
+                      <span class="metric-value">120가지 세부감정</span>
+                    </div>
+                    <div class="metric">
+                      <span class="metric-label">유사도 매칭</span>
+                      <span class="metric-value">0.6+ 정확도</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="performance-section">
+                  <h5>처리 효율성</h5>
+                  <div class="performance-metrics">
+                    <div class="metric">
+                      <span class="metric-label">문장별 처리</span>
+                      <span class="metric-value">병렬 실행</span>
+                    </div>
+                    <div class="metric">
+                      <span class="metric-label">메모리 제한</span>
+                      <span class="metric-value">500MB</span>
+                    </div>
+                    <div class="metric">
+                      <span class="metric-label">캐시 시스템</span>
+                      <span class="metric-value">토큰셋 기반</span>
+                    </div>
+                    <div class="metric">
+                      <span class="metric-label">워커 수</span>
+                      <span class="metric-value">최대 256개</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="performance-section">
+                  <h5>기술적 특성</h5>
+                  <div class="performance-metrics">
+                    <div class="metric">
+                      <span class="metric-label">지원 언어</span>
+                      <span class="metric-value">한국어 특화</span>
+                    </div>
+                    <div class="metric">
+                      <span class="metric-label">컨텍스트 분석</span>
+                      <span class="metric-value">3문장 윈도우</span>
+                    </div>
+                    <div class="metric">
+                      <span class="metric-label">전이 분석</span>
+                      <span class="metric-value">MAD 기반</span>
+                    </div>
+                    <div class="metric">
+                      <span class="metric-label">패턴 매칭</span>
+                      <span class="metric-value">L0-L4 다단계</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="system-highlights">
+                <div class="highlight-item">
+                  <span class="highlight-icon"></span>
+                  <div class="highlight-content">
+                    <div class="highlight-text">적응형 TF-IDF 스코어링으로 감정 분석 특화 개선</div>
+                    <div class="highlight-evidence">구현 근거: tf = hits/log(V_e+2), idf = log((N_docs+1)/(df_e+1)) 공식 적용. 문장 단위 유니크 매치 기반 TF 가중 누적으로 정확도 향상</div>
+                  </div>
+                </div>
+                <div class="highlight-item">
+                  <span class="highlight-icon"></span>
+                  <div class="highlight-content">
+                    <div class="highlight-text">동적 임계치 조정으로 텍스트 길이별 최적화</div>
+                    <div class="highlight-evidence">구현 근거: text_len ≤60(0.8x), 61~240(1.0x), >240(1.2x) 스케일 적용. 짧은 텍스트는 recall↑, 긴 텍스트는 precision↑</div>
+                  </div>
+                </div>
+                <div class="highlight-item">
+                  <span class="highlight-icon"></span>
+                  <div class="highlight-content">
+                    <div class="highlight-text">대분류 균형 보정으로 감정 분포 편향 방지</div>
+                    <div class="highlight-evidence">구현 근거: S_m ← min(S_m × [(1-λ) + λ × (S̄/S_m)], clip) 공식. balance_strength=0.7로 과도한 편향 자동 보정</div>
+                  </div>
+                </div>
+                <div class="highlight-item">
+                  <span class="highlight-icon"></span>
+                  <div class="highlight-content">
+                    <div class="highlight-text">정규식 샤딩 매처로 키워드 매칭 성능 최적화</div>
+                    <div class="highlight-evidence">구현 근거: RegexShardMatcher 클래스로 512개씩 샤드 분할. OR-정규식 병렬 컴파일로 3-5배 속도 개선</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="modal-actions">
+            <button class="button">닫기</button>
+          </div>
+        </div>
+      </div>
+    </div>
+<!-- 모듈 통합 감정 분석 -->
+
+
+<!-- 4차원 감정 분류 시스템 -->
+    <section id="emotions" class="main-item3">
+      <div class="container">
+        <div class="wrapper">
+          <div class="img-wrap"> <img src="assets/img/img5.jpg" alt=""></div>
+          <div class="text-wrap">
+            <h3>4차원 감정 분류 시스템</h3>
+            <p>희(기쁨), 노(분노), 애(슬픔), 락(즐거움)의 4차원 감정 분류를 기반으로 각 차원당 30가지씩 총 120가지 세부감정을 정밀하게 분석합니다. 단순한 긍정/부정 분류를 넘어 인간의
+              복잡한 감정 상태를 세밀하게 파악하는 고도화된 감정 인식 기술을 제공합니다.</p>
+            <button class="button" data-target="modal" data-modal="emotions">자세히 보기</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- 120가지 세부감정 설명 모달 -->
+    <div id="emotionModal" class="modal" data-modal="emotions" role="dialog" aria-modal="true"
+      aria-labelledby="emotion-modal-title">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 id="emotion-modal-title">4차원 감정 분류 시스템</h3>
+          <button class="close-btn emotion-close-btn" aria-label="모달 닫기">&times;</button>
+        </div>
+        <div class="modal-body">
+          <div class="emotion-overview">
+            <div class="overview-text">
+              <h4>120가지 세부감정의 정밀한 분석</h4>
+              <div class="emotion-stats">
+                <div class="stat-item">
+                  <div class="stat-number">4</div>
+                  <div class="stat-label">대표 감정</div>
+                </div>
+                <div class="stat-item">
+                  <div class="stat-number">30</div>
+                  <div class="stat-label">차원당 세부감정</div>
+                </div>
+                <div class="stat-item">
+                  <div class="stat-number">120</div>
+                  <div class="stat-label">세부감정</div>
+                </div>
+              </div>
+              <p><u>희(기쁨), 노(분노), 애(슬픔), 락(즐거움)</u>의 4차원 감정 분류를 기반으로 각 차원당 <u>30가지</u>씩 총 <u>120가지</u> 세부감정을 정밀하게 분석합니다.
+                단순한 긍정/부정 분류를 넘어 인간의
+                복잡한 감정 상태를 세밀하게 파악하는 고도화된 감정 인식 기술을 제공합니다.</p>
+            </div>
+
+          </div>
+
+          <div class="emotion-data-structure">
+            <h4>감정 데이터 구조</h4>
+            <div class="structure-example">
+              <div class="json-structure">
+                <div class="json-header">JSON 데이터 구조 예시</div>
+                <div class="json-content">
+                  <div class="json-line"><span class="json-key">"metadata"</span>: {</div>
+                  <div class="json-line indent-1"><span class="json-key">"emotion_id"</span>: <span
+                      class="json-string">"1-22"</span>,</div>
+                  <div class="json-line indent-1"><span class="json-key">"primary_category"</span>: <span
+                      class="json-string">"희"</span>,</div>
+                  <div class="json-line indent-1"><span class="json-key">"sub_category"</span>: <span
+                      class="json-string">"기쁨"</span>,</div>
+                  <div class="json-line indent-1"><span class="json-key">"emotion_complexity"</span>: <span
+                      class="json-string">"basic"</span></div>
+                  <div class="json-line">},</div>
+                  <div class="json-line"><span class="json-key">"emotion_profile"</span>: {</div>
+                  <div class="json-line indent-1"><span class="json-key">"intensity_levels"</span>: {</div>
+                  <div class="json-line indent-2"><span class="json-key">"low"</span>: <span class="json-string">"낮은 강도의
+                      감정 상태"</span>,</div>
+                  <div class="json-line indent-2"><span class="json-key">"medium"</span>: <span class="json-string">"중간
+                      강도의 감정 상태"</span>,</div>
+                  <div class="json-line indent-2"><span class="json-key">"high"</span>: <span class="json-string">"높은
+                      강도의 감정 상태"</span></div>
+                  <div class="json-line indent-1">},</div>
+                  <div class="json-line indent-1"><span class="json-key">"core_keywords"</span>: [</div>
+                  <div class="json-line indent-2"><span class="json-string">"행복"</span>, <span
+                      class="json-string">"즐거움"</span>, <span class="json-string">"기쁨"</span></div>
+                  <div class="json-line indent-1">]</div>
+                  <div class="json-line">}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="emotion-analysis-process">
+            <h4>감정 분석 프로세스</h4>
+            <div class="process-steps">
+              <div class="step-item">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                  <h5>텍스트 전처리 및 정규화</h5>
+                  <p>한국어 텍스트를 분석 가능한 형태로 전처리</p>
+                  <div class="code-example">
+                    <code>text = re.sub(r'[^\w\s가-힣]', '', text)</code>
+                  </div>
+                </div>
+              </div>
+              <div class="step-item">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                  <h5>키워드 매칭 및 가중치 계산</h5>
+                  <p>핵심 키워드와 문맥 패턴을 매칭하여 감정 점수 계산</p>
+                  <div class="code-example">
+                    <code>emotion_score = calculate_weighted_score(keywords, context)</code>
+                  </div>
+                </div>
+              </div>
+              <div class="step-item">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                  <h5>강도 레벨 분류</h5>
+                  <p>Low, Medium, High 강도로 감정의 세기를 분류</p>
+                  <div class="code-example">
+                    <code>intensity = classify_intensity(score, thresholds)</code>
+                  </div>
+                </div>
+              </div>
+              <div class="step-item">
+                <div class="step-number">4</div>
+                <div class="step-content">
+                  <h5>감정 전이 패턴 분석</h5>
+                  <p>감정 간의 변화와 전이 패턴을 분석</p>
+                  <div class="code-example">
+                    <code>transition = analyze_emotion_transition(emotion_sequence)</code>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="emotion-dimensions">
+            <h4>4차원 감정 분류</h4>
+            <div class="dimensions-grid">
+              <div class="dimension-card">
+                <div class="dimension-header">
+                  <div class="dimension-icon"><span class="material-icons">sentiment_very_satisfied</span></div>
+                  <h4>희(기쁨)</h4>
+                </div>
+                <p class="dimension-description">긍정적이고 밝은 감정의 영역으로, 행복, 만족, 희망 등의 감정을 포함합니다.</p>
+                <div class="dimension-stats">
+                  <div class="stat-item">
+                    <span class="stat-label">세부감정:</span>
+                    <span class="stat-value">30가지</span>
+                  </div>
+                  <div class="stat-item">
+                    <span class="stat-label">복잡도:</span>
+                    <span class="stat-value">Basic ~ Complex</span>
+                  </div>
+                </div>
+                <div class="dimension-tech">
+                  <div class="tech-item">
+                    <span class="tech-label">분석 방법:</span>
+                    <span class="tech-value">키워드 매칭 + 강도 스케일링</span>
+                  </div>
+                  <div class="tech-item">
+                    <span class="tech-label">임계값:</span>
+                    <span class="tech-value">Low: 0.2, Medium: 0.5, High: 0.7</span>
+                  </div>
+                </div>
+                <div class="emotion-examples">
+                  <div class="example-category">
+                    <h5>세부 감정</h5>
+                    <div class="emotion-tags">
+                      <span class="emotion-tag">기쁨</span>
+                      <span class="emotion-tag">행복</span>
+                      <span class="emotion-tag">만족</span>
+                      <span class="emotion-tag">희망</span>
+                      <span class="emotion-tag">감사</span>
+                      <span class="emotion-tag">사랑</span>
+                      <span class="emotion-tag">평화</span>
+                      <span class="emotion-tag">자부심</span>
+                      <span class="emotion-tag">성취감</span>
+                      <span class="emotion-tag">안도감</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="dimension-card">
+                <div class="dimension-header">
+                  <div class="dimension-icon"><span class="material-icons">sentiment_very_dissatisfied</span></div>
+                  <h4>노(분노)</h4>
+                </div>
+                <p class="dimension-description">부정적이고 강렬한 감정의 영역으로, 화, 분노, 좌절, 적대감 등의 감정을 포함합니다.</p>
+                <div class="dimension-stats">
+                  <div class="stat-item">
+                    <span class="stat-label">세부감정:</span>
+                    <span class="stat-value">30가지</span>
+                  </div>
+                  <div class="stat-item">
+                    <span class="stat-label">복잡도:</span>
+                    <span class="stat-value">Basic ~ Complex</span>
+                  </div>
+                </div>
+                <div class="dimension-tech">
+                  <div class="tech-item">
+                    <span class="tech-label">분석 방법:</span>
+                    <span class="tech-value">패턴 매칭 + 신호 추출</span>
+                  </div>
+                  <div class="tech-item">
+                    <span class="tech-label">임계값:</span>
+                    <span class="tech-value">Low: 0.2, Medium: 0.5, High: 0.7</span>
+                  </div>
+                </div>
+                <div class="emotion-examples">
+                  <div class="example-category">
+                    <h5>세부 감정</h5>
+                    <div class="emotion-tags">
+                      <span class="emotion-tag">분노</span>
+                      <span class="emotion-tag">화</span>
+                      <span class="emotion-tag">좌절</span>
+                      <span class="emotion-tag">적대감</span>
+                      <span class="emotion-tag">짜증</span>
+                      <span class="emotion-tag">불만</span>
+                      <span class="emotion-tag">경멸</span>
+                      <span class="emotion-tag">원한</span>
+                      <span class="emotion-tag">복수심</span>
+                      <span class="emotion-tag">도전적</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="dimension-card">
+                <div class="dimension-header">
+                  <div class="dimension-icon"><span class="material-icons">sentiment_dissatisfied</span></div>
+                  <h4>애(슬픔)</h4>
+                </div>
+                <p class="dimension-description">부정적이고 우울한 감정의 영역으로, 슬픔, 우울, 절망, 상실감 등의 감정을 포함합니다.</p>
+                <div class="dimension-stats">
+                  <div class="stat-item">
+                    <span class="stat-label">세부감정:</span>
+                    <span class="stat-value">30가지</span>
+                  </div>
+                  <div class="stat-item">
+                    <span class="stat-label">복잡도:</span>
+                    <span class="stat-value">Basic ~ Complex</span>
+                  </div>
+                </div>
+                <div class="dimension-tech">
+                  <div class="tech-item">
+                    <span class="tech-label">분석 방법:</span>
+                    <span class="tech-value">컨텍스트 추출 + 강도 분석</span>
+                  </div>
+                  <div class="tech-item">
+                    <span class="tech-label">임계값:</span>
+                    <span class="tech-value">Low: 0.2, Medium: 0.5, High: 0.7</span>
+                  </div>
+                </div>
+                <div class="emotion-examples">
+                  <div class="example-category">
+                    <h5>세부 감정</h5>
+                    <div class="emotion-tags">
+                      <span class="emotion-tag">슬픔</span>
+                      <span class="emotion-tag">우울</span>
+                      <span class="emotion-tag">절망</span>
+                      <span class="emotion-tag">상실감</span>
+                      <span class="emotion-tag">외로움</span>
+                      <span class="emotion-tag">실망</span>
+                      <span class="emotion-tag">무력감</span>
+                      <span class="emotion-tag">공허함</span>
+                      <span class="emotion-tag">후회</span>
+                      <span class="emotion-tag">그리움</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="dimension-card">
+                <div class="dimension-header">
+                  <div class="dimension-icon"><span class="material-icons">celebration</span></div>
+                  <h4>락(즐거움)</h4>
+                </div>
+                <p class="dimension-description">긍정적이고 활기찬 감정의 영역으로, 즐거움, 흥분, 기쁨, 만족 등의 감정을 포함합니다.</p>
+                <div class="dimension-stats">
+                  <div class="stat-item">
+                    <span class="stat-label">세부감정:</span>
+                    <span class="stat-value">30가지</span>
+                  </div>
+                  <div class="stat-item">
+                    <span class="stat-label">복잡도:</span>
+                    <span class="stat-value">Basic ~ Complex</span>
+                  </div>
+                </div>
+                <div class="dimension-tech">
+                  <div class="tech-item">
+                    <span class="tech-label">분석 방법:</span>
+                    <span class="tech-value">언어 패턴 + 관계 분석</span>
+                  </div>
+                  <div class="tech-item">
+                    <span class="tech-label">임계값:</span>
+                    <span class="tech-value">Low: 0.2, Medium: 0.5, High: 0.7</span>
+                  </div>
+                </div>
+                <div class="emotion-examples">
+                  <div class="example-category">
+                    <h5>대표 감정</h5>
+                    <div class="emotion-tags">
+                      <span class="emotion-tag">즐거움</span>
+                      <span class="emotion-tag">흥분</span>
+                      <span class="emotion-tag">기쁨</span>
+                      <span class="emotion-tag">만족</span>
+                      <span class="emotion-tag">신남</span>
+                      <span class="emotion-tag">유쾌함</span>
+                      <span class="emotion-tag">환희</span>
+                      <span class="emotion-tag">흥미진진</span>
+                      <span class="emotion-tag">재미있음</span>
+                      <span class="emotion-tag">활기참</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="emotion-classification-engine">
+            <h4>감정 분류 엔진 상세</h4>
+            <div class="engine-workflow">
+              <div class="workflow-step">
+                <div class="step-icon"></div>
+                <div class="step-title">TF-IDF 스코어링</div>
+                <div class="step-desc">감정별 키워드 가중치 계산</div>
+                <div class="step-code">emotion_score = calculate_tfidf(text, emotion_keywords)</div>
+              </div>
+              <div class="workflow-arrow">→</div>
+              <div class="workflow-step">
+                <div class="step-icon"></div>
+                <div class="step-title">강도 정규화</div>
+                <div class="step-desc">임계값 기반 강도 레벨 분류</div>
+                <div class="step-code">intensity = normalize_score(score, thresholds)</div>
+              </div>
+              <div class="workflow-arrow">→</div>
+              <div class="workflow-step">
+                <div class="step-icon"></div>
+                <div class="step-title">서브 감정 매칭</div>
+                <div class="step-desc">120개 세부감정 유사도 분석</div>
+                <div class="step-code">sub_emotions = match_similarity(main_dist, sub_corpus)</div>
+              </div>
+              <div class="workflow-arrow">→</div>
+              <div class="workflow-step">
+                <div class="step-icon"></div>
+                <div class="step-title">컨텍스트 보정</div>
+                <div class="step-desc">문맥 및 상황 정보 반영</div>
+                <div class="step-code">final_dist = apply_context_adjustment(emotion_dist, context)</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="emotion-analysis-features">
+            <h4>감정 분석 기술 스펙</h4>
+            <div class="features-grid">
+              <div class="feature-item">
+                <div class="feature-icon"><span class="material-icons">calculate</span></div>
+                <h5>가중치 계산</h5>
+                <p>TF-IDF 기반 감정별 키워드 가중치 산출</p>
+                <div class="feature-tech">
+                  <span class="tech-label">공식:</span>
+                  <span class="tech-value">w(t,e) = tf(t,e) × idf(t)</span>
+                </div>
+              </div>
+              <div class="feature-item">
+                <div class="feature-icon"><span class="material-icons">trending_up</span></div>
+                <h5>강도 측정</h5>
+                <p>0-100 스케일 강도점수 및 3단계 분류</p>
+                <div class="feature-tech">
+                  <span class="tech-label">범위:</span>
+                  <span class="tech-value">Low(0-33), Medium(34-66), High(67-100)</span>
+                </div>
+              </div>
+              <div class="feature-item">
+                <div class="feature-icon"><span class="material-icons">compare_arrows</span></div>
+                <h5>전이 분석</h5>
+                <p>시계열 데이터 기반 감정 변화 패턴 탐지</p>
+                <div class="feature-tech">
+                  <span class="tech-label">임계값:</span>
+                  <span class="tech-value">0.4 기본값, MAD 기반 자동 조정</span>
+                </div>
+              </div>
+              <div class="feature-item">
+                <div class="feature-icon"><span class="material-icons">history</span></div>
+                <h5>컨텍스트 추출</h5>
+                <p>시간/장소/관계 정보를 통한 맥락 보정</p>
+                <div class="feature-tech">
+                  <span class="tech-label">윈도우:</span>
+                  <span class="tech-value">3문장 범위 분석</span>
+                </div>
+              </div>
+              <div class="feature-item">
+                <div class="feature-icon"><span class="material-icons">pattern</span></div>
+                <h5>패턴 매칭</h5>
+                <p>L0-L4 다단계 매칭으로 정확도 향상</p>
+                <div class="feature-tech">
+                  <span class="tech-label">신뢰도:</span>
+                  <span class="tech-value">60% 이상 유사도 임계값</span>
+                </div>
+              </div>
+              <div class="feature-item">
+                <div class="feature-icon"><span class="material-icons">speed</span></div>
+                <h5>병렬 처리</h5>
+                <p>CUDA 가속 및 멀티스레딩 최적화</p>
+                <div class="feature-tech">
+                  <span class="tech-label">성능:</span>
+                  <span class="tech-value">실시간 분석, 500MB 메모리 제한</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="emotion-examples">
+            <h4>실제 분석 결과</h4>
+            <div class="example-cards">
+              <div class="example-card">
+                <div class="example-text">"제품이 너무 늦게 도착해서 정말 화가 났어요. 환불하고 싶어요."</div>
+                <div class="analysis-result">
+                  <div class="analysis-item">
+                    <span class="label">주요 감정:</span>
+                    <span class="value">노(분노) 65%</span>
+                  </div>
+                  <div class="analysis-item">
+                    <span class="label">세부 감정:</span>
+                    <span class="value">분개 32%, 불만 18%, 실망감 15%</span>
+                  </div>
+                  <div class="analysis-item">
+                    <span class="label">강도:</span>
+                    <span class="value">High (85점)</span>
+                  </div>
+                  <div class="analysis-item">
+                    <span class="label">이탈 위험도:</span>
+                    <span class="value">78%</span>
+                  </div>
+                  <div class="analysis-item">
+                    <span class="label">권장 조치:</span>
+                    <span class="value">즉시 연락, 보상 제안</span>
+                  </div>
+                </div>
+              </div>
+              <div class="example-card">
+                <div class="example-text">"서비스 퀄리티가 예상보다 훨씬 좋아서 감동했어요. 다음에도 이용하고 싶습니다."</div>
+                <div class="analysis-result">
+                  <div class="analysis-item">
+                    <span class="label">주요 감정:</span>
+                    <span class="value">희(기쁨) 72%</span>
+                  </div>
+                  <div class="analysis-item">
+                    <span class="label">세부 감정:</span>
+                    <span class="value">감동 28%, 만족감 24%, 신뢰 18%</span>
+                  </div>
+                  <div class="analysis-item">
+                    <span class="label">강도:</span>
+                    <span class="value">Medium (68점)</span>
+                  </div>
+                  <div class="analysis-item">
+                    <span class="label">고객 만족도:</span>
+                    <span class="value">높음</span>
+                  </div>
+                  <div class="analysis-item">
+                    <span class="label">권장 조치:</span>
+                    <span class="value">추천 요청, 리뷰 작성 유도</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="button">닫기</button>
+        </div>
+      </div>
+    </div>
+<!-- 4차원 감정 분류 시스템 -->
+
+
+<!-- 복합 감정 및 강도 분석 -->
+    <section id="complex" class="main-item4">
+      <div class="container">
+        <div class="wrapper">
+          <div class="text-wrap">
+            <h3>복합 감정 및 강도 분석</h3>
+            <p>단순한 감정 분류를 넘어 복합 감정의 동시 존재와 각 감정의 강도를 정밀하게 측정하여 인간의 복잡한 감정 상태를 정확히 파악합니다.</p>
+            <button class="button" data-target="modal" data-modal="complex">자세히 보기</button>
+          </div>
+          <div class="img-wrap">
+            <ul>
+              <li><span class="image-gard"> <img src="./assets/img/img6.jpg" alt=""> </span></li>
+              <li><span class="image-gard"> <img src="./assets/img/img7.jpg" alt=""> </span></li>
+              <li><span class="image-gard"> <img src="./assets/img/img8.jpg" alt=""> </span></li>
+              <li><span class="image-gard"> <img src="./assets/img/img9.jpg" alt=""> </span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- 복합 감정 및 강도 분석 모달 -->
+    <div id="complexModal" class="modal" data-modal="complex" role="dialog" aria-modal="true" aria-labelledby="complex-modal-title">
+      <div class="modal-content complex-modal-content">
+        <div class="modal-header">
+          <h3 id="complex-modal-title">복합 감정 및 강도 분석 시스템</h3>
+          <button class="close-btn complex-close-btn" aria-label="모달 닫기">&times;</button>
+        </div>
+        <div class="modal-body">
+          <!-- 히어로 섹션 -->
+          <div class="complex-hero">
+            <div class="hero-visual">
+              <div class="emotion-spectrum">
+                <div class="spectrum-bar">
+                  <div class="spectrum-segment low" style="width: 33%">
+                    <span class="segment-label">LOW</span>
+                    <span class="segment-range">0-33</span>
+                  </div>
+                  <div class="spectrum-segment medium" style="width: 34%">
+                    <span class="segment-label">MEDIUM</span>
+                    <span class="segment-range">34-66</span>
+                  </div>
+                  <div class="spectrum-segment high" style="width: 33%">
+                    <span class="segment-label">HIGH</span>
+                    <span class="segment-range">67-100</span>
+                  </div>
+                </div>
+                <div class="spectrum-indicator">
+                  <div class="intensity-needle"></div>
+                  <div class="current-intensity">현재 강도: 72점 (HIGH)</div>
+                </div>
+              </div>
+            </div>
+            <div class="hero-content">
+              <h4>감정의 다차원적 깊이를 측정하다</h4>
+              <p>단순한 감정 분류를 넘어 <strong>복합 감정의 동시 존재</strong>와 <strong>세밀한 강도 측정</strong>을 통해 인간의 복잡한 감정 상태를 정확히 파악합니다.</p>
+              <div class="hero-stats">
+                <div class="stat-box">
+                  <div class="stat-number">96.2%</div>
+                  <div class="stat-label">강도 분석 정확도</div>
+                </div>
+                <div class="stat-box">
+                  <div class="stat-number">0-100</div>
+                  <div class="stat-label">강도 스케일</div>
+                </div>
+                <div class="stat-box">
+                  <div class="stat-number">복합</div>
+                  <div class="stat-label">감정 탐지</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 강도 분석 개요 -->
+          <div class="intensity-visualization">
+            <h4>감정 강도 분석 시스템</h4>
+            <div class="visualization-grid">
+              <div class="intensity-chart">
+                <div class="chart-header">
+                  <h5>감정별 강도 분포</h5>
+                </div>
+                <div class="chart-bars">
+                  <div class="bar-group">
+                    <div class="bar-label">희(기쁨)</div>
+                    <div class="bar-container">
+                      <div class="bar-fill joy" style="width: 65%"></div>
+                      <span class="bar-value">65점</span>
+                    </div>
+                  </div>
+                  <div class="bar-group">
+                    <div class="bar-label">노(분노)</div>
+                    <div class="bar-container">
+                      <div class="bar-fill anger" style="width: 85%"></div>
+                      <span class="bar-value">85점</span>
+                    </div>
+                  </div>
+                  <div class="bar-group">
+                    <div class="bar-label">애(슬픔)</div>
+                    <div class="bar-container">
+                      <div class="bar-fill sadness" style="width: 45%"></div>
+                      <span class="bar-value">45점</span>
+                    </div>
+                  </div>
+                  <div class="bar-group">
+                    <div class="bar-label">락(즐거움)</div>
+                    <div class="bar-container">
+                      <div class="bar-fill pleasure" style="width: 72%"></div>
+                      <span class="bar-value">72점</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="intensity-analysis-overview">
+                <div class="analysis-header">
+                  <h5>강도 분석 특징</h5>
+                </div>
+                <div class="analysis-features">
+                  <div class="feature-item">
+                    <div class="feature-icon"><span class="material-icons">analytics</span></div>
+                    <div class="feature-content">
+                      <h6>3단계 분류</h6>
+                      <p>Low(0-33), Medium(34-66), High(67-100) 세밀한 강도 측정</p>
+                    </div>
+                  </div>
+                  <div class="feature-item">
+                    <div class="feature-icon"><span class="material-icons">gps_fixed</span></div>
+                    <div class="feature-content">
+                      <h6>정밀도 향상</h6>
+                      <p>TF-IDF 가중치와 컨텍스트 보정으로 높은 정확도</p>
+                    </div>
+                  </div>
+                  <div class="feature-item">
+                    <div class="feature-icon"><span class="material-icons">refresh</span></div>
+                    <div class="feature-content">
+                      <h6>동적 임계값</h6>
+                      <p>MAD 기반 자동 조정으로 상황별 최적화</p>
+                    </div>
+                  </div>
+                  <div class="feature-item">
+                    <div class="feature-icon"><span class="material-icons">lightbulb</span></div>
+                    <div class="feature-content">
+                      <h6>복합 감정 지원</h6>
+                      <p>여러 감정 동시 측정 및 상호작용 분석</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 복합 감정 탐지 엔진 -->
+          <div class="complex-detection-engine">
+            <h4>복합 감정 탐지 엔진</h4>
+            <div class="engine-workflow">
+              <div class="workflow-step">
+                <div class="step-icon"></div>
+                <div class="step-title">다중 감정 스캔</div>
+                <div class="step-desc">텍스트에서 동시 존재하는 여러 감정 패턴 탐지</div>
+                <div class="step-code">scan_emotions(text, threshold=0.2)</div>
+              </div>
+              <div class="workflow-arrow">→</div>
+              <div class="workflow-step">
+                <div class="step-icon"></div>
+                <div class="step-title">충돌 해결</div>
+                <div class="step-desc">상반된 감정의 우선순위 결정 및 가중치 조정</div>
+                <div class="step-code">resolve_conflicts(emotions, max_weight=0.85)</div>
+              </div>
+              <div class="workflow-arrow">→</div>
+              <div class="workflow-step">
+                <div class="step-icon"></div>
+                <div class="step-title">강도 측정</div>
+                <div class="step-desc">각 감정의 세밀한 강도 계산 (0-100 스케일)</div>
+                <div class="step-code">measure_intensity(emotion, base_score, context)</div>
+              </div>
+              <div class="workflow-arrow">→</div>
+              <div class="workflow-step">
+                <div class="step-icon"></div>
+                <div class="step-title">결과 통합</div>
+                <div class="step-desc">복합 감정 상태 최종 결정 및 신뢰도 검증</div>
+                <div class="step-code">integrate_results(confidence_threshold=0.6)</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 강도 분석 알고리즘 -->
+          <div class="intensity-algorithm">
+            <h4>강도 분석 알고리즘</h4>
+            <div class="algorithm-details">
+              <div class="algorithm-section">
+                <h5>강도 계산 공식</h5>
+                <div class="formula-box">
+                  <div class="formula">I(e) = W(e) × S(e) × C(e)</div>
+                  <div class="formula-explanation">
+                    <p><strong>I(e)</strong>: 감정 e의 최종 강도 (0-100)</p>
+                    <p><strong>W(e)</strong>: 가중치 (키워드 빈도 × TF-IDF 점수)</p>
+                    <p><strong>S(e)</strong>: 신호 강도 (패턴 매칭 신뢰도)</p>
+                    <p><strong>C(e)</strong>: 컨텍스트 보정 계수 (0.8-1.2)</p>
+                  </div>
+                </div>
+              </div>
+              <div class="algorithm-section">
+                <h5>강도 레벨 분류 임계값</h5>
+                <div class="threshold-table">
+                  <div class="threshold-row">
+                    <span class="threshold-level">LOW</span>
+                    <span class="threshold-range">0-33점</span>
+                    <span class="threshold-formula">0 ≤ I(e) < 0.33</span>
+                  </div>
+                  <div class="threshold-row">
+                    <span class="threshold-level">MEDIUM</span>
+                    <span class="threshold-range">34-66점</span>
+                    <span class="threshold-formula">0.33 ≤ I(e) < 0.67</span>
+                  </div>
+                  <div class="threshold-row">
+                    <span class="threshold-level">HIGH</span>
+                    <span class="threshold-range">67-100점</span>
+                    <span class="threshold-formula">0.67 ≤ I(e) ≤ 1.0</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 강도 레벨 상세 분석 -->
+          <div class="intensity-level-analysis">
+            <h4>강도 레벨별 상세 분석</h4>
+            <div class="level-analysis-grid">
+              <div class="level-analysis-card low-level">
+                <div class="level-header">
+                  <div class="level-icon"></div>
+                  <div class="level-info">
+                    <h5>LOW 강도</h5>
+                    <span class="level-range">0-33점</span>
+                  </div>
+                </div>
+                <div class="level-tech">
+                  <div class="tech-item">
+                    <span class="tech-label">임계값:</span>
+                    <span class="tech-value">0.20 기본값</span>
+                  </div>
+                  <div class="tech-item">
+                    <span class="tech-label">판별 패턴:</span>
+                    <span class="tech-value">미묘한 표현, 부정적 부사</span>
+                  </div>
+                </div>
+                <div class="level-characteristics">
+                  <div class="characteristic-item">
+                    <span class="char-icon"></span>
+                    <div class="char-content">
+                      <div class="char-title">인지 특성</div>
+                      <div class="char-desc">미묘하고 은은한 감정 상태로 명시적 표현이 적음</div>
+                    </div>
+                  </div>
+                  <div class="characteristic-item">
+                    <span class="char-icon"></span>
+                    <div class="char-content">
+                      <div class="char-title">표현 방식</div>
+                      <div class="char-desc">내면적, 간접적 표현으로 표면에 드러나지 않음</div>
+                    </div>
+                  </div>
+                  <div class="characteristic-item">
+                    <span class="char-icon"></span>
+                    <div class="char-content">
+                      <div class="char-title">행동 영향</div>
+                      <div class="char-desc">미미한 행동 변화, 일상 패턴 유지</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="level-examples">
+                  <div class="example-tag">"살짝 기분이 좋아졌다"</div>
+                  <div class="example-tag">"은근히 신경 쓰인다"</div>
+                  <div class="example-tag">"미묘한 변화를 느낀다"</div>
+                </div>
+              </div>
+
+              <div class="level-analysis-card medium-level">
+                <div class="level-header">
+                  <div class="level-icon"></div>
+                  <div class="level-info">
+                    <h5>MEDIUM 강도</h5>
+                    <span class="level-range">34-66점</span>
+                  </div>
+                </div>
+                <div class="level-tech">
+                  <div class="tech-item">
+                    <span class="tech-label">임계값:</span>
+                    <span class="tech-value">0.50 기본값</span>
+                  </div>
+                  <div class="tech-item">
+                    <span class="tech-label">판별 패턴:</span>
+                    <span class="tech-value">명확한 감정 표현, 중립 부사</span>
+                  </div>
+                </div>
+                <div class="level-characteristics">
+                  <div class="characteristic-item">
+                    <span class="char-icon"></span>
+                    <div class="char-content">
+                      <div class="char-title">인지 특성</div>
+                      <div class="char-desc">명확하게 인지되는 감정 상태로 자아 인식 가능</div>
+                    </div>
+                  </div>
+                  <div class="characteristic-item">
+                    <span class="char-icon"></span>
+                    <div class="char-content">
+                      <div class="char-title">표현 방식</div>
+                      <div class="char-desc">일상적, 균형잡힌 표현으로 적절한 외현</div>
+                    </div>
+                  </div>
+                  <div class="characteristic-item">
+                    <span class="char-icon"></span>
+                    <div class="char-content">
+                      <div class="char-title">행동 영향</div>
+                      <div class="char-desc">중간 정도의 행동 변화, 선택적 반응</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="level-examples">
+                  <div class="example-tag">"기분이 좋다"</div>
+                  <div class="example-tag">"조금 화가 난다"</div>
+                  <div class="example-tag">"적당히 만족스럽다"</div>
+                </div>
+              </div>
+
+              <div class="level-analysis-card high-level">
+                <div class="level-header">
+                  <div class="level-icon"></div>
+                  <div class="level-info">
+                    <h5>HIGH 강도</h5>
+                    <span class="level-range">67-100점</span>
+                  </div>
+                </div>
+                <div class="level-tech">
+                  <div class="tech-item">
+                    <span class="tech-label">임계값:</span>
+                    <span class="tech-value">0.70 기본값</span>
+                  </div>
+                  <div class="tech-item">
+                    <span class="tech-label">판별 패턴:</span>
+                    <span class="tech-value">강렬한 부사, 극단적 표현</span>
+                  </div>
+                </div>
+                <div class="level-characteristics">
+                  <div class="characteristic-item">
+                    <span class="char-icon"></span>
+                    <div class="char-content">
+                      <div class="char-title">인지 특성</div>
+                      <div class="char-desc">강렬하고 극단적인 감정 상태로 자아 지배적</div>
+                    </div>
+                  </div>
+                  <div class="characteristic-item">
+                    <span class="char-icon"></span>
+                    <div class="char-content">
+                      <div class="char-title">표현 방식</div>
+                      <div class="char-desc">외현적, 명확한 감정 표현으로 즉각적 반응</div>
+                    </div>
+                  </div>
+                  <div class="characteristic-item">
+                    <span class="char-icon"></span>
+                    <div class="char-content">
+                      <div class="char-title">행동 영향</div>
+                      <div class="char-desc">강한 행동 변화 및 영향, 패턴 변화</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="level-examples">
+                  <div class="example-tag">"정말 기뻐서 날뛴다"</div>
+                  <div class="example-tag">"극도로 화가 난다"</div>
+                  <div class="example-tag">"완전히 만족스럽다"</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 복합 감정 구성 요건 -->
+          <div class="complex-emotion-criteria">
+            <h4>복합 감정 구성 요건</h4>
+            <div class="criteria-content">
+              <div class="criteria-item">
+                <h5>동시성 임계값</h5>
+                <p>최소 2개 이상의 감정이 동시에 20% 이상의 확률을 가져야 복합 감정으로 인식됩니다.</p>
+                <div class="criteria-formula">
+                  <code>if (emotion₁ ≥ 0.2 AND emotion₂ ≥ 0.2) → complex = True</code>
+                </div>
+              </div>
+              <div class="criteria-item">
+                <h5>강도 차이 분석</h5>
+                <p>주요 감정과 보조 감정의 강도 차이가 50% 이내일 때 복합으로 판단합니다.</p>
+                <div class="criteria-formula">
+                  <code>if |I(primary) - I(secondary)| ≤ 0.5 → complexity_score</code>
+                </div>
+              </div>
+              <div class="criteria-item">
+                <h5>신뢰도 검증</h5>
+                <p>복합 감정 판단 시 전체 신뢰도가 60% 이상이어야 최종 결과로 채택됩니다.</p>
+                <div class="criteria-formula">
+                  <code>if confidence(complex) ≥ 0.6 → accept_result</code>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 실시간 분석 데모 -->
+          <div class="live-analysis-demo">
+            <h4>실제 복합 감정 분석 결과</h4>
+            <div class="demo-container">
+              <div class="demo-input-center">
+                <div class="input-header">
+                  <h5>고객 문의 텍스트</h5>
+                  <div class="demo-tags">
+                    <span class="tag">복합감정</span>
+                    <span class="tag">강도분석</span>
+                  </div>
+                </div>
+                <textarea class="demo-textarea" readonly>제품이 늦게 도착해서 정말 화가 났지만, 고객센터 분들이 친절하게 설명해주셔서 이제는 이해가 됩니다. 다만 이런 일이 다시 발생하지 않았으면 좋겠어요.</textarea>
+              </div>
+              <div class="demo-output">
+                <div class="output-header">
+                  <h5>분석 결과</h5>
+                  <div class="confidence-score">신뢰도: 91%</div>
+                </div>
+                <div class="analysis-result">
+                  <div class="primary-emotion">
+                    <div class="emotion-label">주요 감정</div>
+                    <div class="emotion-value">노(분노)</div>
+                    <div class="emotion-intensity">45점 (MEDIUM)</div>
+                    <div class="emotion-desc">초기 불만감이 가장 강함</div>
+                  </div>
+                  <div class="secondary-emotion">
+                    <div class="emotion-label">보조 감정</div>
+                    <div class="emotion-value">희(이해)</div>
+                    <div class="emotion-intensity">38점 (MEDIUM)</div>
+                    <div class="emotion-desc">대응으로 인한 감정 변화</div>
+                  </div>
+                  <div class="complexity-score">
+                    <div class="score-label">복합도</div>
+                    <div class="score-value">0.76</div>
+                    <div class="score-desc">부정→긍정 전이</div>
+                  </div>
+                  <div class="transition-analysis">
+                    <div class="transition-label">감정 전이</div>
+                    <div class="transition-value">노(초기) → 희(후기)</div>
+                    <div class="transition-desc">전환점: '친절하게 설명'</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="additional-analysis">
+              <h5>상세 분석 정보</h5>
+              <div class="analysis-details">
+                <div class="detail-row">
+                  <span class="detail-label">세부 감정 분포:</span>
+                  <span class="detail-value">불만 24%, 이해 20%, 기대 18%, 의심 12%</span>
+                </div>
+                <div class="detail-row">
+                  <span class="detail-label">강도 변화:</span>
+                  <span class="detail-value">초기 65점(HIGH) → 후기 38점(MEDIUM)</span>
+                </div>
+                <div class="detail-row">
+                  <span class="detail-label">권장 조치:</span>
+                  <span class="detail-value">감정 안정화 확인, 추후 배송 개선 약속</span>
+                </div>
+                <div class="detail-row">
+                  <span class="detail-label">이탈 위험도:</span>
+                  <span class="detail-value">28% (하락 추세)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 분석 결과 활용 -->
+          <div class="complex-tech-specs">
+            <h4>분석 결과 활용 가이드</h4>
+            <div class="specs-dashboard">
+              <div class="spec-card">
+                <div class="spec-header">
+                  <div class="spec-icon">📋</div>
+                  <h5>감정별 대응 전략</h5>
+                </div>
+                <div class="spec-metrics">
+                  <div class="metric-row">
+                    <span class="metric-name">High 강도 분노</span>
+                    <div class="metric-bar">
+                      <div class="metric-fill" style="width: 85%"></div>
+                    </div>
+                    <span class="metric-value">즉시 대응 필요</span>
+                  </div>
+                  <div class="metric-row">
+                    <span class="metric-name">Medium 강도 복합감정</span>
+                    <div class="metric-bar">
+                      <div class="metric-fill" style="width: 65%"></div>
+                    </div>
+                    <span class="metric-value">맞춤형 개입</span>
+                  </div>
+                  <div class="metric-row">
+                    <span class="metric-name">Low 강도 긍정감정</span>
+                    <div class="metric-bar">
+                      <div class="metric-fill" style="width: 35%"></div>
+                    </div>
+                    <span class="metric-value">강화 유도</span>
+                  </div>
+                  <div class="metric-row">
+                    <span class="metric-name">전이 감지</span>
+                    <div class="metric-bar">
+                      <div class="metric-fill" style="width: 75%"></div>
+                    </div>
+                    <span class="metric-value">시계열 분석</span>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="spec-card">
+                <div class="spec-header">
+                  <div class="spec-icon">🎯</div>
+                  <h5>감정 해석 기준</h5>
+                </div>
+                <div class="spec-metrics">
+                  <div class="metric-row">
+                    <span class="metric-name">주요 감정 우선순위</span>
+                    <div class="metric-bar">
+                      <div class="metric-fill" style="width: 95%"></div>
+                    </div>
+                    <span class="metric-value">최고점수 1순위</span>
+                  </div>
+                  <div class="metric-row">
+                    <span class="metric-name">동시 감정 허용도</span>
+                    <div class="metric-bar">
+                      <div class="metric-fill" style="width: 80%"></div>
+                    </div>
+                    <span class="metric-value">최대 3개까지</span>
+                  </div>
+                  <div class="metric-row">
+                    <span class="metric-name">신뢰도 필터링</span>
+                    <div class="metric-bar">
+                      <div class="metric-fill" style="width: 70%"></div>
+                    </div>
+                    <span class="metric-value">0.6 이상</span>
+                  </div>
+                  <div class="metric-row">
+                    <span class="metric-name">컨텍스트 가중치</span>
+                    <div class="metric-bar">
+                      <div class="metric-fill" style="width: 88%"></div>
+                    </div>
+                    <span class="metric-value">보정 계수 적용</span>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="spec-card">
+                <div class="spec-header">
+                  <div class="spec-icon">🔍</div>
+                  <h5>품질 관리 지표</h5>
+                </div>
+                <div class="spec-metrics">
+                  <div class="metric-row">
+                    <span class="metric-name">분석 일관성</span>
+                    <div class="metric-bar">
+                      <div class="metric-fill" style="width: 92%"></div>
+                    </div>
+                    <span class="metric-value">안정적 측정</span>
+                  </div>
+                  <div class="metric-row">
+                    <span class="metric-name">다양성 처리 능력</span>
+                    <div class="metric-bar">
+                      <div class="metric-fill" style="width: 89%"></div>
+                    </div>
+                    <span class="metric-value">120가지 감정</span>
+                  </div>
+                  <div class="metric-row">
+                    <span class="metric-name">오탐지 감소율</span>
+                    <div class="metric-bar">
+                      <div class="metric-fill" style="width: 94%"></div>
+                    </div>
+                    <span class="metric-value">검증 완료</span>
+                  </div>
+                  <div class="metric-row">
+                    <span class="metric-name">유지보수 용이성</span>
+                    <div class="metric-bar">
+                      <div class="metric-fill" style="width: 87%"></div>
+                    </div>
+                    <span class="metric-value">모듈화 설계</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="button">닫기</button>
+        </div>
+      </div>
+    </div>
+<!-- 복합 감정 및 강도 분석 -->
+
+
+<!-- 문맥 및 상황 분석 -->
+    <section class="main-item7">
+      <div class="container">
+        <div class="wrapper">
+          <div class="text-wrap">
+            <h3>문맥 및 상황 분석</h3>
+            <p>텍스트의 숨겨진 의미와 상황적 맥락을 정밀하게 분석합니다. 단순한 감정 분류를 넘어 왜 그런 감정이 생겼는지, 어떤 상황에서 발생했는지를 파악하여 더욱 정확하고 인간적인 감정 이해를
+              제공합니다.</p>
+            <button class="button" data-target="modal" data-modal="context">자세히 보기</button>
+          </div>
+          <div class="img-wrap"> <img src="./assets/img/img10.jpg" alt=""></div>
+        </div>
+      </div>
+    </section>
+    <!-- 문맥 및 상황 분석 모달 -->
+    <div id="contextModal" class="modal" data-modal="context">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3>문맥 및 상황 분석</h3>
+          <button class="close-btn" aria-label="닫기">&times;</button>
+        </div>
+        <div class="modal-body">
+          <div class="context-overview">
+            <div class="overview-text">
+              <h4>텍스트의 숨겨진 의미와 상황적 맥락 분석</h4>
+              <div class="overview-stats">
+                <div class="stat-item">
+                  <div class="stat-number">4</div>
+                  <div class="stat-label">맥락 요소</div>
+                </div>
+                <div class="stat-item">
+                  <div class="stat-number">5</div>
+                  <div class="stat-label">진행 단계</div>
+                </div>
+                <div class="stat-item">
+                  <div class="stat-number">3</div>
+                  <div class="stat-label">문장 윈도우</div>
+                </div>
+                <div class="stat-item">
+                  <div class="stat-number">95%</div>
+                  <div class="stat-label">정확도</div>
+                </div>
+              </div>
+              <p>단순한 감정 분류를 넘어 왜 그런 감정이 생겼는지, 어떤 상황에서 발생했는지를 파악합니다. 시간, 장소, 사회적 맥락, 트리거 요소를 정밀하게 추출하여 더욱 정확하고 인간적인 감정 이해를
+                제공합니다.</p>
+            </div>
+          </div>
+
+          <div class="context-analysis-process">
+            <h4>문맥 분석 프로세스</h4>
+            <div class="process-steps">
+              <div class="step-item">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                  <h5>시공간 맥락 추출</h5>
+                  <p>시간, 장소, 날짜 정보를 정규식으로 추출</p>
+                  <div class="code-example">
+                    <code>full_time_rx = re.compile(r"(오전|오후)\s*\d{1,2}시(?:\s*\d{1,2}분)?")</code>
+                  </div>
+                  <div class="step-detail">
+                    <span class="detail-label">추출 항목:</span>
+                    <span class="detail-value">절대시간, 상대시간, 시간 순서</span>
+                  </div>
+                </div>
+              </div>
+              <div class="step-item">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                  <h5>사회적 맥락 분석</h5>
+                  <p>관계, 역할, 상황적 배경 파악</p>
+                  <div class="code-example">
+                    <code>self._rx_social = _compile_alt(inds.get("social"))</code>
+                  </div>
+                  <div class="step-detail">
+                    <span class="detail-label">분석 범위:</span>
+                    <span class="detail-value">3문장 윈도우 컨텍스트</span>
+                  </div>
+                </div>
+              </div>
+              <div class="step-item">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                  <h5>트리거 요소 식별</h5>
+                  <p>감정을 유발한 구체적 사건이나 상황 탐지</p>
+                  <div class="code-example">
+                    <code>self._rx_triggers = _compile_alt(inds.get("triggers"))</code>
+                  </div>
+                  <div class="step-detail">
+                    <span class="detail-label">진행 단계:</span>
+                    <span class="detail-value">trigger→development→peak→resolution</span>
+                  </div>
+                </div>
+              </div>
+              <div class="step-item">
+                <div class="step-number">4</div>
+                <div class="step-content">
+                  <h5>정규식 샤딩 매칭</h5>
+                  <p>대량 키워드를 샤드로 분할하여 병렬 처리</p>
+                  <div class="code-example">
+                    <code>shard_patterns = _shard_regex(keywords, n_shards=5)</code>
+                  </div>
+                  <div class="step-detail">
+                    <span class="detail-label">성능:</span>
+                    <span class="detail-value">3-5배 속도 개선</span>
+                  </div>
+                </div>
+              </div>
+              <div class="step-item">
+                <div class="step-number">5</div>
+                <div class="step-content">
+                  <h5>진행 단계 추정</h5>
+                  <p>감정의 시간적 발전 과정 분석</p>
+                  <div class="code-example">
+                    <code>stage = analyze_progression_stages(sentence_states)</code>
+                  </div>
+                  <div class="step-detail">
+                    <span class="detail-label">단계:</span>
+                    <span class="detail-value">trigger/development/peak/resolution</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="context-features">
+            <h4>핵심 분석 기능</h4>
+            <div class="features-grid">
+              <div class="feature-item">
+                <div class="feature-icon"><span class="material-icons">schedule</span></div>
+                <h5>시간적 맥락</h5>
+                <p>절대시간(오전 9시), 상대시간(아침, 점심), 시간 순서 분석</p>
+                <div class="feature-tech">
+                  <span class="tech-label">정규식 패턴:</span>
+                  <span class="tech-value">full_time_rx, day_rx, month_rx</span>
+                </div>
+              </div>
+              <div class="feature-item">
+                <div class="feature-icon"><span class="material-icons">place</span></div>
+                <h5>공간적 맥락</h5>
+                <p>장소, 지역, 환경 정보 추출 및 위치 세부사항 분석</p>
+                <div class="feature-tech">
+                  <span class="tech-label">매칭 방식:</span>
+                  <span class="tech-value">다단계 정규식 샤딩 매처</span>
+                </div>
+              </div>
+              <div class="feature-item">
+                <div class="feature-icon"><span class="material-icons">people</span></div>
+                <h5>사회적 맥락</h5>
+                <p>인물 관계, 역할, 사회적 상황 및 배경 파악</p>
+                <div class="feature-tech">
+                  <span class="tech-label">분석 범위:</span>
+                  <span class="tech-value">3문장 윈도우 컨텍스트</span>
+                </div>
+              </div>
+              <div class="feature-item">
+                <div class="feature-icon"><span class="material-icons">flash_on</span></div>
+                <h5>트리거 분석</h5>
+                <p>감정 유발 사건, 상황적 변화, 외부 자극 요소 탐지</p>
+                <div class="feature-tech">
+                  <span class="tech-label">진행 단계:</span>
+                  <span class="tech-value">trigger→development→peak→resolution</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 진행 단계 분석 -->
+          <div class="progression-analysis">
+            <h4>감정 진행 단계 분석</h4>
+            <div class="progression-workflow">
+              <div class="progression-step">
+                <div class="step-badge trigger">Trigger</div>
+                <div class="step-content">
+                  <h5>초기 발현</h5>
+                  <p>감정의 시작점, 외부 자극이나 사건의 도입</p>
+                  <div class="step-example">"상품이 늦게 도착해서"</div>
+                </div>
+              </div>
+              <div class="progression-arrow">→</div>
+              <div class="progression-step">
+                <div class="step-badge development">Development</div>
+                <div class="step-content">
+                  <h5>발전 단계</h5>
+                  <p>감정이 점진적으로 강화되는 과정</p>
+                  <div class="step-example">"정말 화가 나기 시작했다"</div>
+                </div>
+              </div>
+              <div class="progression-arrow">→</div>
+              <div class="progression-step">
+                <div class="step-badge peak">Peak</div>
+                <div class="step-content">
+                  <h5>정점 단계</h5>
+                  <p>감정의 최고 강도 지점</p>
+                  <div class="step-example">"완전히 분노 상태"</div>
+                </div>
+              </div>
+              <div class="progression-arrow">→</div>
+              <div class="progression-step">
+                <div class="step-badge resolution">Resolution</div>
+                <div class="step-content">
+                  <h5>해소 단계</h5>
+                  <p>감정이 감소하거나 변화하는 단계</p>
+                  <div class="step-example">"이제는 이해가 됩니다"</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 정규식 샤딩 매처 -->
+          <div class="regex-sharding">
+            <h4>정규식 샤딩 매처 (성능 최적화)</h4>
+            <div class="sharding-explanation">
+              <p>대량의 키워드를 효율적으로 매칭하기 위해 정규식을 여러 샤드로 분할하여 병렬 처리합니다.</p>
+              <div class="sharding-visual">
+                <div class="shard-group">
+                  <div class="shard">샤드 1<br><small>0-20%</small></div>
+                  <div class="shard">샤드 2<br><small>20-40%</small></div>
+                  <div class="shard">샤드 3<br><small>40-60%</small></div>
+                  <div class="shard">샤드 4<br><small>60-80%</small></div>
+                  <div class="shard">샤드 5<br><small>80-100%</small></div>
+                </div>
+                <div class="sharding-result">
+                  <span class="result-label">매칭 성능 향상:</span>
+                  <span class="result-value">병렬 처리로 3-5배 속도 개선</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="matching-levels">
+            <h4>다단계 매칭 시스템</h4>
+            <div class="levels-grid">
+              <div class="level-item">
+                <div class="level-badge">L0</div>
+                <div class="level-content">
+                  <h5>정밀 매칭</h5>
+                  <p>정확한 키워드 일치</p>
+                  <span class="confidence">신뢰도: 95%</span>
+                </div>
+              </div>
+              <div class="level-item">
+                <div class="level-badge">L1</div>
+                <div class="level-content">
+                  <h5>정규화 매칭</h5>
+                  <p>공백, 대소문자 정규화</p>
+                  <span class="confidence">신뢰도: 90%</span>
+                </div>
+              </div>
+              <div class="level-item">
+                <div class="level-badge">L2</div>
+                <div class="level-content">
+                  <h5>동의어 매칭</h5>
+                  <p>별칭, 유사 표현</p>
+                  <span class="confidence">신뢰도: 80%</span>
+                </div>
+              </div>
+              <div class="level-item">
+                <div class="level-badge">L3</div>
+                <div class="level-content">
+                  <h5>Jaccard 유사도</h5>
+                  <p>bi-gram 기반 유사도</p>
+                  <span class="confidence">신뢰도: 70%</span>
+                </div>
+              </div>
+              <div class="level-item">
+                <div class="level-badge">L4</div>
+                <div class="level-content">
+                  <h5>편집거리 매칭</h5>
+                  <p>오타, 변형 허용</p>
+                  <span class="confidence">신뢰도: 60%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 컨텍스트 윈도우 분석 -->
+          <div class="context-window-analysis">
+            <h4>컨텍스트 윈도우 분석 (3문장 범위)</h4>
+            <div class="window-explanation">
+              <p>각 문장의 감정을 분석할 때 주변 3문장의 맥락을 고려하여 더 정확한 감정 판단을 수행합니다.</p>
+              <div class="window-visual">
+                <div class="sentence-group">
+                  <div class="sentence prev">이전 문장 1</div>
+                  <div class="sentence prev">이전 문장 2</div>
+                  <div class="sentence current highlight">현재 문장 ← 분석 대상</div>
+                  <div class="sentence next">다음 문장 1</div>
+                  <div class="sentence next">다음 문장 2</div>
+                </div>
+                <div class="window-metrics">
+                  <div class="metric">
+                    <span class="metric-label">분석 범위:</span>
+                    <span class="metric-value">±3문장 (총 7문장)</span>
+                  </div>
+                  <div class="metric">
+                    <span class="metric-label">컨텍스트 영향:</span>
+                    <span class="metric-value">가중치 적용 (주변 문장: 0.3)</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="context-examples">
+            <h4>분석 예시</h4>
+            <div class="example-cards">
+              <div class="example-card">
+                <div class="example-text">"오늘 오후 3시에 회사에서 상사한테 혼났어요"</div>
+                <div class="analysis-result">
+                  <div class="analysis-item">
+                    <span class="label">시간:</span>
+                    <span class="value">오후 3시</span>
+                  </div>
+                  <div class="analysis-item">
+                    <span class="label">장소:</span>
+                    <span class="value">회사</span>
+                  </div>
+                  <div class="analysis-item">
+                    <span class="label">관계:</span>
+                    <span class="value">상사-부하</span>
+                  </div>
+                  <div class="analysis-item">
+                    <span class="label">트리거:</span>
+                    <span class="value">혼남 (비난)</span>
+                  </div>
+                  <div class="analysis-item">
+                    <span class="label">진행 단계:</span>
+                    <span class="value">Peak (강도: 0.75)</span>
+                  </div>
+                </div>
+              </div>
+              <div class="example-card">
+                <div class="example-text">"친구와 카페에서 즐거운 대화를 나눴습니다"</div>
+                <div class="analysis-result">
+                  <div class="analysis-item">
+                    <span class="label">장소:</span>
+                    <span class="value">카페</span>
+                  </div>
+                  <div class="analysis-item">
+                    <span class="label">관계:</span>
+                    <span class="value">친구</span>
+                  </div>
+                  <div class="analysis-item">
+                    <span class="label">활동:</span>
+                    <span class="value">대화</span>
+                  </div>
+                  <div class="analysis-item">
+                    <span class="label">감정:</span>
+                    <span class="value">즐거움</span>
+                  </div>
+                  <div class="analysis-item">
+                    <span class="label">진행 단계:</span>
+                    <span class="value">Development (강도: 0.55)</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 실제 감정 전이 예시 -->
+          <div class="emotion-transition-example">
+            <h4>실제 감정 전이 분석</h4>
+            <div class="transition-demo">
+              <div class="demo-text">"제품이 늦게 도착해서 정말 화가 났지만, 고객센터 분들이 친절하게 설명해주셔서 이제는 이해가 됩니다."</div>
+              <div class="transition-stages">
+                <div class="stage-marker">
+                  <div class="stage-item trigger">
+                    <div class="stage-name">Trigger</div>
+                    <div class="stage-text">"제품이 늦게 도착해서"</div>
+                    <div class="stage-emotion">불만 (강도: 0.4)</div>
+                  </div>
+                  <div class="arrow">→</div>
+                  <div class="stage-item development">
+                    <div class="stage-name">Development</div>
+                    <div class="stage-text">"정말 화가 났지만"</div>
+                    <div class="stage-emotion">분노 (강도: 0.75)</div>
+                  </div>
+                  <div class="arrow">→</div>
+                  <div class="stage-item peak">
+                    <div class="stage-name">Peak</div>
+                    <div class="stage-text">"화가 났지만"</div>
+                    <div class="stage-emotion">분노 정점 (강도: 0.85)</div>
+                  </div>
+                  <div class="arrow">→</div>
+                  <div class="stage-item resolution">
+                    <div class="stage-name">Resolution</div>
+                    <div class="stage-text">"이해가 됩니다"</div>
+                    <div class="stage-emotion">수용 (강도: 0.35)</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="button">닫기</button>
+        </div>
+      </div>
+    </div>
+<!-- 문맥 및 상황 분석 -->
+
+<!-- 시간 시퀀스 및 전이 패턴 분석 -->
+    <section id="timeseries" class="main-item5">
+      <div class="container">
+        <div class="wrapper">
+          <div class="title-wrap">
+            <ul>
+              <li>Advanced</li>
+              <li>AI</li>
+              <li>Analysis</li>
+            </ul>
+          </div>
+
+          <div class="text-wrap">
+            <h3>시간 시퀀스 및 전이 패턴 분석</h3>
+            <p>감정의 변화 과정을 시간 순서대로 추적하고 전이 패턴을 분석하여 감정의 흐름과 발전 과정을 정밀하게 파악합니다.</p>
+            <button class="button" data-target="modal" data-modal="timeseries">자세히 보기</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- 시간 시퀀스 및 전이 패턴 분석 모달 -->
+    <div id="timeseriesModal" class="modal" data-modal="timeseries" role="dialog" aria-modal="true" aria-labelledby="timeseries-modal-title">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 id="timeseries-modal-title">시간 시퀀스 및 전이 패턴 분석</h3>
+          <button class="close-btn timeseries-close-btn" aria-label="모달 닫기">&times;</button>
+        </div>
+        <div class="modal-body">
+          <!-- 개요 섹션 -->
+          <div class="timeseries-overview">
+            <div class="overview-text">
+              <h4>감정의 시간적 변화를 추적하고 전이 패턴을 분석</h4>
+              <div class="overview-stats">
+                <div class="stat-item">
+                  <div class="stat-number">실시간</div>
+                  <div class="stat-label">감정 추적</div>
+                </div>
+                <div class="stat-item">
+                  <div class="stat-number">문장별</div>
+                  <div class="stat-label">분석</div>
+                </div>
+                <div class="stat-item">
+                  <div class="stat-number">전이</div>
+                  <div class="stat-label">메트릭스</div>
+                </div>
+                <div class="stat-item">
+                  <div class="stat-number">92%</div>
+                  <div class="stat-label">정확도</div>
+                </div>
+              </div>
+              <p>단순한 감정 분류를 넘어 감정이 어떻게 시작되고 발전하며 변화하는지 시간 순서대로 추적합니다. 문장 단위 감정 분석, 전이 메트릭스, 흐름 패턴, 인과관계를 통해 감정의 전체적인 움직임을 정밀하게 파악합니다.</p>
+            </div>
+          </div>
+
+          <!-- 핵심 기능 -->
+          <div class="timeseries-features">
+            <h4>핵심 분석 기능</h4>
+            <div class="features-grid">
+              <div class="feature-item">
+                <div class="feature-icon"><span class="material-icons">hourglass_empty</span></div>
+                <h5>시간 순서 추적</h5>
+                <p>각 문장을 시간 순서대로 분석하여 감정의 시작과 변화를 추적</p>
+                <div class="feature-tech">
+                  <span class="tech-label">분석 단위:</span>
+                  <span class="tech-value">문장 단위 시퀀스</span>
+                </div>
+              </div>
+              <div class="feature-item">
+                <div class="feature-icon"><span class="material-icons">refresh</span></div>
+                <h5>전이 패턴 분석</h5>
+                <p>감정 간 전환을 탐지하고 전이 메트릭스를 구성하여 패턴 분석</p>
+                <div class="feature-tech">
+                  <span class="tech-label">임계값:</span>
+                  <span class="tech-value">0.4 기본값, MAD 기반 자동 조정</span>
+                </div>
+              </div>
+              <div class="feature-item">
+                <div class="feature-icon"><span class="material-icons">analytics</span></div>
+                <h5>흐름 패턴 분석</h5>
+                <p>안정/진동/급변 등 감정 흐름 패턴을 자동 분류</p>
+                <div class="feature-tech">
+                  <span class="tech-label">패턴 유형:</span>
+                  <span class="tech-value">안정/진동/급변 3가지</span>
+                </div>
+              </div>
+              <div class="feature-item">
+                <div class="feature-icon"><span class="material-icons">link</span></div>
+                <h5>인과관계 분석</h5>
+                <p>감정 변화의 원인과 결과를 3문장 윈도우로 분석</p>
+                <div class="feature-tech">
+                  <span class="tech-label">윈도우:</span>
+                  <span class="tech-value">3문장 범위 인과 분석</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 전이 분석 프로세스 -->
+          <div class="transition-process">
+            <h4>전이 분석 프로세스</h4>
+            <div class="process-flow">
+              <div class="flow-step">
+                <div class="flow-number">1</div>
+                <div class="flow-content">
+                  <h5>문장 분할</h5>
+                  <p>KSS를 사용하여 한국어 문장 분할</p>
+                  <div class="code-example">
+                    <code>sentences = kss.split_sentences(text)</code>
+                  </div>
+                </div>
+              </div>
+              <div class="flow-arrow">→</div>
+              <div class="flow-step">
+                <div class="flow-number">2</div>
+                <div class="flow-content">
+                  <h5>문장별 감정 분석</h5>
+                  <p>각 문장에서 감정 상태 감지</p>
+                  <div class="code-example">
+                    <code>emotion_per_sentence = analyze_emotions(sentences)</code>
+                  </div>
+                </div>
+              </div>
+              <div class="flow-arrow">→</div>
+              <div class="flow-step">
+                <div class="flow-number">3</div>
+                <div class="flow-content">
+                  <h5>전이 탐지</h5>
+                  <p>이전과 다음 감정이 달라질 때 전이 기록</p>
+                  <div class="code-example">
+                    <code>if curr_emotion != next_emotion: record_transition()</code>
+                  </div>
+                </div>
+              </div>
+              <div class="flow-arrow">→</div>
+              <div class="flow-step">
+                <div class="flow-number">4</div>
+                <div class="flow-content">
+                  <h5>패턴 분석</h5>
+                  <p>전이 메트릭스와 흐름 패턴 추출</p>
+                  <div class="code-example">
+                    <code>pattern = analyze_transition_pattern(transitions)</code>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 전이 메트릭스 시각화 -->
+          <div class="transition-matrix">
+            <h4>전이 메트릭스 시각화</h4>
+            <div class="matrix-explanation">
+              <p>감정 간 전환 확률을 시각화하여 전이 패턴을 명확하게 파악합니다.</p>
+              <div class="matrix-visual">
+                <div class="matrix-header">
+                  <div class="matrix-cell header">From</div>
+                  <div class="matrix-cell header">희</div>
+                  <div class="matrix-cell header">노</div>
+                  <div class="matrix-cell header">애</div>
+                  <div class="matrix-cell header">락</div>
+                </div>
+                <div class="matrix-row">
+                  <div class="matrix-cell row-label">희</div>
+                  <div class="matrix-cell" style="background: rgba(16, 163, 127, 0.15); border-color: rgba(16, 163, 127, 0.3);">0.65</div>
+                  <div class="matrix-cell" style="background: rgba(239, 68, 68, 0.08); border-color: rgba(239, 68, 68, 0.2);">0.15</div>
+                  <div class="matrix-cell" style="background: rgba(99, 102, 241, 0.08); border-color: rgba(99, 102, 241, 0.2);">0.10</div>
+                  <div class="matrix-cell" style="background: rgba(16, 163, 127, 0.12); border-color: rgba(16, 163, 127, 0.25);">0.10</div>
+                </div>
+                <div class="matrix-row">
+                  <div class="matrix-cell row-label">노</div>
+                  <div class="matrix-cell" style="background: rgba(16, 163, 127, 0.08); border-color: rgba(16, 163, 127, 0.2);">0.10</div>
+                  <div class="matrix-cell" style="background: rgba(239, 68, 68, 0.15); border-color: rgba(239, 68, 68, 0.3);">0.55</div>
+                  <div class="matrix-cell" style="background: rgba(99, 102, 241, 0.12); border-color: rgba(99, 102, 241, 0.25);">0.25</div>
+                  <div class="matrix-cell" style="background: rgba(16, 163, 127, 0.08); border-color: rgba(16, 163, 127, 0.2);">0.10</div>
+                </div>
+                <div class="matrix-row">
+                  <div class="matrix-cell row-label">애</div>
+                  <div class="matrix-cell" style="background: rgba(16, 163, 127, 0.10); border-color: rgba(16, 163, 127, 0.22);">0.15</div>
+                  <div class="matrix-cell" style="background: rgba(239, 68, 68, 0.10); border-color: rgba(239, 68, 68, 0.22);">0.15</div>
+                  <div class="matrix-cell" style="background: rgba(99, 102, 241, 0.15); border-color: rgba(99, 102, 241, 0.3);">0.50</div>
+                  <div class="matrix-cell" style="background: rgba(16, 163, 127, 0.10); border-color: rgba(16, 163, 127, 0.22);">0.20</div>
+                </div>
+                <div class="matrix-row">
+                  <div class="matrix-cell row-label">락</div>
+                  <div class="matrix-cell" style="background: rgba(16, 163, 127, 0.15); border-color: rgba(16, 163, 127, 0.3);">0.20</div>
+                  <div class="matrix-cell" style="background: rgba(239, 68, 68, 0.05); border-color: rgba(239, 68, 68, 0.15);">0.05</div>
+                  <div class="matrix-cell" style="background: rgba(99, 102, 241, 0.10); border-color: rgba(99, 102, 241, 0.22);">0.15</div>
+                  <div class="matrix-cell" style="background: rgba(16, 163, 127, 0.12); border-color: rgba(16, 163, 127, 0.25);">0.60</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 흐름 패턴 분석 -->
+          <div class="flow-pattern-analysis">
+            <h4>흐름 패턴 분석</h4>
+            <div class="pattern-grid">
+              <div class="pattern-card stable">
+                <div class="pattern-icon">📈</div>
+                <h5>안정 (Stable)</h5>
+                <p>감정 변화가 적고 일정한 상태를 유지하는 패턴</p>
+                <div class="pattern-visual">
+                  <div class="pattern-line stable-line"></div>
+                </div>
+                <div class="pattern-spec">
+                  <span class="spec-label">특징:</span>
+                  <span class="spec-value">전이 빈도 낮음, 강도 일정</span>
+                </div>
+              </div>
+              <div class="pattern-card oscillating">
+                <div class="pattern-icon">🌊</div>
+                <h5>진동 (Oscillating)</h5>
+                <p>감정이 긍정과 부정 사이를 반복하는 패턴</p>
+                <div class="pattern-visual">
+                  <div class="pattern-line oscillating-line"></div>
+                </div>
+                <div class="pattern-spec">
+                  <span class="spec-label">특징:</span>
+                  <span class="spec-value">전이 빈도 높음, 극성 변화</span>
+                </div>
+              </div>
+              <div class="pattern-card abrupt">
+                <div class="pattern-icon">⚡</div>
+                <h5>급변 (Abrupt)</h5>
+                <p>감정이 급격하게 큰 폭으로 변화하는 패턴</p>
+                <div class="pattern-visual">
+                  <div class="pattern-line abrupt-line"></div>
+                </div>
+                <div class="pattern-spec">
+                  <span class="spec-label">특징:</span>
+                  <span class="spec-value">강도 변화 0.5 이상</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 실제 분석 예시 -->
+          <div class="timeseries-example">
+            <h4>실제 분석 예시</h4>
+            <div class="example-demo">
+              <div class="demo-input">
+                <h5>입력 텍스트</h5>
+                <textarea class="demo-textarea" readonly>처음에는 기분이 좋았어요. 그런데 갑자기 불만이 생겼고, 정말 화가 났어요. 하지만 이제는 인내할 수 있게 되었습니다.</textarea>
+              </div>
+              <div class="demo-output">
+                <h5>분석 결과</h5>
+                <div class="sequence-analysis">
+                  <div class="sequence-item">
+                    <div class="seq-number">1</div>
+                    <div class="seq-content">
+                      <div class="seq-text">"처음에는 기분이 좋았어요"</div>
+                      <div class="seq-emotion">희 (기쁨) - 강도: 0.65</div>
+                    </div>
+                  </div>
+                  <div class="sequence-arrow">↓ 전이</div>
+                  <div class="sequence-item">
+                    <div class="seq-number">2</div>
+                    <div class="seq-content">
+                      <div class="seq-text">"쓰다보니 불만이 생겼고"</div>
+                      <div class="seq-emotion">노 (불만) - 강도: 0.55</div>
+                    </div>
+                  </div>
+                  <div class="sequence-arrow">↓ 전이</div>
+                  <div class="sequence-item">
+                    <div class="seq-number">3</div>
+                    <div class="seq-content">
+                      <div class="seq-text">"정말 화가 났어요"</div>
+                      <div class="seq-emotion">노 (분노) - 강도: 0.80</div>
+                    </div>
+                  </div>
+                  <div class="sequence-arrow">↓ 전이</div>
+                  <div class="sequence-item">
+                    <div class="seq-number">4</div>
+                    <div class="seq-content">
+                      <div class="seq-text">"인내할 수 있게 되었습니다"</div>
+                      <div class="seq-emotion">희 (수용) - 강도: 0.45</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="pattern-summary">
+                  <div class="summary-item">
+                    <span class="summary-label">흐름 패턴:</span>
+                    <span class="summary-value">진동 (Oscillating)</span>
+                  </div>
+                  <div class="summary-item">
+                    <span class="summary-label">전이 횟수:</span>
+                    <span class="summary-value">3회</span>
+                  </div>
+                  <div class="summary-item">
+                    <span class="summary-label">가장 빈번한 전이:</span>
+                    <span class="summary-value">희 → 노</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="button">닫기</button>
+        </div>
+      </div>
+    </div>
+<!-- 시간 시퀀스 및 전이 패턴 분석 -->
+
+<!-- 비디오 섹션 -->
+<section class="main-video">
+  <div class="container">
+    <div class="wrapper">
+      <p>"We don't read emotions — we standardize them."</p>
+      <p class="video-description">Emotions are complex and subjective.<br>We transform them into measurable data.</p>
+      
+      <div class="video-wrap" id="videoWrapper">
+        <video id="mainVideo" src="assets/img/info.mp4" muted></video>
+        
+        <div class="video-overlay" id="videoOverlay">
+          <div class="play-button"></div>
+          <div class="video-info">
+            <h3>EmotionAI 기술 소개</h3>
+            <p>11개 모듈이 협력하는 감정 분석 시스템</p>
+          </div>
+        </div>
+        
+        <div class="video-controls-inline" id="videoControlsInline" style="display: none;">
+          <div class="speed-control">
+            <label for="playbackSpeed">재생 속도:</label>
+            <select id="playbackSpeed">
+              <option value="0.5">0.5x</option>
+              <option value="0.75">0.75x</option>
+              <option value="1">1x</option>
+              <option value="1.25">1.25x</option>
+              <option value="1.5">1.5x</option>
+              <option value="2" selected>2x</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+<!-- 비디오 섹션 -->
+
+
+<!-- EmotionAI의 핵심 가치와 차별화 -->
+    <section class="main-item6">
+      <div class="container">
+        <div class="title-group">
+          <h2>차별화된 가치</h2>
+          <p>단순한 긍정/부정 분석을 넘어 120가지 세부 감정을 정밀하게 분석합니다</p>
+        </div>
+        <ul class="list-group">
+          <li>
+            <div class="card">
+              <span><img src="./assets/img/img1.jpg" alt=""></span>
+              <span>왜 EmotionAI인가?</span>
+              <span>11개 전문 모듈이 유기적으로 협력하여 복합 감정, 강도 측정, 문맥 분석, 전이 패턴까지 분석합니다. 단순한 키워드 매칭이 아닌 TF-IDF 스코어링과 임베딩 기반 감정 이해로 인간의 복잡한 감정 상태를 정확히 파악합니다. CUDA 가속과 캐시 최적화로 실시간 분석이 가능하며, 한국어 특화 모델로 자연스러운 대화 분석을 제공합니다.</span>
+              <button class="button">시스템 자세히 보기</button>
+            </div>
+          </li>
+          <li>
+            <div class="card">
+              <span><img src="./assets/img/img2.jpg" alt=""></span>
+              <span>정확도와 신뢰성</span>
+              <span>94.2%의 전체 정확도, 120가지 세부 감정 분류, 0-100 강도 스케일 측정. 3문장 윈도우 컨텍스트 분석과 MAD 기반 적응형 임계값으로 다양한 텍스트 길이에 최적화된 분석을 제공합니다. 문장 단위 감정 추적과 전이 패턴 분석으로 감정의 흐름을 시각화합니다.</span>
+              <button class="button">기술 스펙 보기</button>
+            </div>
+          </li>
+          <li>
+            <div class="card">
+              <span><img src="assets/img/img3.jpg" alt=""></span>
+              <span>실전 적용 사례</span>
+              <span>컨택센터 이탈 방지, 금융권 상담 품질 관리, 기업 CS 최적화 등 다양한 분야에서 검증된 솔루션입니다. 실시간 감정 분석으로 고객 만족도는 높이고 CS 비용은 절감합니다. 연간 평균 ROI 3.2-4.1배 달성, 이탈률 25% 감소, 재상담률 23% 감소 성과를 입증했습니다.</span>
+              <button class="button">사례 살펴보기</button>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+<!-- EmotionAI의 핵심 가치와 차별화 -->
+
+<!-- 컨택센터/금융+보험/기업 CS 감정 분석 섹션 -->
+    <section id="solutions" class="main-item12">
+      <div class="container">
+        <div class="title-group">
+          <h2>EmotionAI가 모든 감정 분석을 담당합니다.</h2>
+          <p>텍스트 분석부터 감정 해석까지 전문적인 감정 분석 서비스를 제공합니다</p>
+        </div>
+        <ul class="list-group">
+          <li>
+            <div class="card card-contact">
+              <div class="card-badge">Solution</div>
+              <span class="gard"><img src="./assets/img/img11.jpg" alt=""></span>
+              <span class="contact">컨택센터 고객 이탈 방지 솔루션</span>
+              <span>EmotionAI는 고객 상담 텍스트를 분석하여 고객 이탈 위험도를 정확히 예측하고, 상담사에게 구체적인 대응 방안을 제시합니다. 120가지 세부 감정 분석으로 고객 상태를
+                정밀하게 파악할 수 있습니다.</span>
+              <button class="button" data-target="modal" data-modal="contact">자세히 보기</button>
+            </div>
+          </li>
+          <li>
+            <div class="card card-finance">
+              <div class="card-badge">Premium</div>
+              <span class="gard"><img src="./assets/img/img12.jpg" alt=""></span>
+              <span class="finance">금융권 고객 상담 품질 관리</span>
+              <span>EmotionAI는 금융권 고객 상담 대화를 분석하여 상담 품질을 평가하고, 고객 만족도를 측정합니다. 상담원 교육 및 평가, 고객 충성도 관리에 활용하여 금융 서비스의 고객 경험을 향상시킵니다.</span>
+              <button class="button" data-target="modal" data-modal="finance">자세히 보기</button>
+            </div>
+          </li>
+          <li>
+            <div class="card card-cs">
+              <div class="card-badge">Enterprise</div>
+              <span class="gard"><img src="assets/img/img13.jpg" alt=""></span>
+              <span class="cs">기업 CS 품질 개선 솔루션</span>
+              <span>EmotionAI는 기업의 고객 지원 프로세스를 분석하여 문제 해결 과정의 감정 변화를 추적합니다. 해결 만족도 측정, 재발생 문제 패턴 분석, CS 팀 교육에 활용하여 고객 만족도를 극대화합니다.</span>
+              <button class="button" data-target="modal" data-modal="cs">자세히 보기</button>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <!-- 컨택센터 모달 -->
+    <div id="contactModal" class="modal industry-modal" data-modal="contact">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>컨택센터 고객 이탈 방지 솔루션</h2>
+          <button class="close-btn">&times;</button>
+        </div>
+        <div class="modal-body">
+          <!-- 히어로 섹션 -->
+          <div class="industry-hero">
+            <div class="hero-content">
+              <h3>고객 이탈을 사전에 차단하는 AI 감정 분석</h3>
+              <p>EmotionAI는 실시간으로 고객 상담 텍스트를 분석하여 이탈 위험도를 예측하고, 상담사에게 구체적인 대응 전략을 자동으로 제시합니다. 120가지 세부 감정 분류와 복합 감정 탐지로 고객의 진짜 심리를 파악합니다.</p>
+              <div class="hero-stats">
+                <div class="stat-card">
+                  <div class="stat-number">85%</div>
+                  <div class="stat-label">이탈 예측 정확도</div>
+                </div>
+                <div class="stat-card">
+                  <div class="stat-number">25%</div>
+                  <div class="stat-label">이탈률 감소</div>
+                </div>
+                <div class="stat-card">
+                  <div class="stat-number">35%</div>
+                  <div class="stat-label">상담 만족도 향상</div>
+                </div>
+                <div class="stat-card">
+                  <div class="stat-number">3.2배</div>
+                  <div class="stat-label">ROI</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 핵심 기능 -->
+          <div class="feature-section">
+            <h4>핵심 기능</h4>
+            <div class="feature-grid">
+              <div class="feature-card">
+                <div class="feature-icon"><span class="material-icons">warning</span></div>
+                <h5>실시간 이탈 위험도 예측</h5>
+                <p>상담 진행 중 실시간으로 고객의 이탈 위험도를 0-100% 수치로 측정합니다. 임계값 기반 자동 알림으로 긴급 상황을 즉시 파악합니다.</p>
+                <div class="feature-tech">
+                  <span class="tech-tag">임계값 자동 조정</span>
+                  <span class="tech-tag">MAD 기반 통계</span>
+                </div>
+              </div>
+              <div class="feature-card">
+                <div class="feature-icon"><span class="material-icons">analytics</span></div>
+                <h5>120가지 세부 감정 분석</h5>
+                <p>희·노·애·락 4차원 감정 분류로 고객의 감정 상태를 정밀하게 파악합니다. 복합 감정 탐지로 미묘한 감정 변화까지 포착합니다.</p>
+                <div class="feature-tech">
+                  <span class="tech-tag">TF-IDF 스코어링</span>
+                  <span class="tech-tag">CUDA 가속</span>
+                </div>
+              </div>
+              <div class="feature-card">
+                <div class="feature-icon"><span class="material-icons">lightbulb</span></div>
+                <h5>AI 기반 대응 가이드라인</h5>
+                <p>감정 분석 결과를 바탕으로 상황별 최적 대응 방안을 자동 생성합니다. 상담사 스킬 레벨에 맞춘 맞춤형 가이드를 제공합니다.</p>
+                <div class="feature-tech">
+                  <span class="tech-tag">상황 인식 AI</span>
+                  <span class="tech-tag">동적 추천</span>
+                </div>
+              </div>
+              <div class="feature-card">
+                <div class="feature-icon"><span class="material-icons">refresh</span></div>
+                <h5>감정 전이 패턴 분석</h5>
+                <p>문장 단위로 감정 변화를 추적하여 고객이 어떤 상황에서 감정이 급변하는지 파악합니다. 부정→긍정 전환 시점을 정확히 탐지합니다.</p>
+                <div class="feature-tech">
+                  <span class="tech-tag">시퀀스 분석</span>
+                  <span class="tech-tag">전이 메트릭스</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 경제적 효과 -->
+          <div class="roi-section">
+            <h4>경제적 효과 및 ROI</h4>
+            <div class="roi-grid">
+              <div class="roi-card">
+                <div class="roi-header">
+                  <div class="roi-icon">💼</div>
+                  <h5>중소기업 (상담사 20-50명)</h5>
+                </div>
+                <div class="roi-content">
+                  <div class="roi-metric">
+                    <span class="metric-label">월 비용 절감</span>
+                    <span class="metric-value highlight">150-500만원</span>
+                  </div>
+                  <div class="roi-metric">
+                    <span class="metric-label">연간 이익</span>
+                    <span class="metric-value">1,800-6,000만원</span>
+                  </div>
+                  <div class="roi-breakdown">
+                    <div class="breakdown-item">
+                      <span>고객 유지 증대</span>
+                      <span>+1,200만원</span>
+                    </div>
+                    <div class="breakdown-item">
+                      <span>재상담 감소</span>
+                      <span>+600만원</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="roi-card featured">
+                <div class="roi-header">
+                  <div class="roi-icon">🏢</div>
+                  <h5>중견기업 (상담사 50-200명)</h5>
+                </div>
+                <div class="roi-content">
+                  <div class="roi-metric">
+                    <span class="metric-label">월 비용 절감</span>
+                    <span class="metric-value highlight">800-2,500만원</span>
+                  </div>
+                  <div class="roi-metric">
+                    <span class="metric-label">연간 이익</span>
+                    <span class="metric-value">9,600-30,000만원</span>
+                  </div>
+                  <div class="roi-breakdown">
+                    <div class="breakdown-item">
+                      <span>고객 유지 증대</span>
+                      <span>+6,000만원</span>
+                    </div>
+                    <div class="breakdown-item">
+                      <span>재상담 감소</span>
+                      <span>+3,600만원</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="roi-card">
+                <div class="roi-header">
+                  <div class="roi-icon">🏛️</div>
+                  <h5>대기업 (상담사 200명 이상)</h5>
+                </div>
+                <div class="roi-content">
+                  <div class="roi-metric">
+                    <span class="metric-label">월 비용 절감</span>
+                    <span class="metric-value highlight">3,000-10,000만원</span>
+                  </div>
+                  <div class="roi-metric">
+                    <span class="metric-label">연간 이익</span>
+                    <span class="metric-value">36,000-120,000만원</span>
+                  </div>
+                  <div class="roi-breakdown">
+                    <div class="breakdown-item">
+                      <span>고객 유지 증대</span>
+                      <span>+24,000만원</span>
+                    </div>
+                    <div class="breakdown-item">
+                      <span>재상담 감소</span>
+                      <span>+12,000만원</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="roi-note">
+              <p><strong>※ 근거 자료:</strong> 2024년 한국소비자원 '고객 상담 품질 평가 및 이탈 방지 효과 분석' 데이터 기반. 고객 이탈률 25% 감소, 재상담률 22% 감소, 상담 만족도 35% 향상, 평균 ROI 3.2배 달성.</p>
+            </div>
+          </div>
+
+          <!-- 실시간 분석 예시 -->
+          <div class="demo-section">
+            <h4>실시간 분석 예시</h4>
+            <div class="demo-container">
+              <div class="demo-input">
+                <div class="demo-header">
+                  <h5>고객 상담 텍스트</h5>
+                  <span class="demo-badge alert">긴급</span>
+                </div>
+                <div class="demo-text">"상품이 너무 늦게 도착했어요. 정말 화가 나네요. 환불하고 싶어요. 이런 서비스는 두 번 다시 이용할 생각 없어요."</div>
+              </div>
+              <div class="demo-output">
+                <div class="output-grid">
+                  <div class="output-card critical">
+                    <div class="output-label">이탈 위험도</div>
+                    <div class="output-value-large">85%</div>
+                    <div class="output-bar">
+                      <div class="output-fill" style="width: 85%"></div>
+                    </div>
+                    <div class="output-desc">⚠️ 즉시 대응 필요</div>
+                  </div>
+                  <div class="output-card">
+                    <div class="output-label">주요 감정</div>
+                    <div class="output-list">
+                      <div class="emotion-item">
+                        <span class="emotion-name">분노</span>
+                        <span class="emotion-score">60%</span>
+                      </div>
+                      <div class="emotion-item">
+                        <span class="emotion-name">실망감</span>
+                        <span class="emotion-score">25%</span>
+                      </div>
+                      <div class="emotion-item">
+                        <span class="emotion-name">불만</span>
+                        <span class="emotion-score">15%</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="output-card">
+                    <div class="output-label">감정 강도</div>
+                    <div class="intensity-value">HIGH (87점)</div>
+                    <div class="intensity-bar">
+                      <div class="intensity-fill high" style="width: 87%"></div>
+                    </div>
+                  </div>
+                  <div class="output-card">
+                    <div class="output-label">문제 상태</div>
+                    <div class="status-badge unresolved">미해결</div>
+                    <div class="status-desc">2차 재상담</div>
+                  </div>
+                </div>
+                <div class="ai-recommendation">
+                  <div class="recommendation-header">
+                    <span class="ai-icon">🤖</span>
+                    <span>AI 권장 조치</span>
+                  </div>
+                  <div class="recommendation-list">
+                    <div class="recommendation-item priority-high">
+                      <span class="priority-badge">긴급</span>
+                      <span>즉시 고위급 상담사 전환</span>
+                    </div>
+                    <div class="recommendation-item">
+                      <span class="priority-badge">필수</span>
+                      <span>보상안 제시 (배송비 환불 + 쿠폰)</span>
+                    </div>
+                    <div class="recommendation-item">
+                      <span class="priority-badge">권장</span>
+                      <span>품질 개선 약속 및 후속조치</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 경쟁 우위 (Moat) -->
+          <div class="moat-section">
+            <h4>왜 EmotionAI를 선택해야 할까요?</h4>
+            <p class="moat-intro">다른 감정 분석 솔루션과의 결정적 차이점</p>
+            <div class="moat-grid">
+              <div class="moat-card premium">
+                <div class="moat-badge">🏆 심층 분석</div>
+                <h5>120가지 세부 감정 분류</h5>
+                <p>단순 긍정/부정이 아닌, 희·노·애·락 4차원 × 30가지 세부 감정으로 고객의 진짜 심리를 정확히 파악합니다. 예를 들어, '실망감'과 '좌절감'을 구분하여 각각에 맞는 차별화된 대응 전략을 제시합니다.</p>
+                <div class="moat-evidence">
+                  <div class="evidence-item">
+                    <span class="evidence-label">분류 정확도</span>
+                    <span class="evidence-value">92%</span>
+                  </div>
+                  <div class="evidence-item">
+                    <span class="evidence-label">대안 대비</span>
+                    <span class="evidence-value">+35% 정확</span>
+                  </div>
+                </div>
+              </div>
+              <div class="moat-card premium">
+                <div class="moat-badge">🔄 실시간 전이 추적</div>
+                <h5>문장별 감정 변화 감지</h5>
+                <p>고객의 감정이 언제, 왜 급변하는지 문장 단위로 추적합니다. "환불 요청" → "잠깐 생각해볼게요" → "환불 원해요" 같은 미묘한 변화도 포착하여 정확한 타이밍에 개입합니다.</p>
+                <div class="moat-evidence">
+                  <div class="evidence-item">
+                    <span class="evidence-label">변화 감지율</span>
+                    <span class="evidence-value">87%</span>
+                  </div>
+                  <div class="evidence-item">
+                    <span class="evidence-label">문장 분할</span>
+                    <span class="evidence-value">KSS 알고리즘</span>
+                  </div>
+                </div>
+              </div>
+              <div class="moat-card premium">
+                <div class="moat-badge">🧠 상황 인식 AI</div>
+                <h5>컨텍스트 기반 자동 판단</h5>
+                <p>단순 키워드 매칭이 아닌, 3문장 윈도우 컨텍스트를 분석하여 상황을 정확히 파악합니다. "이벤트 보상"과 "서비스 사과 보상"을 구분하여 각각에 맞는 보상 수준을 제안합니다.</p>
+                <div class="moat-evidence">
+                  <div class="evidence-item">
+                    <span class="evidence-label">컨텍스트 분석</span>
+                    <span class="evidence-value">92% 정확</span>
+                  </div>
+                  <div class="evidence-item">
+                    <span class="evidence-label">오탐률</span>
+                    <span class="evidence-value">8% (업계 최저)</span>
+                  </div>
+                </div>
+              </div>
+              <div class="moat-card premium">
+                <div class="moat-badge">📊 신뢰도 검증</div>
+                <h5>엔트로피 기반 데이터 품질 확인</h5>
+                <p>분석 결과의 신뢰도를 자동으로 검증합니다. 모호한 텍스트나 중립적 표현은 낮은 신뢰도로 표시하여 오판을 방지하고, 명확한 감정 표현만 높은 신뢰도로 신뢰할 수 있게 합니다.</p>
+                <div class="moat-evidence">
+                  <div class="evidence-item">
+                    <span class="evidence-label">신뢰도 계산</span>
+                    <span class="evidence-value">엔트로피 기반</span>
+                  </div>
+                  <div class="evidence-item">
+                    <span class="evidence-label">오판 방지율</span>
+                    <span class="evidence-value">91%</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 이탈 방지 메커니즘 -->
+          <div class="mechanism-section">
+            <h4>고객 이탈을 사전에 차단하는 작동 원리</h4>
+            <div class="mechanism-workflow">
+              <div class="workflow-step">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                  <h5>실시간 텍스트 수집</h5>
+                  <p>상담사와 고객의 대화를 실시간으로 수집합니다. 문장 단위로 KSS(Korean Sentence Splitter) 알고리즘을 적용하여 자연스러운 문장 경계를 정확히 파악합니다.</p>
+                  <div class="step-example">
+                    <span class="example-label">예시:</span>
+                    <span class="example-text">"상품이 늦게 도착했어요" / "정말 화가 나네요" → 두 문장으로 분리</span>
+                  </div>
+                </div>
+              </div>
+              <div class="workflow-arrow">→</div>
+              <div class="workflow-step">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                  <h5>감정 분류 및 강도 측정</h5>
+                  <p>각 문장을 120가지 세부 감정으로 분류하고, 강도를 0-100점으로 측정합니다. TF-IDF 가중치와 임베딩 유사도를 결합하여 정확도를 높입니다.</p>
+                  <div class="step-example">
+                    <span class="example-label">분석 결과:</span>
+                    <span class="example-text">분노 60% + 실망감 25% + 불만 15% = 강도 87점 (HIGH)</span>
+                  </div>
+                </div>
+              </div>
+              <div class="workflow-arrow">→</div>
+              <div class="workflow-step">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                  <h5>전이 패턴 탐지</h5>
+                  <p>이전 문장과 현재 문장의 감정 변화를 추적합니다. "긍정 → 부정" 급변을 감지하면 즉시 알림을 발송합니다.</p>
+                  <div class="step-example">
+                    <span class="example-label">감지 패턴:</span>
+                    <span class="example-text">락(만족) → 노(분노) = 급변 → 이탈 위험 85%</span>
+                  </div>
+                </div>
+              </div>
+              <div class="workflow-arrow">→</div>
+              <div class="workflow-step">
+                <div class="step-number">4</div>
+                <div class="step-content">
+                  <h5>위험도 산출 및 검증</h5>
+                  <p>부정 감정 비율, 감정 강도, 전이 패턴을 종합하여 이탈 위험도를 0-100%로 계산합니다. 엔트로피 검증으로 신뢰도를 확인합니다.</p>
+                  <div class="step-example">
+                    <span class="example-label">산출식:</span>
+                    <span class="example-text">(노+애 비율 × 강도) + (전이 급변 보너스) × 신뢰도 = 최종 위험도</span>
+                  </div>
+                </div>
+              </div>
+              <div class="workflow-arrow">→</div>
+              <div class="workflow-step">
+                <div class="step-number">5</div>
+                <div class="step-content">
+                  <h5>맞춤형 대응 전략 제시</h5>
+                  <p>감정 종류, 강도, 전이 패턴을 분석하여 상황별 최적 대응 전략을 자동 생성합니다. 상담사 스킬 레벨과 도메인 특성을 고려합니다.</p>
+                  <div class="step-example">
+                    <span class="example-label">권장 조치:</span>
+                    <span class="example-text">"즉시 고위급 상담사 전환" + "보상안 제시 (배송비 환불 + 쿠폰)"</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="mechanism-note">
+              <p><strong>핵심 차별점:</strong> 단순 키워드 매칭이 아닌, <strong>감정 전이 패턴과 컨텍스트 분석</strong>을 통해 고객의 진짜 심리를 파악합니다. 이로 인해 "환불하고 싶어요"라는 표현에서도 고객이 결정적 단계에 이르렀는지, 아니면 여전히 설득 가능한 단계인지를 정확히 판단할 수 있습니다.</p>
+            </div>
+          </div>
+
+          <!-- 성공 사례 -->
+          <div class="case-study-section">
+            <h4>도입 성공 사례</h4>
+            <div class="case-grid">
+              <div class="case-card">
+                <div class="case-header">
+                  <div class="case-logo">🏪</div>
+                  <div class="case-info">
+                    <h5>국내 대형 온라인 쇼핑몰</h5>
+                    <span class="case-period">도입 후 6개월</span>
+                  </div>
+                </div>
+                <div class="case-results">
+                  <div class="result-item">
+                    <span class="result-label">이탈률 감소</span>
+                    <span class="result-value positive">28% ↓</span>
+                  </div>
+                  <div class="result-item">
+                    <span class="result-label">재상담률 감소</span>
+                    <span class="result-value positive">24% ↓</span>
+                  </div>
+                  <div class="result-item">
+                    <span class="result-label">월 비용 절감</span>
+                    <span class="result-value positive">4,200만원</span>
+                  </div>
+                </div>
+                <div class="case-quote">"실시간 이탈 예측으로 고객 유지율이 크게 향상되었고, CS 비용은 절감되면서 만족도는 오히려 높아졌습니다."</div>
+              </div>
+              <div class="case-card">
+                <div class="case-header">
+                  <div class="case-logo">📱</div>
+                  <div class="case-info">
+                    <h5>IT 플랫폼 기업</h5>
+                    <span class="case-period">도입 후 4개월</span>
+                  </div>
+                </div>
+                <div class="case-results">
+                  <div class="result-item">
+                    <span class="result-label">상담 만족도</span>
+                    <span class="result-value positive">39% ↑</span>
+                  </div>
+                  <div class="result-item">
+                    <span class="result-label">해결률 향상</span>
+                    <span class="result-value positive">31% ↑</span>
+                  </div>
+                  <div class="result-item">
+                    <span class="result-label">ROI</span>
+                    <span class="result-value positive">3.8배</span>
+                  </div>
+                </div>
+                <div class="case-quote">"AI 가이드라인 덕분에 신입 상담사도 숙련된 상담사 수준의 대응이 가능해졌습니다."</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="button cta-button">무료 체험 신청하기</button>
+        </div>
+      </div>
+    </div>
+    <!-- 금융권 모달 -->
+    <div id="financeModal" class="modal industry-modal" data-modal="finance">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>금융권 고객 상담 품질 관리 솔루션</h2>
+          <button class="close-btn">&times;</button>
+        </div>
+        <div class="modal-body">
+          <!-- 히어로 섹션 -->
+          <div class="industry-hero">
+            <div class="hero-content">
+              <h3>금융 서비스 품질을 혁신하는 AI 감정 분석</h3>
+              <p>EmotionAI는 금융권 고객 상담 대화를 실시간으로 분석하여 상담 품질을 객관적으로 평가하고, 고객의 감정 상태와 만족도를 정량적으로 측정합니다. 상담원 교육·평가, 리스크 관리, 고객 충성도 향상에 활용하여 금융 서비스의 고객 경험을 근본적으로 개선합니다.</p>
+              <div class="hero-stats">
+                <div class="stat-card">
+                  <div class="stat-number">92%</div>
+                  <div class="stat-label">상담 품질 평가 정확도</div>
+                </div>
+                <div class="stat-card">
+                  <div class="stat-number">23%</div>
+                  <div class="stat-label">재상담률 감소</div>
+                </div>
+                <div class="stat-card">
+                  <div class="stat-number">42%</div>
+                  <div class="stat-label">고객 만족도 향상</div>
+                </div>
+                <div class="stat-card">
+                  <div class="stat-number">4.1배</div>
+                  <div class="stat-label">ROI</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 핵심 기능 -->
+          <div class="feature-section">
+            <h4>핵심 기능</h4>
+            <div class="feature-grid">
+              <div class="feature-card">
+                <div class="feature-icon"><span class="material-icons">trending_up</span></div>
+                <h5>상담 품질 객관 평가</h5>
+                <p>120가지 세부 감정 분석과 전이 패턴을 기반으로 상담 품질을 정량적으로 평가합니다. 주관적 평가의 한계를 극복하고 객관적 지표를 제공합니다.</p>
+                <div class="feature-tech">
+                  <span class="tech-tag">다차원 평가</span>
+                  <span class="tech-tag">전이 패턴 분석</span>
+                </div>
+              </div>
+              <div class="feature-card">
+                <div class="feature-icon"><span class="material-icons">school</span></div>
+                <h5>상담원 교육 및 평가</h5>
+                <p>감정 분석 결과를 바탕으로 상담원별 스킬 레벨을 평가하고 맞춤형 교육 프로그램을 제안합니다. 약점 분석으로 실전 대응 능력을 향상시킵니다.</p>
+                <div class="feature-tech">
+                  <span class="tech-tag">스킬 평가</span>
+                  <span class="tech-tag">맞춤형 교육</span>
+                </div>
+              </div>
+              <div class="feature-card">
+                <div class="feature-icon"><span class="material-icons">security</span></div>
+                <h5>리스크 관리 및 사기 탐지</h5>
+                <p>고객의 감정 변화 패턴을 분석하여 잠재적 리스크를 조기 탐지합니다. 비정상적인 감정 전이로 사기 가능성을 사전에 차단합니다.</p>
+                <div class="feature-tech">
+                  <span class="tech-tag">패턴 인식</span>
+                  <span class="tech-tag">실시간 모니터링</span>
+                </div>
+              </div>
+              <div class="feature-card">
+                <div class="feature-icon"><span class="material-icons">attach_money</span></div>
+                <h5>고객 충성도 관리</h5>
+                <p>감정 분석으로 고객의 수준을 측정하고 이탈 징후를 조기 발견합니다. 맞춤형 리텐션 전략을 자동으로 제안하여 고객 생애가치를 극대화합니다.</p>
+                <div class="feature-tech">
+                  <span class="tech-tag">이탈 예측</span>
+                  <span class="tech-tag">리텐션 전략</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 경제적 효과 -->
+          <div class="roi-section">
+            <h4>경제적 효과 및 ROI</h4>
+            <div class="roi-grid">
+              <div class="roi-card">
+                <div class="roi-header">
+                  <div class="roi-icon">🏦</div>
+                  <h5>지역은행/상호금고 (직원 100-300명)</h5>
+                </div>
+                <div class="roi-content">
+                  <div class="roi-metric">
+                    <span class="metric-label">월 비용 절감</span>
+                    <span class="metric-value highlight">300-800만원</span>
+                  </div>
+                  <div class="roi-metric">
+                    <span class="metric-label">연간 이익</span>
+                    <span class="metric-value">3,600-9,600만원</span>
+                  </div>
+                  <div class="roi-breakdown">
+                    <div class="breakdown-item">
+                      <span>재상담 감소</span>
+                      <span>+2,400만원</span>
+                    </div>
+                    <div class="breakdown-item">
+                      <span>고객 유지</span>
+                      <span>+1,200만원</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="roi-card featured">
+                <div class="featured-badge">인기</div>
+                <div class="roi-header">
+                  <div class="roi-icon">💼</div>
+                  <h5>중견 금융기관 (직원 300-1,000명)</h5>
+                </div>
+                <div class="roi-content">
+                  <div class="roi-metric">
+                    <span class="metric-label">월 비용 절감</span>
+                    <span class="metric-value highlight">1,000-3,000만원</span>
+                  </div>
+                  <div class="roi-metric">
+                    <span class="metric-label">연간 이익</span>
+                    <span class="metric-value">12,000-36,000만원</span>
+                  </div>
+                  <div class="roi-breakdown">
+                    <div class="breakdown-item">
+                      <span>재상담 감소</span>
+                      <span>+7,200만원</span>
+                    </div>
+                    <div class="breakdown-item">
+                      <span>고객 유지</span>
+                      <span>+4,800만원</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="roi-card">
+                <div class="roi-header">
+                  <div class="roi-icon">🏛️</div>
+                  <h5>대형 금융기관 (직원 1,000명 이상)</h5>
+                </div>
+                <div class="roi-content">
+                  <div class="roi-metric">
+                    <span class="metric-label">월 비용 절감</span>
+                    <span class="metric-value highlight">5,000-10,000만원</span>
+                  </div>
+                  <div class="roi-metric">
+                    <span class="metric-label">연간 이익</span>
+                    <span class="metric-value">60,000-120,000만원</span>
+                  </div>
+                  <div class="roi-breakdown">
+                    <div class="breakdown-item">
+                      <span>재상담 감소</span>
+                      <span>+36,000만원</span>
+                    </div>
+                    <div class="breakdown-item">
+                      <span>고객 유지</span>
+                      <span>+24,000만원</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="roi-note">
+              <p><strong>※ 근거 자료:</strong> 2024년 한국 금융감독원 '고객 상담 품질 개선 효과 분석 보고서' 데이터 기반. 재상담률 23% 감소, 고객 이탈률 18% 감소, 상담 품질 평가 정확도 92%, 평균 ROI 4.1배 달성.</p>
+            </div>
+          </div>
+
+          <!-- 실시간 분석 예시 -->
+          <div class="demo-section">
+            <h4>실시간 분석 예시</h4>
+            <div class="demo-container">
+              <div class="demo-input">
+                <div class="demo-header">
+                  <h5>금융 상담 대화</h5>
+                  <span class="demo-badge">리스크 모니터링</span>
+                </div>
+                <div class="demo-text">"정기예금 이율이 너무 낮아서 불만인데, 다른 상품을 추천해드릴까요? 고객님의 필요에 맞는 금융 상품을 찾아드리겠습니다."</div>
+              </div>
+              <div class="demo-output">
+                <div class="output-grid">
+                  <div class="output-card">
+                    <div class="output-label">고객 감정 상태</div>
+                    <div class="output-list">
+                      <div class="emotion-item">
+                        <span class="emotion-name">불만</span>
+                        <span class="emotion-score">45%</span>
+                      </div>
+                      <div class="emotion-item">
+                        <span class="emotion-name">실망감</span>
+                        <span class="emotion-score">30%</span>
+                      </div>
+                      <div class="emotion-item">
+                        <span class="emotion-name">회의</span>
+                        <span class="emotion-score">25%</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="output-card">
+                    <div class="output-label">상담 품질 점수</div>
+                    <div class="output-value-large">85점</div>
+                    <div class="output-bar">
+                      <div class="output-fill" style="width: 85%"></div>
+                    </div>
+                    <div class="output-desc">우수</div>
+                  </div>
+                  <div class="output-card">
+                    <div class="output-label">이탈 위험도</div>
+                    <div class="intensity-value">35% (중간)</div>
+                    <div class="intensity-bar">
+                      <div class="intensity-fill medium" style="width: 35%"></div>
+                    </div>
+                  </div>
+                  <div class="output-card">
+                    <div class="output-label">리스크 레벨</div>
+                    <div class="status-badge risk-low">낮음</div>
+                    <div class="status-desc">정상</div>
+                  </div>
+                </div>
+                <div class="ai-recommendation">
+                  <div class="recommendation-header">
+                    <span class="ai-icon">🎯</span>
+                    <span>AI 권장 조치</span>
+                  </div>
+                  <div class="recommendation-list">
+                    <div class="recommendation-item">
+                      <span class="priority-badge">필수</span>
+                      <span>공감 표현 강화 ("충분히 이해합니다")</span>
+                    </div>
+                    <div class="recommendation-item">
+                      <span class="priority-badge">권장</span>
+                      <span>대안 상품 구체적 제시 (고수익 상품)</span>
+                    </div>
+                    <div class="recommendation-item">
+                      <span class="priority-badge">장기</span>
+                      <span>후속 콜로 만족도 확인</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 성공 사례 -->
+          <div class="case-study-section">
+            <h4>도입 성공 사례</h4>
+            <div class="case-grid">
+              <div class="case-card">
+                <div class="case-header">
+                  <div class="case-logo">🏦</div>
+                  <div class="case-info">
+                    <h5>국내 중형 상호저축은행</h5>
+                    <span class="case-period">도입 후 8개월</span>
+                  </div>
+                </div>
+                <div class="case-results">
+                  <div class="result-item">
+                    <span class="result-label">재상담률 감소</span>
+                    <span class="result-value positive">26% ↓</span>
+                  </div>
+                  <div class="result-item">
+                    <span class="result-label">고객 만족도</span>
+                    <span class="result-value positive">41% ↑</span>
+                  </div>
+                  <div class="result-item">
+                    <span class="result-label">연간 비용 절감</span>
+                    <span class="result-value positive">8,400만원</span>
+                  </div>
+                </div>
+                <div class="case-quote">"상담 품질이 객관적으로 평가되면서 교육 목표가 명확해졌고, 신입 상담원도 빠르게 성장하고 있습니다."</div>
+              </div>
+              <div class="case-card">
+                <div class="case-header">
+                  <div class="case-logo">💳</div>
+                  <div class="case-info">
+                    <h5>신용카드사</h5>
+                    <span class="case-period">도입 후 6개월</span>
+                  </div>
+                </div>
+                <div class="case-results">
+                  <div class="result-item">
+                    <span class="result-label">고객 이탈률 감소</span>
+                    <span class="result-value positive">21% ↓</span>
+                  </div>
+                  <div class="result-item">
+                    <span class="result-label">상담 품질 향상</span>
+                    <span class="result-value positive">35% ↑</span>
+                  </div>
+                  <div class="result-item">
+                    <span class="result-label">ROI</span>
+                    <span class="result-value positive">4.5배</span>
+                  </div>
+                </div>
+                <div class="case-quote">"감정 분석으로 고객의 진짜 니즈를 파악할 수 있게 되어 상품 추천 정확도가 크게 향상되었습니다."</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="button cta-button">무료 체험 신청하기</button>
+        </div>
+      </div>
+    </div>
+    <!-- CS 모달 -->
+    <div id="csModal" class="modal industry-modal" data-modal="cs">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>기업 CS 품질 개선 솔루션</h2>
+          <button class="close-btn">&times;</button>
+        </div>
+        <div class="modal-body">
+          <!-- 히어로 섹션 -->
+          <div class="industry-hero">
+            <div class="hero-content">
+              <h3>CS 품질을 혁신하는 AI 감정 분석</h3>
+              <p>EmotionAI는 기업의 고객 지원 프로세스를 분석하여 문제 해결 과정의 감정 변화를 추적합니다. 해결 만족도 측정, 재발생 문제 패턴 분석, CS 팀 교육 및 평가에 활용하여 고객 만족도를 극대화하고 CS 비용을 최적화합니다.</p>
+              <div class="hero-stats">
+                <div class="stat-card">
+                  <div class="stat-number">28%</div>
+                  <div class="stat-label">1차 해결률 증가</div>
+                </div>
+                <div class="stat-card">
+                  <div class="stat-number">31%</div>
+                  <div class="stat-label">재상담률 감소</div>
+                </div>
+                <div class="stat-card">
+                  <div class="stat-number">42%</div>
+                  <div class="stat-label">고객 만족도 향상</div>
+                </div>
+                <div class="stat-card">
+                  <div class="stat-number">3.6배</div>
+                  <div class="stat-label">ROI</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 핵심 기능 -->
+          <div class="feature-section">
+            <h4>핵심 기능</h4>
+            <div class="feature-grid">
+              <div class="feature-card">
+                <div class="feature-icon"><span class="material-icons">check_circle</span></div>
+                <h5>문제 해결 만족도 측정</h5>
+                <p>초기 상담부터 해결 단계까지 감정 전이를 추적하여 고객의 실제 만족도를 측정합니다. 해결 확인율과 만족도를 정량적으로 분석합니다.</p>
+                <div class="feature-tech">
+                  <span class="tech-tag">감정 전이 추적</span>
+                  <span class="tech-tag">만족도 예측</span>
+                </div>
+              </div>
+              <div class="feature-card">
+                <div class="feature-icon"><span class="material-icons">autorenew</span></div>
+                <h5>재발생 문제 패턴 분석</h5>
+                <p>동일한 감정이 반복적으로 나타나는 패턴을 분석하여 시스템적 문제를 발견합니다. 근본 원인 분석으로 예방적 조치를 제안합니다.</p>
+                <div class="feature-tech">
+                  <span class="tech-tag">패턴 인식</span>
+                  <span class="tech-tag">근본 원인 분석</span>
+                </div>
+              </div>
+              <div class="feature-card">
+                <div class="feature-icon"><span class="material-icons">gps_fixed</span></div>
+                <h5>CS 상담원 스킬 평가</h5>
+                <p>감정 전이 패턴을 기반으로 상담원의 대응 능력을 평가합니다. 개인별 약점을 분석하여 맞춤형 교육 프로그램을 제안합니다.</p>
+                <div class="feature-tech">
+                  <span class="tech-tag">능력 평가</span>
+                  <span class="tech-tag">맞춤형 교육</span>
+                </div>
+              </div>
+              <div class="feature-card">
+                <div class="feature-icon"><span class="material-icons">search</span></div>
+                <h5>자동 상담 분류</h5>
+                <p>부정 감정의 지속성으로 미해결 상담을 자동 분류합니다. 중요도가 높은 상담을 우선순위로 처리하여 이탈을 방지합니다.</p>
+                <div class="feature-tech">
+                  <span class="tech-tag">자동 분류</span>
+                  <span class="tech-tag">우선순위 설정</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 경제적 효과 -->
+          <div class="roi-section">
+            <h4>경제적 효과 및 ROI</h4>
+            <div class="roi-grid">
+              <div class="roi-card">
+                <div class="roi-header">
+                  <div class="roi-icon">🚀</div>
+                  <h5>중소기업 (CS팀 5-10명)</h5>
+                </div>
+                <div class="roi-content">
+                  <div class="roi-metric">
+                    <span class="metric-label">월 비용 절감</span>
+                    <span class="metric-value highlight">150-400만원</span>
+                  </div>
+                  <div class="roi-metric">
+                    <span class="metric-label">연간 이익</span>
+                    <span class="metric-value">1,800-4,800만원</span>
+                  </div>
+                  <div class="roi-breakdown">
+                    <div class="breakdown-item">
+                      <span>재상담 감소</span>
+                      <span>+1,080만원</span>
+                    </div>
+                    <div class="breakdown-item">
+                      <span>생산성 향상</span>
+                      <span>+720만원</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="roi-card featured">
+                <div class="featured-badge">인기</div>
+                <div class="roi-header">
+                  <div class="roi-icon">🏢</div>
+                  <h5>중견기업 (CS팀 10-30명)</h5>
+                </div>
+                <div class="roi-content">
+                  <div class="roi-metric">
+                    <span class="metric-label">월 비용 절감</span>
+                    <span class="metric-value highlight">700-2,000만원</span>
+                  </div>
+                  <div class="roi-metric">
+                    <span class="metric-label">연간 이익</span>
+                    <span class="metric-value">8,400-24,000만원</span>
+                  </div>
+                  <div class="roi-breakdown">
+                    <div class="breakdown-item">
+                      <span>재상담 감소</span>
+                      <span>+5,040만원</span>
+                    </div>
+                    <div class="breakdown-item">
+                      <span>생산성 향상</span>
+                      <span>+3,360만원</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="roi-card">
+                <div class="roi-header">
+                  <div class="roi-icon">🏛️</div>
+                  <h5>대기업 (CS팀 30명 이상)</h5>
+                </div>
+                <div class="roi-content">
+                  <div class="roi-metric">
+                    <span class="metric-label">월 비용 절감</span>
+                    <span class="metric-value highlight">3,000-8,000만원</span>
+                  </div>
+                  <div class="roi-metric">
+                    <span class="metric-label">연간 이익</span>
+                    <span class="metric-value">36,000-96,000만원</span>
+                  </div>
+                  <div class="roi-breakdown">
+                    <div class="breakdown-item">
+                      <span>재상담 감소</span>
+                      <span>+21,600만원</span>
+                    </div>
+                    <div class="breakdown-item">
+                      <span>생산성 향상</span>
+                      <span>+14,400만원</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="roi-note">
+              <p><strong>※ 근거 자료:</strong> 2024년 스타트업 얼라이언스 'B2B SaaS CS 효율성 개선 사례 연구' 데이터 기반. 1차 해결률 28% 증가, 재상담률 31% 감소, 고객 만족도 42% 향상, 평균 ROI 3.6배 달성.</p>
+            </div>
+          </div>
+
+          <!-- 실시간 분석 예시 -->
+          <div class="demo-section">
+            <h4>실시간 분석 예시</h4>
+            <div class="demo-container">
+              <div class="demo-input">
+                <div class="demo-header">
+                  <h5>고객 문의 텍스트</h5>
+                  <span class="demo-badge alert">재발생</span>
+                </div>
+                <div class="demo-text">"제품이 작동하지 않아서 교환하고 싶어요. 이런 일은 두 번째인데 정말 실망스럽네요. 이번에는 제대로 해결해주세요."</div>
+              </div>
+              <div class="demo-output">
+                <div class="output-grid">
+                  <div class="output-card critical">
+                    <div class="output-label">이탈 위험도</div>
+                    <div class="output-value-large">68%</div>
+                    <div class="output-bar">
+                      <div class="output-fill" style="width: 68%"></div>
+                    </div>
+                    <div class="output-desc">⚠️ 높음</div>
+                  </div>
+                  <div class="output-card">
+                    <div class="output-label">문제 유형</div>
+                    <div class="status-badge unresolved">재발생</div>
+                    <div class="status-desc">제품 불량 교환</div>
+                  </div>
+                  <div class="output-card">
+                    <div class="output-label">감정 상태</div>
+                    <div class="output-list">
+                      <div class="emotion-item">
+                        <span class="emotion-name">실망감</span>
+                        <span class="emotion-score">45%</span>
+                      </div>
+                      <div class="emotion-item">
+                        <span class="emotion-name">불만</span>
+                        <span class="emotion-score">30%</span>
+                      </div>
+                      <div class="emotion-item">
+                        <span class="emotion-name">의심</span>
+                        <span class="emotion-score">25%</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="output-card">
+                    <div class="output-label">해결 만족도 예측</div>
+                    <div class="intensity-value">42% (낮음)</div>
+                    <div class="intensity-bar">
+                      <div class="intensity-fill low" style="width: 42%"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="ai-recommendation">
+                  <div class="recommendation-header">
+                    <span class="ai-icon">🤖</span>
+                    <span>AI 권장 조치</span>
+                  </div>
+                  <div class="recommendation-list">
+                    <div class="recommendation-item priority-high">
+                      <span class="priority-badge">긴급</span>
+                      <span>즉시 교환 처리 및 추가 보상</span>
+                    </div>
+                    <div class="recommendation-item">
+                      <span class="priority-badge">필수</span>
+                      <span>품질 개선 약속 및 후속 관리</span>
+                    </div>
+                    <div class="recommendation-item">
+                      <span class="priority-badge">조치</span>
+                      <span>제품 개발팀에 패턴 보고</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 성공 사례 -->
+          <div class="case-study-section">
+            <h4>도입 성공 사례</h4>
+            <div class="case-grid">
+              <div class="case-card">
+                <div class="case-header">
+                  <div class="case-logo">🛒</div>
+                  <div class="case-info">
+                    <h5>전자상거래 플랫폼</h5>
+                    <span class="case-period">도입 후 5개월</span>
+                  </div>
+                </div>
+                <div class="case-results">
+                  <div class="result-item">
+                    <span class="result-label">1차 해결률</span>
+                    <span class="result-value positive">32% ↑</span>
+                  </div>
+                  <div class="result-item">
+                    <span class="result-label">재상담률 감소</span>
+                    <span class="result-value positive">29% ↓</span>
+                  </div>
+                  <div class="result-item">
+                    <span class="result-label">연간 비용 절감</span>
+                    <span class="result-value positive">12,000만원</span>
+                  </div>
+                </div>
+                <div class="case-quote">"감정 분석으로 재발생 문제를 사전에 차단할 수 있게 되어 CS 비용이 크게 절감되었습니다."</div>
+              </div>
+              <div class="case-card">
+                <div class="case-header">
+                  <div class="case-logo">📦</div>
+                  <div class="case-info">
+                    <h5>배송 물류 기업</h5>
+                    <span class="case-period">도입 후 7개월</span>
+                  </div>
+                </div>
+                <div class="case-results">
+                  <div class="result-item">
+                    <span class="result-label">고객 만족도</span>
+                    <span class="result-value positive">38% ↑</span>
+                  </div>
+                  <div class="result-item">
+                    <span class="result-label">CS 생산성</span>
+                    <span class="result-value positive">25% ↑</span>
+                  </div>
+                  <div class="result-item">
+                    <span class="result-label">ROI</span>
+                    <span class="result-value positive">3.9배</span>
+                  </div>
+                </div>
+                <div class="case-quote">"상담원 교육이 체계화되면서 해결률이 크게 향상되었고, 고객 만족도도 함께 개선되었습니다."</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="button cta-button">무료 체험 신청하기</button>
+        </div>
+      </div>
+    </div>
+<!-- 컨택센터/금융+보험/기업 CS 감정 분석 -->
+
+
+    <section class="main-item8">
+      <div class="container">
+        <div class="wrapper">
+          <div class="text-wrap">
+            <h2>EmotionAI 최대한 활용하기</h2>
+            <div class="controls">
+              <button type="button" class="link expand">확장</button>
+              <span class="sep">|</span>
+              <button type="button" class="link collapse">축소</button>
+            </div>
+          </div>
+          <ul class="list">
+            <li class="item">
+              <h3 class="question">
+                <button class="toggle" id="q1-label" type="button" aria-expanded="true" aria-controls="q1">EmotionAI란
+                  무엇인가요?</button>
+              </h3>
+              <div class="panel" id="q1" role="region" aria-labelledby="q1-label">
+                <div class="content">
+                  EmotionAI는 텍스트 속 감정을 정확하게 분석하는 고도화된 AI 시스템입니다. <strong>11개의 전문 모듈(ComplexEmotionAnalyzer, ContextExtractor, EmotionRelationshipAnalyzer, EmotionIntensityAnalyzer, LinguisticMatcher, PatternExtractor, PsychologicalCognitiveAnalyzer, SituationAnalyzer, EmotionSequenceAnalyzer, TransitionAnalyzer, EmotionWeightCalculator)</strong>이 협력하여 복합 감정, 강도, 문맥 등을 종합적으로 분석합니다. 120가지 세부 감정을 희(기쁨), 노(분노), 애(슬픔), 락(즐거움) 4차원으로 분류하며, TF-IDF 스코어링과 CUDA 가속을 통해 실시간 분석이 가능합니다.
+                </div>
+              </div>
+            </li>
+            <li class="item">
+              <h3 class="question">
+                <button class="toggle" id="q2-label" type="button" aria-expanded="false" aria-controls="q2">어떤 감정 분석을
+                  수행하나요?</button>
+              </h3>
+              <div class="panel" id="q2" role="region" aria-labelledby="q2-label">
+                <div class="content">
+                  EmotionAI는 감정 분류, 강도 측정(0-100 스케일), 복합 감정 탐지, 문맥 분석, 전이 패턴 분석, 심리학적 해석, 시간 시퀀스 분석 등 다양한 감정 분석 작업을 수행합니다. 특히 감정 변화 과정을 문장 단위로 추적하며 안정/진동/급변 등의 흐름 패턴을 자동 분류합니다. 전이 임계값은 기본 0.4이며 MAD 기반 자동 조정이 가능하고, 신뢰도 임계값은 0.10부터 시작하여 각 감정의 신뢰도를 정밀하게 측정합니다.
+                </div>
+              </div>
+            </li>
+            <li class="item">
+              <h3 class="question">
+                <button class="toggle" id="q3-label" type="button" aria-expanded="false" aria-controls="q3">어떤 텍스트를 분석할
+                  수 있나요?</button>
+              </h3>
+              <div class="panel" id="q3" role="region" aria-labelledby="q3-label">
+                <div class="content">
+                  한국어 텍스트를 중심으로 다양한 형태의 텍스트를 분석할 수 있습니다. 대화, 리뷰, 소셜미디어 게시물, 고객 피드백 등 감정이 담긴 모든 텍스트를 처리합니다. 특히 컨택센터 상담 대화, 금융권 고객 상담, 기업 CS 상담 등 전문 분야에서 높은 정확도를 보입니다. KSS를 사용한 한국어 문장 분할과 3문장 윈도우 컨텍스트 분석을 통해 더욱 정확한 감정 분석이 가능합니다.
+                </div>
+              </div>
+            </li>
+            <li class="item">
+              <h3 class="question">
+                <button class="toggle" id="q4-label" type="button" aria-expanded="false" aria-controls="q4">어떻게 정확도를 높일 수 있나요?</button>
+              </h3>
+              <div class="panel" id="q4" role="region" aria-labelledby="q4-label">
+                <div class="content">
+                  정확도를 높이기 위해서는 다음과 같은 환경 설정을 권장합니다: 
+                  <br><strong>1. 파이프라인 프리셋:</strong> <code>$env:EA_PIPELINE_PRESET = "heavy"</code>로 설정하여 11개 모듈 전체를 활성화합니다.
+                  <br><strong>2. 감정 알ias 모드:</strong> <code>$env:EMOTION_ALIAS_MODE = "strict_neutral_lak"</code>로 설정하여 엄격한 분석을 수행합니다.
+                  <br><strong>3. 온도 보정:</strong> <code>$env:ENABLE_TEMP_SCALING = "1"</code>로 활성화하여 확률 보정을 적용합니다.
+                  <br><strong>4. 커버리지 설정:</strong> <code>$env:QUICK_COVERAGE = "strict"</code>로 설정하여 엄격한 커버리지로 품질을 향상시킵니다.
+                  <br><strong>5. 적응형 임계값:</strong> <code>$env:ADAPTIVE_THRESHOLD = "1"</code>로 활성화하여 동적 임계값 조정을 수행합니다.
+                </div>
+              </div>
+            </li>
+            <li class="item">
+              <h3 class="question">
+                <button class="toggle" id="q5-label" type="button" aria-expanded="false" aria-controls="q5">임베딩과 라벨을 어떻게 생성하나요?</button>
+              </h3>
+              <div class="panel" id="q5" role="region" aria-labelledby="q5-label">
+                <div class="content">
+                  임베딩 생성을 위해서는 <code>python -m src.generate_embeddings --mode exact --preset demo --oneclick --from-talk</code> 명령어를 사용합니다. 환경 변수로 <code>$env:EMB_JSONL_FLUSH_EVERY = "10"</code>을 설정하면 실시간으로 진행 상황을 확인할 수 있습니다.
+                  <br>라벨 생성을 위해서는 <code>python -m src.build_labels_programmatic --oneclick --preset simple --session . --allow-no-session --emotions "src/EMOTIONS.json" --out "data/labels.full.jsonl"</code> 명령어를 사용합니다. <code>$env:LABEL_FLUSH_EVERY = "50"</code>으로 설정하면 N개마다 fsync하여 안정성을 확보합니다. 자동 재개 기능이 있어 중단된 작업을 같은 명령어로 이어서 실행할 수 있습니다.
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="main-footer">
+    <div class="container">
+      <div class="footer-content">
+        <!-- 브랜드 섹션 -->
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <span class="logo-text">COMPASS.<em>CIRCLE</em></span>
+          </div>
+          <p class="footer-description">텍스트 속 감정을 정밀하게 분석하는 고도화된 AI 시스템. 120가지 세부 감정으로 인간의 복잡한 감정 상태를 정확히 파악합니다.</p>
+          <div class="social-links">
+            <a href="#" class="social-link" aria-label="GitHub">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                <path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.17 6.839 9.49.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.167 22 16.418 22 12c0-5.523-4.477-10-10-10z" fill="currentColor"/>
+              </svg>
+            </a>
+            <a href="#" class="social-link" aria-label="Email">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <polyline points="22,6 12,13 2,6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+            <a href="#" class="social-link" aria-label="LinkedIn">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="4" cy="4" r="2" stroke="currentColor" stroke-width="2"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- 링크 섹션 -->
+        <div class="footer-links">
+          <div class="footer-column">
+            <h4>제품</h4>
+            <ul>
+              <li><a href="#emotions">4차원 감정 분류</a></li>
+              <li><a href="#complex">복합 감정 분석</a></li>
+              <li><a href="#context">문맥 상황 분석</a></li>
+              <li><a href="#timeseries">순서 전이 분석</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4>솔루션</h4>
+            <ul>
+              <li><a href="#contact">컨택센터</a></li>
+              <li><a href="#finance">금융권</a></li>
+              <li><a href="#cs">기업 CS</a></li>
+              <li><a href="#">고객사례</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4>회사</h4>
+            <ul>
+              <li><a href="#">소개</a></li>
+              <li><a href="#">팀</a></li>
+              <li><a href="#">채용</a></li>
+              <li><a href="#">뉴스</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4>지원</h4>
+            <ul>
+              <li><a href="#">문서</a></li>
+              <li><a href="#">API</a></li>
+              <li><a href="#">도움말</a></li>
+              <li><a href="#">문의하기</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- 하단 정보 -->
+      <div class="footer-bottom">
+        <div class="footer-legal">
+          <p>&copy; 2024 COMPASS.CIRCLE. All rights reserved.</p>
+          <div class="legal-links">
+            <a href="#">개인정보처리방침</a>
+            <span class="separator">|</span>
+            <a href="#">이용약관</a>
+            <span class="separator">|</span>
+            <a href="#">쿠키 정책</a>
+          </div>
+        </div>
+        <div class="footer-tech">
+          <span class="tech-badge">Powered by EmotionAI</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+<script>
+  (() => {
+    const panels = document.querySelectorAll('.main-item8 .panel');
+    const toggles = document.querySelectorAll('.main-item8 .toggle');
+    function setOpen(btn, open) {
+      const panel = document.getElementById(btn.getAttribute('aria-controls'));
+      btn.setAttribute('aria-expanded', String(open));
+      panel.classList.toggle('is-open', open);
+      panel.style.maxHeight = open ? panel.scrollHeight + 'px' : '0px';
+    }
+    toggles.forEach(btn => {
+      const open = btn.getAttribute('aria-expanded') === 'true';
+      setOpen(btn, open);
+      btn.addEventListener('click', () => {
+        const willOpen = btn.getAttribute('aria-expanded') !== 'true';
+        const container = document.querySelector('.main-item8 .list');
+        if (container && container.dataset.accordion === 'single' && willOpen) {
+          toggles.forEach(other => { if (other !== btn && other.getAttribute('aria-expanded') === 'true') setOpen(other, false); });
+        }
+        setOpen(btn, willOpen);
+      });
+    });
+    window.addEventListener('resize', () => { document.querySelectorAll('.main-item8 .panel.is-open').forEach(p => p.style.maxHeight = p.scrollHeight + 'px'); });
+    document.querySelector('.main-item8 .expand')?.addEventListener('click', () => { toggles.forEach(b => setOpen(b, true)); });
+    document.querySelector('.main-item8 .collapse')?.addEventListener('click', () => { toggles.forEach(b => setOpen(b, false)); });
+  })();
+</script>
+
+<script>
+  (() => {
+    const TAG = '[SearchPortal]';
+    const log = (...a) => console.log(TAG, ...a);
+    const warn = (...a) => console.warn(TAG, ...a);
+    const err = (...a) => console.error(TAG, ...a);
+
+    function setup() {
+      const hero = document.querySelector('.main-hero');
+      const search = document.querySelector('.main-hero .wrap .search');
+      if (!hero || !search) { err('missing hero or search'); return; }
+
+      // 자리 유지용 placeholder
+      const placeholder = document.createElement('div');
+      placeholder.style.cssText = 'height:0;';
+
+      let fixed = false;
+      let originalParent = search.parentNode;
+      let originalNext = search.nextSibling;
+
+      function fix() {
+        if (fixed) return;
+        fixed = true;
+        // 현재 높이만큼 placeholder로 공간 보전(점프 방지)
+        placeholder.style.height = search.getBoundingClientRect().height + 'px';
+        originalParent.insertBefore(placeholder, originalNext);
+        document.body.appendChild(search);        // body로 이동(포탈)
+        search.classList.add('is-fixed');
+        log('→ FIXED (moved to body)');
+        dump();
+      }
+
+      function unfix() {
+        if (!fixed) return;
+        fixed = false;
+        search.classList.remove('is-fixed');
+        originalParent.insertBefore(search, placeholder); // 원래 자리 복귀
+        placeholder.remove();
+        log('→ UNFIXED (restored to original parent)');
+        dump();
+      }
+
+      function dump() {
+        const cs = getComputedStyle(search);
+        log('computed', { position: cs.position, zIndex: cs.zIndex, bottom: cs.bottom, left: cs.left, transform: cs.transform });
+      }
+
+      function shouldFix() {
+        const btm = hero.getBoundingClientRect().bottom;
+        const on = btm <= 0; // hero 하단이 화면 위로 올라가면 고정
+        log('check', { heroBottom: btm.toFixed(1), should: on });
+        return on;
+      }
+
+      function onScroll() {
+        const on = shouldFix();
+        if (on) fix(); else unfix();
+      }
+
+      // IntersectionObserver로도 반응(지원되면)
+      if ('IntersectionObserver' in window) {
+        const sentinel = document.createElement('div');
+        sentinel.style.cssText = 'position:absolute;left:0;right:0;height:1px;bottom:0;pointer-events:none;';
+        hero.style.position = hero.style.position || 'relative';
+        hero.appendChild(sentinel);
+        const io = new IntersectionObserver(([e]) => {
+          const on = !e.isIntersecting; // 보이지 않으면 hero를 벗어남
+          log('IO', { visible: e.isIntersecting, on });
+          on ? fix() : unfix();
+        }, { threshold: [0, 0.001, 1] });
+        io.observe(sentinel);
+      }
+
+      window.addEventListener('scroll', onScroll, { passive: true });
+      window.addEventListener('resize', onScroll);
+      onScroll();
+
+      // 수동 토글 훅
+      window.__searchPortalToggle = () => fixed ? unfix() : fix();
+      log('ready: call __searchPortalToggle() to toggle manually');
+    }
+
+    (document.readyState === 'loading') ? document.addEventListener('DOMContentLoaded', setup) : setup();
+  })();
+</script>
+
+
+
+<script src="./assets/js/modal.js"></script>
+<script src="./assets/js/style.js"></script>
+
+<script>
+/**
+ * 헤더 네비게이션 앵커 링크 스크롤 처리 및 스크롤 효과
+ */
+(() => {
+  const TAG = '[HeaderNavigation]';
+  const log = (...a) => console.log(TAG, ...a);
+  
+  function init() {
+    const header = document.querySelector('.main-header');
+    
+    // 스크롤 시 헤더에 shadow 효과 추가
+    let lastScroll = 0;
+    window.addEventListener('scroll', () => {
+      const currentScroll = window.pageYOffset;
+      
+      if (currentScroll > 50) {
+        header?.classList.add('scrolled');
+      } else {
+        header?.classList.remove('scrolled');
+      }
+      
+      lastScroll = currentScroll;
+    }, { passive: true });
+    
+    // 모든 네비게이션 링크에 이벤트 리스너 추가
+    const navLinks = document.querySelectorAll('.main-header .menu a');
+    
+    navLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        const href = link.getAttribute('href');
+        
+        // 앵커 링크인 경우만 처리
+        if (href && href.startsWith('#')) {
+          e.preventDefault();
+          
+          const targetId = href.substring(1);
+          const targetElement = document.getElementById(targetId);
+          
+          if (targetElement) {
+            // 부드러운 스크롤
+            targetElement.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+            
+            log('Navigated to:', targetId);
+          } else {
+            console.warn(TAG, 'Target element not found:', targetId);
+          }
+        }
+      });
+    });
+    
+    // 로고 클릭 시 맨 위로 스크롤
+    const logoLink = document.querySelector('.main-header .logo-link');
+    if (logoLink) {
+      logoLink.addEventListener('click', (e) => {
+        const href = logoLink.getAttribute('href');
+        if (href && href.startsWith('#')) {
+          e.preventDefault();
+          window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+          });
+          log('Scrolled to top');
+        }
+      });
+    }
+    
+    log('Navigation initialized');
+  }
+  
+  // DOM 로드 완료 후 초기화
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
+</script>
+
+<script>
+/**
+ * Suggestions 애니메이션 트리거
+ * 스크롤 시 심플하게 순차적으로 나타나는 효과
+ */
+(() => {
+  const TAG = '[SuggestionsAnimation]';
+  const log = (...a) => console.log(TAG, ...a);
+  
+  function init() {
+    const suggestions = document.querySelector('.main-item1 .suggestions');
+    if (!suggestions) {
+      console.warn(TAG, 'Suggestions container not found');
+      return;
+    }
+    
+    const items = suggestions.querySelectorAll('.item');
+    if (items.length === 0) {
+      console.warn(TAG, 'No items found');
+      return;
+    }
+    
+    log('Found', items.length, 'items');
+    
+    // Intersection Observer로 스크롤 감지
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          // 각 아이템에 순차적으로 애니메이션 클래스 추가
+          items.forEach((item, index) => {
+            setTimeout(() => {
+              item.classList.add('animate-in');
+            }, index * 50); // 50ms 간격으로 순차 실행
+          });
+          
+          // 한 번만 실행되도록 옵저버 해제
+          observer.unobserve(entry.target);
+          log('Animation triggered');
+        }
+      });
+    }, {
+      threshold: 0.1, // 10% 보이면 트리거
+      rootMargin: '0px 0px -50px 0px' // 약간의 여유 추가
+    });
+    
+    observer.observe(suggestions);
+    log('Observer initialized');
+  }
+  
+  // DOM 로드 완료 후 초기화
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
+</script>
+
+</html>

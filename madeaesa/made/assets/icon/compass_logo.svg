@@ -1,0 +1,31 @@
+<svg width="180" height="32" viewBox="0 0 180 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g transform="translate(0, 0)">
+        <g opacity="0.9">
+            <circle cx="8" cy="12" r="2.5" fill="currentColor"/>
+            <circle cx="14" cy="7" r="2" fill="currentColor"/>
+            <circle cx="20" cy="12" r="2.5" fill="currentColor"/>
+            <circle cx="10" cy="18" r="2" fill="currentColor"/>
+            <circle cx="18" cy="18" r="2" fill="currentColor"/>
+            <circle cx="8" cy="24" r="2.5" fill="currentColor"/>
+            <circle cx="14" cy="27" r="2" fill="currentColor"/>
+            <circle cx="20" cy="24" r="2.5" fill="currentColor"/>
+        </g>
+        <g opacity="0.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+            <line x1="8" y1="12" x2="14" y2="7"/>
+            <line x1="14" y1="7" x2="20" y2="12"/>
+            <line x1="8" y1="12" x2="10" y2="18"/>
+            <line x1="20" y1="12" x2="18" y2="18"/>
+            <line x1="10" y1="18" x2="14" y2="27"/>
+            <line x1="18" y1="18" x2="14" y2="27"/>
+            <line x1="8" y1="12" x2="8" y2="24"/>
+            <line x1="20" y1="12" x2="20" y2="24"/>
+            <line x1="8" y1="24" x2="14" y2="27"/>
+            <line x1="20" y1="24" x2="14" y2="27"/>
+            <line x1="10" y1="18" x2="18" y2="18"/>
+            <line x1="14" y1="7" x2="10" y2="18"/>
+            <line x1="14" y1="7" x2="18" y2="18"/>
+        </g>
+    </g>
+    <text x="32" y="22" font-family="system-ui, -apple-system, sans-serif" font-size="20" font-weight="600" fill="currentColor" letter-spacing="0.05em">COMPASS</text>
+</svg>
+

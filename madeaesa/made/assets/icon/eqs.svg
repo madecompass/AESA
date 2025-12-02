@@ -1,0 +1,24 @@
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Authority Seal: 굵은 원 + 짧은 틱 1개 -->
+  <!-- EQS 점수에 따라 색상 변경 가능 (현재는 중간 값 기준) -->
+  
+  <!-- 외곽 원 (굵은 원, 3px) -->
+  <circle cx="12" cy="12" r="9" 
+          stroke="#10B981" 
+          stroke-width="3" 
+          fill="none"/>
+  
+  <!-- 내부 원 (얇은 원) -->
+  <circle cx="12" cy="12" r="6" 
+          stroke="#10B981" 
+          stroke-width="1" 
+          fill="none" 
+          opacity="0.5"/>
+  
+  <!-- 틱 (짧은 선, 상단) -->
+  <line x1="12" y1="3" x2="12" y2="6" 
+        stroke="#10B981" 
+        stroke-width="2" 
+        stroke-linecap="round"/>
+</svg>
+

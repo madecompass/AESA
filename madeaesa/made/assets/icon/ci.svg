@@ -1,0 +1,34 @@
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Thin Circle + Dot: 얇은 원 + 중앙점 -->
+  
+  <!-- 외곽 원 (얇은 원, 1px) -->
+  <circle cx="12" cy="12" r="10" 
+          stroke="#6B7280" 
+          stroke-width="1" 
+          fill="none" 
+          opacity="0.6"/>
+  
+  <!-- 내부 원 (더 얇은 원) -->
+  <circle cx="12" cy="12" r="7" 
+          stroke="#6B7280" 
+          stroke-width="0.5" 
+          fill="none" 
+          opacity="0.4"/>
+  
+  <!-- 중앙점 (2px) -->
+  <circle cx="12" cy="12" r="2" 
+          fill="#10B981"/>
+  
+  <!-- 좌표 점 (예시: 45도 위치) -->
+  <circle cx="16.97" cy="16.97" r="1.5" 
+          fill="#3B82F6" 
+          opacity="0.8"/>
+  
+  <!-- 좌표선 (중앙에서 좌표점으로) -->
+  <line x1="12" y1="12" x2="16.97" y2="16.97" 
+        stroke="#3B82F6" 
+        stroke-width="1" 
+        stroke-dasharray="2,2" 
+        opacity="0.5"/>
+</svg>
+

@@ -1,0 +1,26 @@
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Gauge Needle: 1/3 원호 + 바늘 -->
+  <defs>
+    <linearGradient id="gaugeGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#1E3A8A;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#3B82F6;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- 원호 (120도, 1/3) -->
+  <path d="M 12 4 A 8 8 0 0 1 20 12" 
+        stroke="url(#gaugeGradient)" 
+        stroke-width="2" 
+        fill="none" 
+        stroke-linecap="round"/>
+  
+  <!-- 바늘 (중앙에서 원호 끝으로) -->
+  <line x1="12" y1="12" x2="20" y2="12" 
+        stroke="#1E3A8A" 
+        stroke-width="2" 
+        stroke-linecap="round"/>
+  
+  <!-- 중심점 -->
+  <circle cx="12" cy="12" r="1.5" fill="#1E3A8A"/>
+</svg>
+

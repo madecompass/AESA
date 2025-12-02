@@ -1,0 +1,57 @@
+# ================================
+# AESA .gitignore
+# ================================
+
+# Python 캐시
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# 환경변수 (비밀번호, API 키)
+.env
+*.env
+src/.env
+
+# 핵심 자산 (혹시 실수로 복사되었을 경우 대비)
+EMOTIONS.json
+EMOTIONS.JSON
+*.backup
+*.cache.json
+
+# 모델 가중치
+*.pt
+*.pth
+*.onnx
+*.bin
+*.safetensors
+
+# 임베딩/라벨 데이터
+embeddings/
+label/
+*.jsonl
+!requirements.txt
+
+# 로그 및 임시 파일
+logs/
+*.log
+tmp/
+*.tmp
+*결과로그*.txt
+
+# IDE 설정
+.cursor/
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS 파일
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# 테스트/개발 파일
+test_*.py
+*_test.py
+*.ipynb_checkpoints/

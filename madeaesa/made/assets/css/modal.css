@@ -1,0 +1,1420 @@
+/* ============================================ */
+/* Material Icons 공통 스타일 */
+/* ============================================ */
+.material-icons {font-family: 'Material Icons'; font-weight: normal; font-style: normal; font-size: 2.5rem; line-height: 1; letter-spacing: normal; text-transform: none; display: inline-block; white-space: nowrap; word-wrap: normal; direction: ltr; font-feature-settings: 'liga'; -webkit-font-feature-settings: 'liga'; -webkit-font-smoothing: antialiased;}
+
+/* ============================================ */
+/* 모달 기본 공통 스타일 */
+/* ============================================ */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 100000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+.modal.is-open {
+  display: block;
+}
+.modal-content {
+  background-color: var(--bg-secondary);
+  margin: 3% auto;
+  padding: 2rem;
+  border: 1px solid var(--border-color);
+  width: 90%;
+  max-width: 1200px;
+  max-height: 90vh;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-xl);
+  animation-name: animatetop;
+  animation-duration: 0.4s;
+  overflow-y: auto;
+  color: var(--text-secondary);
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 0.9375rem;
+}
+@keyframes animatetop {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 1.5rem;
+  margin-bottom: 2rem;
+}
+.modal-header h3 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+}
+.close-btn {
+  color: var(--text-muted);
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  background: none;
+  padding: 0;
+  transition: color var(--transition-base);
+}
+.close-btn:hover,
+.close-btn:focus {
+  color: var(--text-primary);
+}
+.modal-body p {
+  line-height: 1.7;
+  color: var(--text-secondary);
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+}
+.modal-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border-color);
+  margin-top: 1.5rem;
+}
+.modal-content h4,
+.modal-content h5,
+.modal-content h6 {
+  color: var(--text-primary);
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  letter-spacing: -0.01em;
+}
+.modal-content p,
+.modal-content li {
+  color: var(--text-secondary);
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+}
+.modal-content strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+/* ============================================ */
+/* 11개 모듈 모달 스타일 - 소프트 블루 테크 테마 */
+/* ============================================ */
+#myModal {
+  background-color: rgba(0, 0, 0, 0.85);
+}
+
+#myModal .modal-content {
+  background-color: var(--bg-secondary);
+  border-color: var(--border-color);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+#myModal .modal-header {
+  border-bottom-color: var(--border-color);
+}
+
+#myModal .modal-header h3 {
+  color: var(--text-primary);
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+}
+
+#myModal .close-btn {
+  color: var(--text-muted);
+}
+
+#myModal .close-btn:hover {
+  color: var(--text-primary);
+}
+
+#myModal .mod-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+#myModal .mod-card {
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-xl);
+  padding: 1.75rem;
+  background-color: var(--bg-tertiary);
+  transition: all var(--transition-base);
+  box-shadow: var(--shadow-md);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+#myModal .mod-card:hover {
+  box-shadow: var(--shadow-lg);
+  border-color: var(--accent-green);
+  transform: translateY(-4px);
+  background-color: rgba(20, 20, 20, 0.8);
+}
+
+#myModal .mod-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+#myModal .mod-head h4 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  flex: 1;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+}
+
+#myModal .mod-tag {
+  border-radius: var(--radius-md);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  white-space: nowrap;
+  color: #a5b4fc;
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  padding: 0.375rem 0.875rem;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.08) 0%, rgba(99, 102, 241, 0.08) 100%);
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+}
+
+/* 모듈 아이콘 스타일 */
+#myModal .mod-icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-lg);
+  background-color: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  margin-bottom: 1rem;
+  transition: all var(--transition-base);
+}
+
+#myModal .mod-card:hover .mod-icon-wrapper {
+  background-color: rgba(16, 185, 129, 0.2);
+  border-color: var(--accent-green);
+  transform: scale(1.05);
+}
+
+#myModal .mod-icon {
+  font-size: 24px;
+  color: var(--accent-green);
+  transition: all var(--transition-base);
+}
+
+#myModal .mod-card:hover .mod-icon {
+  color: var(--accent-green-hover);
+  transform: scale(1.05);
+}
+
+#myModal .mod-main {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+#myModal .mod-desc {
+  margin: 0;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  letter-spacing: -0.01em;
+}
+
+#myModal .mod-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+#myModal .mod-list li {
+  padding: 0.5rem 0;
+  position: relative;
+  padding-left: 1.5rem;
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  line-height: 1.6;
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+}
+
+#myModal .mod-list li::before {
+  content: "→";
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+  color: var(--accent-green);
+}
+
+#myModal .mod-info {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  padding: 0.875rem;
+  border-left: 3px solid rgba(96, 165, 250, 0.4);
+  color: #a5b4fc;
+  background: rgba(59, 130, 246, 0.05);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+}
+
+
+/* 기술 정보 스타일 */
+#myModal .mod-tech {
+  margin-top: 1rem;
+  padding: 1rem;
+  border-left: 3px solid rgba(96, 165, 250, 0.4);
+  background: linear-gradient(90deg, rgba(59, 130, 246, 0.05) 0%, transparent 100%);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+}
+
+#myModal .tech-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+  font-size: 0.875rem;
+  padding: 0.5rem 0;
+}
+
+#myModal .tech-item:last-child {
+  margin-bottom: 0;
+}
+
+#myModal .tech-label {
+  font-weight: 600;
+  color: #a5b4fc;
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+}
+
+#myModal .tech-value {
+  color: #e2e8f0;
+  background: rgba(96, 165, 250, 0.1);
+  padding: 0.5rem 0.75rem;
+  border-radius: var(--radius-sm);
+  font-family: 'SF Mono', 'Monaco', monospace;
+  font-size: 0.8125rem;
+}
+
+#myModal .system-overview {
+  flex: 1;
+}
+
+#myModal .system-overview h4 {
+  margin: 0 0 0.75rem 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  text-align: center;
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  letter-spacing: -0.02em;
+}
+
+#myModal .system-description {
+  margin: 0 0 2rem 0;
+  font-size: 0.9375rem;
+  color: var(--text-secondary);
+  text-align: center;
+  line-height: 1.6;
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  letter-spacing: -0.01em;
+}
+
+/* 성능 섹션 스타일 */
+#myModal .performance-sections {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+#myModal .performance-section {
+  background-color: var(--bg-tertiary);
+  border-radius: var(--radius-xl);
+  padding: 1.75rem;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-md);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: all var(--transition-base);
+}
+
+#myModal .performance-section:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--accent-green);
+}
+
+#myModal .performance-section h5 {
+  margin: 0 0 1.5rem 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+}
+
+#myModal .performance-metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+}
+
+#myModal .metric {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.875rem;
+  border-radius: var(--radius-md);
+  transition: all var(--transition-base);
+  background-color: rgba(20, 20, 20, 0.5);
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+}
+
+#myModal .metric:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent-green);
+  box-shadow: var(--shadow-md);
+}
+
+#myModal .metric .metric-label {
+  color: var(--text-secondary);
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 0.875rem;
+}
+
+#myModal .metric .metric-value {
+  color: var(--text-primary);
+  font-weight: 600;
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  font-size: 0.9375rem;
+}
+
+
+/* 시스템 하이라이트 스타일 */
+#myModal .system-highlights {
+  background-color: var(--bg-tertiary);
+  border-radius: var(--radius-xl);
+  padding: 1.75rem;
+  margin-top: 1rem;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-md);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+#myModal .highlight-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background-color: rgba(20, 20, 20, 0.5);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  transition: all var(--transition-base);
+}
+
+#myModal .highlight-item:hover {
+  border-color: var(--accent-green);
+  transform: translateX(4px);
+  box-shadow: var(--shadow-md);
+}
+
+#myModal .highlight-item:last-child {
+  margin-bottom: 0;
+}
+
+#myModal .highlight-icon {
+  font-size: 1.25rem;
+  color: var(--accent-green);
+  margin-top: 0.25rem;
+  flex-shrink: 0;
+}
+
+#myModal .highlight-icon .material-icons {
+  font-size: 1.25rem;
+  color: var(--accent-green);
+}
+
+#myModal .highlight-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+#myModal .highlight-text {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+  line-height: 1.6;
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+}
+
+#myModal .highlight-evidence {
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  padding: 0.75rem;
+  background-color: var(--bg-primary);
+  border-radius: var(--radius-sm);
+  border-left: 3px solid var(--accent-green);
+  font-family: 'SF Mono', 'Monaco', monospace;
+}
+
+/* 모달 액션 버튼 스타일 */
+#myModal .modal-actions {
+  display: flex;
+  justify-content: center;
+  padding: 2rem 0 0 0;
+  border-top: 1px solid rgba(59, 130, 246, 0.2);
+  margin-top: 2rem;
+}
+
+#myModal .modal-actions .button {
+  padding: 0.875rem 2rem;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  background-color: var(--accent-green);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  transition: all var(--transition-base);
+  box-shadow: var(--shadow-md);
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  letter-spacing: -0.01em;
+}
+
+#myModal .modal-actions .button:hover {
+  background-color: var(--accent-green-hover);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* ============================================ */
+/* 4차원 감정(120가지) 모달 스타일 - 엘레강트 바이올렛 테마 */
+/* ============================================ */
+#emotionModal {background-color: rgba(0, 0, 0, 0.85);}
+#emotionModal .modal-content {background-color: var(--bg-secondary); border-color: var(--border-color); backdrop-filter: blur(20px); overflow-y: auto; max-height: 90vh;}
+#emotionModal .modal-header {border-bottom-color: var(--border-color);}
+#emotionModal .modal-header h3 {color: var(--text-primary); font-weight: 600;}
+#emotionModal .close-btn {color: var(--text-muted);}
+#emotionModal .close-btn:hover {color: var(--text-primary);}
+#emotionModal .emotion-overview {display: flex; flex-wrap:wrap;justify-content: space-between; align-items: flex-start; margin-bottom: 2rem; padding: 1.75rem; background-color: var(--bg-tertiary); border: 1px solid var(--border-color); border-radius: var(--radius-xl); box-shadow: var(--shadow-md);}
+#emotionModal .overview-text h4 {margin: 0 0 1rem 0; font-size: 1.125rem; font-weight: 600; color: var(--text-primary); letter-spacing: -0.01em;}
+#emotionModal .overview-text p {margin: 0; line-height: 1.6; color: var(--text-secondary); font-size: 0.9375rem;}
+#emotionModal .emotion-stats {display: flex; gap: 1.5rem; margin:1rem 0}
+#emotionModal .stat-item {text-align: center; padding: 1rem; background-color: rgba(20, 20, 20, 0.5); border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); min-width: 120px; border: 1px solid var(--border-color); transition: all var(--transition-base);}
+#emotionModal .stat-item:hover {transform: translateY(-4px); box-shadow: var(--shadow-md); border-color: var(--accent-green);}
+#emotionModal .stat-number {display: block; font-size: 1.125rem; font-weight: 700; color: var(--text-primary);}
+#emotionModal .stat-label {font-size: 0.8125rem; color: var(--text-secondary); font-weight: 500;}
+#emotionModal .emotion-dimensions {display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin: 2rem 0;}
+#emotionModal .dimension-card {background-color: var(--bg-tertiary); border: 1px solid var(--border-color); border-radius: var(--radius-xl); padding: 1.75rem; box-shadow: var(--shadow-md); transition: all var(--transition-base); position: relative; overflow: hidden;}
+#emotionModal .dimension-card:hover {transform: translateY(-4px); box-shadow: var(--shadow-lg); border-color: var(--accent-green);}
+#emotionModal .dimension-header {display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;}
+#emotionModal .dimension-icon {font-size: 1.5rem; width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; background-color: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.2); border-radius: var(--radius-lg); color: var(--accent-green); box-shadow: var(--shadow-sm);}
+#emotionModal .dimension-icon .material-icons {font-size: 1.5rem; color: var(--accent-green);}
+#emotionModal .dimension-header h4 {margin: 0; font-size: 1.125rem; font-weight: 700; color: var(--text-primary); letter-spacing: -0.01em;}
+#emotionModal .dimension-description {margin: 0 0 1rem 0; font-size: 0.875rem; line-height: 1.6; color: var(--text-secondary); padding: 1rem; background-color: rgba(20, 20, 20, 0.5); border-radius: var(--radius-md); border-left: 3px solid var(--accent-green); font-weight: 500;}
+#emotionModal .emotion-examples {display: flex; flex-direction: column; gap: 1rem;}
+#emotionModal .example-category h5 {margin: 0 0 0.75rem 0; font-size: 0.875rem; font-weight: 700; color: var(--text-primary); text-transform: uppercase; letter-spacing: 0.05em;}
+#emotionModal .emotion-tags {display: flex; flex-wrap: wrap; gap: 0.5rem;}
+#emotionModal .emotion-tag {background-color: rgba(16, 185, 129, 0.1); color: var(--text-primary); padding: 0.5rem 1rem; border-radius: var(--radius-md); font-size: 0.8125rem; font-weight: 600; border: 1px solid rgba(16, 185, 129, 0.2); transition: all var(--transition-base);}
+#emotionModal .emotion-tag:hover {background-color: rgba(16, 185, 129, 0.2); border-color: var(--accent-green); transform: translateY(-2px); box-shadow: var(--shadow-sm);}
+/* 감정 분류 엔진 상세 스타일 */
+#emotionModal .emotion-classification-engine {margin: 3rem 0;}
+#emotionModal .emotion-classification-engine h4 {margin: 0 0 2rem 0; font-size: 1.25rem; font-weight: 700; color: var(--text-primary); text-align: center; letter-spacing: -0.01em;}
+#emotionModal .engine-workflow {display: flex; align-items: center; justify-content: center; gap: 1.5rem; padding: 2rem; background-color: var(--bg-tertiary); border-radius: var(--radius-xl); border: 1px solid var(--border-color); box-shadow: var(--shadow-md);}
+#emotionModal .workflow-step {text-align: center; padding: 1.5rem; background-color: rgba(20, 20, 20, 0.5); border-radius: var(--radius-lg); border: 1px solid var(--border-color); min-width: 200px; transition: all var(--transition-base); position: relative; overflow: hidden;}
+#emotionModal .workflow-step:hover {transform: translateY(-4px); background-color: rgba(20, 20, 20, 0.7); border-color: var(--accent-green); box-shadow: var(--shadow-lg);}
+#emotionModal .step-icon {font-size: 2rem; margin-bottom: 1rem; color: var(--accent-green); display: block;}
+#emotionModal .step-title {font-size: 0.9375rem; font-weight: 700; color: var(--text-primary); margin-bottom: 0.75rem; letter-spacing: -0.01em;}
+#emotionModal .step-desc {font-size: 0.8125rem; color: var(--text-secondary); margin-bottom: 1rem; line-height: 1.5;}
+#emotionModal .step-code {font-size: 0.75rem; color: var(--text-primary); font-family: 'Courier New', monospace; background-color: var(--bg-primary); padding: 0.75rem; border-radius: var(--radius-md); border: 1px solid var(--border-color); word-break: break-all; line-height: 1.4;}
+#emotionModal .workflow-arrow {font-size: 1.5rem; color: var(--accent-green); font-weight: bold; flex-shrink: 0;}
+
+#emotionModal .emotion-analysis-features {margin-bottom: 2rem;}
+#emotionModal .emotion-analysis-features h4 {margin: 0 0 1.5rem 0; font-size: 1.125rem; font-weight: 600; color: var(--text-primary); text-align: center;}
+#emotionModal .features-grid {display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;}
+#emotionModal .feature-item {text-align: center; padding: 1.5rem; background-color: var(--bg-tertiary); border: 1px solid var(--border-color); border-radius: var(--radius-xl); box-shadow: var(--shadow-md); transition: all var(--transition-base);}
+#emotionModal .feature-item:hover {transform: translateY(-2px); border-color: var(--accent-green); box-shadow: var(--shadow-lg);}
+#emotionModal .feature-icon {font-size: 2rem; margin-bottom: 1rem; color: var(--accent-green);}
+#emotionModal .feature-icon .material-icons {font-size: 2rem; color: var(--accent-green);}
+#emotionModal .feature-item h5 {margin: 0 0 0.5rem 0; font-size: 0.9375rem; font-weight: 600; color: var(--text-primary);}
+#emotionModal .feature-item p {margin: 0; font-size: 0.8125rem; line-height: 1.5; color: var(--text-secondary);}
+#emotionModal .emotion-data-structure {margin-bottom: 2rem;}
+#emotionModal .emotion-data-structure h4 {margin: 0 0 1.5rem 0; font-size: 1.125rem; font-weight: 600; color: var(--text-primary); text-align: center;}
+#emotionModal .structure-example {display: flex; justify-content: center;}
+#emotionModal .json-structure {background-color: var(--bg-tertiary); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 1.5rem; max-width: 600px; width: 100%; box-shadow: var(--shadow-md);}
+#emotionModal .json-header {font-size: 0.8125rem; font-weight: 600; color: var(--text-primary); margin-bottom: 1rem; text-align: center;}
+#emotionModal .json-content {font-family: 'Courier New', monospace; font-size: 0.8125rem; line-height: 1.4; color: var(--text-secondary);}
+#emotionModal .json-line {margin: 0.25rem 0;}
+#emotionModal .json-key {color: var(--text-primary); font-weight: 600;}
+#emotionModal .json-string {color: var(--text-secondary);}
+#emotionModal .indent-1 {padding-left: 1rem;}
+#emotionModal .indent-2 {padding-left: 2rem;}
+#emotionModal .emotion-analysis-process {margin-bottom: 2rem;}
+#emotionModal .emotion-analysis-process h4 {margin: 0 0 1.5rem 0; font-size: 1.125rem; font-weight: 600; color: var(--text-primary); text-align: center;}
+#emotionModal .process-steps {display: flex; flex-direction: column; gap: 1.5rem;}
+#emotionModal .step-item {display: flex; align-items: flex-start; gap: 1rem; padding: 1.5rem; background-color: var(--bg-tertiary); border: 1px solid var(--border-color); border-radius: var(--radius-xl); box-shadow: var(--shadow-md);}
+#emotionModal .step-number {display: flex; align-items: center; justify-content: center; width: 35px; height: 35px; background-color: rgba(16, 185, 129, 0.2); color: var(--accent-green); border-radius: 50%; font-size: 0.9375rem; flex-shrink: 0;}
+#emotionModal .step-content {flex: 1;}
+#emotionModal .step-content h5 {margin: 0 0 0.5rem 0; font-size: 1rem; font-weight: 600; color: var(--text-primary);}
+#emotionModal .step-content p {margin: 0 0 1rem 0; font-size: 0.875rem; color: var(--text-secondary); line-height: 1.5;}
+#emotionModal .code-example {border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 0.75rem; font-family: 'Courier New', monospace; background-color: var(--bg-primary);}
+#emotionModal .code-example code {font-size: 0.75rem; color: var(--text-primary); line-height: 1.4;}
+#emotionModal .dimensions-grid {display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;}
+#emotionModal .dimension-stats {display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 1rem;}
+#emotionModal .dimension-stats .stat-item {display: flex; justify-content: space-between; align-items: center; padding: 0.75rem; background-color: rgba(20, 20, 20, 0.5); border-radius: var(--radius-md); min-width: auto; border: 1px solid var(--border-color); transition: all var(--transition-base);}
+#emotionModal .dimension-stats .stat-item:hover {background-color: rgba(20, 20, 20, 0.7); transform: translateX(4px); border-color: var(--accent-green);}
+#emotionModal .dimension-stats .stat-label {font-size: 0.8125rem; font-weight: 600; color: var(--text-secondary); margin: 0;}
+#emotionModal .dimension-stats .stat-value {font-size: 0.8125rem; color: var(--text-primary); font-weight: 700; margin: 0;}
+#emotionModal .example-cards {display: flex; flex-direction: column; gap: 1.5rem;}
+#emotionModal .example-card {padding: 1.5rem; background-color: var(--bg-tertiary); border: 1px solid var(--border-color); border-radius: var(--radius-xl); box-shadow: var(--shadow-md);}
+#emotionModal .example-text {margin: 0 0 1rem 0; padding: 1rem; background-color: var(--bg-primary); border-radius: var(--radius-md); font-style: italic; color: var(--text-secondary); border-left: 4px solid var(--accent-green);}
+#emotionModal .analysis-result {display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 0.75rem;}
+#emotionModal .analysis-item {display: flex; justify-content: space-between; align-items: center; padding: 0.5rem; background-color: rgba(20, 20, 20, 0.5); border-radius: var(--radius-sm); border: 1px solid var(--border-color);}
+#emotionModal .analysis-item .label {font-size: 0.75rem; font-weight: 600; color: var(--text-secondary);}
+#emotionModal .analysis-item .value {font-size: 0.75rem; color: var(--text-primary); font-weight: 500;}
+
+.industry-card {background-color: var(--bg-tertiary); border: 1px solid var(--border-color); border-radius: var(--radius-xl); padding: 1.75rem; box-shadow: var(--shadow-md); transition: all var(--transition-base); position: relative; overflow: hidden;}
+.industry-card:hover {transform: translateY(-4px); box-shadow: var(--shadow-lg); border-color: var(--accent-green);}
+.industry-icon {display: flex; align-items: center; justify-content: center; width: 56px; height: 56px; background-color: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.2); border-radius: var(--radius-lg); margin-bottom: 1.5rem; color: var(--accent-green);}
+.industry-card h3 {margin: 0 0 1rem 0; font-size: 1.125rem; font-weight: 600; color: var(--text-primary);}
+.industry-features {display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem;}
+.feature-tag {background-color: rgba(16, 185, 129, 0.1); color: var(--text-primary); padding: 0.25rem 0.75rem; border-radius: var(--radius-md); font-size: 0.75rem; font-weight: 500; border: 1px solid rgba(16, 185, 129, 0.2);}
+.industry-card p {margin: 0 0 1.5rem 0; line-height: 1.6; color: var(--text-secondary); font-size: 0.875rem;}
+.industry-benefits {display: flex; flex-direction: column; gap: 0.75rem;}
+.benefit-item {display: flex; justify-content: space-between; align-items: center; padding: 0.75rem; background-color: rgba(20, 20, 20, 0.5); border-radius: var(--radius-md); border-left: 3px solid var(--accent-green); border-right: 1px solid var(--border-color); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);}
+.benefit-label {font-size: 0.8125rem; color: var(--text-secondary); font-weight: 500;}
+.benefit-value {font-size: 0.8125rem; font-weight: 600; color: var(--text-primary);}
+
+/* ============================================ */
+/* 반응형 디자인 */
+/* ============================================ */
+@media (max-width: 768px) {
+  .modal-content {margin: 2% auto; width: 95%; padding: 1rem;}
+  .mod-grid {grid-template-columns: 1fr; gap: 1rem;}
+  .mod-card {padding: 1rem;}
+  .mod-head {flex-direction: column; align-items: flex-start; gap: 0.5rem;}
+  .performance-metrics {grid-template-columns: 1fr;}
+  .modal-footer {flex-direction: column; gap: 1rem; align-items: stretch;}
+  .emotion-overview {flex-direction: column; gap: 1rem;}
+  .emotion-stats {justify-content: center; gap: 1rem;}
+  .stat-item {min-width: 70px; padding: 0.75rem;}
+  .stat-number {font-size: 1.5rem;}
+  .emotion-dimensions {grid-template-columns: 1fr; gap: 1rem;}
+  .dimension-card {padding: 1rem;}
+  .dimension-header h4 {font-size: 1.1rem;}
+  .dimension-description {font-size: 0.85rem;}
+  .dimension-stats .stat-item {padding: 0.5rem;}
+  .emotion-tag {font-size: 0.75rem; padding: 0.4rem 0.75rem;}
+  .features-grid {grid-template-columns: 1fr; gap: 1rem;}
+  .feature-item {padding: 1rem;}
+  .emotion-summary {margin-right: 0; margin-bottom: 1rem;}
+  .industry-grid {grid-template-columns: 1fr; gap: 1.5rem;}
+  .industry-card {padding: 1.5rem;}
+  .industry-benefits {gap: 0.5rem;}
+  
+  /* 감정 분류 엔진 반응형 */
+  .engine-workflow {flex-direction: column; gap: 1rem; padding: 1.5rem;}
+  .workflow-step {min-width: auto; padding: 1.5rem;}
+  .workflow-arrow {transform: rotate(90deg);}
+  .step-icon {font-size: 2rem;}
+  .step-title {font-size: 0.9rem;}
+  .step-desc {font-size: 0.8rem;}
+  .step-code {font-size: 0.7rem; padding: 0.5rem;}
+}
+
+/* ============================================ */
+/* 문맥 및 상황 분석 모달 스타일 - 럭셔리 샌디브라운 테마 */
+/* ============================================ */
+#contextModal {background-color: rgba(0, 0, 0, 0.85);}
+#contextModal .modal-content {background-color: var(--bg-secondary); border-color: var(--border-color); backdrop-filter: blur(20px); overflow-y: auto; max-height: 90vh;}
+#contextModal .modal-header {border-bottom-color: var(--border-color);}
+#contextModal .modal-header h3 {color: var(--text-primary); font-weight: 600;}
+#contextModal .close-btn {color: var(--text-muted);}
+#contextModal .close-btn:hover {color: var(--text-primary);}
+#contextModal .context-overview {display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; margin-bottom: 2rem; padding: 1.75rem; background-color: var(--bg-tertiary); border: 1px solid var(--border-color); border-radius: var(--radius-xl); box-shadow: var(--shadow-md);}
+#contextModal .context-overview .overview-text h4 {margin: 0 0 1rem 0; font-size: 1.125rem; font-weight: 600; color: var(--text-primary); letter-spacing: -0.01em;}
+#contextModal .context-overview .overview-text p {margin: 0; line-height: 1.6; color: var(--text-secondary); font-size: 0.9375rem;}
+#contextModal .context-overview .overview-stats {display: flex; gap: 1.5rem; margin: 1rem 0;}
+#contextModal .context-overview .stat-item {text-align: center; padding: 1rem; background-color: rgba(20, 20, 20, 0.5); border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); min-width: 120px; border: 1px solid var(--border-color); transition: all var(--transition-base);}
+#contextModal .context-overview .stat-item:hover {transform: translateY(-4px); box-shadow: var(--shadow-md); border-color: var(--accent-green);}
+#contextModal .context-overview .stat-number {display: block; font-size: 1.125rem; font-weight: 700; color: var(--text-primary);}
+#contextModal .context-overview .stat-label {font-size: 0.8125rem; color: var(--text-secondary); font-weight: 500;}
+#contextModal .context-analysis-process {margin-bottom: 2rem;}
+#contextModal .context-analysis-process h4 {margin: 0 0 1.5rem 0; font-size: 1.25rem; font-weight: 600; color: #fbbf24; text-align: center; text-shadow: 0 2px 8px rgba(217, 119, 6, 0.3);}
+#contextModal .process-steps {display: flex; flex-direction: column; gap: 1.5rem;}
+#contextModal .step-item {display: flex; align-items: flex-start; gap: 1rem; padding: 1.75rem; background: linear-gradient(145deg, rgba(41, 37, 36, 0.6) 0%, rgba(28, 25, 23, 0.8) 100%); border: 1px solid rgba(217, 119, 6, 0.2); border-radius: 18px; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.05); transition: all 0.3s ease;}
+#contextModal .step-item:hover {transform: translateX(4px); border-color: rgba(217, 119, 6, 0.35); box-shadow: 0 12px 32px rgba(217, 119, 6, 0.2);}
+#contextModal .step-number {display: flex; align-items: center; justify-content: center; width: 48px; height: 48px; background: linear-gradient(135deg, rgba(217, 119, 6, 0.25) 0%, rgba(245, 158, 11, 0.2) 100%); color: #fef3c7; border-radius: 50%; font-size: 1.3rem; font-weight: 700; flex-shrink: 0; box-shadow: 0 4px 12px rgba(217, 119, 6, 0.3);}
+#contextModal .step-content {flex: 1;}
+#contextModal .step-content h5 {margin: 0 0 0.5rem 0; font-size: 1.1rem; font-weight: 600; color: #fcd9a5;}
+#contextModal .step-content p {margin: 0 0 1rem 0; font-size: 0.9rem; color: #f4d8a7; line-height: 1.6;}
+#contextModal .step-detail {display: flex; gap: 0.5rem; align-items: center; padding: 0.5rem; border-left: 3px solid rgba(217, 119, 6, 0.4); color: #fbbf24; background: rgba(217, 119, 6, 0.05); border-radius: 0 6px 6px 0;}
+#contextModal .detail-label {font-size: 0.75rem; font-weight: 500;}
+#contextModal .detail-value {font-size: 0.7rem; color: #fef3c7; font-family: 'Courier New', monospace;}
+#contextModal .code-example {background: rgba(28, 25, 23, 0.8); border: 1px solid rgba(217, 119, 6, 0.2); border-radius: 12px; padding: 1rem; font-family: 'Courier New', monospace; box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.3); margin: 0 0 .75rem 0;}
+#contextModal .code-example code {font-size: 0.8rem; color: #fcd9a5; line-height: 1.4;}
+#contextModal .context-features {margin-bottom: 2rem;}
+#contextModal .context-features h4 {margin: 0 0 1.5rem 0; font-size: 1.25rem; font-weight: 600; color: #fbbf24; text-align: center; text-shadow: 0 2px 8px rgba(217, 119, 6, 0.3);}
+#contextModal .context-features .features-grid {display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;}
+#contextModal .context-features .feature-item {text-align: center; padding: 2rem; background: linear-gradient(145deg, rgba(41, 37, 36, 0.6) 0%, rgba(28, 25, 23, 0.8) 100%); border: 1px solid rgba(217, 119, 6, 0.2); border-radius: 18px; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.05); transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);}
+#contextModal .context-features .feature-item:hover {transform: translateY(-6px); border-color: rgba(217, 119, 6, 0.4); box-shadow: 0 16px 40px rgba(217, 119, 6, 0.25);}
+#contextModal .context-features .feature-icon {font-size: 2.5rem; margin-bottom: 1rem; color: #fbbf24; filter: drop-shadow(0 4px 8px rgba(217, 119, 6, 0.3));}
+#contextModal .context-features .feature-icon .material-icons {font-size: 2.5rem; color: #fbbf24;}
+#contextModal .context-features .feature-item h5 {margin: 0 0 0.5rem 0; font-size: 1rem; font-weight: 600; color: #fcd9a5;}
+#contextModal .context-features .feature-item p {margin: 0; font-size: 0.85rem; line-height: 1.6; color: #f4d8a7;}
+#contextModal .context-features .feature-tech {display: flex; flex-direction: column; gap: 0.25rem; align-items: center; padding: 0.5rem; border-left: 3px solid rgba(217, 119, 6, 0.4); color: #fbbf24; background: rgba(217, 119, 6, 0.05); border-radius: 0 6px 6px 0; margin-top: 0.5rem; word-break: break-all;}
+#contextModal .context-features .tech-label {font-size: 0.75rem; font-weight: 500;}
+#contextModal .context-features .tech-value {font-size: 0.7rem; color: #fef3c7; font-family: 'Courier New', monospace;}
+#contextModal .matching-levels {margin-bottom: 2rem;}
+#contextModal .matching-levels h4 {margin: 0 0 1.5rem 0; font-size: 1.25rem; font-weight: 600; color: #fbbf24; text-align: center; text-shadow: 0 2px 8px rgba(217, 119, 6, 0.3);}
+#contextModal .levels-grid {display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;}
+#contextModal .level-item {display: flex; align-items: center; gap: 1rem; padding: 1.25rem; background: linear-gradient(145deg, rgba(41, 37, 36, 0.6) 0%, rgba(28, 25, 23, 0.8) 100%); border: 1px solid rgba(217, 119, 6, 0.2); border-radius: 14px; box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.05); transition: all 0.3s ease;}
+#contextModal .level-item:hover {transform: translateY(-2px); border-color: rgba(217, 119, 6, 0.35); box-shadow: 0 8px 24px rgba(217, 119, 6, 0.2);}
+#contextModal .level-badge {display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; background: linear-gradient(135deg, rgba(217, 119, 6, 0.25) 0%, rgba(245, 158, 11, 0.2) 100%); color: #fef3c7; border-radius: 12px; font-size: 0.95rem; font-weight: 700; flex-shrink: 0; box-shadow: 0 4px 12px rgba(217, 119, 6, 0.3);}
+#contextModal .level-content {flex: 1;}
+#contextModal .level-content h5 {margin: 0 0 0.25rem 0; font-size: 0.95rem; font-weight: 600; color: #fcd9a5;}
+#contextModal .level-content p {margin: 0 0 0.25rem 0; font-size: 0.85rem; color: #f4d8a7;}
+#contextModal .confidence {font-size: 0.75rem; color: #fbbf24; font-weight: 500;}
+#contextModal .economic-note {margin-top: 1.5rem; padding: 1rem; background: rgba(217, 119, 6, 0.05); border-left: 4px solid rgba(217, 119, 6, 0.3); border-radius: 8px;}
+#contextModal .economic-note p {margin: 0; font-size: 0.8rem; line-height: 1.6; color: #f4d8a7;}
+#contextModal .economic-note strong {color: #fbbf24; font-weight: 600;}
+#contextModal .context-examples {margin-bottom: 2rem;}
+#contextModal .context-examples h4 {margin: 0 0 1.5rem 0; font-size: 1.25rem; font-weight: 600; color: #fbbf24; text-align: center; text-shadow: 0 2px 8px rgba(217, 119, 6, 0.3);}
+#contextModal .example-cards {display: flex; flex-direction: column; gap: 1.5rem;}
+#contextModal .example-card {padding: 2rem; background: linear-gradient(145deg, rgba(41, 37, 36, 0.6) 0%, rgba(28, 25, 23, 0.8) 100%); border: 1px solid rgba(217, 119, 6, 0.2); border-radius: 18px; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.05); transition: all 0.3s ease;}
+#contextModal .example-card:hover {transform: translateY(-4px); border-color: rgba(217, 119, 6, 0.35); box-shadow: 0 12px 32px rgba(217, 119, 6, 0.2);}
+#contextModal .example-text {margin: 0 0 1rem 0; padding: 1.25rem; background: rgba(28, 25, 23, 0.8); border-radius: 12px; font-style: italic; color: #fcd9a5; border-left: 4px solid rgba(217, 119, 6, 0.5); box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.3);}
+#contextModal .analysis-result {display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 0.75rem;}
+#contextModal .analysis-item {display: flex; justify-content: space-between; align-items: center; padding: 0.75rem; background: linear-gradient(135deg, rgba(217, 119, 6, 0.1) 0%, rgba(245, 158, 11, 0.08) 100%); border-radius: 10px; border: 1px solid rgba(217, 119, 6, 0.2);}
+#contextModal .analysis-item .label {font-size: 0.85rem; font-weight: 600; color: #fbbf24;}
+#contextModal .analysis-item .value {font-size: 0.85rem; color: #fef3c7; font-weight: 500;}
+
+/* ============================================ */
+/* 복합 감정 및 강도 분석 모달 스타일 - 다크 틸 그린 테마 */
+/* ============================================ */
+#complexModal {background-color: rgba(0, 0, 0, 0.85);}
+#complexModal .modal-content {max-width: 1400px; background-color: var(--bg-secondary); border-color: var(--border-color); backdrop-filter: blur(20px); overflow-y: auto; max-height: 90vh;}
+#complexModal .modal-header {border-bottom-color: var(--border-color);}
+#complexModal .modal-header h3 {color: var(--text-primary); font-weight: 600;}
+#complexModal .close-btn {color: var(--text-muted);}
+#complexModal .close-btn:hover {color: var(--text-primary);}
+#complexModal .complex-modal-content {max-width: 1400px; background-color: var(--bg-secondary);}
+#complexModal .code-example {background-color: var(--bg-primary); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 1rem; font-family: 'Courier New', monospace; box-shadow: var(--shadow-sm);}
+#complexModal .code-example code {font-size: 0.75rem; color: var(--text-primary); line-height: 1.4;}
+
+/* 히어로 섹션 */
+#complexModal .complex-hero {display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 3rem; padding: 2rem; background-color: var(--bg-tertiary); border-radius: var(--radius-xl); border: 1px solid var(--border-color); box-shadow: var(--shadow-md);}
+#complexModal .hero-visual {display: flex; align-items: center; justify-content: center;}
+#complexModal .emotion-spectrum {width: 100%; max-width: 400px;}
+#complexModal .spectrum-bar {display: flex; height: 60px; border-radius: 30px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.3); position: relative;}
+#complexModal .spectrum-segment {display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; transition: all 0.3s ease;}
+#complexModal .spectrum-segment.low {background: linear-gradient(135deg, #10b981, #059669);}
+#complexModal .spectrum-segment.medium {background: linear-gradient(135deg, #f59e0b, #d97706);}
+#complexModal .spectrum-segment.high {background: linear-gradient(135deg, #ef4444, #dc2626);}
+#complexModal .segment-label {font-size: 0.8rem; font-weight: 700; color: #fff; text-shadow: 0 1px 2px rgba(0,0,0,0.5);}
+#complexModal .segment-range {font-size: 0.7rem; color: #fff; opacity: 0.9; text-shadow: 0 1px 2px rgba(0,0,0,0.5);}
+#complexModal .spectrum-indicator {text-align: center; margin-top: 1rem;}
+#complexModal .intensity-needle {width: 4px; height: 20px; background: #fff; margin: 0 auto 0.5rem; border-radius: 2px; box-shadow: 0 2px 4px rgba(0,0,0,0.3); animation: pulse 2s infinite;}
+#complexModal .current-intensity {font-size: 0.9rem; color: #e0f2fe; font-weight: 600;}
+@keyframes pulse {0%, 100% {opacity: 1;} 50% {opacity: 0.7;}}
+
+#complexModal .hero-content h4 {margin: 0 0 1rem 0; font-size: 1.25rem; font-weight: 700; color: var(--text-primary); line-height: 1.3;}
+#complexModal .hero-content p {margin: 0 0 2rem 0; font-size: 0.9375rem; line-height: 1.6; color: var(--text-secondary);}
+#complexModal .hero-stats {display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;}
+#complexModal .stat-box {text-align: center; padding: 1.5rem; background-color: rgba(20, 20, 20, 0.5); border-radius: var(--radius-lg); border: 1px solid var(--border-color); backdrop-filter: blur(10px);}
+#complexModal .stat-number {display: block; font-size: 1.5rem; font-weight: 700; color: var(--accent-green); margin-bottom: 0.5rem;}
+#complexModal .stat-label {font-size: 0.75rem; color: var(--text-secondary); font-weight: 500;}
+
+/* 강도 분석 시각화 */
+#complexModal .intensity-visualization {margin-bottom: 3rem;}
+#complexModal .intensity-visualization h4 {margin: 0 0 2rem 0; font-size: 1.25rem; font-weight: 700; color: var(--text-primary); text-align: center;}
+#complexModal .visualization-grid {display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;}
+#complexModal .intensity-chart {background-color: var(--bg-tertiary); border-radius: var(--radius-xl); padding: 1.5rem; border: 1px solid var(--border-color); backdrop-filter: blur(10px);}
+#complexModal .chart-header {display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;}
+#complexModal .chart-header h5 {margin: 0; font-size: 1rem; font-weight: 600; color: var(--text-primary);}
+#complexModal .chart-controls {display: flex; gap: 0.5rem;}
+#complexModal .chart-btn {padding: 0.5rem 1rem; background-color: transparent; border: 1px solid var(--border-color); border-radius: var(--radius-md); color: var(--text-secondary); font-size: 0.75rem; cursor: pointer; transition: all var(--transition-base);}
+#complexModal .chart-btn.active {background-color: rgba(16, 185, 129, 0.2); border-color: var(--accent-green); color: var(--accent-green);}
+#complexModal .chart-btn:hover {border-color: var(--accent-green); color: var(--accent-green);}
+#complexModal .chart-bars {display: flex; flex-direction: column; gap: 1rem;}
+#complexModal .bar-group {display: flex; align-items: center; gap: 1rem;}
+#complexModal .bar-label {min-width: 80px; font-size: 0.8125rem; color: var(--text-secondary); font-weight: 500;}
+#complexModal .bar-container {flex: 1; display: flex; align-items: center; gap: 1rem;}
+#complexModal .bar-fill {height: 20px; border-radius: 10px; transition: width 0.8s ease; position: relative;}
+#complexModal .bar-fill.joy {background: linear-gradient(90deg, #10b981, #059669);}
+#complexModal .bar-fill.anger {background: linear-gradient(90deg, #ef4444, #dc2626);}
+#complexModal .bar-fill.sadness {background: linear-gradient(90deg, #6366f1, #4f46e5);}
+#complexModal .bar-fill.pleasure {background: linear-gradient(90deg, #f59e0b, #d97706);}
+#complexModal .bar-value {font-size: 0.75rem; color: var(--text-primary); font-weight: 600; min-width: 50px; text-align: right;}
+
+/* 강도 분석 개요 스타일 */
+#complexModal .intensity-analysis-overview {background-color: var(--bg-tertiary); border-radius: var(--radius-xl); padding: 1.5rem; border: 1px solid var(--border-color); backdrop-filter: blur(10px);}
+#complexModal .analysis-header {margin-bottom: 1.5rem;}
+#complexModal .analysis-header h5 {margin: 0; font-size: 1rem; font-weight: 600; color: var(--text-primary);}
+#complexModal .analysis-features {display: flex; flex-direction: column; gap: 1rem;}
+#complexModal .analysis-features .feature-item {display: flex; align-items: flex-start; gap: 1rem; padding: 1rem; background-color: rgba(20, 20, 20, 0.5); border-radius: var(--radius-md); border: 1px solid var(--border-color); transition: all var(--transition-base);}
+#complexModal .analysis-features .feature-item:hover {background-color: rgba(20, 20, 20, 0.7); transform: translateX(4px); border-color: var(--accent-green);}
+#complexModal .analysis-features .feature-icon {font-size: 1.5rem; flex-shrink: 0;}
+#complexModal .analysis-features .feature-icon .material-icons {font-size: 1.5rem; color: var(--accent-green);}
+#complexModal .analysis-features .feature-content {flex: 1;}
+#complexModal .analysis-features .feature-content h6 {margin: 0 0 0.5rem 0; font-size: 0.875rem; font-weight: 700; color: var(--accent-green);}
+#complexModal .analysis-features .feature-content p {margin: 0; font-size: 0.8125rem; color: var(--text-secondary); line-height: 1.5;}
+
+/* 복합 감정 탐지 엔진 */
+#complexModal .complex-detection-engine {margin-bottom: 3rem;}
+#complexModal .complex-detection-engine h4 {margin: 0 0 2rem 0; font-size: 1.5rem; font-weight: 700; color: #e0f2fe; text-align: center;}
+#complexModal .engine-workflow {display: flex; align-items: center; justify-content: center; gap: 1rem; padding: 2rem; background: rgba(20, 184, 166, 0.06); border-radius: 1rem; border: 1px solid rgba(20, 184, 166, 0.2); backdrop-filter: blur(10px);}
+#complexModal .workflow-step {text-align: center; padding: 1.5rem; background: rgba(20, 184, 166, 0.08); border-radius: 1rem; border: 1px solid rgba(20, 184, 166, 0.25); min-width: 150px; transition: all 0.3s ease;}
+#complexModal .workflow-step:hover {transform: translateY(-4px); background: rgba(20, 184, 166, 0.12); border-color: rgba(20, 184, 166, 0.4);}
+#complexModal .step-icon {font-size: 2rem; margin-bottom: 0.5rem;}
+#complexModal .step-title {font-size: 0.9rem; font-weight: 600; color: #ccfbf1; margin-bottom: 0.5rem;}
+#complexModal .step-desc {font-size: 0.8rem; color: #94dcc6; margin-bottom: 1rem; line-height: 1.4;}
+#complexModal .step-code {font-size: 0.7rem; color: #5eead4; font-family: 'Courier New', monospace; background: rgba(20, 184, 166, 0.15); padding: 0.5rem; border-radius: 0.25rem; border: 1px solid rgba(20, 184, 166, 0.3); word-break: break-all;}
+#complexModal .workflow-arrow {font-size: 1.5rem; color: #5eead4; font-weight: bold;}
+
+/* 강도 레벨 상세 분석 */
+#complexModal .intensity-level-analysis {margin-bottom: 3rem;}
+#complexModal .intensity-level-analysis h4 {margin: 0 0 2rem 0; font-size: 1.5rem; font-weight: 700; color: #e0f2fe; text-align: center;}
+#complexModal .level-analysis-grid {display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;}
+#complexModal .level-analysis-card {background: rgba(20, 184, 166, 0.06); border-radius: 1rem; padding: 1.5rem; border: 1px solid rgba(20, 184, 166, 0.2); backdrop-filter: blur(10px); transition: all 0.3s ease;}
+#complexModal .level-analysis-card:hover {transform: translateY(-4px); background: rgba(20, 184, 166, 0.1); border-color: rgba(20, 184, 166, 0.3);}
+#complexModal .level-analysis-card.low-level {border-left: 4px solid #5eead4;}
+#complexModal .level-analysis-card.medium-level {border-left: 4px solid #fbbf24;}
+#complexModal .level-analysis-card.high-level {border-left: 4px solid #ef4444;}
+#complexModal .level-header {display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;}
+#complexModal .level-icon {font-size: 2rem;}
+#complexModal .level-info h5 {margin: 0; font-size: 1.1rem; font-weight: 600; color: #ccfbf1;}
+#complexModal .level-range {font-size: 0.8rem; color: #94dcc6;}
+#complexModal .level-characteristics {display: flex; flex-direction: column; gap: 1rem; margin-bottom: 1.5rem;}
+#complexModal .characteristic-item {display: flex; align-items: flex-start; gap: 0.75rem;}
+#complexModal .char-icon {font-size: 1.2rem; margin-top: 0.25rem;}
+#complexModal .char-content {flex: 1;}
+#complexModal .char-title {font-size: 0.9rem; font-weight: 600; color: #5eead4; margin-bottom: 0.25rem;}
+#complexModal .char-desc {font-size: 0.8rem; color: #cbd5e1; line-height: 1.4;}
+#complexModal .level-examples {display: flex; flex-direction: column; gap: 0.5rem;}
+#complexModal .example-tag {font-size: 0.8rem; color: #e0f2fe; background: rgba(20, 184, 166, 0.1); padding: 0.5rem; border-radius: 0.5rem; border: 1px solid rgba(20, 184, 166, 0.2); text-align: center;}
+
+/* 실시간 분석 데모 */
+#complexModal .live-analysis-demo {margin-bottom: 3rem;}
+#complexModal .live-analysis-demo h4 {margin: 0 0 2rem 0; font-size: 1.5rem; font-weight: 700; color: #e0f2fe; text-align: center;}
+#complexModal .demo-container {display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;}
+#complexModal .demo-input {background: rgba(20, 184, 166, 0.06); border-radius: 1rem; padding: 1.5rem; border: 1px solid rgba(20, 184, 166, 0.2); backdrop-filter: blur(10px);}
+#complexModal .input-header {display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;}
+#complexModal .input-header h5 {margin: 0; font-size: 1.1rem; font-weight: 600; color: #ccfbf1;}
+#complexModal .analyze-btn {padding: 0.5rem 1rem; background: rgba(20, 184, 166, 0.3); border: none; border-radius: 0.5rem; color: #e0f2fe; font-size: 0.8rem; font-weight: 600; cursor: pointer; transition: all 0.3s ease;}
+#complexModal .analyze-btn:hover {background: rgba(20, 184, 166, 0.4); transform: translateY(-1px);}
+#complexModal .demo-textarea {width: 100%; height: 120px; background: rgba(15, 31, 28, 0.6); border: 1px solid rgba(20, 184, 166, 0.3); border-radius: 0.5rem; padding: 1rem; color: #e0f2fe; font-size: 0.9rem; resize: none; outline: none;}
+#complexModal .demo-textarea::placeholder {color: #94dcc6;}
+
+#complexModal .demo-output {background: rgba(20, 184, 166, 0.06); border-radius: 1rem; padding: 1.5rem; border: 1px solid rgba(20, 184, 166, 0.2); backdrop-filter: blur(10px);}
+#complexModal .output-header {display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;}
+#complexModal .output-header h5 {margin: 0; font-size: 1.1rem; font-weight: 600; color: #ccfbf1;}
+#complexModal .confidence-score {font-size: 0.8rem; color: #5eead4; font-weight: 600; background: rgba(20, 184, 166, 0.15); padding: 0.5rem 1rem; border-radius: 0.5rem; border: 1px solid rgba(20, 184, 166, 0.3);}
+#complexModal .analysis-result {display: flex; flex-direction: column; gap: 1rem;}
+#complexModal .primary-emotion, #complexModal .secondary-emotion, #complexModal .complexity-score {background: rgba(20, 184, 166, 0.08); border-radius: 0.75rem; padding: 1rem; border: 1px solid rgba(20, 184, 166, 0.2);}
+#complexModal .emotion-label, #complexModal .score-label {font-size: 0.8rem; color: #94dcc6; margin-bottom: 0.5rem;}
+#complexModal .emotion-value, #complexModal .score-value {font-size: 1.1rem; font-weight: 700; color: #ccfbf1; margin-bottom: 0.25rem;}
+#complexModal .emotion-intensity, #complexModal .score-desc {font-size: 0.8rem; color: #cbd5e1;}
+
+/* 강도 분석 알고리즘 */
+#complexModal .intensity-algorithm {margin-bottom: 3rem;}
+#complexModal .intensity-algorithm h4 {margin: 0 0 2rem 0; font-size: 1.5rem; font-weight: 700; color: #e0f2fe; text-align: center;}
+#complexModal .algorithm-details {display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem;}
+#complexModal .algorithm-section {background: rgba(20, 184, 166, 0.06); border-radius: 1rem; padding: 1.5rem; border: 1px solid rgba(20, 184, 166, 0.2); backdrop-filter: blur(10px); transition: all 0.3s ease;}
+#complexModal .algorithm-section:hover {transform: translateY(-2px); background: rgba(20, 184, 166, 0.1); border-color: rgba(20, 184, 166, 0.3);}
+#complexModal .algorithm-section h5 {margin: 0 0 1rem 0; font-size: 1.1rem; font-weight: 600; color: #ccfbf1;}
+#complexModal .formula-box {background: rgba(15, 31, 28, 0.6); border-radius: 0.75rem; padding: 1.25rem; border: 1px solid rgba(20, 184, 166, 0.2); box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.3);}
+#complexModal .formula {font-size: 1.1rem; font-weight: 700; color: #5eead4; text-align: center; margin-bottom: 1rem; font-family: 'Courier New', monospace;}
+#complexModal .formula-explanation {display: flex; flex-direction: column; gap: 0.5rem;}
+#complexModal .formula-explanation p {margin: 0; font-size: 0.85rem; color: #cbd5e1; line-height: 1.5;}
+#complexModal .formula-explanation strong {color: #5eead4; font-weight: 600;}
+#complexModal .threshold-table {display: flex; flex-direction: column; gap: 0.75rem;}
+#complexModal .threshold-row {display: flex; align-items: center; gap: 1rem; padding: 1rem; background: rgba(20, 184, 166, 0.08); border-radius: 0.75rem; border: 1px solid rgba(20, 184, 166, 0.2); transition: all 0.3s ease;}
+#complexModal .threshold-row:hover {background: rgba(20, 184, 166, 0.12); border-color: rgba(20, 184, 166, 0.3);}
+#complexModal .threshold-level {font-size: 0.9rem; font-weight: 700; color: #5eead4; min-width: 80px;}
+#complexModal .threshold-range {font-size: 0.85rem; color: #ccfbf1; font-weight: 500; min-width: 100px;}
+#complexModal .threshold-formula {font-size: 0.8rem; color: #94dcc6; font-family: 'Courier New', monospace; flex: 1;}
+#complexModal .level-tech {margin-bottom: 1rem; padding: 0.75rem; border-left: 3px solid rgba(20, 184, 166, 0.4); background: rgba(20, 184, 166, 0.05); border-radius: 0 6px 6px 0;}
+#complexModal .level-tech .tech-item {display: flex; justify-content: space-between; margin-bottom: 0.5rem; font-size: 0.85em; padding: 0.25rem 0;}
+#complexModal .level-tech .tech-item:last-child {margin-bottom: 0;}
+#complexModal .level-tech .tech-label {font-weight: 500; color: #94dcc6;}
+#complexModal .level-tech .tech-value {color: #e0f2fe; font-family: 'Courier New', monospace; background: rgba(20, 184, 166, 0.1); padding: 0.125rem 0.5rem; border-radius: 4px;}
+
+/* 복합 감정 구성 요건 */
+#complexModal .complex-emotion-criteria {margin-bottom: 3rem;}
+#complexModal .complex-emotion-criteria h4 {margin: 0 0 2rem 0; font-size: 1.5rem; font-weight: 700; color: #e0f2fe; text-align: center;}
+#complexModal .criteria-content {display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;}
+#complexModal .criteria-item {background: rgba(20, 184, 166, 0.06); border-radius: 1rem; padding: 1.5rem; border: 1px solid rgba(20, 184, 166, 0.2); backdrop-filter: blur(10px); transition: all 0.3s ease;}
+#complexModal .criteria-item:hover {transform: translateY(-2px); background: rgba(20, 184, 166, 0.1); border-color: rgba(20, 184, 166, 0.3);}
+#complexModal .criteria-item h5 {margin: 0 0 0.75rem 0; font-size: 1rem; font-weight: 600; color: #ccfbf1;}
+#complexModal .criteria-item p {margin: 0 0 1rem 0; font-size: 0.85rem; color: #cbd5e1; line-height: 1.5;}
+#complexModal .criteria-formula {background: rgba(15, 31, 28, 0.6); border-radius: 0.5rem; padding: 0.75rem; border: 1px solid rgba(20, 184, 166, 0.2);}
+#complexModal .criteria-formula code {font-size: 0.75rem; color: #5eead4; font-family: 'Courier New', monospace;}
+
+/* 전이 분석 */
+#complexModal .transition-analysis {background: rgba(20, 184, 166, 0.08); border-radius: 0.75rem; padding: 1rem; border: 1px solid rgba(20, 184, 166, 0.2);}
+#complexModal .transition-label {font-size: 0.8rem; color: #94dcc6; margin-bottom: 0.5rem;}
+#complexModal .transition-value {font-size: 1rem; font-weight: 700; color: #ccfbf1; margin-bottom: 0.25rem;}
+#complexModal .transition-desc {font-size: 0.8rem; color: #cbd5e1;}
+
+/* 추가 분석 */
+#complexModal .additional-analysis {margin-top: 1.5rem; padding: 1.5rem; background: rgba(20, 184, 166, 0.06); border-radius: 1rem; border: 1px solid rgba(20, 184, 166, 0.2); backdrop-filter: blur(10px);}
+#complexModal .additional-analysis h5 {margin: 0 0 1rem 0; font-size: 1.1rem; font-weight: 600; color: #ccfbf1;}
+#complexModal .analysis-details {display: flex; flex-direction: column; gap: 0.75rem;}
+#complexModal .detail-row {display: flex; justify-content: space-between; align-items: center; padding: 0.75rem; background: rgba(20, 184, 166, 0.08); border-radius: 0.5rem; border: 1px solid rgba(20, 184, 166, 0.2);}
+#complexModal .detail-label {font-size: 0.85rem; color: #94dcc6; font-weight: 500;}
+#complexModal .detail-value {font-size: 0.85rem; color: #e0f2fe; font-weight: 500;}
+
+/* 데모 입력 중앙 */
+#complexModal .demo-input-center {background: rgba(20, 184, 166, 0.06); border-radius: 1rem; padding: 1.5rem; border: 1px solid rgba(20, 184, 166, 0.2); backdrop-filter: blur(10px);}
+#complexModal .demo-tags {display: flex; gap: 0.5rem;}
+#complexModal .tag {padding: 0.25rem 0.75rem; background: rgba(20, 184, 166, 0.15); border: 1px solid rgba(20, 184, 166, 0.3); border-radius: 0.5rem; font-size: 0.75rem; color: #5eead4; font-weight: 500;}
+
+/* 기술 사양 */
+#complexModal .complex-tech-specs {margin-bottom: 2rem;}
+#complexModal .complex-tech-specs h4 {margin: 0 0 2rem 0; font-size: 1.5rem; font-weight: 700; color: #e0f2fe; text-align: center;}
+#complexModal .specs-dashboard {display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;}
+#complexModal .spec-card {background: rgba(20, 184, 166, 0.06); border-radius: 1rem; padding: 1.5rem; border: 1px solid rgba(20, 184, 166, 0.2); backdrop-filter: blur(10px); transition: all 0.3s ease;}
+#complexModal .spec-card:hover {transform: translateY(-2px); background: rgba(20, 184, 166, 0.1); border-color: rgba(20, 184, 166, 0.3);}
+#complexModal .spec-header {display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.5rem;}
+#complexModal .spec-icon {font-size: 1.5rem;}
+#complexModal .spec-header h5 {margin: 0; font-size: 1.1rem; font-weight: 600; color: #ccfbf1;}
+#complexModal .spec-metrics {display: flex; flex-direction: column; gap: 1rem;}
+#complexModal .metric-row {display: flex; align-items: center; gap: 1rem;}
+#complexModal .metric-name {font-size: 0.8rem; color: #94dcc6; min-width: 80px;}
+#complexModal .metric-bar {flex: 1; height: 8px; background: rgba(20, 184, 166, 0.15); border-radius: 4px; overflow: hidden;}
+#complexModal .metric-fill {height: 100%; background: linear-gradient(90deg, #14b8a6, #5eead4); border-radius: 4px; transition: width 0.8s ease;}
+#complexModal .metric-value {font-size: 0.8rem; color: #e0f2fe; font-weight: 600; min-width: 60px; text-align: right;}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  #contextModal .context-overview {flex-direction: column; gap: 1rem;}
+  #contextModal .context-overview .overview-stats {justify-content: center; gap: 1rem;}
+  #contextModal .context-overview .stat-item {min-width: 70px; padding: 0.75rem;}
+  #contextModal .context-overview .stat-number {font-size: 1.5rem;}
+  .process-steps {gap: 1rem;}
+  .step-item {padding: 1rem;}
+  .step-number {width: 35px; height: 35px; font-size: 1rem;}
+  .step-content h5 {font-size: 1rem;}
+  .step-content p {font-size: 0.85rem;}
+  .code-example {padding: 0.5rem;}
+  .code-example code {font-size: 0.75rem;}
+  .context-features .features-grid {grid-template-columns: 1fr; gap: 1rem;}
+  .context-features .feature-item {padding: 1rem;}
+  .levels-grid {grid-template-columns: 1fr; gap: 0.75rem;}
+  .level-item {padding: 0.75rem;}
+  .level-badge {width: 35px; height: 35px; font-size: 0.8rem;}
+  .example-cards {gap: 1rem;}
+  .example-card {padding: 1rem;}
+  .analysis-result {grid-template-columns: 1fr; gap: 0.5rem;}
+  .emotion-data-structure .json-structure {padding: 1rem;}
+  .emotion-data-structure .json-content {font-size: 0.75rem;}
+  .emotion-analysis-process .process-steps {gap: 1rem;}
+  .emotion-analysis-process .step-item {padding: 1rem;}
+  .emotion-analysis-process .step-number {width: 35px; height: 35px; font-size: 1rem;}
+  .emotion-analysis-process .step-content h5 {font-size: 1rem;}
+  .emotion-analysis-process .step-content p {font-size: 0.85rem;}
+  .emotion-analysis-process .code-example {padding: 0.5rem;}
+  .emotion-analysis-process .code-example code {font-size: 0.75rem;}
+  .dimensions-grid {grid-template-columns: 1fr; gap: 1rem;}
+  .dimension-stats {gap: 0.25rem;}
+  .dimension-stats .stat-item {padding: 0.25rem;}
+  .emotion-analysis-features .features-grid {grid-template-columns: 1fr; gap: 1rem;}
+  .emotion-analysis-features .feature-item {padding: 1rem;}
+  
+  /* 복합 감정 모달 반응형 */
+  .complex-hero {grid-template-columns: 1fr; gap: 1.5rem; padding: 1.5rem;}
+  .hero-visual {order: 2;}
+  .hero-content {order: 1;}
+  .hero-content h4 {font-size: 1.3rem;}
+  .hero-stats {grid-template-columns: repeat(3, 1fr); gap: 0.75rem;}
+  .stat-box {padding: 1rem;}
+  .stat-number {font-size: 1.5rem;}
+  .stat-label {font-size: 0.75rem;}
+  
+  .visualization-grid {grid-template-columns: 1fr; gap: 1.5rem;}
+  .intensity-chart {padding: 1rem;}
+  .chart-header {flex-direction: column; gap: 1rem; align-items: flex-start;}
+  .bar-group {flex-direction: column; gap: 0.5rem; align-items: flex-start;}
+  .bar-label {min-width: auto;}
+  .bar-container {width: 100%;}
+  
+  .intensity-analysis-overview {padding: 1rem;}
+  .analysis-features .feature-item {flex-direction: column; text-align: center;}
+  .analysis-features .feature-icon {font-size: 1.5rem;}
+  
+  .engine-workflow {flex-direction: column; gap: 1rem; padding: 1rem;}
+  .workflow-step {min-width: auto; padding: 1rem;}
+  .workflow-arrow {transform: rotate(90deg);}
+  
+  .level-analysis-grid {grid-template-columns: 1fr; gap: 1rem;}
+  .level-analysis-card {padding: 1rem;}
+  .level-header {flex-direction: column; gap: 0.5rem; text-align: center;}
+  .level-characteristics {gap: 0.75rem;}
+  .characteristic-item {flex-direction: column; gap: 0.5rem; text-align: center;}
+  
+  .demo-container {grid-template-columns: 1fr; gap: 1.5rem;}
+  .demo-input {padding: 1rem;}
+  .demo-output {padding: 1rem;}
+  .demo-textarea {height: 100px;}
+  
+  .specs-dashboard {grid-template-columns: 1fr; gap: 1rem;}
+  .spec-card {padding: 1rem;}
+  .metric-row {flex-direction: column; gap: 0.5rem; align-items: flex-start;}
+  .metric-name {min-width: auto;}
+  .metric-bar {width: 100%;}
+  .metric-value {min-width: auto; text-align: left;}
+  
+  /* 강도 분석 알고리즘 반응형 */
+  #complexModal .algorithm-details {grid-template-columns: 1fr; gap: 1rem;}
+  #complexModal .algorithm-section {padding: 1rem;}
+  #complexModal .threshold-row {flex-direction: column; gap: 0.5rem; align-items: flex-start;}
+  #complexModal .threshold-level {min-width: auto;}
+  #complexModal .threshold-range {min-width: auto;}
+  #complexModal .threshold-formula {flex: none;}
+  
+  /* 복합 감정 구성 요건 반응형 */
+  #complexModal .criteria-content {grid-template-columns: 1fr; gap: 1rem;}
+  #complexModal .criteria-item {padding: 1rem;}
+  
+  /* 추가 분석 반응형 */
+  #complexModal .detail-row {flex-direction: column; gap: 0.5rem; align-items: flex-start;}
+}
+
+/* ============================================ */
+/* 시간 시퀀스 및 전이 패턴 분석 모달 스타일 - 다크 블루 테마 */
+/* ============================================ */
+#timeseriesModal {background-color: rgba(0, 0, 0, 0.85);}
+#timeseriesModal .modal-content {background-color: var(--bg-secondary); border-color: var(--border-color); backdrop-filter: blur(20px); overflow-y: auto; max-height: 90vh;}
+#timeseriesModal .modal-header {border-bottom-color: var(--border-color);}
+#timeseriesModal .modal-header h3 {color: var(--text-primary); font-weight: 600;}
+#timeseriesModal .close-btn {color: var(--text-muted);}
+#timeseriesModal .close-btn:hover {color: var(--text-primary);}
+#timeseriesModal .code-example {background-color: var(--bg-primary); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 1rem; font-family: 'Courier New', monospace; box-shadow: var(--shadow-sm);}
+#timeseriesModal .code-example code {font-size: 0.75rem; color: var(--text-primary); line-height: 1.4;}
+
+/* 개요 섹션 */
+#timeseriesModal .timeseries-overview {display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; margin-bottom: 2rem; padding: 1.75rem; background-color: var(--bg-tertiary); border: 1px solid var(--border-color); border-radius: var(--radius-xl); box-shadow: var(--shadow-md);}
+#timeseriesModal .timeseries-overview .overview-text h4 {margin: 0 0 1rem 0; font-size: 1.125rem; font-weight: 600; color: var(--text-primary); letter-spacing: -0.01em;}
+#timeseriesModal .timeseries-overview .overview-text p {margin: 0; line-height: 1.6; color: var(--text-secondary); font-size: 0.9375rem;}
+#timeseriesModal .timeseries-overview .overview-stats {display: flex; gap: 1.5rem; margin: 1rem 0;}
+#timeseriesModal .timeseries-overview .stat-item {text-align: center; padding: 1rem; background-color: rgba(20, 20, 20, 0.5); border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); min-width: 120px; border: 1px solid var(--border-color); transition: all var(--transition-base);}
+#timeseriesModal .timeseries-overview .stat-item:hover {transform: translateY(-4px); box-shadow: var(--shadow-md); border-color: var(--accent-green);}
+#timeseriesModal .timeseries-overview .stat-number {display: block; font-size: 1.125rem; font-weight: 700; color: var(--text-primary);}
+#timeseriesModal .timeseries-overview .stat-label {font-size: 0.8125rem; color: var(--text-secondary); font-weight: 500;}
+
+/* 핵심 기능 */
+.timeseries-features {margin-bottom: 2rem;}
+.timeseries-features h4 {margin: 0 0 1.5rem 0; font-size: 1.125rem; font-weight: 600; color: var(--text-primary); text-align: center;}
+.timeseries-features .features-grid {display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;}
+.timeseries-features .feature-item {text-align: center; padding: 1.75rem; background-color: var(--bg-tertiary); border: 1px solid var(--border-color); border-radius: var(--radius-xl); box-shadow: var(--shadow-md); transition: all var(--transition-base);}
+.timeseries-features .feature-item:hover {transform: translateY(-4px); border-color: var(--accent-green); box-shadow: var(--shadow-lg);}
+.timeseries-features .feature-icon {font-size: 2rem; margin-bottom: 1rem; color: var(--accent-green);}
+.timeseries-features .feature-icon .material-icons {font-size: 2rem; color: var(--accent-green);}
+.timeseries-features .feature-item h5 {margin: 0 0 0.5rem 0; font-size: 0.9375rem; font-weight: 600; color: var(--text-primary);}
+.timeseries-features .feature-item p {margin: 0 0 1rem 0; font-size: 0.8125rem; line-height: 1.6; color: var(--text-secondary);}
+.timeseries-features .feature-tech {display: flex; flex-direction: column; gap: 0.25rem; align-items: center; padding: 0.5rem; border-left: 3px solid var(--accent-green); color: var(--accent-green); background-color: rgba(16, 185, 129, 0.1); border-radius: 0 var(--radius-md) var(--radius-md) 0;}
+.timeseries-features .tech-label {font-size: 0.75rem; font-weight: 500;}
+.timeseries-features .tech-value {font-size: 0.7rem; color: var(--text-primary); font-family: 'Courier New', monospace;}
+
+/* 전이 분석 프로세스 */
+.transition-process {margin-bottom: 2rem;}
+.transition-process h4 {margin: 0 0 1.5rem 0; font-size: 1.125rem; font-weight: 600; color: var(--text-primary); text-align: center;}
+.process-flow {display: flex; align-items: center; justify-content: center; gap: 1rem; padding: 2rem; background-color: var(--bg-tertiary); border-radius: var(--radius-xl); border: 1px solid var(--border-color); backdrop-filter: blur(10px);}
+.flow-step {text-align: center; padding: 1.5rem; background-color: rgba(20, 20, 20, 0.5); border-radius: var(--radius-xl); border: 1px solid var(--border-color); min-width: 180px; transition: all var(--transition-base);}
+.flow-step:hover {transform: translateY(-4px); background-color: rgba(20, 20, 20, 0.7); border-color: var(--accent-green);}
+.flow-number {display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; background-color: rgba(16, 185, 129, 0.2); color: var(--accent-green); border-radius: 50%; font-size: 1.125rem; font-weight: 700; margin: 0 auto 1rem; box-shadow: var(--shadow-sm);}
+.flow-content h5 {margin: 0 0 0.5rem 0; font-size: 0.875rem; font-weight: 600; color: var(--text-primary);}
+.flow-content p {margin: 0 0 1rem 0; font-size: 0.75rem; color: var(--text-secondary); line-height: 1.4;}
+.flow-arrow {font-size: 1.5rem; color: var(--accent-green); font-weight: bold;}
+.flow-content .code-example {background-color: var(--bg-primary); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 0.75rem; font-family: 'Courier New', monospace; box-shadow: var(--shadow-sm);}
+.flow-content .code-example code {font-size: 0.7rem; color: var(--text-primary); line-height: 1.4;}
+
+/* 전이 메트릭스 */
+.transition-matrix {margin-bottom: 2rem;}
+.transition-matrix h4 {margin: 0 0 1.5rem 0; font-size: 1.25rem; font-weight: 600; color: #93c5fd; text-align: center; text-shadow: 0 2px 8px rgba(59, 130, 246, 0.3);}
+.matrix-explanation p {margin: 0 0 1.5rem 0; text-align: center; color: #cbd5e1; font-size: 0.95rem;}
+.matrix-visual {display: grid; grid-template-columns: repeat(5, 1fr); gap: 0.5rem; max-width: 600px; margin: 0 auto;}
+.matrix-header {display: contents;}
+.matrix-row {display: contents;}
+.matrix-cell {padding: 1rem; text-align: center; border: 1px solid rgba(59, 130, 246, 0.2); border-radius: 8px; transition: all 0.3s ease;}
+.matrix-cell.header {background: linear-gradient(135deg, rgba(59, 130, 246, 0.2) 0%, rgba(96, 165, 250, 0.15) 100%); color: #bfdbfe; font-weight: 700; font-size: 0.9rem;}
+.matrix-cell.row-label {background: linear-gradient(135deg, rgba(59, 130, 246, 0.15) 0%, rgba(96, 165, 250, 0.1) 100%); color: #93c5fd; font-weight: 600; font-size: 0.9rem;}
+.matrix-cell:not(.header):not(.row-label) {color: #dbeafe; font-size: 0.85rem; font-weight: 500; cursor: pointer;}
+.matrix-cell:not(.header):not(.row-label):hover {transform: scale(1.05); border-color: rgba(59, 130, 246, 0.4);}
+
+/* 흐름 패턴 분석 */
+.flow-pattern-analysis {margin-bottom: 2rem;}
+.flow-pattern-analysis h4 {margin: 0 0 1.5rem 0; font-size: 1.25rem; font-weight: 600; color: #93c5fd; text-align: center; text-shadow: 0 2px 8px rgba(59, 130, 246, 0.3);}
+.pattern-grid {display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;}
+.pattern-card {text-align: center; padding: 2rem; background: linear-gradient(145deg, rgba(30, 41, 59, 0.6) 0%, rgba(15, 23, 42, 0.8) 100%); border: 1px solid rgba(59, 130, 246, 0.2); border-radius: 18px; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.05); transition: all 0.3s ease;}
+.pattern-card:hover {transform: translateY(-4px); border-color: rgba(59, 130, 246, 0.4); box-shadow: 0 12px 32px rgba(59, 130, 246, 0.2);}
+.pattern-icon {font-size: 3rem; margin-bottom: 1rem;}
+.pattern-card h5 {margin: 0 0 0.5rem 0; font-size: 1.1rem; font-weight: 600; color: #bfdbfe;}
+.pattern-card p {margin: 0 0 1.5rem 0; font-size: 0.85rem; line-height: 1.6; color: #cbd5e1;}
+.pattern-visual {margin: 1rem 0; padding: 1rem; background: rgba(15, 23, 42, 0.6); border-radius: 8px;}
+.pattern-line {height: 40px; background: linear-gradient(90deg, rgba(59, 130, 246, 0.3), rgba(96, 165, 250, 0.5)); border-radius: 4px;}
+.pattern-line.stable-line {background: linear-gradient(90deg, rgba(16, 185, 129, 0.5), rgba(5, 150, 105, 0.7));}
+.pattern-line.oscillating-line {background: linear-gradient(90deg, rgba(251, 191, 36, 0.5), rgba(245, 158, 11, 0.7));}
+.pattern-line.abrupt-line {background: linear-gradient(90deg, rgba(239, 68, 68, 0.5), rgba(220, 38, 38, 0.7));}
+.pattern-spec {display: flex; flex-direction: column; gap: 0.25rem; align-items: center; padding: 0.5rem; border-left: 3px solid rgba(59, 130, 246, 0.4); color: #93c5fd; background: rgba(59, 130, 246, 0.05); border-radius: 0 6px 6px 0;}
+.spec-label {font-size: 0.75rem; font-weight: 500;}
+.spec-value {font-size: 0.7rem; color: #bfdbfe;}
+
+/* 실제 분석 예시 */
+.timeseries-example {margin-bottom: 2rem;}
+.timeseries-example h4 {margin: 0 0 1.5rem 0; font-size: 1.25rem; font-weight: 600; color: #93c5fd; text-align: center; text-shadow: 0 2px 8px rgba(59, 130, 246, 0.3);}
+.example-demo {display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;}
+.demo-input {background: rgba(59, 130, 246, 0.06); border-radius: 1rem; padding: 1.5rem; border: 1px solid rgba(59, 130, 246, 0.2); backdrop-filter: blur(10px);}
+.demo-input h5 {margin: 0 0 1rem 0; font-size: 1.1rem; font-weight: 600; color: #bfdbfe;}
+.demo-output {background: rgba(59, 130, 246, 0.06); border-radius: 1rem; padding: 1.5rem; border: 1px solid rgba(59, 130, 246, 0.2); backdrop-filter: blur(10px);}
+.demo-output h5 {margin: 0 0 1rem 0; font-size: 1.1rem; font-weight: 600; color: #bfdbfe;}
+.demo-textarea {width: 100%; height: 120px; background: rgba(15, 23, 42, 0.6); border: 1px solid rgba(59, 130, 246, 0.3); border-radius: 0.5rem; padding: 1rem; color: #cbd5e1; font-size: 0.9rem; resize: none; outline: none;}
+.demo-textarea::placeholder {color: #64748b;}
+.sequence-analysis {display: flex; flex-direction: column; gap: 1rem;}
+.sequence-item {display: flex; align-items: center; gap: 1rem; padding: 1rem; background: rgba(59, 130, 246, 0.08); border-radius: 0.75rem; border: 1px solid rgba(59, 130, 246, 0.2);}
+.seq-number {display: flex; align-items: center; justify-content: center; width: 32px; height: 32px; background: linear-gradient(135deg, rgba(59, 130, 246, 0.25) 0%, rgba(96, 165, 250, 0.2) 100%); color: #dbeafe; border-radius: 50%; font-size: 0.9rem; font-weight: 700; flex-shrink: 0; box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);}
+.seq-content {flex: 1;}
+.seq-text {font-size: 0.85rem; color: #bfdbfe; margin-bottom: 0.25rem; font-style: italic;}
+.seq-emotion {font-size: 0.8rem; color: #93c5fd; font-weight: 500;}
+.sequence-arrow {text-align: center; color: #60a5fa; font-size: 0.9rem; font-weight: 600;}
+.pattern-summary {display: flex; flex-direction: column; gap: 0.75rem; margin-top: 1rem; padding: 1rem; background: rgba(59, 130, 246, 0.08); border-radius: 0.75rem; border: 1px solid rgba(59, 130, 246, 0.2);}
+.summary-item {display: flex; justify-content: space-between; align-items: center; padding: 0.5rem;}
+.summary-label {font-size: 0.85rem; color: #93c5fd; font-weight: 500;}
+.summary-value {font-size: 0.85rem; color: #bfdbfe; font-weight: 600;}
+
+/* 문맥 분석 모달 추가 스타일 */
+#contextModal .progression-analysis {margin-bottom: 2rem;}
+#contextModal .progression-analysis h4 {margin: 0 0 1.5rem 0; font-size: 1.25rem; font-weight: 600; color: #fbbf24; text-align: center; text-shadow: 0 2px 8px rgba(217, 119, 6, 0.3);}
+#contextModal .progression-workflow {display: flex; align-items: center; justify-content: center; gap: 1rem; padding: 2rem; background: rgba(217, 119, 6, 0.06); border-radius: 1rem; border: 1px solid rgba(217, 119, 6, 0.2); backdrop-filter: blur(10px);}
+#contextModal .progression-step {text-align: center; padding: 1.5rem; background: rgba(217, 119, 6, 0.08); border-radius: 1rem; border: 1px solid rgba(217, 119, 6, 0.25); min-width: 150px; transition: all 0.3s ease;}
+#contextModal .progression-step:hover {transform: translateY(-4px); background: rgba(217, 119, 6, 0.12); border-color: rgba(217, 119, 6, 0.4);}
+#contextModal .step-badge {display: inline-block; padding: 0.5rem 1rem; border-radius: 0.5rem; font-size: 0.85rem; font-weight: 700; margin-bottom: 0.75rem;}
+#contextModal .step-badge.trigger {background: rgba(99, 102, 241, 0.2); color: #a5b4fc; border: 1px solid rgba(99, 102, 241, 0.3);}
+#contextModal .step-badge.development {background: rgba(251, 191, 36, 0.2); color: #fde68a; border: 1px solid rgba(251, 191, 36, 0.3);}
+#contextModal .step-badge.peak {background: rgba(239, 68, 68, 0.2); color: #fca5a5; border: 1px solid rgba(239, 68, 68, 0.3);}
+#contextModal .step-badge.resolution {background: rgba(16, 185, 129, 0.2); color: #6ee7b7; border: 1px solid rgba(16, 185, 129, 0.3);}
+#contextModal .step-content h5 {margin: 0 0 0.5rem 0; font-size: 0.95rem; font-weight: 600; color: #fcd9a5;}
+#contextModal .step-content p {margin: 0 0 0.75rem 0; font-size: 0.8rem; color: #f4d8a7; line-height: 1.4;}
+#contextModal .step-example {font-size: 0.75rem; color: #fbbf24; padding: 0.5rem; background: #0000004d; border-radius: 0.5rem; border: 1px solid rgba(217, 119, 6, 0.2);}
+#contextModal .progression-arrow {font-size: 1.5rem; color: #fbbf24; font-weight: bold;}
+#contextModal .regex-sharding {margin-bottom: 2rem;}
+#contextModal .regex-sharding h4 {margin: 0 0 1.5rem 0; font-size: 1.25rem; font-weight: 600; color: #fbbf24; text-align: center; text-shadow: 0 2px 8px rgba(217, 119, 6, 0.3);}
+#contextModal .sharding-explanation p {margin: 0 0 1.5rem 0; text-align: center; color: #f4d8a7; font-size: 0.95rem;}
+#contextModal .sharding-visual {display: flex; flex-direction: column; gap: 1rem; align-items: center;}
+#contextModal .shard-group {display: flex; gap: 0.5rem;}
+#contextModal .shard {padding: 1rem; background: linear-gradient(135deg, rgba(217, 119, 6, 0.15) 0%, rgba(245, 158, 11, 0.1) 100%); border: 1px solid rgba(217, 119, 6, 0.3); border-radius: 0.5rem; color: #fef3c7; font-size: 0.9rem; font-weight: 600; transition: all 0.3s ease;}
+#contextModal .shard:hover {transform: translateY(-2px); border-color: rgba(217, 119, 6, 0.5); box-shadow: 0 4px 12px rgba(217, 119, 6, 0.3);}
+#contextModal .shard small {display: block; font-size: 0.7rem; opacity: 0.8; margin-top: 0.25rem;}
+#contextModal .sharding-result {display: flex; gap: 0.5rem; align-items: center; padding: 0.75rem 1.5rem; background: rgba(217, 119, 6, 0.1); border-radius: 0.5rem; border: 1px solid rgba(217, 119, 6, 0.2);}
+#contextModal .result-label {font-size: 0.85rem; color: #fbbf24; font-weight: 500;}
+#contextModal .result-value {font-size: 0.85rem; color: #fef3c7; font-weight: 600;}
+#contextModal .context-window-analysis {margin-bottom: 2rem;}
+#contextModal .context-window-analysis h4 {margin: 0 0 1.5rem 0; font-size: 1.25rem; font-weight: 600; color: #fbbf24; text-align: center; text-shadow: 0 2px 8px rgba(217, 119, 6, 0.3);}
+#contextModal .window-explanation p {margin: 0 0 1.5rem 0; text-align: center; color: #f4d8a7; font-size: 0.95rem;}
+#contextModal .window-visual {display: flex; flex-direction: column; gap: 1rem; align-items: center;}
+#contextModal .sentence-group {display: flex; flex-direction: column; gap: 0.5rem; width: 100%; max-width: 500px;}
+#contextModal .sentence {padding: 0.75rem; border-radius: 0.5rem; font-size: 0.85rem; text-align: center;}
+#contextModal .sentence.prev {background: rgba(217, 119, 6, 0.05); color: #cbd5e1; border: 1px solid rgba(217, 119, 6, 0.1);}
+#contextModal .sentence.current {background: linear-gradient(135deg, rgba(217, 119, 6, 0.15) 0%, rgba(245, 158, 11, 0.1) 100%); color: #fef3c7; border: 2px solid rgba(217, 119, 6, 0.3); font-weight: 600;}
+#contextModal .sentence.next {background: rgba(217, 119, 6, 0.05); color: #cbd5e1; border: 1px solid rgba(217, 119, 6, 0.1);}
+#contextModal .sentence.highlight {background: linear-gradient(135deg, rgba(217, 119, 6, 0.25) 0%, rgba(245, 158, 11, 0.2) 100%); color: #fef3c7; font-weight: 700;}
+#contextModal .window-metrics {display: flex; gap: 1rem; padding: 1rem; background: rgba(217, 119, 6, 0.08); border-radius: 0.75rem; border: 1px solid rgba(217, 119, 6, 0.2);}
+#contextModal .window-metrics .metric {display: flex; flex-direction: column; gap: 0.25rem; align-items: center;}
+#contextModal .metric-label {font-size: 0.75rem; color: #fbbf24; font-weight: 500;}
+#contextModal .metric-value {font-size: 0.8rem; color: #fef3c7; font-weight: 600;}
+#contextModal .emotion-transition-example {margin-bottom: 2rem;}
+#contextModal .emotion-transition-example h4 {margin: 0 0 1.5rem 0; font-size: 1.25rem; font-weight: 600; color: #fbbf24; text-align: center; text-shadow: 0 2px 8px rgba(217, 119, 6, 0.3);}
+#contextModal .transition-demo {display: flex; flex-direction: column; gap: 1.5rem;}
+#contextModal .transition-demo .demo-text {padding: 1.25rem; background: rgba(28, 25, 23, 0.8); border-radius: 12px; font-style: italic; color: #fcd9a5; border-left: 4px solid rgba(217, 119, 6, 0.5); box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.3);}
+#contextModal .transition-stages {display: flex; align-items: center; gap: 1rem; overflow-x: auto; padding: 1rem;}
+#contextModal .stage-marker {display: flex; align-items: center; gap: 1rem;}
+#contextModal .stage-item {padding: 1rem; background: linear-gradient(145deg, rgba(41, 37, 36, 0.6) 0%, rgba(28, 25, 23, 0.8) 100%); border: 1px solid rgba(217, 119, 6, 0.2); border-radius: 12px; min-width: 160px; transition: all 0.3s ease;}
+#contextModal .stage-item:hover {transform: translateY(-2px); border-color: rgba(217, 119, 6, 0.35); box-shadow: 0 8px 24px rgba(217, 119, 6, 0.2);}
+#contextModal .stage-name {font-size: 0.85rem; font-weight: 700; color: #fbbf24; margin-bottom: 0.5rem;}
+#contextModal .stage-text {font-size: 0.8rem; color: #fcd9a5; margin-bottom: 0.5rem; font-style: italic;}
+#contextModal .stage-emotion {font-size: 0.75rem; color: #f4d8a7;}
+#contextModal .stage-marker .arrow {font-size: 1.2rem; color: #fbbf24; font-weight: bold; flex-shrink: 0;}
+
+/* 반응형 디자인 - 시간 시퀀스 모달 */
+@media (max-width: 768px) {
+  #timeseriesModal .timeseries-overview {flex-direction: column; gap: 1rem;}
+  #timeseriesModal .timeseries-overview .overview-stats {justify-content: center; gap: 1rem;}
+  #timeseriesModal .timeseries-overview .stat-item {min-width: 70px; padding: 0.75rem;}
+  #timeseriesModal .timeseries-overview .stat-number {font-size: 1.5rem;}
+  .timeseries-features .features-grid {grid-template-columns: 1fr; gap: 1rem;}
+  .timeseries-features .feature-item {padding: 1rem;}
+  .process-flow {flex-direction: column; gap: 1rem; padding: 1rem;}
+  .flow-step {min-width: auto; padding: 1rem;}
+  .flow-arrow {transform: rotate(90deg);}
+  .matrix-visual {grid-template-columns: repeat(3, 1fr); gap: 0.25rem;}
+  .pattern-grid {grid-template-columns: 1fr; gap: 1rem;}
+  .pattern-card {padding: 1rem;}
+  .example-demo {grid-template-columns: 1fr; gap: 1.5rem;}
+  .demo-input {padding: 1rem;}
+  .demo-output {padding: 1rem;}
+  .demo-textarea {height: 100px;}
+  .sequence-item {flex-direction: column; text-align: center;}
+  .sequence-arrow {transform: rotate(90deg);}
+  
+  /* 문맥 분석 모달 반응형 */
+  .progression-workflow {flex-direction: column; gap: 1rem; padding: 1rem;}
+  .progression-step {min-width: auto; padding: 1rem;}
+  .progression-arrow {transform: rotate(90deg);}
+  .shard-group {flex-wrap: wrap;}
+  .shard {flex: 1; min-width: 80px;}
+  .window-metrics {flex-direction: column; gap: 0.5rem;}
+  .transition-stages {flex-direction: column;}
+  .stage-marker {flex-direction: column;}
+  .stage-marker .arrow {transform: rotate(90deg);}
+}
+
+/* ============================================ */
+/* 컨택센터 모달 개선 스타일 - 그린 테마 */
+/* ============================================ */
+#contactModal {background-color: rgba(0, 0, 0, 0.9);}
+#contactModal .modal-content {background-color: var(--bg-secondary); border-color: var(--border-color); backdrop-filter: blur(20px); overflow-y: auto; max-height: 90vh; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans KR', sans-serif;}
+#contactModal .modal-header {border-bottom-color: var(--border-color); padding-bottom: 1.5rem; margin-bottom: 2rem;}
+#contactModal .modal-header h2 {color: var(--text-primary); font-weight: 700; font-size: 1.5rem; letter-spacing: -0.02em;}
+#contactModal .close-btn {color: var(--text-muted); font-size: 28px;}
+#contactModal .close-btn:hover {color: var(--text-primary);}
+
+/* 공통 섹션 스타일 */
+#contactModal .feature-section,
+#contactModal .roi-section,
+#contactModal .demo-section {margin-bottom: 3rem;}
+#contactModal .feature-section h4,
+#contactModal .roi-section h4,
+#contactModal .demo-section h4 {margin: 0 0 2rem 0; font-size: 1.25rem; font-weight: 700; color: var(--text-primary); text-align: center; letter-spacing: -0.01em;}
+
+/* 히어로 섹션 */
+#contactModal .industry-hero {margin-bottom: 3rem; padding: 2rem; background-color: var(--bg-tertiary); border-radius: var(--radius-xl); border: 1px solid var(--border-color);}
+#contactModal .hero-content h3 {margin: 0 0 1.25rem 0; font-size: 1.25rem; font-weight: 700; color: var(--text-primary); letter-spacing: -0.01em;}
+#contactModal .hero-content p {margin: 0 0 2rem 0; font-size: 0.9375rem; line-height: 1.6; color: var(--text-secondary);}
+#contactModal .hero-stats {display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem;}
+#contactModal .stat-card {text-align: center; padding: 1.5rem; background-color: rgba(20, 20, 20, 0.5); border-radius: var(--radius-lg); border: 1px solid var(--border-color);}
+#contactModal .stat-number {display: block; font-size: 1.5rem; font-weight: 800; color: var(--accent-green); margin-bottom: 0.5rem; letter-spacing: -0.02em;}
+#contactModal .stat-label {font-size: 0.8125rem; color: var(--text-secondary); font-weight: 600;}
+
+/* 핵심 기능 섹션 */
+#contactModal .feature-grid {display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem;}
+#contactModal .feature-card {background-color: var(--bg-tertiary); border: 1px solid var(--border-color); border-radius: var(--radius-xl); padding: 1.75rem; transition: all var(--transition-base);}
+#contactModal .feature-card:hover {transform: translateY(-4px); border-color: var(--accent-green); box-shadow: var(--shadow-lg);}
+#contactModal .feature-icon {font-size: 2rem; margin-bottom: 1rem;}
+#contactModal .feature-icon .material-icons {font-size: 2rem; color: var(--accent-green);}
+#financeModal .feature-icon .material-icons {font-size: 2rem; color: var(--accent-green);}
+#csModal .feature-icon .material-icons {font-size: 2rem; color: var(--accent-green);}
+#contactModal .feature-card h5 {margin: 0 0 1rem 0; font-size: 1rem; font-weight: 700; color: var(--text-primary);}
+#contactModal .feature-card p {margin: 0 0 1.25rem 0; font-size: 0.875rem; line-height: 1.6; color: var(--text-secondary);}
+#contactModal .feature-tech {display: flex; gap: 0.5rem; flex-wrap: wrap;}
+#contactModal .tech-tag {padding: 0.4rem 0.85rem; background-color: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.2); border-radius: var(--radius-md); font-size: 0.75rem; color: var(--accent-green); font-weight: 600;}
+
+/* ROI 섹션 */
+#contactModal .roi-grid {display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;}
+#contactModal .roi-card {background-color: var(--bg-tertiary); border: 1px solid var(--border-color); border-radius: var(--radius-xl); padding: 1.75rem; transition: all var(--transition-base); position: relative;}
+#contactModal .roi-card.featured {border-color: var(--accent-green); box-shadow: var(--shadow-lg);}
+#contactModal .roi-card:hover {transform: translateY(-4px); border-color: var(--accent-green); box-shadow: var(--shadow-lg);}
+#contactModal .roi-header {display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;}
+#contactModal .roi-icon {font-size: 1.75rem;}
+#contactModal .roi-header h5 {margin: 0; font-size: 1rem; font-weight: 700; color: var(--text-primary);}
+#contactModal .roi-content {display: flex; flex-direction: column; gap: 1rem;}
+#contactModal .roi-metric {display: flex; flex-direction: column; gap: 0.5rem;}
+#contactModal .metric-label {font-size: 0.8125rem; color: var(--text-secondary); font-weight: 600;}
+#contactModal .metric-value {font-size: 1.125rem; font-weight: 800; color: var(--accent-green); letter-spacing: -0.01em;}
+#contactModal .metric-value.highlight {color: var(--accent-green); font-size: 1.25rem;}
+#contactModal .roi-breakdown {display: flex; flex-direction: column; gap: 0.75rem; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border-color);}
+#contactModal .breakdown-item {display: flex; justify-content: space-between; align-items: center; padding: 0.75rem; background-color: rgba(20, 20, 20, 0.5); border-radius: var(--radius-md);}
+#contactModal .breakdown-item span:first-child {font-size: 0.8125rem; color: var(--text-secondary);}
+#contactModal .breakdown-item span:last-child {font-size: 0.875rem; font-weight: 700; color: var(--accent-green);}
+#contactModal .roi-note {margin-top: 2rem; padding: 1.5rem; background-color: rgba(20, 20, 20, 0.5); border-radius: var(--radius-lg); border-left: 4px solid var(--accent-green);}
+#contactModal .roi-note p {margin: 0; font-size: 0.875rem; line-height: 1.6; color: var(--text-secondary);}
+#contactModal .roi-note strong {color: var(--accent-green); font-weight: 700;}
+
+/* 데모 섹션 */
+#contactModal .demo-container {display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;}
+#contactModal .demo-input,
+#contactModal .demo-output {background-color: var(--bg-tertiary); border-radius: var(--radius-xl); padding: 1.75rem; border: 1px solid var(--border-color);}
+#contactModal .demo-header {display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;}
+#contactModal .demo-header h5 {margin: 0; font-size: 1rem; font-weight: 700; color: var(--text-primary);}
+#contactModal .demo-badge {padding: 0.4rem 0.85rem; background-color: rgba(239, 68, 68, 0.2); border: 1px solid rgba(239, 68, 68, 0.3); border-radius: var(--radius-md); font-size: 0.75rem; color: #fca5a5; font-weight: 700;}
+#contactModal .demo-text {padding: 1.5rem; background-color: var(--bg-primary); border-radius: var(--radius-lg); font-size: 0.9375rem; line-height: 1.6; color: var(--text-secondary); border-left: 4px solid var(--accent-green);}
+#contactModal .output-grid {display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin-bottom: 1.5rem;}
+#contactModal .output-card {background-color: rgba(20, 20, 20, 0.5); border-radius: var(--radius-lg); padding: 1.25rem; border: 1px solid var(--border-color);}
+#contactModal .output-card.critical {border-color: rgba(239, 68, 68, 0.4); background-color: rgba(239, 68, 68, 0.05);}
+#contactModal .output-label {font-size: 0.8125rem; color: var(--text-secondary); font-weight: 600; margin-bottom: 0.75rem;}
+#contactModal .output-value-large {font-size: 1.5rem; font-weight: 800; color: var(--accent-green); margin-bottom: 0.75rem; letter-spacing: -0.02em;}
+#contactModal .output-bar {height: 8px; background: rgba(14, 158, 69, 0.15); border-radius: 4px; overflow: hidden; margin-bottom: 0.5rem;}
+#contactModal .output-fill {height: 100%; background: linear-gradient(90deg, #ef4444, #dc2626); border-radius: 4px;}
+#contactModal .output-desc {font-size: 0.85rem; color: #fca5a5; font-weight: 600;}
+#contactModal .output-list {display: flex; flex-direction: column; gap: 0.5rem;}
+#contactModal .emotion-item {display: flex; justify-content: space-between; align-items: center; padding: 0.5rem; background-color: rgba(20, 20, 20, 0.5); border-radius: var(--radius-sm);}
+#contactModal .emotion-name {font-size: 0.8125rem; color: var(--text-secondary);}
+#contactModal .emotion-score {font-size: 0.8125rem; font-weight: 700; color: var(--accent-green);}
+#contactModal .intensity-value {font-size: 1rem; font-weight: 700; color: var(--accent-green); margin-bottom: 0.5rem;}
+#contactModal .intensity-bar {height: 8px; background-color: rgba(20, 20, 20, 0.5); border-radius: 4px; overflow: hidden;}
+#contactModal .intensity-fill {height: 100%; border-radius: 4px;}
+#contactModal .intensity-fill.high {background: linear-gradient(90deg, #ef4444, #dc2626);}
+#contactModal .status-badge {display: inline-block; padding: 0.5rem 1rem; border-radius: var(--radius-md); font-size: 0.8125rem; font-weight: 700; margin-bottom: 0.5rem;}
+#contactModal .status-badge.unresolved {background-color: rgba(239, 68, 68, 0.2); color: #fca5a5; border: 1px solid rgba(239, 68, 68, 0.3);}
+#contactModal .status-desc {font-size: 0.8125rem; color: var(--text-secondary);}
+#contactModal .ai-recommendation {margin-top: 1.5rem; padding: 1.5rem; background-color: var(--bg-tertiary); border-radius: var(--radius-lg); border: 1px solid var(--border-color);}
+#contactModal .recommendation-header {display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;}
+#contactModal .ai-icon {font-size: 1.5rem;}
+#contactModal .recommendation-header span:last-child {font-size: 0.9375rem; font-weight: 700; color: var(--text-primary);}
+#contactModal .recommendation-list {display: flex; flex-direction: column; gap: 0.75rem;}
+#contactModal .recommendation-item {display: flex; align-items: center; gap: 1rem; padding: 1rem; background-color: rgba(20, 20, 20, 0.5); border-radius: var(--radius-md); border-left: 3px solid var(--accent-green);}
+#contactModal .recommendation-item.priority-high {border-left-color: rgba(239, 68, 68, 0.5);}
+#contactModal .priority-badge {padding: 0.35rem 0.75rem; background-color: rgba(16, 185, 129, 0.2); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: var(--radius-sm); font-size: 0.75rem; font-weight: 700; color: var(--accent-green);}
+#contactModal .recommendation-item span:last-child {font-size: 0.875rem; color: var(--text-secondary);}
+
+/* 경쟁 우위 (Moat) 섹션 */
+#contactModal .moat-section {margin-bottom: 4rem;}
+#contactModal .moat-section h4 {margin: 0 0 0.75rem 0; font-size: 1.25rem; font-weight: 700; color: var(--text-primary); text-align: center; letter-spacing: -0.01em;}
+#contactModal .moat-intro {text-align: center; color: var(--text-secondary); font-size: 0.9375rem; margin-bottom: 2.5rem; line-height: 1.6;}
+#contactModal .moat-grid {display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem;}
+#contactModal .moat-card {background-color: var(--bg-tertiary); border: 1px solid var(--border-color); border-radius: var(--radius-xl); padding: 2rem; box-shadow: var(--shadow-md); transition: all var(--transition-base); position: relative; overflow: hidden;}
+#contactModal .moat-card:hover {transform: translateY(-6px); border-color: var(--accent-green); box-shadow: var(--shadow-lg);}
+#contactModal .moat-badge {display: inline-block; padding: 0.5rem 1rem; background-color: rgba(16, 185, 129, 0.2); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: var(--radius-md); font-size: 0.8125rem; font-weight: 700; color: var(--accent-green); margin-bottom: 1.25rem; letter-spacing: 0.02em;}
+#contactModal .moat-card h5 {margin: 0 0 1.25rem 0; font-size: 1.125rem; font-weight: 700; color: var(--text-primary); letter-spacing: -0.01em;}
+#contactModal .moat-card p {margin: 0 0 1.75rem 0; font-size: 0.9375rem; line-height: 1.6; color: var(--text-secondary);}
+#contactModal .moat-evidence {display: flex; gap: 1.25rem; padding: 1.25rem; background-color: rgba(20, 20, 20, 0.5); border-radius: var(--radius-lg); border: 1px solid var(--border-color);}
+#contactModal .evidence-item {display: flex; flex-direction: column; gap: 0.5rem; flex: 1;}
+#contactModal .evidence-label {font-size: 0.8125rem; color: var(--text-secondary); font-weight: 600; letter-spacing: 0.01em;}
+#contactModal .evidence-value {font-size: 0.9375rem; color: var(--accent-green); font-weight: 800; letter-spacing: -0.01em;}
+
+/* 이탈 방지 메커니즘 섹션 */
+#contactModal .mechanism-section {margin-bottom: 4rem;}
+#contactModal .mechanism-section h4 {margin: 0 0 2.5rem 0; font-size: 1.25rem; font-weight: 700; color: var(--text-primary); text-align: center; letter-spacing: -0.01em;}
+#contactModal .mechanism-workflow {display: flex; align-items: center; justify-content: center; gap: 1.5rem; padding: 2rem; background-color: var(--bg-tertiary); border-radius: var(--radius-xl); border: 1px solid var(--border-color); backdrop-filter: blur(10px); flex-wrap: wrap;}
+#contactModal .mechanism-workflow .workflow-step {text-align: center; padding: 1.75rem; background-color: rgba(20, 20, 20, 0.5); border-radius: var(--radius-xl); border: 1px solid var(--border-color); min-width: 200px; max-width: 240px; transition: all var(--transition-base); position: relative;}
+#contactModal .mechanism-workflow .workflow-step:hover {transform: translateY(-6px); background-color: rgba(20, 20, 20, 0.7); border-color: var(--accent-green); box-shadow: var(--shadow-lg);}
+#contactModal .mechanism-workflow .step-number {display: flex; align-items: center; justify-content: center; width: 48px; height: 48px; background-color: rgba(16, 185, 129, 0.2); color: var(--accent-green); border-radius: 50%; font-size: 1.25rem; font-weight: 800; margin: 0 auto 1.25rem; box-shadow: var(--shadow-sm);}
+#contactModal .mechanism-workflow .step-content h5 {margin: 0 0 1rem 0; font-size: 1rem; font-weight: 700; color: var(--text-primary); letter-spacing: -0.01em;}
+#contactModal .mechanism-workflow .step-content p {margin: 0 0 1.25rem 0; font-size: 0.875rem; color: var(--text-secondary); line-height: 1.6;}
+#contactModal .step-example {display: flex; flex-direction: column; gap: 0.65rem; padding: 1rem; background-color: var(--bg-primary); border-radius: var(--radius-md); border-left: 4px solid var(--accent-green);}
+#contactModal .example-label {font-size: 0.8125rem; color: var(--accent-green); font-weight: 700; letter-spacing: 0.01em;}
+#contactModal .example-text {font-size: 0.875rem; color: var(--text-secondary); font-family: 'Noto Sans KR', 'Malgun Gothic', sans-serif; line-height: 1.5;}
+#contactModal .mechanism-workflow .workflow-arrow {font-size: 1.5rem; color: var(--accent-green); font-weight: bold; flex-shrink: 0;}
+#contactModal .mechanism-note {margin-top: 2.5rem; padding: 1.75rem; background-color: rgba(20, 20, 20, 0.5); border-radius: var(--radius-lg); border-left: 5px solid var(--accent-green);}
+#contactModal .mechanism-note p {margin: 0; font-size: 0.9375rem; line-height: 1.6; color: var(--text-secondary);}
+#contactModal .mechanism-note strong {color: var(--accent-green); font-weight: 700;}
+
+/* 성공 사례 섹션 */
+#contactModal .case-study-section {margin-bottom: 3rem;}
+#contactModal .case-study-section h4 {margin: 0 0 2.5rem 0; font-size: 1.25rem; font-weight: 700; color: var(--text-primary); text-align: center; letter-spacing: -0.01em;}
+#contactModal .case-grid {display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem;}
+#contactModal .case-card {background-color: var(--bg-tertiary); border: 1px solid var(--border-color); border-radius: var(--radius-xl); padding: 2rem; box-shadow: var(--shadow-md); transition: all var(--transition-base);}
+#contactModal .case-card:hover {transform: translateY(-6px); border-color: var(--accent-green); box-shadow: var(--shadow-lg);}
+#contactModal .case-header {display: flex; align-items: center; gap: 1.25rem; margin-bottom: 2rem;}
+#contactModal .case-logo {font-size: 2.5rem; width: 64px; height: 64px; display: flex; align-items: center; justify-content: center; background-color: rgba(16, 185, 129, 0.2); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: var(--radius-lg); color: var(--accent-green); box-shadow: var(--shadow-sm);}
+#contactModal .case-info {flex: 1;}
+#contactModal .case-info h5 {margin: 0 0 0.5rem 0; font-size: 1.125rem; font-weight: 700; color: var(--text-primary); letter-spacing: -0.01em;}
+#contactModal .case-period {font-size: 0.8125rem; color: var(--text-secondary); font-weight: 500;}
+#contactModal .case-results {display: flex; flex-direction: column; gap: 1rem; margin-bottom: 2rem;}
+#contactModal .result-item {display: flex; justify-content: space-between; align-items: center; padding: 1rem; background-color: rgba(20, 20, 20, 0.5); border-radius: var(--radius-lg); border: 1px solid var(--border-color);}
+#contactModal .result-label {font-size: 0.875rem; color: var(--text-secondary); font-weight: 600;}
+#contactModal .result-value {font-size: 0.9375rem; font-weight: 800; letter-spacing: -0.01em;}
+#contactModal .result-value.positive {color: var(--accent-green);}
+#contactModal .case-quote {font-size: 0.9375rem; line-height: 1.6; color: var(--text-secondary); font-style: italic; padding: 1.5rem; background-color: var(--bg-primary); border-radius: var(--radius-lg); border-left: 4px solid var(--accent-green);}
+
+@media (max-width: 1400px) {
+  #emotionModal .workflow-arrow{font-size: 1.25rem;}
+  #emotionModal .engine-workflow{gap:1vw; padding: 2.5vw}
+
+}
+
+@media (max-width:1200px){
+  
+
+}
+
+
+@media (max-width: 1024px) {
+  #emotionModal .emotion-dimensions{grid-template-columns: 1fr;}
+
+}
+
+
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  #contactModal .modal-header h2 {font-size: 1.25rem;}
+  #contactModal .feature-section h4,
+  #contactModal .roi-section h4,
+  #contactModal .demo-section h4,
+  #contactModal .moat-section h4,
+  #contactModal .mechanism-section h4,
+  #contactModal .case-study-section h4 {font-size: 1.125rem;}
+  #contactModal .hero-content h3 {font-size: 1.125rem;}
+  #contactModal .hero-content p {font-size: 0.875rem;}
+  #contactModal .hero-stats {grid-template-columns: repeat(2, 1fr); gap: 1rem;}
+  #contactModal .stat-number {font-size: 1.25rem;}
+  #contactModal .stat-label {font-size: 0.75rem;}
+  #contactModal .feature-grid {grid-template-columns: 1fr; gap: 1.25rem;}
+  #contactModal .feature-card {padding: 1.5rem;}
+  #contactModal .feature-card h5 {font-size: 0.9375rem;}
+  #contactModal .feature-card p {font-size: 0.8125rem;}
+  #contactModal .roi-grid {grid-template-columns: 1fr; gap: 1.25rem;}
+  #contactModal .roi-card {padding: 1.75rem;}
+  #contactModal .demo-container {grid-template-columns: 1fr; gap: 1.5rem;}
+  #contactModal .demo-input,
+  #contactModal .demo-output {padding: 1.5rem;}
+  #contactModal .output-grid {grid-template-columns: 1fr; gap: 0.75rem;}
+  #contactModal .moat-intro {font-size: 0.95rem;}
+  #contactModal .moat-grid {grid-template-columns: 1fr; gap: 1.5rem;}
+  #contactModal .moat-card {padding: 1.75rem;}
+  #contactModal .moat-card h5 {font-size: 1rem;}
+  #contactModal .moat-card p {font-size: 0.875rem;}
+  #contactModal .moat-evidence {flex-direction: column; gap: 0.75rem;}
+  #contactModal .evidence-label {font-size: 0.75rem;}
+  #contactModal .evidence-value {font-size: 0.875rem;}
+  #contactModal .mechanism-workflow {flex-direction: column; gap: 1.25rem; padding: 1.5rem;}
+  #contactModal .mechanism-workflow .workflow-step {min-width: auto; max-width: 100%; padding: 1.5rem;}
+  #contactModal .mechanism-workflow .step-number {width: 40px; height: 40px; font-size: 1.125rem;}
+  #contactModal .mechanism-workflow .step-content h5 {font-size: 0.9375rem;}
+  #contactModal .mechanism-workflow .step-content p {font-size: 0.8125rem;}
+  #contactModal .mechanism-workflow .workflow-arrow {transform: rotate(90deg); font-size: 1.25rem;}
+  #contactModal .mechanism-note {padding: 1.5rem;}
+  #contactModal .mechanism-note p {font-size: 0.875rem;}
+  #contactModal .case-grid {grid-template-columns: 1fr; gap: 1.5rem;}
+  #contactModal .case-card {padding: 1.5rem;}
+  #contactModal .case-header {flex-direction: column; text-align: center; gap: 1rem;}
+  #contactModal .case-logo {width: 56px; height: 56px; font-size: 2rem;}
+  #contactModal .case-info h5 {font-size: 1rem;}
+  #contactModal .case-period {font-size: 0.75rem;}
+  #contactModal .result-label {font-size: 0.8125rem;}
+  #contactModal .result-value {font-size: 0.875rem;}
+  #contactModal .case-quote {font-size: 0.875rem; padding: 1.25rem;}
+}

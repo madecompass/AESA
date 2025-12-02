@@ -1,0 +1,27 @@
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Prism Split: 프리즘 + 3선 분해 -->
+  <defs>
+    <linearGradient id="prismGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3B82F6;stop-opacity:1" />
+      <stop offset="33%" style="stop-color:#10B981;stop-opacity:1" />
+      <stop offset="66%" style="stop-color:#F59E0B;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#EF4444;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- 프리즘 삼각형 (좌측) -->
+  <path d="M6 12 L12 6 L12 12 Z" fill="url(#prismGradient)" opacity="0.8" stroke="none"/>
+  
+  <!-- 분해선 1 (수직) -->
+  <line x1="12" y1="6" x2="12" y2="18" stroke="url(#prismGradient)" stroke-width="2" stroke-linecap="round"/>
+  
+  <!-- 분해선 2 (대각선 우상) -->
+  <line x1="12" y1="6" x2="18" y2="6" stroke="url(#prismGradient)" stroke-width="2" stroke-linecap="round"/>
+  
+  <!-- 분해선 3 (대각선 우하) -->
+  <line x1="12" y1="18" x2="18" y2="18" stroke="url(#prismGradient)" stroke-width="2" stroke-linecap="round"/>
+  
+  <!-- 프리즘 삼각형 (우측) -->
+  <path d="M18 12 L12 6 L12 18 Z" fill="url(#prismGradient)" opacity="0.6" stroke="none"/>
+</svg>
+

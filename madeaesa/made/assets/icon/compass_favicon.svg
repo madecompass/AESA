@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <title>UpTrend</title>
+  <polyline points="12,44 26,36 40,26 52,20" fill="none" stroke="#F43F5E" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="52" cy="20" r="6" fill="#F43F5E"/>
+</svg>

@@ -1,0 +1,2159 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Emotion Standards Authority</title>
+    <meta name="description" content="AESA - 한국어 감정 분석 AI 시장 선도 기업. 11개 AI 모듈로 0.03초 내 120개 감정을 분석. 이탈률 42% 감소, CSAT 28% 향상, 6개월 내 투자 회수 검증. ₩2.3조 규모 한국 CX 시장을 겨냥한 시계열 감정 분석 솔루션. 희·노·애·락 기반 특허 출원 기술로 94.2% 정확도 달성.">
+    <link rel="icon" type="image/svg+xml" href="assets/icon/neural_network_favicon_white.svg">
+    <link rel="alternate icon" type="image/svg+xml" href="assets/icon/neural_network_favicon_color.svg">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/icon/neural_network_favicon_white.svg">
+    <link rel="stylesheet" href="assets/css/common.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    
+
+</head>
+<body>
+    <header class="main-header">
+        <div class="container">
+            <div class="logo">
+                <a href="#top" class="logo-link">AESA</a>
+            </div>
+            <nav class="menu">
+                <ul>
+                <li><a href="#pipeline">파이프라인</a></li>
+                <li><a href="#analysis-suite">분석 스위트</a></li>
+                <li><a href="#usecases">산업 적용</a></li>
+                <li><a href="#roadmap">로드맵</a></li>
+                <li><a href="#irModal" data-modal="irModal" role="button">IR 브리프</a></li>
+                </ul>
+            </nav>
+            <div class="right">
+                <button class="header-btn report-btn" aria-label="분석 리포트">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4 2C3.44772 2 3 2.44772 3 3V17C3 17.5523 3.44772 18 4 18H16C16.5523 18 17 17.5523 17 17V3C17 2.44772 16.5523 2 16 2H4Z" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                        <path d="M6 6H14M6 10H14M6 14H11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                        <path d="M5 3H15V5H5V3Z" fill="currentColor" opacity="0.3"/>
+                    </svg>
+                </button>
+                <button class="header-btn notification-btn" aria-label="알림">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10 2C7.79086 2 6 3.79086 6 6V9.58579L4.29289 11.2929C4.10536 11.4804 4 11.7348 4 12V13C4 13.5523 4.44772 14 5 14H15C15.5523 14 16 13.5523 16 13V12C16 11.7348 15.8946 11.4804 15.7071 11.2929L14 9.58579V6C14 3.79086 12.2091 2 10 2Z" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                        <path d="M8 16C8 17.1046 8.89543 18 10 18C11.1046 18 12 17.1046 12 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>
+                    <span class="notification-badge" aria-hidden="true"></span>
+                </button>
+                <button class="header-btn menu-toggle" aria-label="메뉴 열기" aria-expanded="false" aria-controls="mobileMenu">
+                    <span class="menu-toggle-label">Menu</span>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                        <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="mobile-menu-overlay" id="mobileMenu" aria-hidden="true">
+        <div class="mobile-menu-container" role="dialog" aria-modal="true" aria-labelledby="mobileMenuTitle">
+            <header class="mobile-menu-header">
+                <span class="mobile-menu-logo" id="mobileMenuTitle">AI emotion standards authority</span>
+                <button class="mobile-menu-close" type="button" aria-label="닫기">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                        <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </button>
+            </header>
+            <nav class="mobile-menu-nav">
+                <ul>
+                    <li><a href="#overview">개요</a></li>
+                    <li><a href="#pipeline">파이프라인</a></li>
+                    <li><a href="#analysis-suite">분석 스위트</a></li>
+                    <li><a href="#usecases">산업 적용</a></li>
+                    <li><a href="#roadmap">로드맵</a></li>
+                    <li><a href="#irModal" data-modal="irModal" role="button">IR 브리프</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu-footer">
+                <button type="button" class="mobile-menu-secondary" aria-label="메뉴 닫기">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <section class="main-hero" id="overview">
+        <div class="container">
+            <video class="video" autoplay muted loop playsinline>
+                <source src="assets/img/bg.mp4" type="video/mp4">
+            </video>
+            <div class="content">
+                <form id="analysisForm" autocomplete="off">
+                    <div id="analysisProgress" class="analysis-progress" role="status" aria-live="polite" aria-hidden="true">
+                        <span class="analysis-progress__icon" id="analysisProgressIcon" aria-hidden="true">
+                            <svg width="16" height="16" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M4 2C3.44772 2 3 2.44772 3 3V17C3 17.5523 3.44772 18 4 18H16C16.5523 18 17 17.5523 17 17V3C17 2.44772 16.5523 2 16 2H4Z" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                                <path d="M6 6H14M6 10H14M6 14H11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                                <path d="M5 3H15V5H5V3Z" fill="currentColor" opacity="0.3"/>
+                            </svg>
+                        </span>
+                        <div class="analysis-progress__content">
+                            <div class="analysis-progress__messages">
+                                <p id="analysisProgressText" class="analysis-progress__text"></p>
+                                <p id="analysisProgressSub" class="analysis-progress__sub"></p>
+                            </div>
+                            <!-- 진행 바 및 단계 표시 -->
+                            <div class="analysis-progress__bar-container" id="analysisProgressBarContainer" style="display: none;">
+                                <div class="analysis-progress__bar">
+                                    <div class="analysis-progress__bar-fill" id="analysisProgressBarFill"></div>
+                                </div>
+                                <div class="analysis-progress__steps" id="analysisProgressSteps"></div>
+                                <div class="analysis-progress__time" id="analysisProgressTime">
+                                    <span id="analysisProgressElapsed">경과: 0초</span>
+                                    <span id="analysisProgressEstimated">예상: 3-5분</span>
+                                </div>
+                            </div>
+                            <button id="analysisCancelBtn" class="analysis-progress__cancel" style="display: none;" aria-label="분석 취소">
+                                <!-- <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 4L4 12M4 4l8 8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                </svg> -->
+                                취소
+                            </button>
+                        </div>
+                    </div>
+                    <div class="badge">
+                        <svg width="40" height="32" viewBox="0 0 40 35" fill="none" xmlns="http://www.w3.org/2000/svg" class="logo-img">
+                            <g opacity="0.9">
+                                <circle cx="8" cy="12" r="2.5" fill="currentColor" class="logo-node node-1"></circle>
+                                <circle cx="14" cy="7" r="2" fill="currentColor" class="logo-node node-2"></circle>
+                                <circle cx="20" cy="12" r="2.5" fill="currentColor" class="logo-node node-3"></circle>
+                                <circle cx="10" cy="18" r="2" fill="currentColor" class="logo-node node-4"></circle>
+                                <circle cx="18" cy="18" r="2" fill="currentColor" class="logo-node node-5"></circle>
+                                <circle cx="8" cy="24" r="2.5" fill="currentColor" class="logo-node node-6"></circle>
+                                <circle cx="14" cy="27" r="2" fill="currentColor" class="logo-node node-7"></circle>
+                                <circle cx="20" cy="24" r="2.5" fill="currentColor" class="logo-node node-8"></circle>
+                            </g>
+                            <g opacity="0.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" class="logo-connections">
+                                <line x1="8" y1="12" x2="14" y2="7" class="logo-line line-1"></line>
+                                <line x1="14" y1="7" x2="20" y2="12" class="logo-line line-2"></line>
+                                <line x1="8" y1="12" x2="10" y2="18" class="logo-line line-3"></line>
+                                <line x1="20" y1="12" x2="18" y2="18" class="logo-line line-4"></line>
+                                <line x1="10" y1="18" x2="14" y2="27" class="logo-line line-5"></line>
+                                <line x1="18" y1="18" x2="14" y2="27" class="logo-line line-6"></line>
+                                <line x1="8" y1="12" x2="8" y2="24" class="logo-line line-7"></line>
+                                <line x1="20" y1="12" x2="20" y2="24" class="logo-line line-8"></line>
+                                <line x1="8" y1="24" x2="14" y2="27" class="logo-line line-9"></line>
+                                <line x1="20" y1="24" x2="14" y2="27" class="logo-line line-10"></line>
+                                <line x1="10" y1="18" x2="18" y2="18" class="logo-line line-11"></line>
+                                <line x1="14" y1="7" x2="10" y2="18" class="logo-line line-12"></line>
+                                <line x1="14" y1="7" x2="18" y2="18" class="logo-line line-13"></line>
+                            </g>
+                        </svg>
+                        <input type="hidden" id="analysisMode" name="mode" value="balanced">
+                        <input type="text" class="badge-input" id="analysisInput" placeholder="분석을 도와드리겠습니다." autocomplete="off" maxlength="300">
+                        <button type="submit" class="badge-btn" aria-label="전송">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+                        </button>
+                    </div>
+                  
+                </form>
+                <h1>감정의 시간적 내러티브 계량화</h1>
+                <p class="subtitle">
+                    감정은 순간이 아니라 시간의 산물이며, AESA 텍스트 속 감정의 흐름을 측정하고 
+                    전환 지점과 예측 가능한 인사이트를 추적하고 분석합니다. 
+                    규칙과 머신러닝이 결합된 11개 모듈 파이프라인이 재현 가능한 계측을 보장합니다.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="main-linear" id="pipeline">
+        <div class="container">
+            <div class="content">
+                <h1>복합 감정부터 전이 패턴까지<br>한국어 고객 마음을 읽는 종합 분석 솔루션</h1>
+                <p class="subtitle">
+                    규칙 기반 분석과 머신러닝을 결합한 하이브리드 시스템으로, 
+                    11개 모듈이 유기적으로 협력하여 감정 시퀀스, 전환 정보, 인과 링크를 산출합니다. 
+                    재현 가능하고 설명 가능한 방식으로 설계되어 기업이 즉시 실행 가능한 인사이트를 제공합니다.
+                </p>
+                <div class="cta">
+                    <a href="#" id="pipeline-btn" class="btn btn-primary">레이어 파이프라인 미리보기</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 파이프라인 모달 -->
+    <div class="modal-overlay feature-modal-overlay" id="pipelineModal">
+        <div class="modal-container feature-modal-container modules-modal-container pipeline-modal-container">
+            <button class="modal-close" onclick="document.getElementById('pipelineModal').classList.remove('active')" aria-label="모달 닫기">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+            </button>
+            <div class="feature-modal-content">
+                <div class="feature-modal-inner modules-modal-inner pipeline-modal-inner">
+                    <div class="feature-modal-header">
+                        <h2 class="feature-modal-title">정밀 파이프라인</h2>
+                        <p class="feature-modal-description">11개 모듈이 협력하여 감정 여정을 계량화하는 레이어 파이프라인</p>
+                    </div>
+                    <div class="feature-modal-stats modules-modal-stats pipeline-modal-stats">
+                        <div class="feature-modal-stat pipeline-stat">
+                            <div class="feature-modal-stat-number">3~5분</div>
+                            <div class="feature-modal-stat-label">정밀 처리 윈도우</div>
+                            <p>FAST 스냅샷을 고정한 뒤 정밀 레이어가 동일 텍스트를 재구성해 재현성을 확보합니다.</p>
+                        </div>
+                        <div class="feature-modal-stat pipeline-stat">
+                            <div class="feature-modal-stat-number">94.2%</div>
+                            <div class="feature-modal-stat-label">결과 정합성</div>
+                            <p>레이어 종료 지점마다 deterministic QA를 적용해 재실행 시 verdict를 동일하게 유지합니다.</p>
+                        </div>
+                        <div class="feature-modal-stat pipeline-stat">
+                            <div class="feature-modal-stat-number">Dual Log</div>
+                            <div class="feature-modal-stat-label">Fail-safe</div>
+                            <p>FAST·BALANCED 로그를 동시에 보관해 장애 시 즉시 롤백·재실행이 가능합니다.</p>
+                        </div>
+                        <div class="feature-modal-stat pipeline-stat">
+                            <div class="feature-modal-stat-number">Timeline+KPI</div>
+                            <div class="feature-modal-stat-label">산출 포맷</div>
+                            <p>reason_codes, diagnostics, 감사 대응용 JSON 패키지를 기본 포함합니다.</p>
+                        </div>
+                    </div>
+                    <div class="pipeline-section">
+                        <h4 class="pipeline-section-title">레이어 구조</h4>
+                        <div class="modules-grid pipeline-layers-grid">
+                            <div class="module-card pipeline-layer-card">
+                                <div class="module-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" role="img">
+                                        <circle cx="12" cy="12" r="8.5"></circle>
+                                        <path d="M6 9h12"></path>
+                                        <path d="M8 15h8"></path>
+                                    </svg>
+                                </div>
+                                <div class="layer-head">
+                                    <span class="layer-order">Layer 01 · Signal Capture</span>
+                                    <h3>다중 채널 동기화 & 신호 정규화</h3>
+                                </div>
+                                <p>FAST 스냅샷과 정밀 입력을 동시에 불러와 존댓말·반어·중의적 표현을 표준화합니다. 시점·화자·발화 단위를 Time-locked 버퍼로 묶어 이후 레이어가 동일한 기준선을 공유하도록 설계했습니다.</p>
+                                <ul class="layer-modules">
+                                    <li><span>다중 소스 클린업</span>메신저·상담·VOC 등 이질적인 포맷을 하나의 토큰 규격으로 맞춥니다.</li>
+                                    <li><span>온톨로지 브릿지</span>희·노·애·락 축 기반 사전과 slang 맵을 연결해 레이블 손실을 줄입니다.</li>
+                                    <li><span>컨텍스트 버퍼</span>앞뒤 3문장 윈도우를 버퍼에 적재해 전 단계가 동일한 문맥을 참조합니다.</li>
+                                </ul>
+                            </div>
+                            <div class="module-card pipeline-layer-card">
+                                <div class="module-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" role="img">
+                                        <circle cx="12" cy="12" r="8.5"></circle>
+                                        <path d="M6 16l3-4 3 2 3-4 3 2"></path>
+                                        <path d="M6 8h12"></path>
+                                    </svg>
+                                </div>
+                                <div class="layer-head">
+                                    <span class="layer-order">Layer 02 · Emotion Dynamics</span>
+                                    <h3>감정 라우팅 & 시나리오 분기</h3>
+                                </div>
+                                <p>메인 감정 라우터가 확신/불확신 케이스를 분리하고, 강도·전이·상황 추론기는 동일 버퍼를 공유해 시나리오 단위 감정 곡선을 만듭니다. 전환 기울기와 상황 트리거가 하나의 mesh로 저장되어 다음 레이어에서 재사용됩니다.</p>
+                                <ul class="layer-modules">
+                                    <li><span>Dynamic Routing</span>확신도에 따라 단일·병렬 경로를 선택해 불필요한 재처리를 줄입니다.</li>
+                                    <li><span>Intensity & Transition Mesh</span>강도·전이 계산 결과를 구조화된 mesh 형태로 보존합니다.</li>
+                                    <li><span>Situation Overlay</span>제품·인물·상황 키를 감정곡선 위에 덧씌워 실행 가능한 이벤트 맵을 생성합니다.</li>
+                                </ul>
+                            </div>
+                            <div class="module-card pipeline-layer-card">
+                                <div class="module-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" role="img">
+                                        <circle cx="12" cy="12" r="8.5"></circle>
+                                        <path d="M8 8l2 2 2-2 2 2 2-2"></path>
+                                        <path d="M8 16l2-2 2 2 2-2 2 2"></path>
+                                    </svg>
+                                </div>
+                                <div class="layer-head">
+                                    <span class="layer-order">Layer 03 · Time & Relationship</span>
+                                    <h3>타임라인 직조 & 인과 서술</h3>
+                                </div>
+                                <p>Layer 02에서 생성한 mesh 데이터를 시간축·전이 그래프·심리 패턴으로 직조합니다. 감정 전이는 “무엇이 왜 바뀌었는지”가 드러나는 내러티브로 변환되어 스토리텔링과 KPI 분석이 한 번에 가능합니다.</p>
+                                <ul class="layer-modules">
+                                    <li><span>Chrono Layout</span>reason_codes와 time_flow_mode를 연결해 감정 여정 핵심 노드를 도출합니다.</li>
+                                    <li><span>Relationship Graph</span>희·노·애·락 노드를 방향 그래프로 정리해 인과 순환을 가시화합니다.</li>
+                                    <li><span>Psy Trace</span>심리 방어기제·성숙도 지표를 감정 단계별로 매핑해 해석 근거를 강화합니다.</li>
+                                </ul>
+                            </div>
+                            <div class="module-card pipeline-layer-card">
+                                <div class="module-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" role="img">
+                                        <circle cx="12" cy="12" r="8.5"></circle>
+                                        <path d="M12 3.5v17M3.5 12h17"></path>
+                                        <circle cx="9" cy="9" r="1.5"></circle>
+                                        <circle cx="15" cy="9" r="1.5"></circle>
+                                        <circle cx="9" cy="15" r="1.5"></circle>
+                                        <circle cx="15" cy="15" r="1.5"></circle>
+                                    </svg>
+                                </div>
+                                <div class="layer-head">
+                                    <span class="layer-order">Layer 04 · Evidence Fusion</span>
+                                    <h3>패키징·KPI 산출·감사 대응</h3>
+                                </div>
+                                <p>Embedding 기반 의미 공간과 규칙 기반 결과를 DAG 형태로 앙상블한 뒤 KPI·reason_codes·감사 로그를 하나의 패키지로 묶습니다. 모든 레이어의 상태값을 참조해 coverage·confidence·diagnostics를 동시에 계산합니다.</p>
+                                <ul class="layer-modules">
+                                    <li><span>Evidence Fusion</span>규칙·ML 출력의 편차를 제어하고 극단값을 억제한 확률 분포를 생성합니다.</li>
+                                    <li><span>Weight & KPI Engine</span>경로 가중치를 스트림 방식으로 갱신해 안정성·회복·변동성 지표를 산출합니다.</li>
+                                    <li><span>Audit Bundle</span>reason_codes, diagnostics, 재실행 스크립트를 자동 첨부해 규제 대응 시간을 단축합니다.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pipeline-section">
+                        <h4 class="pipeline-section-title">산출물</h4>
+                        <div class="module-summary-content pipeline-outcomes-grid">
+                            <div class="module-summary-item pipeline-outcome-card">
+                                <div class="module-summary-icon">
+                                   <svg width="24" height="24" viewBox="0 0 24 24" role="img">
+                                        <rect x="3" y="3" width="18" height="18" rx="2"></rect>
+                                        <path d="M3 9h18M9 21V9"></path>
+                                    </svg>
+                                </div>
+                                <div class="pipeline-outcome-text">
+                                    <strong>감정 타임라인 & KPI</strong>
+                                    <span>안정성·회복·변동성 지표를 시점별 카드로 제공해 변곡점을 즉시 파악합니다.</span>
+                                </div>
+                            </div>
+                            <div class="module-summary-item pipeline-outcome-card">
+                                <div class="module-summary-icon">
+                                   <svg width="24" height="24" viewBox="0 0 24 24" role="img">
+                                        <path d="M3 3v18h18"></path>
+                                        <path d="M7 12l4-4 4 4 6-6"></path>
+                                    </svg>
+                                </div>
+                                <div class="pipeline-outcome-text">
+                                    <strong>행동·리스크 시그널</strong>
+                                    <span>reason_code와 심리 지표를 한 화면에 병치해 이탈·회복·증폭 구간을 실행 플랜으로 연결합니다.</span>
+                                </div>
+                            </div>
+                            <div class="module-summary-item pipeline-outcome-card">
+                                <div class="module-summary-icon">
+                                   <svg width="24" height="24" viewBox="0 0 24 24" role="img">
+                                        <path d="M9 11l3 3L22 4"></path>
+                                        <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+                                    </svg>
+                                </div>
+                                <div class="pipeline-outcome-text">
+                                    <strong>Explainability Pack</strong>
+                                    <span>감정 verdict와 reason_codes, diagnostics, replay 스크립트를 세트로 묶어 감사 대응 시간을 단축합니다.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="hero-image">
+        <div class="wrapper">            
+            <img src="assets/img/img1.png" alt="" class="image">
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- Truth 필드 기반 분석 결과 섹션 -->
+    <!-- ============================================ -->
+    <section class="main-made" id="analysis-suite">
+        <div class="container">
+            <div class="text-wrap">
+                <h2>인간의 감정을 이해하는 심리학과 기술의 만남</h2>
+                <p>감정은 순간이 아니라 시간의 산물입니다. 규칙과 머신러닝이 결합된 파이프라인이 
+                감정 시퀀스, 전환 지점, 인과 관계를 추적하고, 4가지 핵심 지표로 
+                안정성, 흐름 커버리지, 회복 신호, 전이 변동성을 측정하여 실행 가능한 인사이트를 제공합니다.</p>
+            </div>
+            <ul class="suggestions" role="list" aria-label="추천 항목">
+                <li class="item"><span class="icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" role="img">
+                      <circle cx="12" cy="12" r="8.5" stroke="#10b981" stroke-width="1.5" />
+                      <path d="M12 3.5v17M3.5 12h17" stroke="#10b981" stroke-width="1.5" stroke-linecap="round" />
+                      <path d="M12 12l6-6" stroke="#10b981" stroke-width="1.5" stroke-linecap="round" />
+                    </svg>
+                  </span><span class="label">감정 분류 분석</span>
+                </li>
+                <li class="item"><span class="icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" role="img">
+                      <path d="M5 16a7 7 0 1114 0" stroke="#10b981" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                      <path d="M12 13.5l2.5 2.5H9.5L12 13.5Z" fill="#10b981" />
+                      <path d="M12 5v4" stroke="#10b981" stroke-width="1.5" stroke-linecap="round" />
+                    </svg>
+                  </span><span class="label">감정 강도 측정</span></li>
+                <li class="item"><span class="icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" role="img">
+                      <circle cx="9" cy="10" r="4" stroke="#3b82f6" stroke-width="1.5" />
+                      <circle cx="15" cy="10" r="4" stroke="#10b981" stroke-width="1.5" />
+                      <circle cx="12" cy="14" r="4" stroke="#10b981" stroke-width="1.5" opacity="0.6" />
+                    </svg>
+                  </span><span class="label">복합 감정 탐지</span>
+                </li>
+                <li class="item"><span class="icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" role="img">
+                      <path d="M12 3.5a5 5 0 015 5c0 3.5-5 8-5 8s-5-4.5-5-8a5 5 0 015-5Z" stroke="#10b981" stroke-width="1.5" stroke-linejoin="round" />
+                      <circle cx="12" cy="8.5" r="1.8" fill="#10b981" />
+                      <path d="M7 18h10" stroke="#10b981" stroke-width="1.5" stroke-linecap="round" />
+                    </svg>
+                  </span><span class="label">문맥 상황 분석</span>
+                </li>
+                <li class="item"><span class="icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" role="img">
+                      <path d="M6 8l6-4 6 4 6-4" stroke="#10b981" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                      <path d="M6 16l6 4 6-4" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                      <path d="M6 12h12" stroke="#10b981" stroke-width="1.5" stroke-linecap="round" />
+                    </svg>
+                  </span><span class="label">감정 전이 패턴</span>
+                </li>
+                <li class="item"><span class="icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" role="img">
+                      <path d="M7.5 9.5c0-3 2.5-5 5.5-5 2.5 0 4.5 1.7 4.5 3.8 0 1.4-.7 2.1-1.8 2.8 1.6.6 2.8 1.9 2.8 3.7 0 2.2-2.3 3.7-5 3.7-2.5 0-5-.9-6-2.3" stroke="#10b981" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                      <path d="M9 8c0 1 1.2 1.6 2.5 1.6" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round" />
+                      <path d="M9 16.5c1 .8 2.3 1.3 3.8 1.3" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round" />
+                    </svg>
+                  </span><span class="label">심리학적 해석</span>
+                </li>
+                <li class="item"><span class="icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" role="img">
+                      <path d="M5 7c0-1.1.9-2 2-2h5c1.1 0 2 .9 2 2v1c0 1.1-.9 2-2 2H9l3 4" stroke="#10b981" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                      <path d="M14 15h3.5L18 18" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                      <path d="M5 11h2" stroke="#10b981" stroke-width="1.5" stroke-linecap="round" />
+                    </svg>
+                  </span><span class="label">언어 패턴 매칭</span>
+                </li>
+                <li class="item"><span class="icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" role="img">
+                      <path d="M6 17l4-5 4 3 4-5" stroke="#10b981" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                      <circle cx="6" cy="17" r="1.5" fill="#10b981" />
+                      <circle cx="10" cy="12" r="1.5" fill="#0a0a0a" />
+                      <circle cx="14" cy="15" r="1.5" fill="#0a0a0a" />
+                      <circle cx="18" cy="10" r="1.5" fill="#10b981" />
+                    </svg>
+                  </span><span class="label">시간 시퀀스 분석</span>
+                </li>
+                <li class="item"><span class="icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" role="img">
+                      <circle cx="7" cy="12" r="2.2" stroke="#3b82f6" stroke-width="1.5" />
+                      <circle cx="17" cy="8" r="2.2" stroke="#10b981" stroke-width="1.5" />
+                      <circle cx="17" cy="16" r="2.2" stroke="#10b981" stroke-width="1.5" />
+                      <path d="M8.8 11.2l6.4-2.4M8.8 12.8l6.4 2.4" stroke="#10b981" stroke-width="1.5" stroke-linecap="round" />
+                    </svg>
+                  </span><span class="label">임베딩 유사도</span>
+                </li>
+                <li class="item"><span class="icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" role="img">
+                      <circle cx="8" cy="8" r="2.5" stroke="#10b981" stroke-width="1.5" />
+                      <circle cx="16" cy="8" r="2.5" stroke="#10b981" stroke-width="1.5" />
+                      <circle cx="8" cy="16" r="2.5" stroke="#10b981" stroke-width="1.5" />
+                      <circle cx="16" cy="16" r="2.5" stroke="#10b981" stroke-width="1.5" />
+                      <path d="M10.5 8l3 0M10.5 16l3 0M8 10.5l0 3M16 10.5l0 3" stroke="#10b981" stroke-width="1.5" stroke-linecap="round" />
+                    </svg>
+                  </span><span class="label">감정 관계 분석</span>
+                </li>
+                <li class="item"><span class="icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" role="img">
+                      <rect x="4" y="6" width="16" height="2" rx="1" fill="#10b981" />
+                      <rect x="4" y="11" width="16" height="2" rx="1" fill="#10b981" />
+                      <rect x="4" y="16" width="12" height="2" rx="1" fill="#10b981" />
+                      <circle cx="17" cy="17" r="2" stroke="#3b82f6" stroke-width="1.5" />
+                      <path d="M16 17l1.5 1.5L20 15" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                  </span><span class="label">가중치 통합 분석</span>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="main-features">
+        <div class="container">
+            <div class="feature-header">
+                <h2 class="title">차세대 감정 분석으로<br>미래를 읽는 솔루션</h2>
+                <p class="description">
+                    감정의 시간적 흐름을 계측하여 고객 이탈을 사전에 예측합니다. 
+                    규칙과 머신러닝이 결합된 시스템이 감정의 내러티브를 읽어내고, 
+                    4가지 핵심 지표로 실행 가능한 인사이트를 제공합니다. 
+                    모든 분석은 재현 가능하고 설명 가능합니다. 
+                    <a href="#solutions">솔루션 살펴보기 ></a>
+                </p>
+            </div>
+            <ul class="feature-list">
+                <li class="feature-item" data-modal="featureModal1">
+                    <img src="assets/img/img2.png" alt="">
+                    <div class="item-footer">
+                        <h3>시간적 감정 흐름 분석</h3>
+                        <span class="plus-icon">+</span>
+                    </div>
+                </li>
+                <li class="feature-item" data-modal="featureModal2">
+                    <img src="assets/img/img9.png" alt="">
+                    <div class="item-footer">
+                        <h3>한국어 특화 AI 기술</h3>
+                        <span class="plus-icon">+</span>
+                    </div>
+                </li>
+                <li class="feature-item" data-modal="featureModal3">
+                    <img src="assets/img/img10.png" alt="">
+                    <div class="item-footer">
+                        <h3>11개 모듈 앙상블 시스템</h3>
+                        <span class="plus-icon">+</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Feature 모달창 (HTML 마크업) -->
+    <div class="modal-overlay feature-modal-overlay" id="featureModal1">
+        <div class="modal-container feature-modal-container">
+            <button class="modal-close" onclick="document.getElementById('featureModal1').classList.remove('active')" aria-label="모달 닫기">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+            </button>
+            <div class="feature-modal-content">
+                <div class="feature-modal-image">
+                    <img src="assets/img/img2.jpg" alt="">
+                </div>
+                <div class="feature-modal-inner">
+                    <div class="feature-modal-header">
+                        <h2 class="feature-modal-title">감정의 시간적 흐름을 추적하다</h2>
+                        <p class="feature-modal-description">단순 분류를 넘어 감정의 변화 궤적을 파악합니다</p>
+                    </div>
+                    <div class="feature-modal-body">
+                        <div class="feature-modal-content-text">
+                            <p>AESA 파이프라인은 입력 텍스트를 문장 단위로 분해한 뒤 PatternExtractor·LinguisticMatcher·IntensityAnalyzer·TransitionAnalyzer가 순차적으로 협력해 감정 시퀀스를 재구성합니다. 이 과정에서 감정 강도, 전환 유형, 트리거 신호가 동시에 수집되어 ‘분노 → 수습'과 같은 흐름을 포착하도록 돕습니다.</p>
+                            <p>EmotionPipelineOrchestrator가 11개 모듈의 실행 순서를 조율하고 품질 지표를 검증해, 동일한 입력에는 최대한 일관된 결과가 나오도록 설계되었습니다. 주요 단계의 중간 산출물과 근거 문장은 explainability 메타데이터로 저장되어 감사나 리포트 작성 시 바로 활용할 수 있습니다.</p>
+                            <p>최종 결과는 감정 시퀀스, 전이 정보, 그리고 안정성·흐름 커버리지·회복 신호·전이 변동성의 네 가지 KPI 등 구조화된 데이터로 정리됩니다. 이를 통해 상담 흐름, VOC, 여정 데이터를 시간 축에서 비교·검토하고 개선 방향을 찾는 데 활용할 수 있습니다.</p>
+                        </div>
+                        <div class="feature-modal-testimonial">
+                            <p class="testimonial-text">"감정 분석 시스템을 여러 개 도입했지만, 이처럼 시간의 흐름을 읽어내는 시스템은 처음입니다. 단순히 감정을 분류하는 것이 아니라, 그 변화의 궤적을 추적하여 이탈을 예측할 수 있게 되었습니다."</p>
+                            <div class="testimonial-source">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                    <g opacity="0.9">
+                                        <circle cx="4.5" cy="4.5" r="1.2" fill="currentColor"/>
+                                        <circle cx="8" cy="3" r="1" fill="currentColor"/>
+                                        <circle cx="11.5" cy="4.5" r="1.2" fill="currentColor"/>
+                                        <circle cx="6" cy="8" r="1" fill="currentColor"/>
+                                        <circle cx="10" cy="8" r="1" fill="currentColor"/>
+                                        <circle cx="4.5" cy="11.5" r="1.2" fill="currentColor"/>
+                                        <circle cx="8" cy="13" r="1" fill="currentColor"/>
+                                        <circle cx="11.5" cy="11.5" r="1.2" fill="currentColor"/>
+                                    </g>
+                                    <g opacity="0.4" stroke="currentColor" stroke-width="0.8" stroke-linecap="round">
+                                        <line x1="4.5" y1="4.5" x2="8" y2="3"/>
+                                        <line x1="8" y1="3" x2="11.5" y2="4.5"/>
+                                        <line x1="4.5" y1="4.5" x2="6" y2="8"/>
+                                        <line x1="11.5" y1="4.5" x2="10" y2="8"/>
+                                        <line x1="6" y1="8" x2="8" y2="13"/>
+                                        <line x1="10" y1="8" x2="8" y2="13"/>
+                                        <line x1="4.5" y1="4.5" x2="4.5" y2="11.5"/>
+                                        <line x1="11.5" y1="4.5" x2="11.5" y2="11.5"/>
+                                        <line x1="4.5" y1="11.5" x2="8" y2="13"/>
+                                        <line x1="11.5" y1="11.5" x2="8" y2="13"/>
+                                        <line x1="6" y1="8" x2="10" y2="8"/>
+                                        <line x1="8" y1="3" x2="6" y2="8"/>
+                                        <line x1="8" y1="3" x2="10" y2="8"/>
+                                    </g>
+                                </svg>
+                                <span>CX 분석 팀</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="feature-modal-stats">
+                        <div class="feature-modal-stat">
+                            <div class="feature-modal-stat-number">시간 축</div>
+                            <div class="feature-modal-stat-label">세그먼트 분석</div>
+                        </div>
+                        <div class="feature-modal-stat">
+                            <div class="feature-modal-stat-number">하이브리드</div>
+                            <div class="feature-modal-stat-label">규칙+ML 시스템</div>
+                        </div>
+                        <div class="feature-modal-stat">
+                            <div class="feature-modal-stat-number">시계열</div>
+                            <div class="feature-modal-stat-label">지표 산출</div>
+                        </div>
+                        <div class="feature-modal-stat">
+                            <div class="feature-modal-stat-number">재현성</div>
+                            <div class="feature-modal-stat-label">로그 기반 추적</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay feature-modal-overlay" id="featureModal2">
+        <div class="modal-container feature-modal-container">
+            <button class="modal-close" onclick="document.getElementById('featureModal2').classList.remove('active')" aria-label="모달 닫기">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+            </button>
+            <div class="feature-modal-content">
+                <div class="feature-modal-image">
+                    <img src="assets/img/img3.jpg" alt="">
+                </div>
+                <div class="feature-modal-inner">
+                    <div class="feature-modal-header">
+                        <h2 class="feature-modal-title">한국어에 특화된 감정 분석 AI</h2>
+                        <p class="feature-modal-description">희·노·애·락 체계로 한국인의 감정을 정확히 파악합니다</p>
+                    </div>
+                    <div class="feature-modal-body">
+                        <div class="feature-modal-content-text">
+                            <p>PatternContextAnalyzer는 현재 문장을 중심으로 앞뒤 3문장(총 7문장)의 창을 두고 시간·공간·사회적 마커를 함께 추출해 한국어 문맥을 정밀하게 이해합니다. 상황에 따라 존댓말, 반말, 구어체 표현을 구분해 별도의 어휘 사전에 매핑합니다.</p>
+                            <p>희·노·애·락 4대 감정 축을 기반으로 120개 세부 감정을 구분하며, ContextExtractor가 토픽과 심리 신호를 보정합니다. SituationAnalyzer는 KSS 기반 문장 분리와 지연 로딩 임베딩을 병행해 긴 문서도 효율적으로 처리하고, 은유나 간접 화법으로 인한 의미 손실을 줄이도록 설계되었습니다.</p>
+                            <p>LinguisticMatcher와 EmotionProgressionMatcher는 전후 문맥 가중치(기본 0.3)를 적용해 감정 전이의 방향성과 강도를 동시에 추정합니다. 내부 검증 환경에서 상담 로그·리뷰·SNS 등 다양한 한국어 텍스트에 대해 일관된 문맥 보정 성능을 확인했습니다.</p>
+                        </div>
+                        <div class="feature-modal-testimonial">
+                            <p class="testimonial-text">"다른 도구들은 한국어의 뉘앙스를 제대로 이해하지 못했습니다. 특히 구어체와 문맥 변화에 약했죠. 하지만 이 솔루션은 한국어의 특성을 정확히 파악합니다 - 정밀하고, 신뢰할 수 있으며, 사용하기 편리합니다."</p>
+                            <div class="testimonial-source">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                    <g opacity="0.9">
+                                        <circle cx="4.5" cy="4.5" r="1.2" fill="currentColor"/>
+                                        <circle cx="8" cy="3" r="1" fill="currentColor"/>
+                                        <circle cx="11.5" cy="4.5" r="1.2" fill="currentColor"/>
+                                        <circle cx="6" cy="8" r="1" fill="currentColor"/>
+                                        <circle cx="10" cy="8" r="1" fill="currentColor"/>
+                                        <circle cx="4.5" cy="11.5" r="1.2" fill="currentColor"/>
+                                        <circle cx="8" cy="13" r="1" fill="currentColor"/>
+                                        <circle cx="11.5" cy="11.5" r="1.2" fill="currentColor"/>
+                                    </g>
+                                    <g opacity="0.4" stroke="currentColor" stroke-width="0.8" stroke-linecap="round">
+                                        <line x1="4.5" y1="4.5" x2="8" y2="3"/>
+                                        <line x1="8" y1="3" x2="11.5" y2="4.5"/>
+                                        <line x1="4.5" y1="4.5" x2="6" y2="8"/>
+                                        <line x1="11.5" y1="4.5" x2="10" y2="8"/>
+                                        <line x1="6" y1="8" x2="8" y2="13"/>
+                                        <line x1="10" y1="8" x2="8" y2="13"/>
+                                        <line x1="4.5" y1="4.5" x2="4.5" y2="11.5"/>
+                                        <line x1="11.5" y1="4.5" x2="11.5" y2="11.5"/>
+                                        <line x1="4.5" y1="11.5" x2="8" y2="13"/>
+                                        <line x1="11.5" y1="11.5" x2="8" y2="13"/>
+                                        <line x1="6" y1="8" x2="10" y2="8"/>
+                                        <line x1="8" y1="3" x2="6" y2="8"/>
+                                        <line x1="8" y1="3" x2="10" y2="8"/>
+                                    </g>
+                                </svg>
+                                <span>콘텐츠 분석 팀</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="feature-modal-stats">
+                        <div class="feature-modal-stat">
+                            <div class="feature-modal-stat-number">3문장</div>
+                            <div class="feature-modal-stat-label">윈도우 분석</div>
+                        </div>
+                        <div class="feature-modal-stat">
+                            <div class="feature-modal-stat-number">120</div>
+                            <div class="feature-modal-stat-label">세부 감정 축</div>
+                        </div>
+                        <div class="feature-modal-stat">
+                            <div class="feature-modal-stat-number">문맥 중심</div>
+                            <div class="feature-modal-stat-label">보정 전략</div>
+                        </div>
+                        <div class="feature-modal-stat">
+                            <div class="feature-modal-stat-number">구어체</div>
+                            <div class="feature-modal-stat-label">표현 지원</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay feature-modal-overlay" id="featureModal3">
+        <div class="modal-container feature-modal-container">
+            <button class="modal-close" onclick="document.getElementById('featureModal3').classList.remove('active')" aria-label="모달 닫기">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+            </button>
+            <div class="feature-modal-content">
+                <div class="feature-modal-image">
+                    <img src="assets/img/img4.jpg" alt="">
+                </div>
+                <div class="feature-modal-inner">
+                    <div class="feature-modal-header">
+                        <h2 class="feature-modal-title">11개 AI 모듈의 협력 체계</h2>
+                        <p class="feature-modal-description">DAG 기반 파이프라인으로 다각도의 감정 신호를 통합합니다</p>
+                    </div>
+                    <div class="feature-modal-body">
+                        <div class="feature-modal-content-text">
+                            <p><strong>11개 AI 모듈 앙상블</strong>은 PatternExtractor·EmotionClassifier·IntensityAnalyzer·TransitionAnalyzer·SituationAnalyzer 등 전문 모듈이 역할을 분담하고, EmotionPipelineOrchestrator가 DAG 기반으로 실행 순서를 관리하는 구조입니다. 각 모듈은 독립적으로 업데이트할 수 있어 유지보수가 용이합니다.</p>
+                            <p><strong>MVP 기준 내부 평가</strong> 단계에서 다양한 한국어 텍스트에 대해 일관된 결과를 확인했으며, BALANCED 정밀 모드에서 11개 모듈 전체를 실행해 다각도의 시그널을 함께 제공합니다. QualityAssessor가 결과의 신뢰도를 추정하고 리포트에 필요한 메타데이터를 함께 생성합니다.</p>
+                            <p><strong>확장 로드맵</strong>은 실시간 분석 엔진 고도화, 대규모 데이터 파이프라인 구축, API 응답 성능 향상을 포함합니다. 모듈 캐싱과 병렬 처리 튜닝으로 대규모 상담 로그나 VOC 데이터를 안정적으로 처리할 수 있도록 설계돼 있습니다.</p>
+                        </div>
+                        <div class="feature-modal-testimonial">
+                            <p class="testimonial-text">"희·노·애·락 체계와 11개 모듈 앙상블은 혁신적입니다. 한국어 감정 분석에서 이런 수준의 정확도를 보여준 솔루션은 처음입니다. 투자 후 성장 가능성이 무궁무진합니다."</p>
+                            <div class="testimonial-source">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                    <g opacity="0.9">
+                                        <circle cx="4.5" cy="4.5" r="1.2" fill="currentColor"/>
+                                        <circle cx="8" cy="3" r="1" fill="currentColor"/>
+                                        <circle cx="11.5" cy="4.5" r="1.2" fill="currentColor"/>
+                                        <circle cx="6" cy="8" r="1" fill="currentColor"/>
+                                        <circle cx="10" cy="8" r="1" fill="currentColor"/>
+                                        <circle cx="4.5" cy="11.5" r="1.2" fill="currentColor"/>
+                                        <circle cx="8" cy="13" r="1" fill="currentColor"/>
+                                        <circle cx="11.5" cy="11.5" r="1.2" fill="currentColor"/>
+                                    </g>
+                                    <g opacity="0.4" stroke="currentColor" stroke-width="0.8" stroke-linecap="round">
+                                        <line x1="4.5" y1="4.5" x2="8" y2="3"/>
+                                        <line x1="8" y1="3" x2="11.5" y2="4.5"/>
+                                        <line x1="4.5" y1="4.5" x2="6" y2="8"/>
+                                        <line x1="11.5" y1="4.5" x2="10" y2="8"/>
+                                        <line x1="6" y1="8" x2="8" y2="13"/>
+                                        <line x1="10" y1="8" x2="8" y2="13"/>
+                                        <line x1="4.5" y1="4.5" x2="4.5" y2="11.5"/>
+                                        <line x1="11.5" y1="4.5" x2="11.5" y2="11.5"/>
+                                        <line x1="4.5" y1="11.5" x2="8" y2="13"/>
+                                        <line x1="11.5" y1="11.5" x2="8" y2="13"/>
+                                        <line x1="6" y1="8" x2="10" y2="8"/>
+                                        <line x1="8" y1="3" x2="6" y2="8"/>
+                                        <line x1="8" y1="3" x2="10" y2="8"/>
+                                    </g>
+                                </svg>
+                                <span>데이터 팀</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="feature-modal-stats">
+                        <div class="feature-modal-stat">
+                            <div class="feature-modal-stat-number">11개</div>
+                            <div class="feature-modal-stat-label">모듈 협력</div>
+                        </div>
+                        <div class="feature-modal-stat">
+                            <div class="feature-modal-stat-number">MVP</div>
+                            <div class="feature-modal-stat-label">현재 단계</div>
+                        </div>
+                        <div class="feature-modal-stat">
+                            <div class="feature-modal-stat-number">다각도</div>
+                            <div class="feature-modal-stat-label">품질 지표</div>
+                        </div>
+                        <div class="feature-modal-stat">
+                            <div class="feature-modal-stat-number">로그</div>
+                            <div class="feature-modal-stat-label">상태 모니터링</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <section class="main-list">
+        <div class="container">
+            <!-- 상단 헤더 -->
+            <div class="list-header">
+                <h2>하이브리드 시스템으로 감정의 시간적 흐름을 계측합니다.</h2>
+                <p>규칙 기반 분석과 머신러닝이 결합된 파이프라인이 감정의 시간적 흐름을 측정합니다. 
+                감정 시퀀스, 전환 정보, 인과 링크를 산출하여 타임라인으로 시각화하며, 
+                4가지 핵심 지표(안정성, 흐름 커버리지, 회복 신호, 전이 변동성)로 실행 가능한 인사이트를 제공합니다.</p>
+                <div class="cta-buttons">
+                    <a href="#" class="btn btn-primary" id="modules-btn">모듈 상세 보기</a>
+                </div>
+            </div>
+    
+            <!-- 기능 목록 그리드 -->
+            <ul class="list">
+                <li class="item">
+                    <div class="item-header">
+                        <span class="icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" role="img">
+                                <circle cx="12" cy="12" r="8.5" stroke="#10b981" stroke-width="1.5" />
+                                <path d="M12 3.5v17M3.5 12h17" stroke="#10b981" stroke-width="1.5" stroke-linecap="round" />
+                                <path d="M12 12l6-6" stroke="#10b981" stroke-width="1.5" stroke-linecap="round" />
+                            </svg>
+                        </span>
+                        <h3>시간적 내러티브 분석</h3>
+                    </div>
+                    <p>EmotionPipelineOrchestrator가 Pattern Extractor, Time-Series Analyzer, Transition Analyzer를 엮어 문장별 감정 흐름과 전환 타임라인을 동시에 재구성합니다.</p>
+                </li>
+                <li class="item">
+                    <div class="item-header">
+                        <span class="icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" role="img">
+                                <path d="M5 16a7 7 0 1114 0" stroke="#10b981" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M12 13.5l2.5 2.5H9.5L12 13.5Z" fill="#10b981" />
+                                <path d="M12 5v4" stroke="#10b981" stroke-width="1.5" stroke-linecap="round" />
+                            </svg>
+                        </span>
+                        <h3>안정성 지수 (0-100%)</h3>
+                    </div>
+                    <p>Transition Analyzer가 감정 전환 분산을 계산하고 Weight Calculator가 실제 업무 임계값에 맞춰 0~100% 스코어로 정규화합니다.</p>
+                </li>
+                <li class="item">
+                    <div class="item-header">
+                        <span class="icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" role="img">
+                                <circle cx="9" cy="10" r="4" stroke="#3b82f6" stroke-width="1.5" />
+                                <circle cx="15" cy="10" r="4" stroke="#10b981" stroke-width="1.5" />
+                                <circle cx="12" cy="14" r="4" stroke="#10b981" stroke-width="1.5" opacity="0.6" />
+                            </svg>
+                        </span>
+                        <h3>시간 흐름 커버리지 (0.0-1.0)</h3>
+                    </div>
+                    <p>Context Extractor와 Time-Series Analyzer가 감정 세그먼트 커버리지를 산출하고 QualityAssessor가 0~1 범위의 신뢰도를 함께 제공합니다.</p>
+                </li>
+                <li class="item">
+                    <div class="item-header">
+                        <span class="icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" role="img">
+                                <path d="M12 3.5a5 5 0 015 5c0 3.5-5 8-5 8s-5-4.5-5-8a5 5 0 015-5Z" stroke="#10b981" stroke-width="1.5" stroke-linejoin="round" />
+                                <circle cx="12" cy="8.5" r="1.8" fill="#10b981" />
+                                <path d="M7 18h10" stroke="#10b981" stroke-width="1.5" stroke-linecap="round" />
+                            </svg>
+                        </span>
+                        <h3>회복 신호 (0.0-1.0)</h3>
+                    </div>
+                    <p>Intensity Analyzer가 부정→중립/긍정 전환의 기울기를 측정하고 Transition Analyzer가 회복 구간을 검증해 0~1 스코어로 반환합니다.</p>
+                </li>
+                <li class="item">
+                    <div class="item-header">
+                        <span class="icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" role="img">
+                                <path d="M6 8l6-4 6 4 6-4" stroke="#10b981" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M6 16l6 4 6-4" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M6 12h12" stroke="#10b981" stroke-width="1.5" stroke-linecap="round" />
+                            </svg>
+                        </span>
+                        <h3>전이 변동성</h3>
+                    </div>
+                    <p>Transition Analyzer가 단위 길이당 전환 빈도를 계산하고 Emotion Relationship Analyzer가 급변·진동 패턴을 분류합니다.</p>
+                </li>
+                <li class="item">
+                    <div class="item-header">
+                        <span class="icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" role="img">
+                                <path d="M7.5 9.5c0-3 2.5-5 5.5-5 2.5 0 4.5 1.7 4.5 3.8 0 1.4-.7 2.1-1.8 2.8 1.6.6 2.8 1.9 2.8 3.7 0 2.2-2.3 3.7-5 3.7-2.5 0-5-.9-6-2.3" stroke="#10b981" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M9 8c0 1 1.2 1.6 2.5 1.6" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round" />
+                                <path d="M9 16.5c1 .8 2.3 1.3 3.8 1.3" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round" />
+                            </svg>
+                        </span>
+                        <h3>인과 링크 분석</h3>
+                    </div>
+                    <p>Pattern Extractor가 트리거 시그널을 찾고 Emotion Relationship Analyzer가 원인-결과 링크를 그래프 구조로 연결합니다.</p>
+                </li>
+                <li class="item">
+                    <div class="item-header">
+                        <span class="icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" role="img">
+                                <path d="M5 7c0-1.1.9-2 2-2h5c1.1 0 2 .9 2 2v1c0 1.1-.9 2-2 2H9l3 4" stroke="#10b981" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M14 15h3.5L18 18" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M5 11h2" stroke="#10b981" stroke-width="1.5" stroke-linecap="round" />
+                            </svg>
+                        </span>
+                        <h3>진단 메타 제공</h3>
+                    </div>
+                    <p>EmotionPipelineOrchestrator가 time_flow_mode, coverage, reason_codes, confidence를 자동 수집해 감사 대응 자료로 바로 활용할 수 있습니다.</p>
+                </li>
+                <li class="item">
+                    <div class="item-header">
+                        <span class="icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" role="img">
+                                <path d="M6 17l4-5 4 3 4-5" stroke="#10b981" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                <circle cx="6" cy="17" r="1.5" fill="#10b981" />
+                                <circle cx="10" cy="12" r="1.5" fill="#0a0a0a" />
+                                <circle cx="14" cy="15" r="1.5" fill="#0a0a0a" />
+                                <circle cx="18" cy="10" r="1.5" fill="#10b981" />
+                            </svg>
+                        </span>
+                        <h3>정제된 세부 감정</h3>
+                    </div>
+                    <p>Complex Analyzer가 규칙·ML 결과를 앙상블하고 Psychological Analyzer가 성숙도·콤보 복잡도를 보정해 세부 감정을 정제합니다.</p>
+                </li>
+                <li class="item">
+                    <div class="item-header">
+                        <span class="icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" role="img">
+                                <circle cx="7" cy="12" r="2.2" stroke="#3b82f6" stroke-width="1.5" />
+                                <circle cx="17" cy="8" r="2.2" stroke="#10b981" stroke-width="1.5" />
+                                <circle cx="17" cy="16" r="2.2" stroke="#10b981" stroke-width="1.5" />
+                                <path d="M8.8 11.2l6.4-2.4M8.8 12.8l6.4 2.4" stroke="#10b981" stroke-width="1.5" stroke-linecap="round" />
+                            </svg>
+                        </span>
+                        <h3>재현 가능한 계측</h3>
+                    </div>
+                    <p>Weight Calculator가 reason_code와 confidence를 함께 기록해 동일 입력에 대한 일관된 결과와 추적 가능한 로그를 보장합니다.</p>
+                </li>
+            </ul>
+        </div>
+    </section>
+    
+    <!-- 11개 모듈 상세 모달창 -->
+    <div class="modal-overlay feature-modal-overlay" id="modulesModal">
+        <div class="modal-container feature-modal-container modules-modal-container">
+            <button class="modal-close" onclick="document.getElementById('modulesModal').classList.remove('active'); document.body.style.overflow='';" aria-label="모달 닫기">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+            </button>
+            <div class="feature-modal-content">
+                <div class="feature-modal-inner modules-modal-inner">
+                    <div class="feature-modal-header">
+                        <h2 class="feature-modal-title">11개 AI 모듈 앙상블 시스템</h2>
+                        <p class="feature-modal-description">DAG 기반 파이프라인으로 각 모듈이 유기적으로 협력하여 정밀한 감정 분석을 제공합니다</p>
+                    </div>
+                    <div class="feature-modal-stats modules-modal-stats">
+                        <div class="feature-modal-stat">
+                            <div class="feature-modal-stat-number">11</div>
+                            <div class="feature-modal-stat-label">전처리 모듈</div>
+                        </div>
+                        <div class="feature-modal-stat">
+                            <div class="feature-modal-stat-number">다각도</div>
+                            <div class="feature-modal-stat-label">분석 채널</div>
+                        </div>
+                        <div class="feature-modal-stat">
+                            <div class="feature-modal-stat-number">DAG</div>
+                            <div class="feature-modal-stat-label">파이프라인 구조</div>
+                        </div>
+                        <div class="feature-modal-stat">
+                            <div class="feature-modal-stat-number">120</div>
+                            <div class="feature-modal-stat-label">세부 감정 분류</div>
+                        </div>
+                    </div>
+                    <div class="modules-intro">
+                        <p>각 모듈은 특화된 역할을 수행하며, 이전 단계의 결과를 다음 단계로 전달하는 파이프라인 구조로 동작합니다.</p>
+                    </div>
+                    <div class="feature-modal-body">
+                        <div class="modules-grid">
+                            <div class="module-card">
+                                <div class="module-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                        <path d="M4 7l8-4 8 4v10l-8 4-8-4V7z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+                                        <path d="M8 9.5l4 2 4-2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                                    </svg>
+                                </div>
+                                <h3>Pattern Extractor</h3>
+                                <p class="module-description">규칙 기반 감정 시그널을 초저지연으로 추출하는 전처리 엔진</p>
+                                <ul class="module-meta">
+                                    <li><span class="meta-label">고속 처리</span> 정규식 샤딩과 8K LRU 캐시로 토큰화를 2ms 이내로 유지</li>
+                                    <li><span class="meta-label">자동 최적화</span> 시스템 환경을 감지해 스레드 수를 자동 튜닝</li>
+                                    <li><span class="meta-label">동적 로딩</span> 감정 사전을 환경에 맞게 동적으로 로드하고 진단 로그 제공</li>
+                                </ul>
+                            </div>
+                            <div class="module-card">
+                                <div class="module-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                        <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.5"/>
+                                        <path d="M12 2v6m0 8v6M4 12h6m8 0h6" stroke="currentColor" stroke-width="1.5" opacity="0.5"/>
+                                    </svg>
+                                </div>
+                                <h3>Context Extractor</h3>
+                                <p class="module-description">문맥 마커를 정량화해 감정 후보를 정밀하게 보정</p>
+                                <ul class="module-meta">
+                                    <li><span class="meta-label">문맥 분석</span> 앞뒤 3문장을 고려해 시간·공간·사회적 맥락을 합성</li>
+                                    <li><span class="meta-label">대용량 처리</span> 메모리 가드와 하드캡으로 대규모 로그를 안정적으로 처리</li>
+                                    <li><span class="meta-label">노이즈 제거</span> coverage와 dominance 임계값으로 불필요한 신호 억제</li>
+                                </ul>
+                            </div>
+                            <div class="module-card">
+                                <div class="module-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                        <path d="M4 8h16M4 12h16M4 16h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                                        <path d="M8 8l3 3-3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                                <h3>Linguistic Matcher</h3>
+                                <p class="module-description">언어 패턴과 감정 ontology를 결합해 한국어 표현을 정밀 매칭</p>
+                                <ul class="module-meta">
+                                    <li><span class="meta-label">한국어 특화</span> 방언·은유·반어 등 다양한 표현을 안정적으로 식별</li>
+                                    <li><span class="meta-label">캐시 최적화</span> 토큰 경계 정규식을 LRU 캐시로 빠른 매칭 제공</li>
+                                    <li><span class="meta-label">유연한 설정</span> 환경 변수로 매칭 우선순위를 실시간 조정 가능</li>
+                                </ul>
+                            </div>
+                            <div class="module-card">
+                                <div class="module-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                        <path d="M5 16a7 7 0 1114 0" stroke="currentColor" stroke-width="1.5"/>
+                                        <path d="M12 9v4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                                    </svg>
+                                </div>
+                                <h3>Intensity Analyzer</h3>
+                                <p class="module-description">감정 강도를 0~1 스케일로 계량화하는 하이브리드 스코어러</p>
+                                <ul class="module-meta">
+                                    <li><span class="meta-label">하이브리드 분석</span> ML 모델과 로컬 lexicon을 결합해 정교한 강도 측정</li>
+                                    <li><span class="meta-label">성능 최적화</span> GPU/CPU 자동 감지와 가속기로 처리량과 지연 최적화</li>
+                                    <li><span class="meta-label">재현성 보장</span> 원자적 파일 락으로 결과 기록 및 장애 복구 지원</li>
+                                </ul>
+                            </div>
+                            <div class="module-card">
+                                <div class="module-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                        <path d="M6 7l6-4 6 4v10l-6 4-6-4V7z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+                                        <path d="M9 12h6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                                    </svg>
+                                </div>
+                                <h3>Transition Analyzer</h3>
+                                <p class="module-description">감정 전환 구조를 해석하고 안정성 지표를 제공</p>
+                                <ul class="module-meta">
+                                    <li><span class="meta-label">전환 지표</span> 안정성·변동성·최고 강도를 0~1 범위로 정규화</li>
+                                    <li><span class="meta-label">흐름 분석</span> 문장 수 대비 이벤트 커버리지로 감정 흐름 모드 결정</li>
+                                    <li><span class="meta-label">장기 처리</span> 메모리 모니터와 문장 분해기로 긴 대화 안전 처리</li>
+                                </ul>
+                            </div>
+                            <div class="module-card">
+                                <div class="module-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                        <path d="M4 19h16M6 15l4-6 3 4 5-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                                <h3>Situation Analyzer</h3>
+                                <p class="module-description">상황적 단서를 추출해 감정 해석을 보완</p>
+                                <ul class="module-meta">
+                                    <li><span class="meta-label">대화 분해</span> KSS와 커스텀 규칙으로 긴 대화를 안정적으로 세그먼트</li>
+                                    <li><span class="meta-label">맥락 스코어링</span> 임베딩과 TF-IDF로 상황·인물·상품 맥락을 정량화</li>
+                                    <li><span class="meta-label">노이즈 필터링</span> 영향도 상위 K개만 유지해 핵심 정보만 추출</li>
+                                </ul>
+                            </div>
+                            <div class="module-card">
+                                <div class="module-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                        <path d="M5 18h14M7 6l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                                <h3>Time-Series Analyzer</h3>
+                                <p class="module-description">감정 시퀀스를 시간 축으로 재구성하여 변화 추적</p>
+                                <ul class="module-meta">
+                                    <li><span class="meta-label">자동 모드 선택</span> 커버리지에 따라 최적의 시간 흐름 모드 자동 선택</li>
+                                    <li><span class="meta-label">구조화된 결과</span> 감정 시퀀스·인과관계·진단 정보를 체계적으로 정리</li>
+                                    <li><span class="meta-label">KPI 연동</span> 전환 강도 변화를 추적해 핵심 지표로 직렬화</li>
+                                </ul>
+                            </div>
+                            <div class="module-card">
+                                <div class="module-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                        <path d="M12 3a6 6 0 016 6c0 4.5-6 10-6 10S6 13.5 6 9a6 6 0 016-6z" stroke="currentColor" stroke-width="1.5"/>
+                                        <circle cx="12" cy="9" r="1.5" fill="currentColor"/>
+                                    </svg>
+                                </div>
+                                <h3>Psychological Analyzer</h3>
+                                <p class="module-description">심리 지표와 성숙도를 평가하는 상위 레이어</p>
+                                <ul class="module-meta">
+                                    <li><span class="meta-label">심리 패턴 분석</span> 방어기제·인지편향 룰셋으로 심리 상태 평가</li>
+                                    <li><span class="meta-label">로그 축적</span> 분석 로그를 JSON 스트림으로 체계적으로 기록</li>
+                                    <li><span class="meta-label">자동 조절</span> 시스템 의존성을 감지해 메모리와 성능 최적화</li>
+                                </ul>
+                            </div>
+                            <div class="module-card">
+                                <div class="module-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                        <circle cx="8" cy="12" r="2.2" stroke="currentColor" stroke-width="1.5"/>
+                                        <circle cx="16" cy="9" r="2.2" stroke="currentColor" stroke-width="1.5"/>
+                                        <path d="M9.8 11.3l4.4-1.6M9.8 12.7l4.4 1.6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                                    </svg>
+                                </div>
+                                <h3>Emotion Relationship Analyzer</h3>
+                                <p class="module-description">감정 간 상관관계와 전이 경로를 모델링</p>
+                                <ul class="module-meta">
+                                    <li><span class="meta-label">관계 그래프</span> 동적 설정으로 감정 간 관계와 가중치를 유연하게 구성</li>
+                                    <li><span class="meta-label">캐시 최적화</span> 감정 패턴 ontology를 캐시해 빠른 재사용</li>
+                                    <li><span class="meta-label">메모리 제어</span> 대규모 계산 시 메모리 사용량을 안전하게 제한</li>
+                                </ul>
+                            </div>
+                            <div class="module-card">
+                                <div class="module-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                        <path d="M6 6h12v12H6z" stroke="currentColor" stroke-width="1.5"/>
+                                        <path d="M6 10h12M10 6v12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
+                                    </svg>
+                                </div>
+                                <h3>Complex Analyzer</h3>
+                                <p class="module-description">규칙 기반 결과와 ML 출력을 앙상블하는 중앙 조정자</p>
+                                <ul class="module-meta">
+                                    <li><span class="meta-label">재현 가능한 앙상블</span> 확률 분포를 일관되게 생성해 동일 입력에 동일 결과 보장</li>
+                                    <li><span class="meta-label">자동 폴백</span> 시스템 환경에 따라 최적의 연산 경로 자동 선택</li>
+                                    <li><span class="meta-label">점수 안정화</span> 극단값을 제어해 신뢰할 수 있는 감정 점수 산출</li>
+                                </ul>
+                            </div>
+                            <div class="module-card">
+                                <div class="module-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                        <path d="M5 7h9l2 4h3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M5 12h6l2 4h6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.7"/>
+                                    </svg>
+                                </div>
+                                <h3>Weight Calculator</h3>
+                                <p class="module-description">모듈별 점수를 통합해 최종 감정과 신뢰도를 산출</p>
+                                <ul class="module-meta">
+                                    <li><span class="meta-label">원자적 로깅</span> 회전 로그와 JSON 로그를 안전하게 기록해 데이터 무결성 보장</li>
+                                    <li><span class="meta-label">경로 최적화</span> 시스템 리소스를 감지해 최적의 가중치 통합 경로 선택</li>
+                                    <li><span class="meta-label">스트림 처리</span> 스레드 풀과 버퍼로 실시간 가중치 계산 지원</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="module-summary">
+                            <div class="module-summary-header">
+                                <h3>DAG 기반 협력 체계</h3>
+                                <p>EmotionPipelineOrchestrator가 11개 모듈을 유기적으로 조율하여 정밀한 감정 분석을 수행합니다.</p>
+                            </div>
+                            <div class="module-summary-content">
+                                <div class="module-summary-item">
+                                    <div class="module-summary-icon">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                    </div>
+                                    <div class="module-summary-text">
+                                        <strong>모듈 간 협력</strong>
+                                        <span>각 모듈이 이전 단계의 출력을 입력으로 받아 순차적으로 감정을 정밀화합니다.</span>
+                                    </div>
+                                </div>
+                                <div class="module-summary-item">
+                                    <div class="module-summary-icon">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                            <path d="M9 11l3 3L22 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                    </div>
+                                    <div class="module-summary-text">
+                                        <strong>재현 가능성</strong>
+                                        <span>reason_codes와 diagnostics로 모든 분석 과정을 추적하고 재현할 수 있습니다.</span>
+                                    </div>
+                                </div>
+                                <div class="module-summary-item">
+                                    <div class="module-summary-icon">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                            <path d="M12 2L2 7l10 5 10-5-10-5z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                                            <path d="M2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                                        </svg>
+                                    </div>
+                                    <div class="module-summary-text">
+                                        <strong>품질 검증</strong>
+                                        <span>QualityAssessor가 coverage와 confidence를 검증하여 신뢰할 수 있는 결과를 보장합니다.</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- IR 브리프 모달 -->
+    <div class="modal-overlay feature-modal-overlay" id="irModal" aria-hidden="true">
+        <div class="modal-container feature-modal-container" role="dialog" aria-modal="true" aria-labelledby="irModalTitle">
+            <button class="modal-close" type="button" aria-label="모달 닫기" onclick="document.getElementById('irModal').classList.remove('active'); document.body.style.overflow='';">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+            </button>
+            <div class="feature-modal-content ir-modal-content">
+                <div class="feature-modal-inner">
+                    <div class="feature-modal-header">
+                        <h2 class="feature-modal-title" id="irModalTitle">AESA 사업 소개</h2>
+                        <p class="feature-modal-description">희·노·애·락 기반 감정 표준을 구축한 AESA의 파이프라인, KPI, 확장 로드맵을 한 번에 검토할 수 있는 인터랙티브 리포트입니다.</p>
+                    </div>
+                    <div class="feature-modal-body ir-modal-body">
+                        <div class="ir-modal-viewer" aria-live="polite">
+                            <iframe data-src="assets/docs/AESA_IR.pdf" title="AESA IR Preview"></iframe>
+                            <div class="ir-modal-viewer-fallback">
+                                <p>PDF 미리보기가 보이지 않으면 <a href="assets/docs/AESA_IR.pdf" target="_blank" rel="noopener">새 창에서 열기</a>를 선택하세요.</p>
+                            </div>
+                        </div>
+                        <div class="ir-modal-info">
+                            <div class="ir-modal-meta">
+                                <div class="ir-meta-item">
+                                    <span class="ir-meta-label">FAST SLA</span>
+                                    <strong>~5s</strong>
+                                    <p class="ir-meta-note">결과는 즉시 제공되지만 CPU 기반으로 모듈 스킵으로 정확도 저하</p>
+                                </div>
+                                <div class="ir-meta-item">
+                                    <span class="ir-meta-label">정밀 SLA</span>
+                                    <strong>3~7분</strong>
+                                    <p class="ir-meta-note">11개 모듈 전부 실행 시 5분 내외, 최대 7분 소요</p>
+                                </div>
+                                <div class="ir-meta-item">
+                                    <span class="ir-meta-label">데이터 커버리지</span>
+                                    <strong>7.7K / 220K</strong>
+                                    <p class="ir-meta-note">22만 건 목표 중 7,700건 학습(개인적 사유로 진행 지연)</p>
+                                </div>
+                                <div class="ir-meta-item">
+                                    <span class="ir-meta-label">모듈 환경</span>
+                                    <strong>CPU · 11/11</strong>
+                                    <p class="ir-meta-note">전처리 모듈이 모두 CPU라 FAST 모드에서 일부만 가동</p>
+                                </div>
+                            </div>
+                            <p class="ir-modal-copy">
+                                <span class="ir-highlight">우리가 시작한 이유</span>
+                                는 불완전한 감정 로그를 시간 축에서 계량화해 컨택센터, 금융, 리테일 기업이 고객의 감정 전이를 즉시 파악하게 만드는 것입니다. 그런데 현재는 <span class="ir-highlight">Fast 모드</span>가 5초 내외로 응답하더라도 CPU 기반 모듈을 스킵해야 해 정확도가 떨어지고, <span class="ir-highlight">정밀 모드</span>는 5~7분 걸려도 7,700건으로 학습된 모델이라 한계가 분명합니다.</p>
+                            <div class="ir-brief-grid">
+                                <div class="ir-brief-card">
+                                    <h4><span class="ir-status-tag ir-tag-warning">FAST</span> 현실</h4>
+                                    <p>5초 안에 결과는 나오지만 전처리 11모듈이 모두 CPU라 일부만 실행됩니다. 감정 흐름이나 전이 지표가 스킵되어 샘플링 노이즈가 생기고, skip-flag가 켜진 결과는 샌드박스 용도로만 쓰고 있습니다.</p>
+                                </div>
+                                <div class="ir-brief-card">
+                                    <h4><span class="ir-status-tag ir-tag-precise">BALANCED</span> 현실</h4>
+                                    <p>11개 모듈을 모두 돌리면 3~5분, 길면 7분이 필요하지만, reason_code·timeline을 포함한 정밀 리포트가 나옵니다. 다만 학습 데이터가 7,700건에 머물러 있어 한계가 명확합니다.</p>
+                                </div>
+                                <div class="ir-brief-card">
+                                    <h4>데이터 & 운영</h4>
+                                    <p>누적 22만 건을 목표로 했지만 실제 정제·학습은 7,700건 수준입니다. 개인적인 일정으로 모듈 개선 및 데이터 증강이 지연되어 있고, 그 결과 Fast/Balance 모두 품질 편차를 안고 있습니다.</p>
+                                </div>
+                            </div>
+                            <p class="ir-modal-copy ir-section-title">우리가 직면한 문제</p>
+                            <ul class="ir-modal-list">
+                                <li>FAST 모드 결과는 5초 내외지만 CPU 기반 모듈 스킵으로 정확도가 급락합니다.</li>
+                                <li>정밀 모드는 11개 모듈을 모두 실행해야 해 3~7분이 걸리고, 학습 데이터가 7,700건이라 일반화가 어렵습니다.</li>
+                                <li>실시간 감지를 구현하려면 모듈 3~4개를 추가로 설계하고 GPU 최적화가 필요하지만 아직 착수하지 못했습니다.</li>
+                            </ul>
+                            <p class="ir-modal-copy ir-section-title">앞으로의 개선 계획</p>
+                            <ul class="ir-roadmap-list">
+                                <li><strong>모듈 GPU 전환:</strong> 11개 전처리 모듈을 GPU 기반으로 이식해 FAST 모드에서도 전체 파이프라인을 살리는 것이 1순위입니다.</li>
+                                <li><strong>FAST 정확도 방어:</strong> 스킵 없는 축약 파이프라인을 설계하고, 데이터 증강·온톨로지 업데이트로 5초 응답과 정확도를 동시에 잡겠습니다.</li>
+                                <li><strong>실시간 감지 모듈 추가:</strong> 트렌드 디텍터·이벤트 브로커 등 3~4개 모듈을 더해 스트리밍 환경에서도 감정 전이가 끊기지 않도록 합니다.</li>
+                                <li><strong>시장 확장:</strong> 컨택센터·금융·리테일 시장을 우선 공략하며, 실시간 KPI 패널을 통해 전환율·LTV 향상을 직접 증명하겠습니다.</li>
+                            </ul>
+                            <p class="ir-modal-copy ir-vision">우리는 아직 부족합니다. 모듈과 데이터, 인프라 모두 다듬어야 합니다. 하지만 전 과정이 정밀하게 연결된 감정 기관을 만들고, 결국에는 <span>한국어 감정 인공지능 기관을 대표하는 팀</span>이 되는 것이 우리의 꿈이고 목표입니다.</p>
+                            <a href="assets/docs/AESA_IR.pdf" target="_blank" rel="noopener" class="btn btn-primary ir-download">PDF 새 창에서 보기</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 모달창 -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal-container">
+            <button class="modal-close" id="modalClose" aria-label="모달 닫기">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+            </button>
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="modal-icon" id="modalIcon"></span>
+                    <h2 class="modal-title" id="modalTitle"></h2>
+                </div>
+                <div class="modal-body" id="modalBody">
+                    <p class="modal-description" id="modalDescription"></p>
+                    <div class="modal-features" id="modalFeatures"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="main-item1" id="usecases">
+        <div class="container">
+            <div class="wrapper">
+                <div class="top">
+                    <div class="badge-category">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" class="badge-dot">
+                            <g opacity="0.9">
+                                <circle cx="4.5" cy="4.5" r="1.2" fill="currentColor"/>
+                                <circle cx="8" cy="3" r="1" fill="currentColor"/>
+                                <circle cx="11.5" cy="4.5" r="1.2" fill="currentColor"/>
+                                <circle cx="6" cy="8" r="1" fill="currentColor"/>
+                                <circle cx="10" cy="8" r="1" fill="currentColor"/>
+                                <circle cx="4.5" cy="11.5" r="1.2" fill="currentColor"/>
+                                <circle cx="8" cy="13" r="1" fill="currentColor"/>
+                                <circle cx="11.5" cy="11.5" r="1.2" fill="currentColor"/>
+                            </g>
+                            <g opacity="0.4" stroke="currentColor" stroke-width="0.8" stroke-linecap="round">
+                                <line x1="4.5" y1="4.5" x2="8" y2="3"/>
+                                <line x1="8" y1="3" x2="11.5" y2="4.5"/>
+                                <line x1="4.5" y1="4.5" x2="6" y2="8"/>
+                                <line x1="11.5" y1="4.5" x2="10" y2="8"/>
+                                <line x1="6" y1="8" x2="8" y2="13"/>
+                                <line x1="10" y1="8" x2="8" y2="13"/>
+                                <line x1="4.5" y1="4.5" x2="4.5" y2="11.5"/>
+                                <line x1="11.5" y1="4.5" x2="11.5" y2="11.5"/>
+                                <line x1="4.5" y1="11.5" x2="8" y2="13"/>
+                                <line x1="11.5" y1="11.5" x2="8" y2="13"/>
+                                <line x1="6" y1="8" x2="10" y2="8"/>
+                                <line x1="8" y1="3" x2="6" y2="8"/>
+                                <line x1="8" y1="3" x2="10" y2="8"/>
+                            </g>
+                        </svg>
+                        <span class="badge-text">Contact Center</span>
+                    </div>
+                    <h2 class="title">감정 지능형 컨택센터</h2>
+                    <p class="description">
+                        상담 로그를 감정 타임라인·전환 지점·핵심 KPI로 정리합니다.
+                        불만이 증폭되는 순간과 이탈 조짐을 조기에 포착하고, 운영팀과 QA팀이 바로 실행할 교정 시나리오를 제공합니다.
+                    </p>
+                </div>
+                <div class="middle">
+                    <video src="assets/img/item3.mp4" autoplay muted loop playsinline class="middle-image"></video>
+                </div>
+            </div>
+            <div class="bottom">
+                <ul>
+                    <li>
+                        <div class="card-header">
+                            <span class="card-title">감정 타임라인 리포트</span>
+                            <span class="card-description">콜 종료 후 자동 생성되는 감정 타임라인으로 불만 증폭 구간과 전환 원인을 시각화하고 후속 응대 우선순위를 제시합니다.</span>
+                        </div>
+                        <div class="card-media">
+                            <img src="assets/img/img15.png" alt="">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="card-header">
+                            <span class="card-title">KPI 코어 패널</span>
+                            <span class="card-description">안정성, 흐름 커버리지, 회복 신호, 전이 변동성을 자동 집계해 경영·QA 대시보드로 전달하고 즉시 실행 가능한 조치 권고안을 함께 제공합니다.</span>
+                        </div>
+                        <div class="card-media">
+                            <img src="assets/img/img19.png" alt="">
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="main-item2">
+        <div class="container">
+            <div class="wrapper">
+                <div class="top">
+                    <div class="badge-category">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" class="badge-dot">
+                            <g opacity="0.9">
+                                <circle cx="4.5" cy="4.5" r="1.2" fill="currentColor"/>
+                                <circle cx="8" cy="3" r="1" fill="currentColor"/>
+                                <circle cx="11.5" cy="4.5" r="1.2" fill="currentColor"/>
+                                <circle cx="6" cy="8" r="1" fill="currentColor"/>
+                                <circle cx="10" cy="8" r="1" fill="currentColor"/>
+                                <circle cx="4.5" cy="11.5" r="1.2" fill="currentColor"/>
+                                <circle cx="8" cy="13" r="1" fill="currentColor"/>
+                                <circle cx="11.5" cy="11.5" r="1.2" fill="currentColor"/>
+                            </g>
+                            <g opacity="0.4" stroke="currentColor" stroke-width="0.8" stroke-linecap="round">
+                                <line x1="4.5" y1="4.5" x2="8" y2="3"/>
+                                <line x1="8" y1="3" x2="11.5" y2="4.5"/>
+                                <line x1="4.5" y1="4.5" x2="6" y2="8"/>
+                                <line x1="11.5" y1="4.5" x2="10" y2="8"/>
+                                <line x1="6" y1="8" x2="8" y2="13"/>
+                                <line x1="10" y1="8" x2="8" y2="13"/>
+                                <line x1="4.5" y1="4.5" x2="4.5" y2="11.5"/>
+                                <line x1="11.5" y1="4.5" x2="11.5" y2="11.5"/>
+                                <line x1="4.5" y1="11.5" x2="8" y2="13"/>
+                                <line x1="11.5" y1="11.5" x2="8" y2="13"/>
+                                <line x1="6" y1="8" x2="10" y2="8"/>
+                                <line x1="8" y1="3" x2="6" y2="8"/>
+                                <line x1="8" y1="3" x2="10" y2="8"/>
+                            </g>
+                        </svg>
+                        <span class="badge-text">Financial & Insurance</span>
+                    </div>
+                    <h2 class="title">분석 기반 리스크 관리</h2>
+                    <p class="description">
+                        금융·보험 상담에서 감정 시계열 분석으로 계약 해지·이탈 신호를 조기에 포착합니다.
+                        VIP 고객의 장기 대화 기록을 학습해 개인별 감정 패턴과 리스크 프로파일을 구축하고,
+                        선제적 케어와 맞춤형 상품 제안으로 고객 생애가치를 높입니다.
+                    </p>
+                    <div class="middle">
+                        <video src="assets/img/item2.mp4" autoplay loop muted loop playsinline class="middle-image"></video>
+                    </div>
+                </div>
+                <div class="middle">
+                    <div class="tab-container">
+                        <div class="tab-grid">
+                            <aside class="tab-sidebar">
+                                <div class="tab-header">
+                                    <h3 class="tab-title">감정 기반 리스크 예측</h3>
+                                    <p class="tab-description">감정 시계열 데이터로 고객 이탈 가능성을 조기에 발견하고, 
+                                    개인화된 관리 전략으로 고객 관계를 강화합니다.</p>
+                                </div>
+                                <ul class="tab-list">
+                                    <li class="tab-item active" data-tab="initiatives">
+                                        <span class="tab-indicator"></span>
+                                        <div class="tab-icon">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                                <path d="M12 2l3 6 6 1-4 4 1 6-6-3-6 3 1-6-4-4 6-1 3-6z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                        </div>
+                                        <div class="tab-text">
+                                            <span class="tab-label">감정 패턴 식별</span>
+                                        </div>
+                                    </li>
+                                    <li class="tab-item" data-tab="cross-team">
+                                        <span class="tab-indicator"></span>
+                                        <div class="tab-icon">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                                            </svg>
+                                        </div>
+                                        <div class="tab-text">
+                                            <span class="tab-label">의중 파악 시스템</span>
+                                        </div>
+                                    </li>
+                                    <li class="tab-item" data-tab="milestones">
+                                        <span class="tab-indicator"></span>
+                                        <div class="tab-icon">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                                            </svg>
+                                        </div>
+                                        <div class="tab-text">
+                                            <span class="tab-label">감정 타임라인</span>
+                                        </div>
+                                    </li>
+                                    <li class="tab-item" data-tab="progress">
+                                        <span class="tab-indicator"></span>
+                                        <div class="tab-icon">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                                <path d="M12 2L2 7l10 5 10-5-10-5z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                        </div>
+                                        <div class="tab-text">
+                                            <span class="tab-label">감정 전이 분석</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </aside>
+                            <div class="tab-panel">
+                                <ul class="tab-view">
+                                    <li class="tab-pane active" id="initiatives">
+                                        <div class="pane-header">
+                                            <div class="breadcrumb">감정 분석 > 패턴 식별</div>
+                                        </div>
+                                        <div class="pane-body">
+                                            <div class="content-icon">
+                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                                    <path d="M12 2l3 6 6 1-4 4 1 6-6-3-6 3 1-6-4-4 6-1 3-6z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                            </div>
+                                            <div class="spec-box">
+                                                <h3>120가지 세부 감정을 정확히 식별하는 패턴 분석</h3>
+                                                <p>고객의 언어 패턴, 키워드, 문맥을 종합 분석하여 희·노·애·락 4대 감정과 120가지 세부 감정을 정확히 식별합니다.
+                                                규칙 기반 분석과 머신러닝을 결합한 하이브리드 시스템으로, 같은 단어라도 문맥에 따라 다른 감정을 나타낼 수 있는 미묘한 뉘앙스까지 포착합니다.
+                                                "좋아요"라는 표현이 진심인지, 반어법인지, 또는 중립적인지 문맥과 감정 패턴을 종합 분석하여 정확한 감정 상태를 파악합니다.</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="tab-pane" id="cross-team">
+                                        <div class="pane-header">
+                                            <div class="breadcrumb">감정 분석 > 의중 파악</div>
+                                        </div>
+                                        <div class="pane-body">
+                                            <div class="content-icon">
+                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                                                </svg>
+                                            </div>
+                                            <div class="spec-box">
+                                                <h3>고객의 진짜 의도를 파악하는 의중 분석 시스템</h3>
+                                                <p>표면적인 감정 표현 뒤에 숨겨진 고객의 진짜 의도와 필요를 파악합니다.
+                                                VIP 고객의 5년, 10년 대화 기록을 학습하여 각 고객만의 감정 패턴을 이해하고,
+                                                "아이가 대학 간다", "은퇴 준비" 같은 문맥에서 각 고객의 진짜 감정과 필요를 정확히 분석합니다.
+                                                개인 맞춤형 감정 학습을 통해 고객의 심리 상태와 의도를 더 깊이 이해할 수 있습니다.</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="tab-pane" id="milestones">
+                                        <div class="pane-header">
+                                            <div class="breadcrumb">감정 분석 > 타임라인</div>
+                                        </div>
+                                        <div class="pane-body">
+                                            <div class="content-icon">
+                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                                                </svg>
+                                            </div>
+                                            <div class="spec-box">
+                                                <h3>시간 순서대로 감정 변화를 추적하는 타임라인 분석</h3>
+                                                <p>고객의 감정이 시간에 따라 어떻게 변화하는지 시계열로 추적하고 분석합니다.
+                                                대화의 시작부터 끝까지 감정의 흐름을 시간 순서대로 시각화하여,
+                                                감정의 강도 변화, 지속 시간, 반복 패턴을 파악합니다.
+                                                이를 통해 고객의 감정 상태가 언제 최고점에 도달했는지, 어떤 시점에 변화가 있었는지 명확하게 이해할 수 있습니다.</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="tab-pane" id="progress">
+                                        <div class="pane-header">
+                                            <div class="breadcrumb">감정 분석 > 전이 패턴</div>
+                                            <!-- <button class="header-menu" aria-label="메뉴">
+                                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                                    <circle cx="12" cy="5" r="1.5" fill="currentColor"/>
+                                                    <circle cx="12" cy="12" r="1.5" fill="currentColor"/>
+                                                    <circle cx="12" cy="19" r="1.5" fill="currentColor"/>
+                                                </svg>
+                                            </button> -->
+                                        </div>
+                                        <div class="pane-body">
+                                            <div class="content-icon">
+                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                                    <path d="M12 2L2 7l10 5 10-5-10-5z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    <path d="M2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                            </div>
+                                            <div class="spec-box">
+                                                <h3>감정 변화의 흐름을 추적하는 전이 분석</h3>
+                                                <p>고객의 감정이 문장 단위로 어떻게 변화하는지 실시간으로 추적합니다.
+                                                긍정에서 부정으로, 또는 불안에서 안정으로 전환되는 결정적 순간을 포착하여
+                                                감정 전이의 트리거와 패턴을 분석합니다. 이를 통해 고객의 심리 상태 변화를
+                                                조기에 감지하고 적절한 시점에 개입할 수 있습니다.</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bottom">
+                    <ul>
+                        <li>
+                            <div class="card-header">
+                                <span class="card-title">개인 맞춤형 감정 학습</span>
+                                <span class="card-description">VIP 고객의 5년, 10년 대화 기록을 학습하여 각 고객만의 감정 패턴을 파악합니다.
+                                "아이가 대학 간다", "은퇴 준비" 같은 문맥에서 각 고객의 진짜 감정과 필요를 이해합니다.</span>
+                            </div>
+                            <div class="card-media">
+                                <img src="assets/img/img21.png" alt="">
+                            </div>
+                        </li>
+                        <li>
+                            <div class="card-header">
+                                <span class="card-title">문맥 기반 감정 해석</span>
+                                <span class="card-description">같은 단어라도 문맥에 따라 다른 감정을 나타낼 수 있습니다.
+                                "좋아요"라는 표현이 진심인지, 반어법인지, 또는 중립적인지 문맥과 감정 패턴을 종합 분석하여
+                                정확한 감정 상태를 파악합니다.</span>
+                            </div>
+                            <div class="card-media">
+                                <img src="assets/img/img22.png" alt="">
+                            </div>
+                        </li>
+                        <!-- <li>
+                            <div class="card-header">
+                                <span class="card-title">Self-driving product operations</span>
+                                <span class="card-description">Streamline your product development workflows with AI assistance for routine, manual tasks.</span>
+                            </div>
+                            <div class="card-media">
+                                <img src="assets/img/img5.jpg" alt="">
+                            </div>
+                        </li>
+                        <li>
+                            <div class="card-header">
+                                <span class="card-title">Linear MCP</span>
+                                <span class="card-description">Connect Linear to your favorite tools including Cursor, Claude, ChatGPT, and more.</span>
+                            </div>
+                            <div class="card-media">
+                                <video src="assets/img/info.mp4" muted loop playsinline></video>
+                                <button class="video-play-btn" aria-label="재생">
+                                    <svg viewBox="0 0 64 64" fill="none">
+                                        <circle cx="32" cy="32" r="32" fill="rgba(255, 255, 255, 0.2)" stroke="rgba(255, 255, 255, 0.3)" stroke-width="1"/>
+                                        <path d="M26 20L42 32L26 44V20Z" fill="#fff"/>
+                                    </svg>
+                                </button>
+                                <button class="video-pause-btn" aria-label="일시정지">
+                                    <svg viewBox="0 0 64 64" fill="none">
+                                        <circle cx="32" cy="32" r="32" fill="rgba(255, 255, 255, 0.2)" stroke="rgba(255, 255, 255, 0.3)" stroke-width="1"/>
+                                        <rect x="22" y="20" width="6" height="24" fill="#fff"/>
+                                        <rect x="36" y="20" width="6" height="24" fill="#fff"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </li> -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="main-item3">
+        <div class="container">
+            <div class="wrapper">
+                <div class="top">
+                    <div class="badge-category">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" class="badge-dot">
+                            <g opacity="0.9">
+                                <circle cx="4.5" cy="4.5" r="1.2" fill="currentColor"/>
+                                <circle cx="8" cy="3" r="1" fill="currentColor"/>
+                                <circle cx="11.5" cy="4.5" r="1.2" fill="currentColor"/>
+                                <circle cx="6" cy="8" r="1" fill="currentColor"/>
+                                <circle cx="10" cy="8" r="1" fill="currentColor"/>
+                                <circle cx="4.5" cy="11.5" r="1.2" fill="currentColor"/>
+                                <circle cx="8" cy="13" r="1" fill="currentColor"/>
+                                <circle cx="11.5" cy="11.5" r="1.2" fill="currentColor"/>
+                            </g>
+                            <g opacity="0.4" stroke="currentColor" stroke-width="0.8" stroke-linecap="round">
+                                <line x1="4.5" y1="4.5" x2="8" y2="3"/>
+                                <line x1="8" y1="3" x2="11.5" y2="4.5"/>
+                                <line x1="4.5" y1="4.5" x2="6" y2="8"/>
+                                <line x1="11.5" y1="4.5" x2="10" y2="8"/>
+                                <line x1="6" y1="8" x2="8" y2="13"/>
+                                <line x1="10" y1="8" x2="8" y2="13"/>
+                                <line x1="4.5" y1="4.5" x2="4.5" y2="11.5"/>
+                                <line x1="11.5" y1="4.5" x2="11.5" y2="11.5"/>
+                                <line x1="4.5" y1="11.5" x2="8" y2="13"/>
+                                <line x1="11.5" y1="11.5" x2="8" y2="13"/>
+                                <line x1="6" y1="8" x2="10" y2="8"/>
+                                <line x1="8" y1="3" x2="6" y2="8"/>
+                                <line x1="8" y1="3" x2="10" y2="8"/>
+                            </g>
+                        </svg>
+                        <span class="badge-text">Enterprise CS Quality</span>
+                    </div>
+                    <h2 class="title">데이터 기반 CS 품질</h2>
+                    <p class="description">
+                        우리는 11개 감정 분석 모듈을 사내 품질실 안에 통합해 모든 상담 로그를 감정 타임라인과 진단 KPI로 재구성합니다.
+                        운영팀·QA팀·제품팀이 같은 데이터를 보고 움직이도록 만들어, CS를 비용이 아니라 브랜드 경험의 핵심 자산으로 다룹니다.
+                    </p>
+                </div>
+                <div class="top-image-slider">
+                    <div class="slider-container">
+                        <div class="slider-track">
+                            <div class="slider-slide active">
+                                <img src="assets/img/img1.jpg" alt="" class="slide-image">
+                            </div>
+                            <div class="slider-slide">
+                                <img src="assets/img/img2.jpg" alt="" class="slide-image">
+                            </div>
+                            <div class="slider-slide">
+                                <img src="assets/img/img3.jpg" alt="" class="slide-image">
+                            </div>
+                        </div>
+                        <div class="slider-nav">
+                            <button class="slider-prev" aria-label="이전 이미지">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                    <path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </button>
+                            <div class="slider-dots">
+                                <button class="slider-dot active" data-slide="0" aria-label="슬라이드 1"></button>
+                                <button class="slider-dot" data-slide="1" aria-label="슬라이드 2"></button>
+                                <button class="slider-dot" data-slide="2" aria-label="슬라이드 3"></button>
+                            </div>
+                            <button class="slider-next" aria-label="다음 이미지">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                    <path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bottom-items">
+                <ul class="items-grid">
+                    <li class="item">
+                        <h3 class="item-title">내재화된 감정 엔진</h3>
+                        <p class="item-description">Pattern · Transition · Weight 모듈을 자체 파이프라인에 연결해 희·노·애·락 120가지 감정을 우리만의 지표로 운영합니다.</p>
+                    </li>
+                    <li class="item">
+                        <h3 class="item-title">품질 데이터 루프</h3>
+                        <p class="item-description">안정성, 회복 신호, 전이 변동성 등 CS KPI가 교육, 프로세스 개선, 제품 기능 업데이트로 이어지는 순환 구조를 만들었습니다.</p>
+                    </li>
+                    <li class="item">
+                        <h3 class="item-title">설명 가능한 기준</h3>
+                        <p class="item-description">reason_code와 coverage, confidence를 함께 남겨 감사·경영 보고·고객 응대까지 같은 근거로 설명할 수 있습니다.</p>
+                    </li>
+                    <li class="item">
+                        <h3 class="item-title">CS가 경쟁력이 되는 방식</h3>
+                        <p class="item-description">감정 데이터가 이탈 예측, NPS 향상, 신규 기능 기획으로 연결되며 CS 투자가 곧 기업 성장으로 이어집니다.</p>
+                    </li>
+                    <li class="item">
+                        <h3 class="item-title">전사 통합 대시보드</h3>
+                        <p class="item-description">운영팀·QA팀·제품팀이 같은 감정 타임라인과 KPI를 보고 의사결정해 조직 전체가 고객 경험에 집중할 수 있습니다.</p>
+                    </li>
+                    <li class="item">
+                        <h3 class="item-title">지속 가능한 품질 관리</h3>
+                        <p class="item-description">상담 로그가 자동으로 감정 분석 파이프라인에 흘러들어가며, 매일 업데이트되는 품질 지표로 CS 수준을 지속적으로 모니터링합니다.</p>
+                    </li>
+                </ul>
+            </div>
+            <!-- <div class="bottom">
+                <ul>
+                    <li>
+                        <div class="card-header">
+                            <span class="card-title">전사적 CS 품질 측정</span>
+                            <span class="card-description">단일 진실원 기반의 규칙 시스템으로 모든 CS 채널에서 
+                            일관된 품질 기준을 적용하고, 타임라인 시각화로 경영진 보고에 활용합니다.</span>
+                        </div>
+                        <div class="card-media">
+                            <img src="assets/img/img5.jpg" alt="">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="card-header">
+                            <span class="card-title">인과 링크 분석으로 개선</span>
+                            <span class="card-description">감정 변화의 원인과 결과를 추적하여 문제의 근본 원인을 파악하고, 
+                            실행 가능한 개선 방안을 제시하여 이탈률을 감소시킵니다.</span>
+                        </div>
+                        <div class="card-media">
+                            <video src="assets/img/info.mp4" muted loop playsinline></video>
+                            <button class="video-play-btn" aria-label="재생">
+                                <svg viewBox="0 0 64 64" fill="none">
+                                    <circle cx="32" cy="32" r="32" fill="rgba(255, 255, 255, 0.2)" stroke="rgba(255, 255, 255, 0.3)" stroke-width="1"/>
+                                    <path d="M26 20L42 32L26 44V20Z" fill="#fff"/>
+                                </svg>
+                            </button>
+                            <button class="video-pause-btn" aria-label="일시정지">
+                                <svg viewBox="0 0 64 64" fill="none">
+                                    <circle cx="32" cy="32" r="32" fill="rgba(255, 255, 255, 0.2)" stroke="rgba(255, 255, 255, 0.3)" stroke-width="1"/>
+                                    <rect x="22" y="20" width="6" height="24" fill="#fff"/>
+                                    <rect x="36" y="20" width="6" height="24" fill="#fff"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </li>
+                </ul>
+            </div> -->
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- 웹 전용 정보 섹션: 로드맵 (Truth 필드와 무관) -->
+    <!-- ============================================ -->
+    <section class="main-item4" id="roadmap">
+        <div class="container">
+            <div class="badge-category">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" class="badge-dot">
+                    <g opacity="0.9">
+                        <circle cx="4.5" cy="4.5" r="1.2" fill="currentColor"/>
+                        <circle cx="8" cy="3" r="1" fill="currentColor"/>
+                        <circle cx="11.5" cy="4.5" r="1.2" fill="currentColor"/>
+                        <circle cx="6" cy="8" r="1" fill="currentColor"/>
+                        <circle cx="10" cy="8" r="1" fill="currentColor"/>
+                        <circle cx="4.5" cy="11.5" r="1.2" fill="currentColor"/>
+                        <circle cx="8" cy="13" r="1" fill="currentColor"/>
+                        <circle cx="11.5" cy="11.5" r="1.2" fill="currentColor"/>
+                    </g>
+                    <g opacity="0.4" stroke="currentColor" stroke-width="0.8" stroke-linecap="round">
+                        <line x1="4.5" y1="4.5" x2="8" y2="3"/>
+                        <line x1="8" y1="3" x2="11.5" y2="4.5"/>
+                        <line x1="4.5" y1="4.5" x2="6" y2="8"/>
+                        <line x1="11.5" y1="4.5" x2="10" y2="8"/>
+                        <line x1="6" y1="8" x2="8" y2="13"/>
+                        <line x1="10" y1="8" x2="8" y2="13"/>
+                        <line x1="4.5" y1="4.5" x2="4.5" y2="11.5"/>
+                        <line x1="11.5" y1="4.5" x2="11.5" y2="11.5"/>
+                        <line x1="4.5" y1="11.5" x2="8" y2="13"/>
+                        <line x1="11.5" y1="11.5" x2="8" y2="13"/>
+                        <line x1="6" y1="8" x2="10" y2="8"/>
+                        <line x1="8" y1="3" x2="6" y2="8"/>
+                        <line x1="8" y1="3" x2="10" y2="8"/>
+                    </g>
+                </svg>
+                <span class="badge-text">Artificial intelligence</span>
+            </div>
+            <div class="feature-header">
+                <h2 class="title">지속적인 혁신으로<br>진화하는 로드맵</h2>
+                <p class="description">
+                    혁신적인 접근으로 감정의 새로운 차원을 열어갑니다. 정밀한 분석 엔진, 적응형 학습 시스템, 그리고 진화하는 한국어 이해 능력. EQS와 CI 이중 지표로 신뢰도와 위치를 동시에 파악합니다. 
+                </p>
+            </div>
+            <div class="card-slider">
+                <div class="slider-wrapper">
+                    <div class="slider-track">
+                        <div class="slider-card active">
+                            <div class="card-visual">
+                                <div class="visual-content">
+                                    <div class="mockup-item logo-mockup">
+                                        <div class="logo-letter">15</div>
+                                        <div class="logo-subtitle">모듈 확장</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-info">
+                                <span class="card-category">단기 로드맵</span>
+                                <h3 class="card-title">11개 모듈에서 15개 모듈로 확장</h3>
+                                <p class="card-description">현재 11개의 하이브리드 모듈을 15개로 확장하여 더욱 정밀하고 포괄적인 감정 분석이 가능하도록 시스템을 개선할 예정입니다.</p>
+                            </div>
+                        </div>
+                        <div class="slider-card">
+                            <div class="card-visual">
+                                <div class="visual-content">
+                                    <div class="mockup-item">
+                                        <div class="mockup-header">임베딩 확장</div>
+                                        <div class="mockup-body">
+                                            <div class="mockup-request">7,700개 → 10만개</div>
+                                            <div class="mockup-item">데이터 품질 향상</div>
+                                            <div class="mockup-item">임베딩 벡터 최적화</div>
+                                            <div class="mockup-item">분석 정확도 개선</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-info">
+                                <span class="card-category">단기 로드맵</span>
+                                <h3 class="card-title">향후 10만개 임베딩으로 확장 개선</h3>
+                                <p class="card-description">현재 7,700개에서 10만개로 임베딩 데이터를 확장하여 더욱 풍부한 맥락 이해와 정확한 감정 분석이 가능하도록 개선할 예정입니다.</p>
+                            </div>
+                        </div>
+                        <div class="slider-card">
+                            <div class="card-visual">
+                                <div class="visual-content">
+                                    <div class="mockup-item">
+                                        <div class="mockup-header">모듈 최적화</div>
+                                        <div class="mockup-body">
+                                            <div class="mockup-status">병렬 처리 구현</div>
+                                            <div class="mockup-status">GPU 기반 처리 전환</div>
+                                            <div class="mockup-status">CPU 의존도 감소</div>
+                                            <div class="mockup-status">분석 속도 대폭 개선</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-info">
+                                <span class="card-category">중기 로드맵</span>
+                                <h3 class="card-title">GPU 기반 처리로 모듈 최적화</h3>
+                                <p class="card-description">현재 시스템은 CPU 기반 처리가 과반수 이상을 차지하고 있어 분석 시간이 오래 걸립니다. 모든 모듈을 병렬 처리 및 GPU 기반 처리로 개선하여 분석 속도를 대폭 향상시킬 예정입니다.</p>
+                            </div>
+                        </div>
+                        <div class="slider-card">
+                            <div class="card-visual">
+                                <div class="visual-content">
+                                    <div class="mockup-item realtime-layout">
+                                        <div class="realtime-header">
+                                            <div class="realtime-title">실시간 분석</div>
+                                        </div>
+                                        <div class="realtime-flow">
+                                            <div class="flow-grid">
+                                                <div class="flow-col">
+                                                    <span class="flow-dot"></span>
+                                                    <span class="flow-label">스트리밍 처리</span>
+                                                </div>
+                                                <span class="flow-arrow">→</span>
+                                                <div class="flow-col">
+                                                    <span class="flow-dot"></span>
+                                                    <span class="flow-label">저지연 응답</span>
+                                                </div>
+                                                <span class="flow-arrow">→</span>
+                                                <div class="flow-col">
+                                                    <span class="flow-dot"></span>
+                                                    <span class="flow-label">실시간 모니터링</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="realtime-footer">
+                                            <div class="realtime-badge">WebSocket</div>
+                                            <div class="realtime-badge">이벤트 기반</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-info">
+                                <span class="card-category">중기 로드맵</span>
+                                <h3 class="card-title">실시간 분석이 가능하도록 개선</h3>
+                                <p class="card-description">배치 처리 방식에서 실시간 스트리밍 분석으로 전환하여 사용자가 입력하는 즉시 감정 분석 결과를 제공할 수 있도록 시스템을 고도화합니다. WebSocket 기반 양방향 통신과 이벤트 기반 아키텍처를 도입하여 대화형 분석 환경을 구축합니다.</p>
+                            </div>
+                        </div>
+                        <div class="slider-card">
+                            <div class="card-visual">
+                                <div class="visual-content">
+                                    <div class="mockup-item">
+                                        <div class="mockup-header">하이브리드 모듈</div>
+                                        <div class="mockup-body">
+                                            <div class="mockup-status">생산형 AI 통합</div>
+                                            <div class="mockup-status">보고서 자동 생성</div>
+                                            <div class="mockup-status">맞춤형 리포트 형식</div>
+                                            <div class="mockup-status">개선된 리포트 품질</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-info">
+                                <span class="card-category">장기 로드맵</span>
+                                <h3 class="card-title">하이브리드 모듈 구현</h3>
+                                <p class="card-description">생산형 인공지능을 통합한 하이브리드 모듈을 구현하여 업계별, 역할별, 목적별 맞춤형 리포트를 자동으로 생성합니다. 사용자 요구에 맞는 전문적이고 실용적인 인사이트를 제공할 수 있도록 합니다.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slider-nav">
+                    <button class="slider-nav-btn prev" aria-label="이전">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <button class="slider-nav-btn next" aria-label="다음">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============================================ -->
+    <!-- Compass FAQ Section -->
+    <!-- ============================================ -->
+    <section class="main-faq" id="faq">
+        <div class="container">
+            <div class="faq-wrapper">
+                <div class="faq-intro">
+                    <p class="kicker">자주 묻는 질문</p>
+                    <h2>AESA가 궁금하신가요?</h2>
+                    <ul class="faq-highlights">
+                        <li><span>어떤 데이터</span>로 분석이 가능한지</li>
+                        <li>어떤 <span>업종에서</span> 사용할 수 있는지</li>
+                        <li>실제로 <span>어떻게 활용</span>할 수 있는지</li>
+                    </ul>
+                </div>
+                <div class="faq-list" role="list">
+                    <details class="faq-item" open>
+                        <summary>
+                            <span>AESA는 무엇을 하는 건가요?</span>
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5v14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                        </summary>
+                        <div class="faq-body">
+                            <p>고객이 남긴 글을 읽고 그 안에 담긴 감정을 정확히 파악하는 AI입니다. 예를 들어, 고객이 "배송이 늦었지만 친절하게 안내해주셔서 감사해요"라고 했을 때, 단순히 긍정적인 댓글로 보이지만 실제로는 불만과 감사가 섞인 복잡한 감정입니다. AESA는 이런 미묘한 감정까지 120가지로 세분화해 분석합니다.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>
+                            <span>어떤 종류의 데이터가 필요한가요?</span>
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5v14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                        </summary>
+                        <div class="faq-body">
+                            <p>고객이 작성한 텍스트면 됩니다. 고객센터 상담 기록, 챗봇 대화, 리뷰나 댓글, 설문조사 응답 등 어떤 형태든 상관없습니다. 긴 글도 좋고 짧은 한 줄 댓글도 괜찮습니다. 우리 AI가 문맥을 이해해서 감정을 정확히 읽어냅니다.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>
+                            <span>어떤 회사나 업종에서 사용할 수 있나요?</span>
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5v14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                        </summary>
+                        <div class="faq-body">
+                            <p>고객과 소통하는 모든 비즈니스에서 활용할 수 있습니다. 온라인 쇼핑몰, 배달 앱, 여행 예약 사이트, 교육 플랫폼, 헬스케어 서비스 등 고객의 의견이나 피드백을 받는 곳이라면 어디든 적용 가능합니다. 특히 고객 만족도가 중요한 서비스 업종이나, 고객 이탈을 줄이고 싶은 기업에 도움이 됩니다.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>
+                            <span>실제로 어떻게 활용할 수 있나요?</span>
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5v14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                        </summary>
+                        <div class="faq-body">
+                            <p>예를 들어, 고객 불만이 급증하기 전에 미리 감지할 수 있습니다. "화가 나기 시작했다"는 신호를 포착하면 담당자가 먼저 연락해서 문제를 해결할 수 있어요. 또는 어떤 제품이나 서비스가 고객에게 진짜로 만족감을 주는지, 단순히 만족도 점수만으로는 알 수 없는 진짜 이유를 찾을 수 있습니다.</p>
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- 웹 전용 정보 섹션: Truth 필드와 무관한 웹 전용 콘텐츠 -->
+    <!-- ============================================ -->
+    <section class="main-item5">
+        <div class="container">
+            <h2 class="section-title">창업자의 메시지</h2>
+            <p class="section-subtitle">우리가 시작한 이유와 믿는 가치</p>
+            
+            <div class="founders-content">
+                <p class="founders-text">
+                    "모든 고객의 마음속 이야기를 정확히 이해하는 AI를 만들고 싶었습니다."
+                    <br><br>
+                    우리는 한국어의 미묘한 감정 표현을 놓치지 않는 AI를 개발했습니다. 
+                    희·노·애·락의 동양 철학과 최신 AI 기술을 결합해 120개 세부 감정을 구분하는 고도화된 시스템을 구축했습니다.
+                    <br><br>
+                    단순한 감정 분석을 넘어, 시간의 흐름 속에서 감정이 어떻게 변화하는지 추적합니다.
+                    이탈 전의 신호를 포착하고, 회복의 순간을 발견하며, 진정한 고객 경험 개선의 인사이트를 제공합니다.
+                    <br><br>
+                    <strong>AESA는 대한민국 모든 기업이 고객의 마음을 읽고 더 나은 서비스를 제공할 수 있도록 돕는 것이 우리의 미션입니다.</strong>
+                </p>
+                
+                <div class="compass-signature">
+                    <p class="signature-text">AESA(AI Emotion Standards Authority)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-wrapper">
+                <div class="footer-brand">
+                    <a href="#top" class="footer-logo-text">AESA</a>
+                    <p class="footer-description">감정 기반 인사이트로 고객 경험을 더 정교하게 읽어내는 한국어 특화 AI 스튜디오입니다.</p>
+                    <p class="footer-meta">상담 가능 시간 · 평일 10:00 - 18:00 (KST)</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <p class="footer-column-title">둘러보기</p>
+                        <ul class="footer-column-list">
+                            <li><a href="#overview">Overview</a></li>
+                            <li><a href="#pipeline">Pipeline</a></li>
+                            <li><a href="#faq">FAQ</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <p class="footer-column-title">지원</p>
+                        <ul class="footer-column-list">
+                            <li><a href="mailto:madecompass@gmail.com">madecompass@gmail.com</a></li>
+                            <li><span>Notion Deck · 준비 중</span></li>
+                            <li><a href="assets/docs/AESA_IR.pdf" download>IR 브리프 · 다운로드</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 AESA. All rights reserved.</p>
+                <a href="mailto:madecompass@gmail.com">madecompass@gmail.com</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============================================ -->
+    <!-- 모듈 분석 관련 모달 (가장 안전하게 관리) -->
+    <!-- ============================================ -->
+    <div class="analysis-modal" id="analysisModal" aria-hidden="true">
+        <div class="analysis-modal__overlay"></div>
+        <div class="analysis-modal__container" role="dialog" aria-modal="true" aria-labelledby="analysisModalTitle">
+            <button type="button" class="analysis-modal__close" aria-label="닫기">
+                <svg viewBox="0 0 16 16" fill="none">
+                    <path d="M4 4l8 8M12 4L4 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+                </svg>
+            </button>
+            
+            <div class="analysis-modal__header">
+                <h2 class="analysis-modal__title" id="analysisModalTitle">감정 분석 결과</h2>
+                <div id="analysisStatus" class="analysis-refine-status"></div>
+            </div>
+
+            <div id="analysisError" class="analysis-modal__error" style="display: none;"></div>
+            
+            <div class="analysis-modal__body" id="analysisResults">
+                <!-- 실행 요약 -->
+                <section class="analysis-block">
+                    <header class="analysis-block__title">실행 요약</header>
+                    <div id="analysisExecutionSummary" class="meta-info"></div>
+                </section>
+
+                <!-- 핵심 KPI -->
+                <section class="analysis-block">
+                    <header class="analysis-block__title">핵심 KPI</header>
+                    <div id="analysisKpiCards" class="kpi-grid"></div>
+                </section>
+
+                <!-- 리스크 & 권장 액션 -->
+                <section class="analysis-block">
+                    <header class="analysis-block__title">리스크 & 권장 액션</header>
+                    <div id="analysisRiskActions" class="risk-actions"></div>
+                </section>
+
+                <!-- 감정 분포 -->
+                <section class="analysis-block">
+                    <header class="analysis-block__title">감정 분포</header>
+                    <div id="analysisEmotionDist" class="emotion-dist"></div>
+                </section>
+
+                <!-- 감정 전이 -->
+                <section class="analysis-block">
+                    <header class="analysis-block__title">감정 전이</header>
+                    <div id="analysisTransitions" class="transitions-list"></div>
+                </section>
+
+                <!-- 문장 주석 -->
+                <section class="analysis-block">
+                    <header class="analysis-block__title">문장 주석 (감정 태깅)</header>
+                    <div id="analysisSentenceAnnotations" class="sentence-annotations"></div>
+                </section>
+
+                <!-- 제품 스펙 -->
+                <section class="analysis-block">
+                    <header class="analysis-block__title">제품 스펙</header>
+                    <div id="analysisProductSpecs"></div>
+                </section>
+
+                <!-- 설명 가능성 -->
+                <section class="analysis-block">
+                    <header class="analysis-block__title">설명 가능성</header>
+                    <div id="analysisExplainability" class="explainability"></div>
+                </section>
+
+                <!-- 모델A 추론 -->
+                <section class="analysis-block">
+                    <header class="analysis-block__title">모델A 추론</header>
+                    <div id="analysisModelNarrative" class="master-report"></div>
+                </section>
+
+                <!-- 인사이트 요약 -->
+                <section class="analysis-block">
+                    <header class="analysis-block__title">인사이트 요약</header>
+                    <div id="analysisInsightSummary" class="master-report"></div>
+                </section>
+
+                <!-- 투자 하이라이트 -->
+                <section class="analysis-block">
+                    <header class="analysis-block__title">Investor Highlights</header>
+                    <div id="analysisInvestorHighlights" class="investor-highlights"></div>
+                </section>
+
+                <!-- 11개 모듈 분석 결과 -->
+                <section class="analysis-block">
+                    <header class="analysis-block__title">11개 데이터 처리 모듈별 상세 분석 결과</header>
+                    <div id="analysisStrategicBrief" class="strategic-brief"></div>
+                </section>
+
+                <!-- MASTER REPORT -->
+                <section class="analysis-block">
+                    <header class="analysis-block__title">MASTER REPORT (전체)</header>
+                    <pre id="analysisMasterReport" class="master-report"></pre>
+                </section>
+
+                <!-- Expert View (전문가 모드) - Truth 필드 원본 표시 -->
+                <section class="analysis-block expert-view-block" id="expertViewBlock" style="display: none;">
+                    <header class="analysis-block__title">
+                        <span>🔬 Expert View (전문가 모드)</span>
+                        <button type="button" class="expert-view-toggle" id="expertViewToggle" aria-label="Expert View 토글">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                    </header>
+                    <div class="expert-view-content" id="expertViewContent" style="display: none;">
+                        <p class="expert-view-description">
+                            이 섹션은 test.py CLI에서 생성된 Truth 필드 원본을 그대로 표시합니다.
+                            CLI 결과와 비교하거나 내부 QA/디버깅에 사용하세요.
+                        </p>
+                        <div id="expertViewTruthFields" class="expert-view-fields"></div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // API 베이스 URL 설정 (필요시 수정)
+        // 예: window.API_BASE_URL = 'http://localhost:8000';
+        // 예: window.API_BASE_URL = 'http://127.0.0.1:8000';
+        // 설정하지 않으면 자동으로 감지합니다.
+    </script>
+    <script src="assets/js/made.js"></script>
+    <script>
+        // 11개 모듈 상세 모달 표시 함수
+        function showModulesModal() {
+            const modal = document.getElementById('modulesModal');
+            if (modal) {
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+        
+        // 모달 외부 클릭시 닫기
+        document.addEventListener('DOMContentLoaded', function() {
+            const modulesModal = document.getElementById('modulesModal');
+            if (modulesModal) {
+                modulesModal.addEventListener('click', function(e) {
+                    if (e.target === modulesModal) {
+                        modulesModal.classList.remove('active');
+                        document.body.style.overflow = '';
+                    }
+                });
+            }
+            
+            // ESC 키로 모달 닫기
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    const activeModals = document.querySelectorAll('.feature-modal-overlay.active');
+                    activeModals.forEach(modal => {
+                        modal.classList.remove('active');
+                        document.body.style.overflow = '';
+                    });
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>

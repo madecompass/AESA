@@ -138,8 +138,14 @@ AESA/
 - **Email**: madecompass@outlook.kr
 - **Portfolio**: [이력서 참조]
 - **AESA 분석결과 화면
-  
-  <img width="1632" height="10380" alt="aesa" src="https://github.com/user-attachments/assets/bdcf22d9-e0cd-4530-91f5-3527137f21cd" />
+  <p align="center">
+  <img src="업로드한_이미지_주소.png" width="100%" style="display: block; margin: 0 auto;">
+</p>
+ <p align="center">
+  <a href="https://github.com/user-attachments/assets/bdcf22d9-e0cd-4530-91f5-3527137f21cd">
+    <img src="https://github.com/user-attachments/assets/bdcf22d9-e0cd-4530-91f5-3527137f21cd" alt="aesa" width="100%">
+  </a>
+</p>
 ---
 
 *이 프로젝트는 퍼블리셔가 AI 서비스의 "라스트마일"을 어떻게 완성하는지 보여주기 위해 제작되었습니다.*

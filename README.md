@@ -1,9 +1,11 @@
-# AESA (Advanced Emotion & Sentiment Analyzer)
+<img width="1632" height="10380" alt="aesa" src="https://github.com/user-attachments/assets/306d2bef-9768-4564-81cc-c7837e37ce6e" /># AESA (Advanced Emotion & Sentiment Analyzer)
 
 > **AI 기술의 라스트마일 실무자** — 모델을 '서비스'로 완성하는 퍼블리셔
 
 한국어 텍스트의 복합 감정을 분석하는 AI 시스템입니다.  
 11개의 전문 분석 모듈이 협력하여 단순 긍/부정을 넘어 **심층적인 감정 흐름과 심리 패턴**을 도출합니다.
+  >>AESA 분석결과 화면<img width="1632" height="10380" alt="aesa" src="https://github.com/user-attachments/assets/bdcf22d9-e0cd-4530-91f5-3527137f21cd" />
+
 
 ---
 

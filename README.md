@@ -1,4 +1,5 @@
-<img width="1632" height="10380" alt="aesa" src="https://github.com/user-attachments/assets/306d2bef-9768-4564-81cc-c7837e37ce6e" /># AESA (Advanced Emotion & Sentiment Analyzer)
+<img width="1545" height="943" alt="main" src="https://github.com/user-attachments/assets/2b868979-51de-4406-9822-d4a5a7cd9950" />
+#AESA (Advanced Emotion & Sentiment Analyzer)
 
 > **AI 기술의 라스트마일 실무자** — 모델을 '서비스'로 완성하는 퍼블리셔
 

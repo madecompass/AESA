@@ -92,6 +92,9 @@ AESA/
 [입력 텍스트]
       │
       ▼
+[Payload 생성 / 입력 정규화]
+      │
+      ▼
 [EmotionPipelineOrchestrator]
       │
       ├─→ [PatternExtractor]
@@ -107,7 +110,7 @@ AESA/
       └─→ [EmotionRelationshipAnalyzer]
       │
       ▼
-[Payload]
+[Result Merge / Score Integration]
       │
       ▼
 [통합 분석 결과]

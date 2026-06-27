@@ -225,18 +225,18 @@ flowchart TB
         direction TB
         r1["근거를 지킨다"]
         r2["과단정을 막는다"]
-        r3["사용자에게 전달할 말을 정리한다"]
+        r3["전달 문장을 정리한다"]
     end
 
     subgraph value["사용자에게 보이는 차이"]
         direction LR
         v1["일반 분석<br/>하나의 감정 라벨"]
-        v2["AESA 지향<br/>후보 · 맥락 · 강도 · 확실성 · 다음 질문"]
+        v2["AESA 지향<br/>후보 · 맥락 · 강도<br/>확실성 · 질문"]
     end
 
-    subgraph deploy["적용 장면 — LLM 비의존 설계"]
+    subgraph deploy["적용 장면"]
         direction LR
-        d1["온디바이스 · 로봇 · NPC"]
+        d1["온디바이스<br/>로봇 · NPC"]
         d2["컨택센터 · 챗봇"]
         d3["메신저 · API · UI"]
     end

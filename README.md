@@ -4,7 +4,7 @@
 
 **Repository**: https://github.com/madecompass/AESA
 
-AESA 는 한국어 문장에서 단순 긍정/부정을 넘어, 복합 감정·강도·전이·상황 맥락·감정 간 관계를 다축적으로 분석하기 위한 포트폴리오형 AI 프로토타입입니다.
+AESA(Advanced Emotion & Sentiment Analyzer)는 한국어 문장에서 단순 긍정/부정을 넘어, 복합 감정·강도·전이·상황 맥락·감정 간 관계를 다축적으로 분석하기 위한 포트폴리오형 AI 프로토타입입니다.
 
 이 프로젝트는 전직 퍼블리셔의 언어·맥락 감각을 바탕으로, AI 모델의 결과를 실제 서비스에서 활용 가능한 구조로 정리하는 것을 목표로 합니다.
 
@@ -12,13 +12,14 @@ AESA 는 한국어 문장에서 단순 긍정/부정을 넘어, 복합 감정·�
 
 ## Executive Summary
 
-- **AESA 1.0**은 11개 분석 관점 기반의 한국어 복합 감정 분석 프로토타입입니다.
-- **AESA 2.0**은 감정 후보, 근거, 흐름, 불확실성, 출력 안전성을 다루는 schema-driven R&D 트랙으로 고도화 중입니다.
+- **AESA 1.0**은 11개 분석 관점과 FastAPI/UI 데모를 갖춘 공개 프로토타입입니다.
+- **AESA 1.0 데모 영상과 스크린샷**은 현재 공개 구현물의 결과 화면을 보여줍니다.
+- **AESA 2.0**은 1.0의 한계를 바탕으로 감정 후보, 근거, 흐름, 불확실성, 출력 안전성을 다루는 schema-driven R&D 트랙으로 고도화 중입니다.
 - 공개 저장소에는 포트폴리오용 프로토타입과 개념 수준 설명만 포함하며, 내부 schema, rule, answer-key, prompt 전문은 공개하지 않습니다.
 
 ---
 
-## 🎯 Project Overview
+## Project Overview
 
 | 항목 | 내용 |
 |------|------|
@@ -31,7 +32,7 @@ AESA 는 한국어 문장에서 단순 긍정/부정을 넘어, 복합 감정·�
 
 ---
 
-## 🧭 Why AESA
+## Why AESA
 
 한국어 감정 표현은 단어 하나나 긍·부정 점수만으로 설명하기 어렵습니다.
 
@@ -51,7 +52,7 @@ AESA 2.0에서는 이 방향을 한 단계 확장하여, 감정의 단순 분류
 
 ---
 
-## 🛠 Tech Stack
+## Tech Stack
 
 | Category | Technology |
 |----------|------------|
@@ -66,7 +67,7 @@ AESA 2.0에서는 이 방향을 한 단계 확장하여, 감정의 단순 분류
 
 ---
 
-## 📁 Project Structure
+## Repository Structure
 
 아래 구조는 공개 GitHub 저장소 기준의 요약 구조입니다. AESA 2.0의 내부 schema·evaluation scaffold와 비공개 rule/answer-key 자산은 공개 저장소에 포함하지 않습니다.
 
@@ -82,9 +83,9 @@ AESA/
 
 ---
 
-## 🔬 AESA 1.0 — 11개 분석 모듈
+## AESA 1.0 — Public Prototype
 
-AESA 1.0은 감정 분석을 단일 모델 결과에만 의존하지 않고, 여러 분석 관점으로 나누어 처리하는 구조를 실험합니다.
+AESA 1.0은 현재 공개 저장소에서 확인할 수 있는 구현 중심 프로토타입입니다. 감정 분석을 단일 모델 결과에만 의존하지 않고, 여러 분석 관점으로 나누어 처리하는 구조를 실험했습니다.
 
 | # | 모듈 | 역할 |
 |---|------|------|
@@ -102,7 +103,7 @@ AESA 1.0은 감정 분석을 단일 모델 결과에만 의존하지 않고, 여
 
 ---
 
-## 🏗 AESA 1.0 Architecture
+## AESA 1.0 Architecture
 
 ```text
 [입력 텍스트]
@@ -134,11 +135,11 @@ AESA 1.0은 감정 분석을 단일 모델 결과에만 의존하지 않고, 여
 
 ---
 
-## 🧩 Core Design Points
+## What AESA 1.0 Proved
 
 ### 1. 모듈형 분석 구조
 
-감정 분석을 단일 모델 출력에만 의존하지 않고, 패턴·언어·강도·문맥·상황·전이·관계성 등 여러 관점으로 나누어 처리합니다.
+감정 분석을 단일 모델 출력에만 의존하지 않고, 패턴·언어·강도·문맥·상황·전이·관계성 등 여러 관점으로 나누어 처리했습니다.
 
 ### 2. 표준 Payload 구조
 
@@ -150,17 +151,159 @@ AESA 1.0은 감정 분석을 단일 모델 결과에만 의존하지 않고, 여
 
 ### 4. 안전한 결과 해석 지향
 
-감정 결과를 단정적 진단으로 제시하기보다, 텍스트에서 관찰되는 감정·맥락 신호의 후보로 다루는 것을 목표로 합니다.
+감정 결과를 단정적 진단으로 제시하기보다, 텍스트에서 관찰되는 감정·맥락 신호의 후보로 다루는 방향을 실험했습니다.
 
 ### 5. 서비스 적용 관점
 
 단순 모델 출력이 아니라, 실제 화면·API·사용자 경험에서 활용 가능한 감정 분석 구조를 실험했습니다.
 
+### AESA 1.0 Demo Video
+
+> **Recorded Demo**: https://www.youtube.com/watch?v=R51yFc5YOpA
+
+아래 데모 영상과 스크린샷은 **AESA 1.0 공개 프로토타입**의 분석 흐름과 결과 화면입니다. AESA 2.0의 내부 schema-driven 구조나 evaluation harness 결과 화면은 아닙니다.
+
+- 주요 감정 분류
+- 세부 감정 및 강도 분석
+- 감정 전이 및 시간 흐름 추적
+- 상황 맥락 기반 감정 해석
+- 복합 감정 후보 및 관계성 분석
+
+### AESA 1.0 Screenshot
+
+<p align="center">
+  <a href="https://github.com/user-attachments/assets/bdcf22d9-e0cd-4530-91f5-3527137f21cd">
+    <img src="https://github.com/user-attachments/assets/bdcf22d9-e0cd-4530-91f5-3527137f21cd" alt="AESA 1.0 analysis result screen" width="100%">
+  </a>
+</p>
+
 ---
 
-## 🚧 AESA 2.0 — In Progress
+## From AESA 1.0 to AESA 2.0
 
-AESA 2.0은 기존 1.0의 모듈형 감정 분석 구조를 바탕으로, 더 명확한 **schema-driven emotion analysis scaffold**로 확장 중입니다.
+AESA 1.0은 여러 분석 모듈을 조합해 감정 후보와 맥락 신호를 구조화하는 가능성을 확인한 단계입니다. 다만 결과 통합이 가중 평균과 라벨 중심으로 보일 수 있고, 감정의 애매함·흐름·불확실성을 더 명시적으로 다루기 위해서는 별도의 기준 구조가 필요했습니다.
+
+AESA 2.0은 이 한계를 바탕으로, 1.0의 모듈형 실험을 **schema-driven 판단 구조, 정답지/검증 하네스, 출력 거버넌스**로 재정리하는 R&D 트랙입니다.
+
+| 1.0에서 확인한 점 | 2.0에서의 대응 |
+|-------------------|----------------|
+| 여러 분석 관점이 감정 해석에 필요함 | 좌뇌형 신호와 우뇌형 맥락으로 역할을 재정리 |
+| 단일 라벨만으로는 감정의 결을 담기 어려움 | 후보·근거·강도·확실성·불확실성을 함께 보존 |
+| 키워드 기반 확정은 오탐 위험이 있음 | 5계층 질문 흐름과 confusion-aware 평가로 보완 |
+| 결과는 사용자에게 조심스럽게 전달되어야 함 | Raphael 출력 거버넌스로 과단정과 진단적 표현을 억제 |
+
+---
+
+## AESA 2.0 — Schema-driven R&D Track
+
+AESA 2.0은 기존 1.0의 모듈형 감정 분석 구조를 바탕으로, 감정을 하나의 라벨로 고정하지 않고 **후보·근거·맥락·강도·확실성·출력 안전성**을 함께 다루는 schema-driven emotion analysis scaffold로 확장 중입니다.
+
+### 공개 설계도
+
+```mermaid
+flowchart TB
+    problemNode["기존 감정 분석의 한계<br/>단일 라벨 · 키워드 의존 · 과단정 위험"]
+    topNode["AESA 2.0 — 한국어 감정 판단 아키텍처"]
+
+    subgraph observer["AESA 관찰자 — 두 갈래 관찰"]
+        direction LR
+        leftBrain["좌뇌형 신호<br/>단어·표현을 분석한다"]
+        rightBrain["우뇌형 맥락<br/>상황·흐름을 검토한다"]
+    end
+
+    subgraph schema["5계층 질문 흐름"]
+        direction LR
+        l1["1. 뭔가?<br/>정의"]
+        l2["2. 왜?<br/>조건"]
+        l3["3. 종류?<br/>분류"]
+        l4["4. 얼마나?<br/>강도"]
+        l5["5. 확실?<br/>검증"]
+        l1 --> l2 --> l3 --> l4 --> l5
+    end
+
+    subgraph raphael["Raphael 2.13 — 출력 거버넌스"]
+        direction TB
+        r1["근거를 지킨다"]
+        r2["과단정을 막는다"]
+        r3["사용자에게 전달할 말을 정리한다"]
+    end
+
+    subgraph value["사용자에게 보이는 차이"]
+        direction LR
+        v1["일반 분석<br/>하나의 감정 라벨"]
+        v2["AESA 지향<br/>후보 · 맥락 · 강도 · 확실성 · 다음 질문"]
+    end
+
+    subgraph deploy["적용 장면 — LLM 비의존 설계"]
+        direction LR
+        d1["온디바이스 · 로봇 · NPC"]
+        d2["컨택센터 · 챗봇"]
+        d3["메신저 · API · UI"]
+    end
+
+    problemNode --> topNode
+    topNode --> observer
+    observer --> schema
+    schema --> raphael
+    raphael --> value
+    value --> deploy
+
+    classDef problemClass fill:#5D4037,stroke:#D7CCC8,color:#FFFFFF
+    classDef topClass fill:#1B263B,stroke:#778DA9,color:#E0E1DD
+    classDef leftClass fill:#E76F51,stroke:#F4A261,color:#FFFFFF
+    classDef rightClass fill:#2A9D8F,stroke:#52B788,color:#FFFFFF
+    classDef schemaClass fill:#457B9D,stroke:#A8DADC,color:#FFFFFF
+    classDef raphaelClass fill:#6A4C93,stroke:#C9A0DC,color:#FFFFFF
+    classDef valueClass fill:#7B2CBF,stroke:#C77DFF,color:#FFFFFF
+    classDef deployClass fill:#588157,stroke:#A5D6A7,color:#FFFFFF
+
+    class problemNode problemClass
+    class topNode topClass
+    class leftBrain leftClass
+    class rightBrain rightClass
+    class l1,l2,l3,l4,l5 schemaClass
+    class r1,r2,r3 raphaelClass
+    class v1,v2 valueClass
+    class d1,d2,d3 deployClass
+```
+
+### 공개 예시 — 내부 로직 없는 출력 차이
+
+```text
+입력:
+"괜찮아진 줄 알았는데, 그 노래를 들으니까 다시 비어 있는 느낌이 들었다."
+
+일반 감정 분석:
+- 슬픔
+
+AESA 2.0이 지향하는 출력:
+- 슬픔으로 단정하지 않는다.
+- 문장 안의 "다시 비어 있음"을 근거로 상실·그리움 계열 후보를 열어 둔다.
+- 지금 필요한 것은 확정 라벨보다 확인 질문이다:
+  "다시 보고 싶은 마음이 큰가요, 아니면 내 삶에 남은 빈자리가 더 크게 느껴지나요?"
+```
+
+### 핵심 특징
+
+| 특징 | 설명 |
+|------|------|
+| **좌뇌형 / 우뇌형 관찰** | 단어 신호와 맥락 단서를 함께 본다 |
+| **5계층 질문 흐름** | 정의 → 조건 → 분류 → 강도 → 검증 순서로 후보를 점검한다 |
+| **LLM 비의존 설계** | 핵심 판정은 컴파일된 룰과 상태 메모리 중심으로 작동하도록 설계한다 |
+| **Raphael 출력 거버넌스** | AESA Core의 판정을 덮어쓰지 않고 근거와 표현을 관리한다 |
+| **사용자-facing 차이** | 단일 라벨보다 후보·맥락·강도·확실성·다음 질문을 함께 전달한다 |
+
+### 5계층 질문 흐름
+
+각 층은 하나의 질문에 답하고, 그 답이 다음 질문을 깨우는 방식으로 이어집니다.
+
+| 계층 | 질문 | 역할 |
+|------|------|------|
+| 1층 | 이 감정이 뭔가? | 정의 |
+| 2층 | 왜 생겼나? | 조건 |
+| 3층 | 어떤 종류인가? | 분류 |
+| 4층 | 얼마나 강한가? | 강도 |
+| 5층 | 이 감정이 확실한가? | 검증 |
 
 2.0의 목표는 감정 결과를 하나의 라벨로 고정하는 것이 아니라, 다음 요소를 함께 구조화하는 것입니다.
 
@@ -173,23 +316,19 @@ AESA 2.0은 기존 1.0의 모듈형 감정 분석 구조를 바탕으로, 더 �
 - 불확실성
 - 사용자에게 전달되는 최종 표현의 안전성
 
-AESA 2.0은 현재 내부적으로 다음 방향을 중심으로 고도화되고 있습니다.
+### 적용 가능성이 있는 장면
 
-| 축 | 설명 |
-|----|------|
-| **Soft Judgment** | 단일 정답보다 top-k 후보, 근거, 불확실성을 함께 보존 |
-| **Emotion Field** | 감정을 0에서 생성되는 값이 아니라, 입력에 의해 드러나는 잠재 후보로 해석 |
-| **Emotion Dynamics** | 감정의 상승, 하강, 잔류, 전이, 재활성화 같은 시간적 흐름을 고려 |
-| **Context Weighting** | 상황, 관계, 시간, 환경 단서를 통해 감정 후보를 보정 |
-| **Confusion-aware Evaluation** | 비슷한 감정끼리의 혼동을 줄이기 위한 정답지·평가 구조 설계 |
-| **Output Governance** | 분석 결과가 과확신이나 심리 진단처럼 전달되지 않도록 출력 단계에서 제어 |
-| **Modular Extension Slots** | 기존 11개 분석 관점을 기반으로 평가·전처리·출력 거버넌스 확장을 설계 |
+- **상담형 챗봇**: 감정을 단정하지 않고 후보와 확인 질문으로 응답
+- **게임 NPC**: 플레이어 대화의 감정 흐름을 반영한 반응 설계
+- **컨택센터**: 불만·불안·상실 같은 결을 키워드보다 맥락으로 구분
+- **개인 기록 앱**: 하루의 감정선을 라벨이 아니라 흐름으로 정리
+- **온디바이스/로봇**: LLM 의존을 낮춘 기본 감정 후보 경량 판정
 
 > AESA 2.0의 상세 schema, rule, answer-key, scoring 기준, prompt 전문은 공개하지 않습니다. 공개 README에서는 프로젝트 방향과 설계 의도만 요약합니다.
 
 ---
 
-## 🧪 Evaluation Harness & Answer-key Direction
+## Evaluation Harness & Answer-key Direction
 
 AESA 2.0에서는 단순히 모델 결과를 출력하는 것을 넘어, 감정 rule과 분석 결과를 지속적으로 검증하기 위한 evaluation harness를 함께 설계하고 있습니다.
 
@@ -235,11 +374,15 @@ AESA 2.0에서는 단순히 모델 결과를 출력하는 것을 넘어, 감정 
 
 ---
 
-## 🧭 Raphael Output Governance
+## Raphael Output Governance
 
 AESA는 감정 분석 결과를 사용자에게 직접 단정적으로 전달하지 않도록, 별도의 출력 거버넌스 계층을 실험하고 있습니다.
 
-이 계층은 내부적으로 Raphael_ra v2.13 대화 지침을 참고하여, 분석 결과가 사용자에게 전달되기 전 다음 요소를 점검하는 방향으로 설계되고 있습니다.
+**Raphael 2.13은 감정 판단을 대신하는 모델이 아니라, AESA Core의 분석 결과를 사용자에게 전달하기 전 근거·표현·과단정 방지를 점검하는 출력 하네스입니다.** 내부 실행 순서와 세부 규칙은 공개하지 않습니다.
+
+> 무엇을 느끼는지는 AESA Core가 판단하고, 어떻게 안전하게 말할지는 Raphael이 지킨다.
+
+이 계층은 분석 결과가 사용자에게 전달되기 전 다음 요소를 점검하는 방향으로 설계되고 있습니다.
 
 - 근거가 부족할 때 단정 표현을 피하는지
 - 감정 후보와 확정 판단을 구분하는지
@@ -247,13 +390,13 @@ AESA는 감정 분석 결과를 사용자에게 직접 단정적으로 전달하
 - 사용자가 이해 가능한 언어로 결과를 정리하는지
 - AI 모델이나 LLM renderer가 core 분석 결과를 임의로 덮어쓰지 않는지
 
-즉, Raphael은 감정 판단을 대신하는 모델이 아니라, 분석 결과의 표현 품질과 안전성을 관리하는 **output governance layer**입니다.
+즉, Raphael은 감정 판단을 대신하지 않고, 분석 결과의 표현 품질과 안전성을 관리하는 **output governance layer**입니다.
 
 이 구조는 프롬프트 작성뿐 아니라, AI 서비스에서 사용자-facing 응답을 어떻게 제한하고 조정할 것인지에 대한 설계 실험이기도 합니다.
 
 ---
 
-## 🗺 Roadmap
+## Roadmap
 
 AESA는 현재 다음 방향으로 지속 개선 중입니다.
 
@@ -268,45 +411,21 @@ AESA는 현재 다음 방향으로 지속 개선 중입니다.
 
 ---
 
-## 🎥 Demo Video
+## Project Significance
 
-> **Recorded Demo**: https://www.youtube.com/watch?v=R51yFc5YOpA
-
-AESA의 주요 분석 흐름과 결과 화면은 데모 영상과 스크린샷에서 확인할 수 있습니다.
-
-- 주요 감정 분류
-- 세부 감정 및 강도 분석
-- 감정 전이 및 시간 흐름 추적
-- 상황 맥락 기반 감정 해석
-- 복합 감정 후보 및 관계성 분석
-
----
-
-## 🖼 Screenshots
-
-<p align="center">
-  <a href="https://github.com/user-attachments/assets/bdcf22d9-e0cd-4530-91f5-3527137f21cd">
-    <img src="https://github.com/user-attachments/assets/bdcf22d9-e0cd-4530-91f5-3527137f21cd" alt="AESA analysis result screen" width="100%">
-  </a>
-</p>
-
----
-
-## 📌 Project Significance
-
-AESA는 언어와 감정의 결을 AI 서비스 구조로 옮기기 위해 제작한 포트폴리오형 프로토타입입니다.
+AESA는 한국어 감정 표현을 단순 라벨로 분류하는 데서 출발해, 감정 후보·맥락·흐름·불확실성·출력 안전성을 함께 다루는 구조로 확장해 온 포트폴리오형 AI 프로젝트입니다.
 
 이 프로젝트를 통해 실험한 핵심 역량은 다음과 같습니다.
 
-- 한국어 감정 표현을 단순 라벨이 아니라 구조화된 후보군으로 다루는 방식
-- 여러 분석 모듈을 조합하는 Python 기반 pipeline architecture
-- 모델 출력 결과를 서비스 화면과 API에 맞게 정리하는 구조화 능력
-- 감정 분석 결과의 과확신과 진단적 표현을 줄이기 위한 output governance 설계
-- 향후 정답지, 하네스, schema-driven 구조로 확장 가능한 프로젝트 설계
+- **AESA 1.0 구현 역량**: 11개 분석 관점을 조합한 Python 기반 pipeline architecture, FastAPI 서비스 구조, UI/데모 구성
+- **1.0 → 2.0 재설계 역량**: 라벨 중심 결과의 한계를 발견하고 schema-driven 판단 구조로 재정리한 설계 과정
+- **감정 기준 자산화 관점**: 감정 표현을 단순 키워드가 아니라 후보·근거·강도·확실성·불확실성으로 구조화하는 방식
+- **검증 가능한 AI 설계**: answer-key, confusion-pair, top-k, false positive, uncertainty handling을 고려한 evaluation harness 방향
+- **사용자-facing 출력 설계**: 분석 결과가 과확신이나 심리 진단처럼 전달되지 않도록 관리하는 output governance 설계
 
 ---
 
-## 🔐 Public Disclosure Boundary
+## Public Disclosure Boundary
 
 이 저장소는 포트폴리오 목적으로 공개되어 있으므로, 일부 내부 설계는 공개하지 않습니다.
 
@@ -331,7 +450,7 @@ AESA는 언어와 감정의 결을 AI 서비스 구조로 옮기기 위해 제�
 
 ---
 
-## ⚠️ Limitations
+## Limitations
 
 이 프로젝트는 포트폴리오 및 학습 목적의 프로토타입입니다.
 
@@ -345,14 +464,14 @@ AESA는 언어와 감정의 결을 AI 서비스 구조로 옮기기 위해 제�
 
 ---
 
-## 📜 License
+## License
 
 이 저장소의 코드는 학습 및 포트폴리오 목적으로 공개되었습니다.  
 상업적 사용 시 별도 문의 바랍니다.
 
 ---
 
-## 👤 Contact
+## Contact
 
 - **Email**: madecompass@outlook.kr
 - **Portfolio**: 이력서 참조
